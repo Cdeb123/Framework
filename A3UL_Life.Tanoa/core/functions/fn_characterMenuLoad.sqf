@@ -3,14 +3,25 @@
     File: fn_characterMenuLoad.sqf
 */
 disableSerialization;
-private _display = findDisplay 7800;
+params [
+    ["_display",displayNull,[displayNull]]
+];
+
+if (isNull _display) then {_display = findDisplay 7800;};
 if (isNull _display) exitWith {};
 
 private _key = format ["life_characters_%1_%2",getPlayerUID player,profileName];
 life_characters = profileNamespace getVariable [_key,[]];
 if !(life_characters isEqualType []) then {life_characters = [];};
+private _lastSlot = profileNamespace getVariable [format ["%1_selected",_key],-1];
+private _lastIndex = -1;
 
 lbClear 7801;
+if ((count life_characters) < 3) then {
+    private _newIdx = lbAdd [7801,"Create New Character"];
+    lbSetData [7801,_newIdx,"__new"];
+};
+
 {
     private _slot = _x select 0;
     private _name = _x select 2;
@@ -18,10 +29,15 @@ lbClear 7801;
     private _idx = lbAdd [7801,format ["Slot %1  |  %2",_slot + 1,_name]];
     lbSetData [7801,_idx,str _x];
     lbSetTooltip [7801,_idx,format ["DOB: %1",_dob]];
+    if (_slot isEqualTo _lastSlot) then {_lastIndex = _idx;};
 } forEach life_characters;
 
-if ((count life_characters) > 0 && {(lbCurSel 7801) < 0}) then {
-    lbSetCurSel [7801,0];
+if (_lastIndex >= 0) then {
+    lbSetCurSel [7801,_lastIndex];
+} else {
+    if ((lbCurSel 7801) < 0 && {(lbSize 7801) > 0}) then {
+        lbSetCurSel [7801,0];
+    };
 };
 
 private _faces = [
@@ -62,3 +78,12 @@ private _remaining = 3 - (count life_characters);
     getPlayerUID player,
     profileName
 ];
+
+if (missionNamespace getVariable ["life_character_gate_active",false]) then {
+    (_display displayCtrl 7803) ctrlSetTooltip "Required";
+    (_display displayCtrl 7804) ctrlSetTooltip "Required";
+    (_display displayCtrl 7805) ctrlSetTooltip "Required";
+    (_display displayCtrl 7806) ctrlSetTooltip "Required";
+};
+
+[_display] call life_fnc_characterPreviewStart;

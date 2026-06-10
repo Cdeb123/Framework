@@ -19,6 +19,8 @@ class CfgFunctions {
             class mresArray {};
             class queryRequest{};
             class fetchFrameworkData {};
+            class updateLEOMembership {};
+            class updateLEOTraining {};
             class asyncCall{};
             class insertRequest{};
             class updateRequest{};

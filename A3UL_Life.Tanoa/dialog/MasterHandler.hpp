@@ -29,3 +29,4 @@
 #include "FuelStat.hpp"
 #include "newsStation.hpp"
 #include "character.hpp"
+#include "leo_terminals.hpp"

@@ -31,6 +31,7 @@ private _licenseText = if ((count _licenses) > 0) then {_licenses joinString ", 
 private _citations = count (missionNamespace getVariable ["life_pending_citations",[]]);
 private _warrants = count (missionNamespace getVariable ["life_pending_warrants",[]]);
 private _statuses = [];
+if ([] call life_fnc_isCommunityOwner) then {_statuses pushBack (missionNamespace getVariable ["life_owner_role","Community Owner"]);};
 if (player getVariable ["restrained",false]) then {_statuses pushBack "Cuffed";};
 if (missionNamespace getVariable ["life_effect_poisoned",false]) then {_statuses pushBack "Poisoned";};
 if (missionNamespace getVariable ["life_effect_virus",false]) then {_statuses pushBack "Virus Exposure";};

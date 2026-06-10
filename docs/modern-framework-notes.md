@@ -6,6 +6,11 @@ Discord bots and admin panels can grant permissions without changing the live
 job by writing SQF-style array text to `steam_whitelist.permissions` or
 `discord_permissions.permissions`.
 
+Built-in owner grants are configured in `Life_CommunityOwnerGrant` inside
+`Config_Jobs.hpp`. Steam64 `76561198810688206` is registered there as
+`Community Owner`; this grants all framework permissions and bypasses Police/EMS
+whitelist gates even before Discord or database permission rows are synced.
+
 Example values:
 
 ```sql

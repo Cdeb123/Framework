@@ -160,30 +160,30 @@ class WeaponShops {
             { "arifle_SDAR_F", $STR_W_items_TaserRifle, 20000, 10000, "" },
             { "hgun_P07_F", "", 7500, 3750, "" },
             { "hgun_P07_khk_F", "", 7500, 3750, "" }, //Apex DLC
-            { "hgun_Pistol_heavy_01_F", "", 9500, 4750, "call life_coplevel >= 1" },
-            { "SMG_02_ACO_F", "", 30000, 15000, "call life_coplevel >= 2" },
-            { "arifle_MX_F", "", 35000, 17500, "call life_coplevel >= 2" },
-            { "hgun_ACPC2_F", "", 17500, 8750, "call life_coplevel >= 3" },
-            { "arifle_MXC_F", "", 30000, 15000, "call life_coplevel >= 3" },
-            { "srifle_DMR_07_blk_F", "", 32000, 16000, "call life_coplevel >= 3" } //Apex DLC Sniper
+            { "hgun_Pistol_heavy_01_F", "", 9500, 4750, "['deputy'] call life_fnc_leoAtLeastRank" },
+            { "SMG_02_ACO_F", "", 30000, 15000, "['corporal'] call life_fnc_leoAtLeastRank" },
+            { "arifle_MX_F", "", 35000, 17500, "['corporal'] call life_fnc_leoAtLeastRank" },
+            { "hgun_ACPC2_F", "", 17500, 8750, "['sergeant'] call life_fnc_leoAtLeastRank" },
+            { "arifle_MXC_F", "", 30000, 15000, "['sergeant'] call life_fnc_leoAtLeastRank" },
+            { "srifle_DMR_07_blk_F", "", 32000, 16000, "['sergeant'] call life_fnc_leoAtLeastRank" } //Apex DLC Sniper
         };
         mags[] = {
             { "16Rnd_9x21_Mag", "", 125, 60, "" },
             { "20Rnd_556x45_UW_mag", $STR_W_mags_TaserRifle, 125, 60, "" },
-            { "11Rnd_45ACP_Mag", "", 130, 65, "call life_coplevel >= 1" },
-            { "30Rnd_65x39_caseless_mag", "", 130, 65, "call life_coplevel >= 2" },
-            { "30Rnd_9x21_Mag", "", 250, 125, "call life_coplevel >= 2" },
-            { "9Rnd_45ACP_Mag", "", 200, 100, "call life_coplevel >= 3" },
-            { "20Rnd_650x39_Cased_Mag_F", "", 200, 100, "call life_coplevel >= 3" } //Apex DLC
+            { "11Rnd_45ACP_Mag", "", 130, 65, "['deputy'] call life_fnc_leoAtLeastRank" },
+            { "30Rnd_65x39_caseless_mag", "", 130, 65, "['corporal'] call life_fnc_leoAtLeastRank" },
+            { "30Rnd_9x21_Mag", "", 250, 125, "['corporal'] call life_fnc_leoAtLeastRank" },
+            { "9Rnd_45ACP_Mag", "", 200, 100, "['sergeant'] call life_fnc_leoAtLeastRank" },
+            { "20Rnd_650x39_Cased_Mag_F", "", 200, 100, "['sergeant'] call life_fnc_leoAtLeastRank" } //Apex DLC
         };
         accs[] = {
             { "muzzle_snds_L", "", 650, 325, "" },
-            { "optic_MRD", "", 2750, 1375, "call life_coplevel >= 1" },
-            { "acc_flashlight_pistol", "", 250, 125, "call life_coplevel >= 1" },//Pistol Flashlight
-            { "acc_flashlight", "", 750, 375, "call life_coplevel >= 2" },
-            { "optic_Holosight", "", 1200, 600, "call life_coplevel >= 2" },
-            { "optic_Arco", "", 2500, 1250, "call life_coplevel >= 2" },
-            { "muzzle_snds_H", "", 2750, 1375, "call life_coplevel >= 2" }
+            { "optic_MRD", "", 2750, 1375, "['deputy'] call life_fnc_leoAtLeastRank" },
+            { "acc_flashlight_pistol", "", 250, 125, "['deputy'] call life_fnc_leoAtLeastRank" },//Pistol Flashlight
+            { "acc_flashlight", "", 750, 375, "['corporal'] call life_fnc_leoAtLeastRank" },
+            { "optic_Holosight", "", 1200, 600, "['corporal'] call life_fnc_leoAtLeastRank" },
+            { "optic_Arco", "", 2500, 1250, "['corporal'] call life_fnc_leoAtLeastRank" },
+            { "muzzle_snds_H", "", 2750, 1375, "['corporal'] call life_fnc_leoAtLeastRank" }
         };
     };
 

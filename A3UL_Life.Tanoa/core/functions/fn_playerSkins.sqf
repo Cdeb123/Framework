@@ -39,8 +39,10 @@ switch (playerSide) do {
         if (uniform player isEqualTo "U_Rangemaster") then {
             _skinName = "textures\cop_uniform.jpg";
             if (LIFE_SETTINGS(getNumber,"cop_extendedSkins") isEqualTo 1) then {
-                if (FETCH_CONST(life_coplevel) >= 1) then {
-                    _skinName = ["textures\cop_uniform_",(FETCH_CONST(life_coplevel)),".jpg"] joinString "";
+                private _legacyRank = getNumber (missionConfigFile >> "Life_LEO" >> "Departments" >> (missionNamespace getVariable ["life_leo_department","tcsd"]) >> "Ranks" >> (missionNamespace getVariable ["life_leo_rank","deputy"]) >> "legacyCopLevel");
+                if (_legacyRank < 1) then {_legacyRank = FETCH_CONST(life_coplevel);};
+                if (_legacyRank >= 1) then {
+                    _skinName = ["textures\cop_uniform_",_legacyRank,".jpg"] joinString "";
                 };
             };
             player setObjectTextureGlobal [0, _skinName];

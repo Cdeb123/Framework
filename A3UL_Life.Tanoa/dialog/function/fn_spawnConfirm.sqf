@@ -7,6 +7,9 @@
 */
 private ["_spCfg","_sp","_spawnPos"];
 closeDialog 0;
+detach player;
+player allowDamage true;
+player setVelocity [0,0,0];
 cutText ["","BLACK IN"];
 if (life_spawn_point isEqualTo []) then {
     private ["_sp","_spCfg"];

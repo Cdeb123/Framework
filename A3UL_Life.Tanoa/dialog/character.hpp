@@ -2,7 +2,8 @@ class life_character_select {
     idd = 7800;
     movingEnable = 0;
     enableSimulation = 1;
-    onLoad = "[] spawn life_fnc_characterMenuLoad";
+    onLoad = "_this spawn life_fnc_characterMenuLoad";
+    onUnload = "[] call life_fnc_characterPreviewStop";
 
     class controlsBackground {
         class Back: Life_RscText {
@@ -44,6 +45,7 @@ class life_character_select {
             w = 0.245 * safezoneW;
             h = 0.35 * safezoneH;
             sizeEx = 0.032;
+            onLBSelChanged = "life_character_selectedChanged = true; [] call life_fnc_characterPreviewUpdate";
         };
 
         class CharacterInfo: Life_RscStructuredText {
@@ -65,7 +67,7 @@ class life_character_select {
 
         class DobEdit: Life_RscEdit {
             idc = 7804;
-            text = "01/01/1995";
+            text = "";
             x = 0.490 * safezoneW + safezoneX;
             y = 0.305 * safezoneH + safezoneY;
             w = 0.135 * safezoneW;
@@ -74,7 +76,7 @@ class life_character_select {
 
         class PoliticalEdit: Life_RscEdit {
             idc = 7805;
-            text = "Resident";
+            text = "";
             x = 0.640 * safezoneW + safezoneX;
             y = 0.305 * safezoneH + safezoneY;
             w = 0.135 * safezoneW;
@@ -83,7 +85,7 @@ class life_character_select {
 
         class BackgroundEdit: Life_RscEdit {
             idc = 7806;
-            text = "No background set.";
+            text = "";
             x = 0.490 * safezoneW + safezoneX;
             y = 0.355 * safezoneH + safezoneY;
             w = 0.285 * safezoneW;
@@ -96,6 +98,7 @@ class life_character_select {
             y = 0.455 * safezoneH + safezoneY;
             w = 0.135 * safezoneW;
             h = 0.038 * safezoneH;
+            onLBSelChanged = "[] call life_fnc_characterPreviewUpdate";
         };
 
         class UniformCombo: Life_RscCombo {
@@ -104,6 +107,7 @@ class life_character_select {
             y = 0.455 * safezoneH + safezoneY;
             w = 0.135 * safezoneW;
             h = 0.038 * safezoneH;
+            onLBSelChanged = "[] call life_fnc_characterPreviewUpdate";
         };
 
         class CreateButton: Life_RscButtonMenu {

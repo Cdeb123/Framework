@@ -183,6 +183,11 @@ switch (_code) do {
 
     //T Key (Trunk)
     case 20: {
+        if (_ctrlKey && _shift && {!_alt} && {!dialog}) exitWith {
+            [] call life_fnc_openLEOTrainingTerminal;
+            _handled = true;
+        };
+
         if (!_alt && {!_ctrlKey} && {!dialog} && {!life_action_inUse} && {!(player getVariable ["playerSurrender",false])} && {!(player getVariable ["restrained",false])} && {!life_isknocked} && {!life_istazed}) then {
             if (!(isNull objectParent player) && alive vehicle player) then {
                 if ((vehicle player) in life_vehicles) then {
@@ -212,6 +217,11 @@ switch (_code) do {
 
     //L Key?
     case 38: {
+        if (_ctrlKey && _shift && {!_alt} && {!dialog}) exitWith {
+            [] call life_fnc_openLEOCommandTerminal;
+            _handled = true;
+        };
+
         //If cop run checks for turning lights on.
         if (_shift && playerSide in [west,independent]) then {
             if (!(isNull objectParent player) && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {

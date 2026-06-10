@@ -43,4 +43,25 @@ if !(_citations isEqualType []) then {_citations = [];};
 private _warrants = [format ["SELECT id, severity, reason FROM warrants WHERE pid='%1' AND active='1'",_uid],2,true] call DB_fnc_asyncCall;
 if !(_warrants isEqualType []) then {_warrants = [];};
 
-[_permissions,_citations,_warrants] remoteExecCall ["life_fnc_frameworkDataReceived",_owner];
+private _leoRows = [];
+private _leoDbRows = [format ["SELECT department_key, rank_key, primary_subdivision, subdivisions, role_permissions, status FROM leo_memberships WHERE pid='%1' AND status='active'",_uid],2,true] call DB_fnc_asyncCall;
+if (_leoDbRows isEqualType []) then {
+    {
+        _leoRows pushBack [
+            _x select 0,
+            _x select 1,
+            _x select 2,
+            [(_x select 3)] call _readArray,
+            [(_x select 4)] call _readArray,
+            _x select 5
+        ];
+    } forEach _leoDbRows;
+};
+
+private _trainingDocs = ["SELECT id, department_key, title, body, created_by_pid, DATE_FORMAT(insert_time,'%Y-%m-%d %H:%i') FROM leo_training_documents WHERE active='1' ORDER BY id DESC LIMIT 30",2,true] call DB_fnc_asyncCall;
+if !(_trainingDocs isEqualType []) then {_trainingDocs = [];};
+
+private _trainingRoster = ["SELECT trainee_pid, trainee_character_uid, department_key, phase, fto_pid, notes FROM leo_training_roster WHERE active='1' ORDER BY updated_at DESC LIMIT 60",2,true] call DB_fnc_asyncCall;
+if !(_trainingRoster isEqualType []) then {_trainingRoster = [];};
+
+[_permissions,_citations,_warrants,_leoRows,_trainingDocs,_trainingRoster] remoteExecCall ["life_fnc_frameworkDataReceived",_owner];

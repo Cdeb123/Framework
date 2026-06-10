@@ -28,9 +28,9 @@ _political = [_political] call _cleanText;
 _background = [_background] call _cleanText;
 
 if (_name isEqualTo "") exitWith {hint "Enter a character name.";};
-if (_dob isEqualTo "") then {_dob = "01/01/1995";};
-if (_political isEqualTo "") then {_political = "Resident";};
-if (_background isEqualTo "") then {_background = "No background set.";};
+if (_dob isEqualTo "") exitWith {hint "Enter a date of birth.";};
+if (_political isEqualTo "") exitWith {hint "Enter a political status.";};
+if (_background isEqualTo "") exitWith {hint "Enter a character background.";};
 if (_face isEqualTo "") then {_face = "WhiteHead_01";};
 if (_uniform isEqualTo "") then {_uniform = "U_C_Poloshirt_blue";};
 
@@ -48,4 +48,6 @@ profileNamespace setVariable [format ["%1_selected",_key],_slot];
 saveProfileNamespace;
 
 [_character] call life_fnc_characterApply;
+life_character_preview_committed = true;
+life_character_completed = true;
 closeDialog 0;

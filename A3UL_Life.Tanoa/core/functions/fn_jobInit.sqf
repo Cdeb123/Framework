@@ -8,15 +8,26 @@
 */
 life_jobs = [];
 life_permissions = [];
+private _isOwner = [] call life_fnc_isCommunityOwner;
+
+if (_isOwner) then {
+    {
+        life_permissions pushBackUnique _x;
+    } forEach getArray (missionConfigFile >> "Life_CommunityOwnerGrant" >> "permissions");
+};
 
 {
     life_permissions pushBackUnique _x;
 } forEach (missionNamespace getVariable ["life_discord_permissions",[]]);
 
 {
+    life_permissions pushBackUnique _x;
+} forEach (missionNamespace getVariable ["life_leo_permissions",[]]);
+
+{
     private _jobKey = configName _x;
     private _conditions = getText (_x >> "conditions");
-    private _allowed = if (_conditions isEqualTo "") then {true} else {call compile _conditions};
+    private _allowed = _isOwner || {if (_conditions isEqualTo "") then {true} else {call compile _conditions}};
 
     if (_allowed) then {
         private _displayName = getText (_x >> "displayName");
@@ -28,6 +39,12 @@ life_permissions = [];
 
 if ((missionNamespace getVariable ["life_active_job","unemployed"]) isEqualTo "") then {
     life_active_job = "unemployed";
+};
+
+if (_isOwner) then {
+    life_owner_role = getText (missionConfigFile >> "Life_CommunityOwnerGrant" >> "roleName");
+    player setVariable ["communityOwner",true,true];
+    player setVariable ["ownerRole",life_owner_role,true];
 };
 
 player setVariable ["activeJob",life_active_job,true];

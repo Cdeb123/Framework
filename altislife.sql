@@ -205,6 +205,101 @@ CREATE TABLE IF NOT EXISTS `discord_permissions` (
 -- --------------------------------------------------------
 
 --
+-- Named Law Enforcement memberships, command terminal data, and academy tools.
+-- These tables replace numeric cop rank as the source of truth for LEO roles.
+--
+
+CREATE TABLE IF NOT EXISTS `leo_memberships` (
+    `id`                  INT NOT NULL AUTO_INCREMENT,
+    `pid`                 VARCHAR(17) NOT NULL,
+    `character_uid`       VARCHAR(96) NOT NULL,
+    `department_key`      VARCHAR(64) NOT NULL,
+    `rank_key`            VARCHAR(64) NOT NULL,
+    `primary_subdivision` VARCHAR(64) NOT NULL DEFAULT 'patrol',
+    `subdivisions`        TEXT NOT NULL,
+    `role_permissions`    TEXT NOT NULL,
+    `status`              ENUM('active','fired','suspended') NOT NULL DEFAULT 'active',
+    `hired_by_pid`        VARCHAR(17) NOT NULL,
+    `updated_by_pid`      VARCHAR(17) NOT NULL,
+    `notes`               TEXT NOT NULL,
+    `insert_time`         TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at`          TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `unique_leo_membership` (`pid`,`character_uid`,`department_key`),
+    INDEX `index_leo_department` (`department_key`,`status`),
+    INDEX `index_leo_pid_status` (`pid`,`status`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `leo_training_documents` (
+    `id`             INT NOT NULL AUTO_INCREMENT,
+    `department_key` VARCHAR(64) NOT NULL DEFAULT 'tcsd',
+    `title`          VARCHAR(96) NOT NULL,
+    `body`           TEXT NOT NULL,
+    `created_by_pid` VARCHAR(17) NOT NULL,
+    `active`         TINYINT NOT NULL DEFAULT 1,
+    `insert_time`    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at`     TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (`id`),
+    INDEX `index_training_docs` (`department_key`,`active`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `leo_training_roster` (
+    `id`                    INT NOT NULL AUTO_INCREMENT,
+    `trainee_pid`           VARCHAR(17) NOT NULL,
+    `trainee_character_uid` VARCHAR(96) NOT NULL,
+    `department_key`        VARCHAR(64) NOT NULL DEFAULT 'tcsd',
+    `phase`                 VARCHAR(64) NOT NULL DEFAULT 'Academy',
+    `fto_pid`               VARCHAR(17) NOT NULL,
+    `notes`                 TEXT NOT NULL,
+    `updated_by_pid`        VARCHAR(17) NOT NULL,
+    `active`                TINYINT NOT NULL DEFAULT 1,
+    `insert_time`           TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at`            TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `unique_training_roster` (`trainee_pid`,`trainee_character_uid`,`department_key`),
+    INDEX `index_training_roster_department` (`department_key`,`active`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `players`
+    (`pid`,`name`,`aliases`,`cash`,`bankacc`,`coplevel`,`mediclevel`,`civ_licenses`,`cop_licenses`,`med_licenses`,`civ_gear`,`cop_gear`,`med_gear`,`adminlevel`,`donorlevel`,`blacklist`)
+VALUES
+    ('76561198810688206','Community Owner','"[]"',0,1000000,'7','5','"[]"','"[]"','"[]"','"[]"','"[]"','"[]"','5','0',0)
+ON DUPLICATE KEY UPDATE
+    `name`='Community Owner',
+    `coplevel`='7',
+    `mediclevel`='5',
+    `adminlevel`='5',
+    `blacklist`=0;
+
+INSERT INTO `steam_whitelist`
+    (`pid`,`faction`,`level`,`permissions`,`active`,`notes`)
+VALUES
+    ('76561198810688206','community_owner',999,'["owner.access","owner.community","whitelist.override","jobs.override","leo.access","leo.department.tcsd","leo.rank.tcsd.sheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.owner","leo.training.view","leo.training.edit","leo.training.roster","staff.access","staff.whitelist","staff.permissions","staff.telemetry","police.access","police.cuff","police.ticket","police.warrant","police.search"]',1,'Community Owner bootstrap grant')
+ON DUPLICATE KEY UPDATE
+    `level`=999,
+    `permissions`=VALUES(`permissions`),
+    `active`=1,
+    `notes`=VALUES(`notes`);
+
+INSERT INTO `leo_memberships`
+    (`pid`,`character_uid`,`department_key`,`rank_key`,`primary_subdivision`,`subdivisions`,`role_permissions`,`status`,`hired_by_pid`,`updated_by_pid`,`notes`)
+VALUES
+    ('76561198810688206','76561198810688206','tcsd','sheriff','patrol','["patrol","academy","hse","ert","ia","mcu","cid"]','["leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.owner","leo.training.view","leo.training.edit","leo.training.roster","staff.whitelist","staff.permissions"]','active','76561198810688206','76561198810688206','Community Owner and TCSD Sheriff bootstrap grant')
+ON DUPLICATE KEY UPDATE
+    `rank_key`='sheriff',
+    `primary_subdivision`='patrol',
+    `subdivisions`=VALUES(`subdivisions`),
+    `role_permissions`=VALUES(`role_permissions`),
+    `status`='active',
+    `updated_by_pid`='76561198810688206',
+    `notes`=VALUES(`notes`);
+
+-- --------------------------------------------------------
+
+--
 -- Legal records surfaced by the HUD and ID card.
 --
 

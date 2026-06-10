@@ -44,6 +44,11 @@ diag_log "[Life Client] Server loading completed ";
 waitUntil {life_session_completed};
 0 cutText[localize "STR_Init_ClientFinish","BLACK FADED",99999999];
 
+life_framework_data_loaded = false;
+[] call life_fnc_frameworkDataQuery;
+private _frameworkDeadline = time + 10;
+waitUntil {(missionNamespace getVariable ["life_framework_data_loaded",false]) || {time > _frameworkDeadline}};
+
 [] spawn life_fnc_escInterupt;
 
 switch (playerSide) do {
@@ -68,7 +73,13 @@ player setVariable ["restrained", false, true];
 player setVariable ["Escorting", false, true];
 player setVariable ["transporting", false, true];
 player setVariable ["playerSurrender", false, true];
-player setVariable ["realname", profileName, true];
+private _activeCharacterName = if ((count (missionNamespace getVariable ["life_character_data",[]])) > 2) then {
+    life_character_data select 2
+} else {
+    profileName
+};
+player setVariable ["realname", _activeCharacterName, true];
+player setVariable ["characterUID", missionNamespace getVariable ["life_character_uid",""], true];
 player setVariable ["seatbelt", false, true];
 player setVariable ["fireMode", life_fireMode, true];
 
@@ -125,7 +136,6 @@ if (life_HC_isActive) then {
 };
 
 [] call life_fnc_hudSetup;
-[] spawn life_fnc_characterInit;
 
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime - _timeStamp)];

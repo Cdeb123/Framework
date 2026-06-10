@@ -14,26 +14,26 @@ class Loadouts {
     // COP
     class WEST {
         uniform[] = {
-            {"U_Rangemaster", "call life_copLevel >= 0"}
+            {"U_Rangemaster", "['deputy'] call life_fnc_leoAtLeastRank"}
         };
         headgear[] = {
-            {"H_Cap_blk", "call life_copLevel >= 0"}
+            {"H_Cap_blk", "['deputy'] call life_fnc_leoAtLeastRank"}
         };
         vest[] = {
-            {"V_Rangemaster_belt", "call life_copLevel >= 0"}
+            {"V_Rangemaster_belt", "['deputy'] call life_fnc_leoAtLeastRank"}
         };
         backpack[] = {};
         weapon[] = {
-            {"hgun_P07_snds_F", "call life_copLevel >= 0"}
+            {"hgun_P07_snds_F", "['deputy'] call life_fnc_leoAtLeastRank"}
         };
         mags[] = {
-            {"16Rnd_9x21_Mag", 6, "call life_copLevel >= 0"}
+            {"16Rnd_9x21_Mag", 6, "['deputy'] call life_fnc_leoAtLeastRank"}
         };
         items[] = {};
         linkedItems[] = {
-            {"ItemMap", "call life_copLevel >= 0"},
-            {"ItemCompass", "call life_copLevel >= 0"},
-            {"ItemWatch", "call life_copLevel >= 0"}
+            {"ItemMap", "['deputy'] call life_fnc_leoAtLeastRank"},
+            {"ItemCompass", "['deputy'] call life_fnc_leoAtLeastRank"},
+            {"ItemWatch", "['deputy'] call life_fnc_leoAtLeastRank"}
         };
     };
 
