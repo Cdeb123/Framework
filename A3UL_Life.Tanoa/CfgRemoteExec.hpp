@@ -26,6 +26,7 @@ class CfgRemoteExec {
         F(life_fnc_copSearch,CLIENT)
         JIP(life_fnc_copSiren,CLIENT)
         F(life_fnc_freezePlayer,CLIENT)
+        F(life_fnc_frameworkDataReceived,CLIENT)
         F(life_fnc_gangCreated,CLIENT)
         F(life_fnc_gangDisbanded,CLIENT)
         F(life_fnc_gangInvite,CLIENT)
@@ -77,6 +78,7 @@ class CfgRemoteExec {
 
         /* Server only functions */
         F(DB_fnc_insertRequest,SERVER)
+        F(DB_fnc_fetchFrameworkData,SERVER)
         F(DB_fnc_queryRequest,SERVER)
         F(DB_fnc_updatePartial,SERVER)
         F(DB_fnc_updateRequest,SERVER)

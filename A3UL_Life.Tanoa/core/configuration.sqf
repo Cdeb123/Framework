@@ -43,6 +43,26 @@ life_canpay_bail = true;
 life_storagePlacing = scriptNull;
 life_hideoutBuildings = [];
 life_firstSpawn = true;
+life_seatbelt = false;
+life_fireMode = "SAFE";
+life_weapon_fireModes = ["SAFE","SEMI","AUTO"];
+life_status_effects = [];
+life_toxicity = 0;
+life_alcohol = 0;
+life_effect_poisoned = false;
+life_effect_virus = false;
+life_effect_drunk = false;
+life_effect_overdose = false;
+life_pending_citations = [];
+life_pending_warrants = [];
+life_permissions = [];
+life_discord_permissions = [];
+life_jobs = [];
+life_active_job = "unemployed";
+life_characters = [];
+life_character_slot = -1;
+life_character_uid = "";
+life_character_data = [];
 
 //Settings
 life_settings_enableNewsBroadcast = profileNamespace getVariable ["life_enableNewsBroadcast", true];

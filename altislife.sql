@@ -109,6 +109,150 @@ CREATE TABLE IF NOT EXISTS `players` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `characters`
+-- Framework identity records. Existing `players` rows remain account-level.
+--
+
+CREATE TABLE IF NOT EXISTS `characters` (
+    `id`               INT NOT NULL AUTO_INCREMENT,
+    `pid`              VARCHAR(17) NOT NULL,
+    `profile_name`     VARCHAR(64) NOT NULL,
+    `slot`             TINYINT NOT NULL,
+    `character_uid`    VARCHAR(96) NOT NULL,
+    `display_name`     VARCHAR(64) NOT NULL,
+    `date_of_birth`    VARCHAR(16) NOT NULL,
+    `political_status` VARCHAR(64) NOT NULL DEFAULT 'Resident',
+    `background`       TEXT NOT NULL,
+    `face`             VARCHAR(64) NOT NULL DEFAULT 'WhiteHead_01',
+    `uniform`          VARCHAR(64) NOT NULL DEFAULT 'U_C_Poloshirt_blue',
+    `licenses`         TEXT NOT NULL,
+    `records`          TEXT NOT NULL,
+    `tickets`          TEXT NOT NULL,
+    `statuses`         TEXT NOT NULL,
+    `insert_time`      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `last_seen`        TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `unique_character_uid` (`character_uid`),
+    UNIQUE KEY `unique_character_slot` (`pid`,`profile_name`,`slot`),
+    INDEX `index_character_name` (`display_name`),
+    CONSTRAINT `FK_players_characters` FOREIGN KEY `fkIdx_players_characters` (`pid`)
+      REFERENCES `players` (`pid`)
+      ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Standalone job and permission grants.
+--
+
+CREATE TABLE IF NOT EXISTS `character_jobs` (
+    `id`            INT NOT NULL AUTO_INCREMENT,
+    `pid`           VARCHAR(17) NOT NULL,
+    `character_uid` VARCHAR(96) NOT NULL,
+    `job_key`       VARCHAR(64) NOT NULL,
+    `rank`          INT NOT NULL DEFAULT 0,
+    `active`        TINYINT NOT NULL DEFAULT 1,
+    `source`        VARCHAR(32) NOT NULL DEFAULT 'server',
+    `insert_time`   TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `unique_character_job` (`character_uid`,`job_key`),
+    INDEX `index_job_key` (`job_key`),
+    CONSTRAINT `FK_characters_jobs` FOREIGN KEY `fkIdx_characters_jobs` (`character_uid`)
+      REFERENCES `characters` (`character_uid`)
+      ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT `FK_players_character_jobs` FOREIGN KEY `fkIdx_players_character_jobs` (`pid`)
+      REFERENCES `players` (`pid`)
+      ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `steam_whitelist` (
+    `id`          INT NOT NULL AUTO_INCREMENT,
+    `pid`         VARCHAR(17) NOT NULL,
+    `faction`     VARCHAR(64) NOT NULL,
+    `level`       INT NOT NULL DEFAULT 0,
+    `permissions` TEXT NOT NULL,
+    `active`      TINYINT NOT NULL DEFAULT 1,
+    `notes`       TEXT NOT NULL,
+    `insert_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `unique_pid_faction` (`pid`,`faction`),
+    CONSTRAINT `FK_players_steam_whitelist` FOREIGN KEY `fkIdx_players_steam_whitelist` (`pid`)
+      REFERENCES `players` (`pid`)
+      ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `discord_permissions` (
+    `id`           INT NOT NULL AUTO_INCREMENT,
+    `pid`          VARCHAR(17) NOT NULL,
+    `discord_id`   VARCHAR(32) NOT NULL,
+    `roles`        TEXT NOT NULL,
+    `permissions`  TEXT NOT NULL,
+    `active`       TINYINT NOT NULL DEFAULT 1,
+    `last_sync`    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `unique_discord_pid` (`pid`,`discord_id`),
+    INDEX `index_discord_id` (`discord_id`),
+    CONSTRAINT `FK_players_discord_permissions` FOREIGN KEY `fkIdx_players_discord_permissions` (`pid`)
+      REFERENCES `players` (`pid`)
+      ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Legal records surfaced by the HUD and ID card.
+--
+
+CREATE TABLE IF NOT EXISTS `citations` (
+    `id`            INT NOT NULL AUTO_INCREMENT,
+    `pid`           VARCHAR(17) NOT NULL,
+    `character_uid` VARCHAR(96) NOT NULL,
+    `officer_pid`   VARCHAR(17) NOT NULL,
+    `amount`        INT NOT NULL DEFAULT 0,
+    `reason`        TEXT NOT NULL,
+    `status`        ENUM('pending','paid','void') NOT NULL DEFAULT 'pending',
+    `insert_time`   TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at`    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (`id`),
+    INDEX `index_citation_status` (`pid`,`status`),
+    CONSTRAINT `FK_characters_citations` FOREIGN KEY `fkIdx_characters_citations` (`character_uid`)
+      REFERENCES `characters` (`character_uid`)
+      ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT `FK_players_citations` FOREIGN KEY `fkIdx_players_citations` (`pid`)
+      REFERENCES `players` (`pid`)
+      ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS `warrants` (
+    `id`            INT NOT NULL AUTO_INCREMENT,
+    `pid`           VARCHAR(17) NOT NULL,
+    `character_uid` VARCHAR(96) NOT NULL,
+    `issuer_pid`    VARCHAR(17) NOT NULL,
+    `reason`        TEXT NOT NULL,
+    `severity`      ENUM('low','medium','high','critical') NOT NULL DEFAULT 'medium',
+    `active`        TINYINT NOT NULL DEFAULT 1,
+    `insert_time`   TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at`    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (`id`),
+    INDEX `index_warrant_active` (`pid`,`active`),
+    CONSTRAINT `FK_characters_warrants` FOREIGN KEY `fkIdx_characters_warrants` (`character_uid`)
+      REFERENCES `characters` (`character_uid`)
+      ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT `FK_players_warrants` FOREIGN KEY `fkIdx_players_warrants` (`pid`)
+      REFERENCES `players` (`pid`)
+      ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `vehicles`
 --
 

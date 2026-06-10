@@ -6,8 +6,9 @@
     Description:
     Restrains the client.
 */
-private ["_cop","_player","_vehicle"];
+private ["_cop","_hardCuff","_player","_vehicle"];
 _cop = [_this,0,objNull,[objNull]] call BIS_fnc_param;
+_hardCuff = [_this,1,false,[false]] call BIS_fnc_param;
 _player = player;
 _vehicle = vehicle player;
 if (isNull _cop) exitWith {};
@@ -31,6 +32,13 @@ if (isNull _cop) exitWith {};
 };
 
 titleText[format [localize "STR_Cop_Restrained",_cop getVariable ["realname",name _cop]],"PLAIN"];
+
+if (_hardCuff && {isNull objectParent player}) then {
+    player switchMove "AinjPpneMstpSnonWrflDnon";
+    uiSleep 1.2;
+};
+
+[] call life_fnc_hudUpdate;
 
 life_disable_getIn = true;
 life_disable_getOut = false;
@@ -90,5 +98,7 @@ if (alive player) then {
     player switchMove "AmovPercMstpSlowWrflDnon_SaluteIn";
     player setVariable ["Escorting",false,true];
     player setVariable ["transporting",false,true];
+    player setVariable ["restrainMode","",true];
     detach player;
+    [] call life_fnc_hudUpdate;
 };

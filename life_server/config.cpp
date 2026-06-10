@@ -18,6 +18,7 @@ class CfgFunctions {
             class numberSafe {};
             class mresArray {};
             class queryRequest{};
+            class fetchFrameworkData {};
             class asyncCall{};
             class insertRequest{};
             class updateRequest{};

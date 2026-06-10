@@ -1,14 +1,104 @@
 #include "..\..\script_macros.hpp"
 /*
     File: fn_hudUpdate.sqf
-    Author: Daniel Stuart
 
     Description:
-    Updates the HUD when it needs to.
+    Updates the modern framework HUD.
 */
 disableSerialization;
 
-if (isNull LIFEdisplay) then {[] call life_fnc_hudSetup;};
-LIFEctrl(2200) progressSetPosition (life_hunger / 100);
-LIFEctrl(2201) progressSetPosition (1 - (damage player));
-LIFEctrl(2202) progressSetPosition (life_thirst / 100);
+if (isNull LIFEdisplay) exitWith {[] call life_fnc_hudSetup;};
+
+private _display = LIFEdisplay;
+if (isNull (_display displayCtrl 2200)) exitWith {};
+
+private _hunger = (life_hunger max 0) min 100;
+private _thirst = (life_thirst max 0) min 100;
+private _health = ((1 - (damage player)) * 100) max 0 min 100;
+
+(_display displayCtrl 2200) progressSetPosition (_hunger / 100);
+(_display displayCtrl 2201) progressSetPosition (_health / 100);
+(_display displayCtrl 2202) progressSetPosition (_thirst / 100);
+(_display displayCtrl 1200) ctrlSetText format ["%1%2",round _hunger,"%"];
+(_display displayCtrl 1201) ctrlSetText format ["%1%2",round _health,"%"];
+(_display displayCtrl 1202) ctrlSetText format ["%1%2",round _thirst,"%"];
+
+private _vehicle = vehicle player;
+private _inVehicle = !(_vehicle isEqualTo player);
+private _speed = round (abs (speed _vehicle));
+private _vehicleLabel = "ON FOOT";
+if (_inVehicle) then {
+    _vehicleLabel = switch (true) do {
+        case (_vehicle isKindOf "Air"): {"AIR"};
+        case (_vehicle isKindOf "Ship"): {"MARINE"};
+        case (_vehicle isKindOf "LandVehicle"): {"GROUND"};
+        default {"VEHICLE"};
+    };
+};
+
+(_display displayCtrl 1301) ctrlSetText _vehicleLabel;
+(_display displayCtrl 1302) ctrlSetText format ["%1 KM/H",_speed];
+
+private _gps = _display displayCtrl 2400;
+if !(isNull _gps) then {
+    _gps ctrlMapAnimAdd [0,0.055,player];
+    ctrlMapAnimCommit _gps;
+};
+
+private _weapon = currentWeapon player;
+private _mode = if (_weapon isEqualTo "") then {"SAFE"} else {missionNamespace getVariable ["life_fireMode","SEMI"]};
+(_display displayCtrl 1300) ctrlSetText _mode;
+
+{
+    (_display displayCtrl _x) ctrlShow false;
+} forEach [2300,2301,2302,2303,2304,2305,2306,2307];
+
+private _showIcon = {
+    params ["_idc","_color"];
+    private _ctrl = _display displayCtrl _idc;
+    _ctrl ctrlShow true;
+    _ctrl ctrlSetTextColor _color;
+};
+
+if (_inVehicle) then {
+    private _beltColor = if (missionNamespace getVariable ["life_seatbelt",false]) then {
+        [0.13,0.85,0.54,0.95]
+    } else {
+        [0.95,0.28,0.24,0.95]
+    };
+    [2300,_beltColor] call _showIcon;
+};
+
+if (player getVariable ["restrained",false]) then {
+    [2301,[0.0,0.78,0.92,0.95]] call _showIcon;
+};
+
+if (missionNamespace getVariable ["life_effect_poisoned",false]) then {
+    [2302,[0.70,1.00,0.18,0.95]] call _showIcon;
+};
+
+if (missionNamespace getVariable ["life_effect_virus",false]) then {
+    [2303,[0.68,0.55,1.00,0.95]] call _showIcon;
+};
+
+if (missionNamespace getVariable ["life_effect_drunk",false]) then {
+    [2304,[1.00,0.62,0.20,0.95]] call _showIcon;
+};
+
+private _weightRatio = if (life_maxWeight <= 0) then {0} else {life_carryWeight / life_maxWeight};
+if (_weightRatio >= 0.90) then {
+    private _weightColor = switch (true) do {
+        case (_weightRatio >= 1.25): {[1.00,0.12,0.10,0.98]};
+        case (_weightRatio >= 1.00): {[1.00,0.55,0.12,0.96]};
+        default {[1.00,0.90,0.20,0.92]};
+    };
+    [2305,_weightColor] call _showIcon;
+};
+
+if (count (missionNamespace getVariable ["life_pending_citations",[]]) > 0) then {
+    [2306,[1.00,0.90,0.20,0.95]] call _showIcon;
+};
+
+if (count (missionNamespace getVariable ["life_pending_warrants",[]]) > 0) then {
+    [2307,[1.00,0.24,0.18,0.95]] call _showIcon;
+};

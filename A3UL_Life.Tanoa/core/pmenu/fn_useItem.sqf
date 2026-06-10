@@ -17,6 +17,7 @@ if ((lbCurSel 2005) isEqualTo -1) exitWith {
 private _item = CONTROL_DATA(2005);
 private _edible = M_CONFIG(getNumber, "VirtualItems", _item, "edible");
 private _drinkable = M_CONFIG(getNumber, "VirtualItems", _item, "drinkable");
+private _alcohol = M_CONFIG(getNumber, "VirtualItems", _item, "alcohol");
 
 if (_edible > -1 || _drinkable > -1) exitWith {
     if ([false, _item, 1] call life_fnc_handleInv) then {
@@ -41,6 +42,10 @@ if (_edible > -1 || _drinkable > -1) exitWith {
                     waitUntil {!alive player || ((time - life_redgull_effect) > (3 * 60))};
                     player enableFatigue true;
                 };
+            };
+
+            if (_alcohol > 0) then {
+                ["drunk",round (420 * _alcohol),_alcohol,_item] call life_fnc_statusEffect;
             };
         };
     };
@@ -97,6 +102,44 @@ switch (_item) do {
     case "lockpick": {
         [] spawn life_fnc_lockpick;
         closeDialog 0;
+    };
+
+    case "painkillers": {
+        if ([false, _item, 1] call life_fnc_handleInv) then {
+            ["toxicity",180,0.18,_item] call life_fnc_statusEffect;
+            player setDamage ((damage player - 0.08) max 0);
+        };
+    };
+
+    case "antidote": {
+        if ([false, _item, 1] call life_fnc_handleInv) then {
+            ["clear",0,0,_item] call life_fnc_statusEffect;
+        };
+    };
+
+    case "virusSample": {
+        if ([false, _item, 1] call life_fnc_handleInv) then {
+            ["virus",900,1,_item] call life_fnc_statusEffect;
+        };
+    };
+
+    case "marijuana": {
+        if ([false, _item, 1] call life_fnc_handleInv) then {
+            ["drunk",180,0.12,_item] call life_fnc_statusEffect;
+            ["toxicity",180,0.18,_item] call life_fnc_statusEffect;
+        };
+    };
+
+    case "cocaine_processed": {
+        if ([false, _item, 1] call life_fnc_handleInv) then {
+            ["toxicity",240,0.55,_item] call life_fnc_statusEffect;
+        };
+    };
+
+    case "heroin_processed": {
+        if ([false, _item, 1] call life_fnc_handleInv) then {
+            ["toxicity",300,0.75,_item] call life_fnc_statusEffect;
+        };
     };
 
     default {

@@ -13,14 +13,14 @@ class VirtualShops {
         name = "STR_Shops_Market";
         side = "civ";
         conditions = "";
-        items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "pickaxe", "toolkit", "fuelFull", "peach", "storagesmall", "storagebig", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
+        items[] = { "waterBottle", "beer", "rabbit", "apple", "redgull", "tbacon", "pickaxe", "toolkit", "fuelFull", "peach", "storagesmall", "storagebig", "rabbit_raw", "hen_raw", "rooster_raw", "sheep_raw", "goat_raw" };
     };
 
     class med_market {
         name = "STR_Shops_Market";
         side = "med";
         conditions = "";
-        items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "toolkit", "fuelFull", "peach", "defibrillator" };
+        items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "toolkit", "fuelFull", "peach", "defibrillator", "antidote", "painkillers" };
     };
 
     class rebel {
@@ -48,21 +48,21 @@ class VirtualShops {
         name = "STR_Shops_Coffee";
         side = "civ";
         conditions = "";
-        items[] = { "coffee", "donuts" };
+        items[] = { "coffee", "beer", "whiskey", "donuts" };
     };
 
     class f_station_coffee {
         name = "STR_Shop_Station_Coffee";
         side = "";
         conditions = "";
-        items[] = { "coffee", "donuts", "redgull", "toolkit", "fuelFull"};
+        items[] = { "coffee", "beer", "donuts", "redgull", "toolkit", "fuelFull"};
     };
 
     class drugdealer {
         name = "STR_Shops_DrugDealer";
         side = "civ";
         conditions = "";
-        items[] = { "cocaine_processed", "heroin_processed", "marijuana" };
+        items[] = { "cocaine_processed", "heroin_processed", "marijuana", "virusSample" };
     };
 
     class oil {
@@ -582,6 +582,69 @@ class VirtualItems {
         edible = -1;
         drinkable = 100;
         icon = "icons\ico_waterBottle.paa";
+    };
+
+    class beer {
+        variable = "beer";
+        displayName = "Beer";
+        weight = 1;
+        buyPrice = 45;
+        sellPrice = 10;
+        illegal = false;
+        edible = -1;
+        drinkable = 35;
+        icon = "icons\ico_coffee.paa";
+        alcohol = 0.22;
+    };
+
+    class whiskey {
+        variable = "whiskey";
+        displayName = "Whiskey";
+        weight = 1;
+        buyPrice = 250;
+        sellPrice = 80;
+        illegal = false;
+        edible = -1;
+        drinkable = 20;
+        icon = "icons\ico_coffee.paa";
+        alcohol = 0.55;
+    };
+
+    class painkillers {
+        variable = "painkillers";
+        displayName = "Painkillers";
+        weight = 1;
+        buyPrice = 350;
+        sellPrice = 75;
+        illegal = false;
+        edible = -1;
+        drinkable = -1;
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\heal_ca.paa";
+        toxicity = 0.18;
+    };
+
+    class antidote {
+        variable = "antidote";
+        displayName = "Antidote";
+        weight = 1;
+        buyPrice = 1250;
+        sellPrice = 250;
+        illegal = false;
+        edible = -1;
+        drinkable = -1;
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\heal_ca.paa";
+    };
+
+    class virusSample {
+        variable = "virusSample";
+        displayName = "Virus Sample";
+        weight = 1;
+        buyPrice = 5000;
+        sellPrice = 750;
+        illegal = true;
+        edible = -1;
+        drinkable = -1;
+        icon = "\A3\ui_f\data\igui\cfg\simpleTasks\types\danger_ca.paa";
     };
 
     //Food

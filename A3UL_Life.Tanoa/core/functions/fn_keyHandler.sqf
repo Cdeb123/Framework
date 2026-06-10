@@ -25,6 +25,16 @@ if ((_code in (actionKeys "GetOver") || _code in (actionKeys "salute") || _code 
     true;
 };
 
+if (_code in (actionKeys "GetOut") && {missionNamespace getVariable ["life_seatbelt",false]} && {!(vehicle player isEqualTo player)}) exitWith {
+    hint "Unbuckle your seatbelt first.";
+    true;
+};
+
+if (_code in (actionKeys "Fire") && {!(currentWeapon player isEqualTo "")} && {(missionNamespace getVariable ["life_fireMode","SAFE"]) isEqualTo "SAFE"}) exitWith {
+    titleText ["Fire mode: SAFE","PLAIN"];
+    true;
+};
+
 if (life_action_inUse) exitWith {
     if (!life_interrupted && _code in _interruptionKeys) then {life_interrupted = true};
     _handled;
@@ -110,8 +120,13 @@ switch (_code) do {
         };
     };
 
-    //Surrender (Shift + B)
+    //Surrender (Shift + B) / Seatbelt (Ctrl + B)
     case 48: {
+        if (_ctrlKey && {!_shift} && {!(vehicle player isEqualTo player)}) then {
+            [] call life_fnc_seatbeltToggle;
+            _handled = true;
+        };
+
         if (_shift) then {
             if (player getVariable ["playerSurrender",false]) then {
                 player setVariable ["playerSurrender",false,true];
@@ -148,11 +163,11 @@ switch (_code) do {
         };
     };
 
-    //Restraining (Shift + R)
+    //Restraining (Shift + R soft, Ctrl + Shift + R hard)
     case 19: {
         if (_shift) then {_handled = true};
-        if (_shift && playerSide isEqualTo west && {!isNull cursorObject} && {cursorObject isKindOf "CAManBase"} && {(isPlayer cursorObject)} && {(side cursorObject in [civilian,independent])} && {alive cursorObject} && {cursorObject distance player < 3.5} && {!(cursorObject getVariable "Escorting")} && {!(cursorObject getVariable "restrained")} && {speed cursorObject < 1}) then {
-            [] call life_fnc_restrainAction;
+        if (_shift && playerSide isEqualTo west && {!isNull cursorObject} && {cursorObject isKindOf "CAManBase"} && {(isPlayer cursorObject)} && {(side cursorObject in [civilian,independent])} && {alive cursorObject} && {cursorObject distance player < 3.8} && {!(cursorObject getVariable "Escorting")} && {!(cursorObject getVariable "restrained")} && {speed cursorObject < 4}) then {
+            [_ctrlKey] call life_fnc_restrainAction;
         };
     };
 
@@ -221,8 +236,29 @@ switch (_code) do {
         };
     };
 
+    //I ID Card
+    case 23: {
+        if (_ctrlKey && {!_alt} && {!dialog}) then {
+            [] call life_fnc_openID;
+            _handled = true;
+        };
+    };
+
+    //P Character Menu
+    case 25: {
+        if (_ctrlKey && {!_alt} && {!dialog}) then {
+            createDialog "life_character_select";
+            _handled = true;
+        };
+    };
+
     //F Key
     case 33: {
+        if (_ctrlKey && {!_alt}) exitWith {
+            [] call life_fnc_weaponFireMode;
+            _handled = true;
+        };
+
         if (playerSide in [west,independent] && {vehicle player != player} && {!life_siren_active} && {((driver vehicle player) == player)}) then {
             [] spawn {
                 life_siren_active = true;

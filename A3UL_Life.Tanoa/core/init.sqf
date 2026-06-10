@@ -60,6 +60,8 @@ switch (playerSide) do {
         [] call life_fnc_initMedic;
     };
 };
+[] call life_fnc_jobInit;
+[] call life_fnc_frameworkDataQuery;
 CONSTVAR(life_paycheck);
 
 player setVariable ["restrained", false, true];
@@ -67,6 +69,8 @@ player setVariable ["Escorting", false, true];
 player setVariable ["transporting", false, true];
 player setVariable ["playerSurrender", false, true];
 player setVariable ["realname", profileName, true];
+player setVariable ["seatbelt", false, true];
+player setVariable ["fireMode", life_fireMode, true];
 
 diag_log "[Life Client] Past Settings Init";
 [] execFSM "core\fsm\client.fsm";
@@ -76,6 +80,7 @@ diag_log "[Life Client] Executing client.fsm";
 [player, life_settings_enableSidechannel, playerSide] remoteExecCall ["TON_fnc_manageSC", RSERV];
 
 [] spawn life_fnc_survival;
+[] spawn life_fnc_statusMonitor;
 
 0 cutText ["","BLACK IN"];
 
@@ -120,6 +125,7 @@ if (life_HC_isActive) then {
 };
 
 [] call life_fnc_hudSetup;
+[] spawn life_fnc_characterInit;
 
 diag_log "----------------------------------------------------------------------------------------------------";
 diag_log format ["               End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime - _timeStamp)];
