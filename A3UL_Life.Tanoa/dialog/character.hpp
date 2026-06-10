@@ -38,6 +38,29 @@ class life_character_select {
     };
 
     class controls {
+        class CharacterListLabel: Life_RscText {
+            idc = -1;
+            text = "Saved Characters";
+            colorText[] = {0.92,0.97,1,1};
+            colorBackground[] = {0,0,0,0};
+            sizeEx = 0.032;
+            x = 0.205 * safezoneW + safezoneX;
+            y = 0.225 * safezoneH + safezoneY;
+            w = 0.245 * safezoneW;
+            h = 0.03 * safezoneH;
+        };
+
+        class CharacterInfoLabel: Life_RscText {
+            idc = -1;
+            text = "Details";
+            colorText[] = {0.92,0.97,1,1};
+            colorBackground[] = {0,0,0,0};
+            sizeEx = 0.032;
+            x = 0.205 * safezoneW + safezoneX;
+            y = 0.590 * safezoneH + safezoneY;
+            w = 0.245 * safezoneW;
+            h = 0.03 * safezoneH;
+        };
         class CharacterList: Life_RscListBox {
             idc = 7801;
             x = 0.205 * safezoneW + safezoneX;
@@ -56,40 +79,106 @@ class life_character_select {
             h = 0.13 * safezoneH;
         };
 
-        class NameEdit: Life_RscEdit {
+        class FirstNameLabel: Life_RscText {
+            idc = -1;
+            text = "First Name";
+            colorText[] = {0.92,0.97,1,1};
+            colorBackground[] = {0,0,0,0};
+            sizeEx = 0.032;
+            x = 0.490 * safezoneW + safezoneX;
+            y = 0.225 * safezoneH + safezoneY;
+            w = 0.14 * safezoneW;
+            h = 0.03 * safezoneH;
+        };
+
+        class LastNameLabel: Life_RscText {
+            idc = -1;
+            text = "Last Name";
+            colorText[] = {0.92,0.97,1,1};
+            colorBackground[] = {0,0,0,0};
+            sizeEx = 0.032;
+            x = 0.635 * safezoneW + safezoneX;
+            y = 0.225 * safezoneH + safezoneY;
+            w = 0.14 * safezoneW;
+            h = 0.03 * safezoneH;
+        };
+
+        class FirstNameEdit: Life_RscEdit {
             idc = 7803;
             text = "";
             x = 0.490 * safezoneW + safezoneX;
             y = 0.255 * safezoneH + safezoneY;
-            w = 0.285 * safezoneW;
+            w = 0.14 * safezoneW;
             h = 0.038 * safezoneH;
         };
 
-        class DobEdit: Life_RscEdit {
-            idc = 7804;
+        class LastNameEdit: Life_RscEdit {
+            idc = 7810;
             text = "";
+            x = 0.635 * safezoneW + safezoneX;
+            y = 0.255 * safezoneH + safezoneY;
+            w = 0.14 * safezoneW;
+            h = 0.038 * safezoneH;
+        };
+
+        class DobEdit: Life_RscCombo {
+            idc = 7804;
             x = 0.490 * safezoneW + safezoneX;
             y = 0.305 * safezoneH + safezoneY;
             w = 0.135 * safezoneW;
             h = 0.038 * safezoneH;
         };
 
-        class PoliticalEdit: Life_RscEdit {
+        class DobLabel: Life_RscText {
+            idc = -1;
+            text = "Date of Birth";
+            colorText[] = {0.92,0.97,1,1};
+            colorBackground[] = {0,0,0,0};
+            sizeEx = 0.03;
+            x = 0.490 * safezoneW + safezoneX;
+            y = 0.275 * safezoneH + safezoneY;
+            w = 0.135 * safezoneW;
+            h = 0.03 * safezoneH;
+        };
+
+        class PoliticalEdit: Life_RscCombo {
             idc = 7805;
-            text = "";
             x = 0.640 * safezoneW + safezoneX;
             y = 0.305 * safezoneH + safezoneY;
             w = 0.135 * safezoneW;
             h = 0.038 * safezoneH;
         };
 
-        class BackgroundEdit: Life_RscEdit {
+        class PoliticalLabel: Life_RscText {
+            idc = -1;
+            text = "Political Affiliation";
+            colorText[] = {0.92,0.97,1,1};
+            colorBackground[] = {0,0,0,0};
+            sizeEx = 0.03;
+            x = 0.640 * safezoneW + safezoneX;
+            y = 0.275 * safezoneH + safezoneY;
+            w = 0.135 * safezoneW;
+            h = 0.03 * safezoneH;
+        };
+
+        class BackgroundEdit: Life_RscCombo {
             idc = 7806;
-            text = "";
             x = 0.490 * safezoneW + safezoneX;
             y = 0.355 * safezoneH + safezoneY;
             w = 0.285 * safezoneW;
             h = 0.080 * safezoneH;
+        };
+
+        class BackgroundLabel: Life_RscText {
+            idc = -1;
+            text = "Background / Bio";
+            colorText[] = {0.92,0.97,1,1};
+            colorBackground[] = {0,0,0,0};
+            sizeEx = 0.03;
+            x = 0.490 * safezoneW + safezoneX;
+            y = 0.325 * safezoneH + safezoneY;
+            w = 0.285 * safezoneW;
+            h = 0.03 * safezoneH;
         };
 
         class FaceCombo: Life_RscCombo {
@@ -101,6 +190,18 @@ class life_character_select {
             onLBSelChanged = "[] call life_fnc_characterPreviewUpdate";
         };
 
+        class FaceLabel: Life_RscText {
+            idc = -1;
+            text = "Face";
+            colorText[] = {0.92,0.97,1,1};
+            colorBackground[] = {0,0,0,0};
+            sizeEx = 0.032;
+            x = 0.490 * safezoneW + safezoneX;
+            y = 0.425 * safezoneH + safezoneY;
+            w = 0.135 * safezoneW;
+            h = 0.03 * safezoneH;
+        };
+
         class UniformCombo: Life_RscCombo {
             idc = 7808;
             x = 0.640 * safezoneW + safezoneX;
@@ -108,6 +209,18 @@ class life_character_select {
             w = 0.135 * safezoneW;
             h = 0.038 * safezoneH;
             onLBSelChanged = "[] call life_fnc_characterPreviewUpdate";
+        };
+
+        class UniformLabel: Life_RscText {
+            idc = -1;
+            text = "Uniform";
+            colorText[] = {0.92,0.97,1,1};
+            colorBackground[] = {0,0,0,0};
+            sizeEx = 0.032;
+            x = 0.640 * safezoneW + safezoneX;
+            y = 0.425 * safezoneH + safezoneY;
+            w = 0.135 * safezoneW;
+            h = 0.03 * safezoneH;
         };
 
         class CreateButton: Life_RscButtonMenu {
