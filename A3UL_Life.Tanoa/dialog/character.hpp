@@ -8,7 +8,7 @@ class life_character_select {
     class controlsBackground {
         class Back: Life_RscText {
             idc = -1;
-            colorBackground[] = {0.02,0.025,0.03,0.92};
+            colorBackground[] = {0.015,0.02,0.025,0.94};
             x = 0.18 * safezoneW + safezoneX;
             y = 0.16 * safezoneH + safezoneY;
             w = 0.64 * safezoneW;
@@ -20,18 +20,27 @@ class life_character_select {
             colorBackground[] = {0.0,0.78,0.92,1};
             x = 0.18 * safezoneW + safezoneX;
             y = 0.16 * safezoneH + safezoneY;
-            w = 0.004 * safezoneW;
+            w = 0.006 * safezoneW;
             h = 0.68 * safezoneH;
+        };
+
+        class HeaderBar: Life_RscText {
+            idc = -1;
+            colorBackground[] = {0.0,0.78,0.92,0.12};
+            x = 0.18 * safezoneW + safezoneX;
+            y = 0.16 * safezoneH + safezoneY;
+            w = 0.64 * safezoneW;
+            h = 0.06 * safezoneH;
         };
 
         class Title: Life_RscText {
             idc = -1;
             text = "Characters";
-            colorText[] = {0.92,0.97,1,1};
+            colorText[] = {1,1,1,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.045;
             x = 0.205 * safezoneW + safezoneX;
-            y = 0.185 * safezoneH + safezoneY;
+            y = 0.170 * safezoneH + safezoneY;
             w = 0.24 * safezoneW;
             h = 0.05 * safezoneH;
         };
@@ -79,50 +88,30 @@ class life_character_select {
             h = 0.13 * safezoneH;
         };
 
-        class FirstNameLabel: Life_RscText {
+        class NameLabel: Life_RscText {
             idc = -1;
-            text = "First Name";
+            text = "Name";
             colorText[] = {0.92,0.97,1,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.032;
             x = 0.490 * safezoneW + safezoneX;
             y = 0.225 * safezoneH + safezoneY;
-            w = 0.14 * safezoneW;
+            w = 0.285 * safezoneW;
             h = 0.03 * safezoneH;
         };
 
-        class LastNameLabel: Life_RscText {
-            idc = -1;
-            text = "Last Name";
-            colorText[] = {0.92,0.97,1,1};
-            colorBackground[] = {0,0,0,0};
-            sizeEx = 0.032;
-            x = 0.635 * safezoneW + safezoneX;
-            y = 0.225 * safezoneH + safezoneY;
-            w = 0.14 * safezoneW;
-            h = 0.03 * safezoneH;
-        };
-
-        class FirstNameEdit: Life_RscEdit {
+        class NameEdit: Life_RscEdit {
             idc = 7803;
             text = "";
             x = 0.490 * safezoneW + safezoneX;
             y = 0.255 * safezoneH + safezoneY;
-            w = 0.14 * safezoneW;
+            w = 0.285 * safezoneW;
             h = 0.038 * safezoneH;
         };
 
-        class LastNameEdit: Life_RscEdit {
-            idc = 7810;
-            text = "";
-            x = 0.635 * safezoneW + safezoneX;
-            y = 0.255 * safezoneH + safezoneY;
-            w = 0.14 * safezoneW;
-            h = 0.038 * safezoneH;
-        };
-
-        class DobEdit: Life_RscCombo {
+        class DobEdit: Life_RscEdit {
             idc = 7804;
+            text = "";
             x = 0.490 * safezoneW + safezoneX;
             y = 0.305 * safezoneH + safezoneY;
             w = 0.135 * safezoneW;
@@ -141,8 +130,9 @@ class life_character_select {
             h = 0.03 * safezoneH;
         };
 
-        class PoliticalEdit: Life_RscCombo {
+        class PoliticalEdit: Life_RscEdit {
             idc = 7805;
+            text = "";
             x = 0.640 * safezoneW + safezoneX;
             y = 0.305 * safezoneH + safezoneY;
             w = 0.135 * safezoneW;
@@ -161,8 +151,9 @@ class life_character_select {
             h = 0.03 * safezoneH;
         };
 
-        class BackgroundEdit: Life_RscCombo {
+        class BackgroundEdit: Life_RscEdit {
             idc = 7806;
+            text = "";
             x = 0.490 * safezoneW + safezoneX;
             y = 0.355 * safezoneH + safezoneY;
             w = 0.285 * safezoneW;
