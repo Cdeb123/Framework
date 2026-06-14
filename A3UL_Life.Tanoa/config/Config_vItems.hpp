@@ -20,7 +20,7 @@ class VirtualShops {
         name = "STR_Shops_Market";
         side = "med";
         conditions = "";
-        items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "toolkit", "fuelFull", "peach", "defibrillator", "antidote", "painkillers" };
+        items[] = { "waterBottle", "rabbit", "apple", "redgull", "tbacon", "toolkit", "fuelFull", "peach", "defibrillator", "antidote", "painkillers", "emsKeycard", "fireKeycard" };
     };
 
     class rebel {
@@ -125,7 +125,7 @@ class VirtualShops {
         name = "STR_Shops_Cop";
         side = "cop";
         conditions = "";
-        items[] = { "donuts", "coffee", "spikeStrip", "waterBottle", "rabbit", "apple", "redgull", "toolkit", "fuelFull", "defusekit", "defibrillator" };
+        items[] = { "donuts", "coffee", "spikeStrip", "waterBottle", "rabbit", "apple", "redgull", "toolkit", "fuelFull", "defusekit", "defibrillator", "policeKeycard" };
     };
 };
 
@@ -225,6 +225,54 @@ class VirtualItems {
         buyPrice = 150;
         sellPrice = 75;
         illegal = true;
+        edible = -1;
+        drinkable = -1;
+        icon = "icons\ico_lockpick.paa";
+    };
+
+    class policeKeycard {
+        variable = "policeKeycard";
+        displayName = "STR_Item_PoliceKeycard";
+        weight = 1;
+        buyPrice = 250;
+        sellPrice = 25;
+        illegal = false;
+        edible = -1;
+        drinkable = -1;
+        icon = "icons\ico_lockpick.paa";
+    };
+
+    class emsKeycard {
+        variable = "emsKeycard";
+        displayName = "STR_Item_EMSKeycard";
+        weight = 1;
+        buyPrice = 250;
+        sellPrice = 25;
+        illegal = false;
+        edible = -1;
+        drinkable = -1;
+        icon = "icons\ico_lockpick.paa";
+    };
+
+    class fireKeycard {
+        variable = "fireKeycard";
+        displayName = "STR_Item_FireKeycard";
+        weight = 1;
+        buyPrice = 250;
+        sellPrice = 25;
+        illegal = false;
+        edible = -1;
+        drinkable = -1;
+        icon = "icons\ico_lockpick.paa";
+    };
+
+    class commandKeycard {
+        variable = "commandKeycard";
+        displayName = "STR_Item_CommandKeycard";
+        weight = 1;
+        buyPrice = -1;
+        sellPrice = 25;
+        illegal = false;
         edible = -1;
         drinkable = -1;
         icon = "icons\ico_lockpick.paa";

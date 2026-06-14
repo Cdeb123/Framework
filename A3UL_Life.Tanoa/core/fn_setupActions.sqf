@@ -8,6 +8,17 @@
 
 life_actions = [];
 
+life_actions pushBack (player addAction[
+    "Door Access",
+    {[] call life_fnc_doorInteraction},
+    "",
+    3,
+    false,
+    true,
+    "",
+    '!dialog && {isNull objectParent player} && {!(([] call life_fnc_nearestBuildingDoor) isEqualTo [])}'
+]);
+
 switch (playerSide) do {
 
     //Civilian

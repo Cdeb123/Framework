@@ -7668,6 +7668,54 @@
             <Polish>Kolczatka drogowa</Polish>
 			<Chinesesimp>钉刺带</Chinesesimp>
         </Key>
+        <Key ID="STR_Item_PoliceKeycard">
+            <Original>Police Keycard</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+			<Chinesesimp></Chinesesimp>
+        </Key>
+        <Key ID="STR_Item_EMSKeycard">
+            <Original>EMS Keycard</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+			<Chinesesimp></Chinesesimp>
+        </Key>
+        <Key ID="STR_Item_FireKeycard">
+            <Original>Fire Keycard</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+			<Chinesesimp></Chinesesimp>
+        </Key>
+        <Key ID="STR_Item_CommandKeycard">
+            <Original>Command Keycard</Original>
+            <Czech></Czech>
+            <Spanish></Spanish>
+            <Russian></Russian>
+            <German></German>
+            <French></French>
+            <Italian></Italian>
+            <Portuguese></Portuguese>
+            <Polish></Polish>
+			<Chinesesimp></Chinesesimp>
+        </Key>
     </Package>
     <Package name="Life_License">
         <Key ID="STR_License_Driver">
@@ -10538,7 +10586,7 @@
             <Portuguese>Loja de Caminhões</Portuguese>
             <Polish>Salon ciężarówek</Polish>
             <Italian>Concessionaria Camion</Italian>
-			<Chinesesimp>卡车商店</Origimnal>
+			<Chinesesimp>卡车商店</Chinesesimp>
         </Key>
         <Key ID="STR_MAR_Oil_Processing">
             <Original>Oil Processing</Original>

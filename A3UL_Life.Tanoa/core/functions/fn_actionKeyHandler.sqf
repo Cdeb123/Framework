@@ -17,6 +17,11 @@ if (playerSide isEqualTo west && {player getVariable ["isEscorting",false]}) exi
     [] call life_fnc_copInteractionMenu;
 };
 
+private _nearDoor = [] call life_fnc_nearestBuildingDoor;
+if (!(_nearDoor isEqualTo []) && {!dialog} && {isNull objectParent player}) exitWith {
+    _nearDoor call life_fnc_doorInteraction;
+};
+
 if (LIFE_SETTINGS(getNumber,"global_ATM") isEqualTo 1) then{
     //Check if the player is near an ATM.
     if ((call life_fnc_nearATM) && {!dialog}) exitWith {

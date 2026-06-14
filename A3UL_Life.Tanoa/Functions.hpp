@@ -175,6 +175,7 @@ class Life_Client_Core {
         class actionKeyHandler {};
         class animSync {};
         class calWeightDiff {};
+        class canUseDoor {};
         class characterApply {};
         class characterCreate {};
         class characterGate {};
@@ -186,6 +187,8 @@ class Life_Client_Core {
         class characterSelect {};
         class checkMap {};
         class clearVehicleAmmo {};
+        class doorAccessFor {};
+        class doorInteraction {};
         class dropItems {};
         class escInterupt {};
         class fetchCfgDetails {};
@@ -228,12 +231,14 @@ class Life_Client_Core {
         class loadDeadGear {};
         class loadGear {};
         class nearATM {};
+        class nearestBuildingDoor {};
         class nearestDoor {};
         class nearUnits {};
         class numberText {};
         class onFired {};
         class onTakeItem {};
         class openID {};
+        class openDoorKeypad {};
         class openLEOCommandTerminal {};
         class openLEOTrainingTerminal {};
         class playerSkins {};
@@ -252,7 +257,9 @@ class Life_Client_Core {
         class statusEffect {};
         class statusMonitor {};
         class stripDownPlayer {};
+        class submitDoorCode {};
         class teleport {};
+        class toggleBuildingDoor {};
         class weaponFireMode {};
         class whereAmI {};
         class moveIn {};

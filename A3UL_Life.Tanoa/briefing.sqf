@@ -529,6 +529,7 @@ The following items are illegal to posses:<br/><br/>
             "Tanoa Life Custom Controls",
                 "
 User Action 10 / Left Windows: Main interaction key for vehicles, houses, ATMs, containers, restrained players, and nearby objects. Rebind in ESC -> Configure -> Controls -> Custom -> Use Action 10.<br/>
+Scroll Wheel near a building door: Door Access, including public doors, keycards, and configured keypads.<br/>
 Y: Open Player Menu.<br/>
 U: Lock and unlock owned vehicles and houses.<br/>
 T: Open vehicle trunk or nearby storage.<br/>
