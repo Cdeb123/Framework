@@ -8,7 +8,7 @@
 */
 disableSerialization;
 
-showHUD [false,false,false,false,false,false,false,false,true,false,false];
+showHUD [false,false,false,false,false,true,false,false,true,false,false];
 cutRsc ["playerHUD", "PLAIN", 2, false];
 [] call life_fnc_hudUpdate;
 
