@@ -57,6 +57,12 @@ private _canPostCommandDocument = {
     ("leo.command.documents" in _permissions)
     || {"leo.command.terminal" in _permissions}
     || {"leo.command.permissions" in _permissions}
+    || {"leo.command.executive" in _permissions}
+    || {"leo.command.owner" in _permissions}
+    || {"leo.department.oversight" in _permissions}
+    || {"owner.access" in _permissions}
+    || {"owner.community" in _permissions}
+    || {"staff.permissions" in _permissions}
     || {"rank:lieutenant" in _permissions}
     || {"rank:captain" in _permissions}
     || {"rank:assistant_sheriff" in _permissions}
@@ -75,7 +81,7 @@ private _query = format [
     [_body] call DB_fnc_mresString,
     [_requesterUid] call DB_fnc_mresString
 ];
-[_query,1] call DB_fnc_asyncCall;
+[_query,2] call DB_fnc_asyncCall;
 
 {
     if ((getPlayerUID _x) isEqualTo _requesterUid) then {

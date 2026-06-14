@@ -64,6 +64,14 @@ private _canCommand = {
     || {"leo.command.ranks" in _permissions}
     || {"leo.command.divisions" in _permissions}
     || {"leo.command.roles" in _permissions}
+    || {"leo.command.documents" in _permissions}
+    || {"leo.command.executive" in _permissions}
+    || {"leo.command.owner" in _permissions}
+    || {"leo.department.oversight" in _permissions}
+    || {"owner.access" in _permissions}
+    || {"owner.community" in _permissions}
+    || {"whitelist.override" in _permissions}
+    || {"staff.permissions" in _permissions}
     || {"rank:lieutenant" in _permissions}
     || {"rank:captain" in _permissions}
     || {"rank:assistant_sheriff" in _permissions}
@@ -99,7 +107,7 @@ private _query = format [
     _safeRequester,
     _safeName
 ];
-[_query,1] call DB_fnc_asyncCall;
+[_query,2] call DB_fnc_asyncCall;
 
 {
     if ((getPlayerUID _x) in [_targetUid,_requesterUid]) then {

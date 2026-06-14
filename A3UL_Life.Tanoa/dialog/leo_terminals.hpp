@@ -362,7 +362,7 @@ class life_leo_training_terminal {
         };
         class Subtitle: Life_RscText {
             idc = -1;
-            text = "FTO documents, academy phases, and trainee progress";
+            text = "Cadets, FTO assignments, academy documents, and release status";
             colorText[] = {0.78,0.68,0.52,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.024;
@@ -452,7 +452,7 @@ class life_leo_training_terminal {
 
         class RosterLabel: Life_RscText {
             idc = -1;
-            text = "FTO Roster";
+            text = "Cadet & FTO Roster";
             colorText[] = {1.0,0.78,0.42,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.026;
@@ -470,7 +470,7 @@ class life_leo_training_terminal {
             sizeEx = 0.027;
         };
         class TraineeLabel: DocTitleLabel {
-            text = "Trainee";
+            text = "Cadet / Deputy";
             x = 0.452 * safezoneW + safezoneX;
             y = 0.568 * safezoneH + safezoneY;
         };
@@ -482,7 +482,7 @@ class life_leo_training_terminal {
             h = 0.034 * safezoneH;
         };
         class PhaseLabel: TraineeLabel {
-            text = "Phase";
+            text = "Academy Status";
             x = 0.668 * safezoneW + safezoneX;
         };
         class PhaseCombo: Life_RscCombo {
@@ -493,7 +493,7 @@ class life_leo_training_terminal {
             h = 0.034 * safezoneH;
         };
         class NotesLabel: TraineeLabel {
-            text = "FTO Notes";
+            text = "Evaluation Notes";
             y = 0.642 * safezoneH + safezoneY;
         };
         class NotesEdit: Life_RscEdit {
@@ -506,7 +506,7 @@ class life_leo_training_terminal {
         };
         class PostDocButton: Life_RscButtonMenu {
             idc = 8211;
-            text = "Post Document";
+            text = "Post Academy Doc";
             onButtonClick = "[] call life_fnc_leoTrainingPostDocument";
             x = 0.452 * safezoneW + safezoneX;
             y = 0.795 * safezoneH + safezoneY;
@@ -515,7 +515,7 @@ class life_leo_training_terminal {
         };
         class RosterButton: Life_RscButtonMenu {
             idc = 8212;
-            text = "Update Roster";
+            text = "Save Training";
             onButtonClick = "[] call life_fnc_leoTrainingRosterUpdate";
             x = 0.604 * safezoneW + safezoneX;
             y = 0.795 * safezoneH + safezoneY;

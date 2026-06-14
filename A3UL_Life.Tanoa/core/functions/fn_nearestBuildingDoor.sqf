@@ -18,12 +18,24 @@ if (_maxDistance <= 0) then {
 private _searchRadius = getNumber (_doorCfg >> "buildingSearchRadius");
 if (_searchRadius <= 0) then {_searchRadius = 9;};
 
+private _fallbackDoorCount = getNumber (_doorCfg >> "maxFallbackDoors");
+if (_fallbackDoorCount <= 0) then {_fallbackDoorCount = 32;};
+
 private _selectionPatterns = getArray (_doorCfg >> "selectionPatterns");
 if (_selectionPatterns isEqualTo []) then {
     _selectionPatterns = ["Door_%1_trigger","Door_%1_action","Door_%1_button","Door_%1_handle"];
 };
 
 private _candidates = [];
+private _canBeBuilding = {
+    params [["_object",objNull,[objNull]]];
+    !isNull _object
+    && {!(_object isKindOf "CAManBase")}
+    && {!(_object isKindOf "LandVehicle")}
+    && {!(_object isKindOf "Ship")}
+    && {!(_object isKindOf "Air")}
+};
+
 private _doorCount = {
     params [["_object",objNull,[objNull]]];
     if (isNull _object) exitWith {0};
@@ -77,48 +89,45 @@ private _doorCount = {
     _result
 };
 
-private _hasDoors = {
-    params [["_object",objNull,[objNull]]];
-    ([_object] call _doorCount) > 0
+private _addCandidate = {
+    params [["_object",objNull,[objNull]],["_range",_searchRadius,[0]]];
+    if ([_object] call _canBeBuilding && {player distance _object < _range}) then {
+        _candidates pushBackUnique _object;
+    };
 };
 
-if ([cursorObject] call _hasDoors && {player distance cursorObject < (_searchRadius + 4)}) then {
-    _candidates pushBackUnique cursorObject;
-};
+[cursorObject,_searchRadius + 4] call _addCandidate;
 
 private _nearestBuilding = nearestBuilding player;
-if ([_nearestBuilding] call _hasDoors && {player distance _nearestBuilding < _searchRadius}) then {
-    _candidates pushBackUnique _nearestBuilding;
-};
+[_nearestBuilding,_searchRadius] call _addCandidate;
 
 {
-    if ([_x] call _hasDoors) then {
-        _candidates pushBackUnique _x;
-    };
+    [_x,_searchRadius] call _addCandidate;
 } forEach (nearestObjects [player,["House_F"],_searchRadius]);
 
 {
-    if ([_x] call _hasDoors) then {
-        _candidates pushBackUnique _x;
-    };
-} forEach (nearestObjects [player,[],_searchRadius]);
+    [_x,_searchRadius] call _addCandidate;
+} forEach (nearestObjects [player,["House","Building"],_searchRadius]);
 
 {
-    if ([_x] call _hasDoors) then {
-        _candidates pushBackUnique _x;
-    };
+    [_x,_searchRadius] call _addCandidate;
 } forEach (nearestTerrainObjects [getPosATL player,["HOUSE","BUILDING"],_searchRadius,false,true]);
 
 private _best = [objNull,0,999];
 {
     private _building = _x;
-    private _doors = [_building] call _doorCount;
+    private _knownDoors = [_building] call _doorCount;
+    private _doors = if (_knownDoors > 0) then {_knownDoors} else {_fallbackDoorCount};
     private _foundTrigger = false;
 
     for "_i" from 1 to _doors do {
         private _selectionPos = [0,0,0];
         {
-            _selectionPos = _building selectionPosition format [_x,_i];
+            private _selectionName = format [_x,_i];
+            _selectionPos = _building selectionPosition _selectionName;
+            if (_selectionPos isEqualTo [0,0,0]) then {
+                _selectionPos = _building selectionPosition [_selectionName,"Memory"];
+            };
             if !(_selectionPos isEqualTo [0,0,0]) exitWith {};
         } forEach _selectionPatterns;
 
@@ -132,9 +141,9 @@ private _best = [objNull,0,999];
         };
     };
 
-    if (!_foundTrigger && {_doors > 0}) then {
+    if (!_foundTrigger && {_knownDoors > 0}) then {
         private _distance = player distance _building;
-        if (_distance < (_best select 2) && {_distance <= (_maxDistance + 4.5)}) then {
+        if (_distance < (_best select 2) && {_distance <= _searchRadius}) then {
             _best = [_building,1,_distance];
         };
     };

@@ -3,7 +3,9 @@
     File: fn_leoTrainingPostDocument.sqf
 */
 disableSerialization;
-if (!((["leo.training.edit"] call life_fnc_hasPermission) || {["leo.training.fto"] call life_fnc_hasPermission})) exitWith {hint "You only have view access to the training terminal.";};
+private _autoFtoRanks = ["lieutenant","captain","assistant_sheriff","undersheriff","sheriff"];
+private _isAutoFto = (missionNamespace getVariable ["life_leo_rank",""]) in _autoFtoRanks || {["lieutenant","tcsd"] call life_fnc_leoAtLeastRank};
+if (!((["leo.training.edit"] call life_fnc_hasPermission) || {["leo.training.fto"] call life_fnc_hasPermission} || {_isAutoFto})) exitWith {hint "You only have view access to the training terminal.";};
 
 private _display = findDisplay 8200;
 if (isNull _display) exitWith {};

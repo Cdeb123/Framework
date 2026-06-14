@@ -12,11 +12,11 @@ life_actions pushBack (player addAction[
     "Door Access",
     {[] call life_fnc_doorInteraction},
     "",
-    3,
+    -5,
     false,
     true,
     "",
-    '!dialog && {isNull objectParent player} && {!(([] call life_fnc_nearestBuildingDoor) isEqualTo [])}'
+    '!dialog && {isNull objectParent player} && {isNull cursorObject || {player distance cursorObject > 4} || {!((cursorObject isKindOf "CAManBase") || {cursorObject isKindOf "LandVehicle"} || {cursorObject isKindOf "Ship"} || {cursorObject isKindOf "Air"} || {cursorObject isKindOf "ReammoBox_F"} || {(typeOf cursorObject) in ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F","Land_Money_F","Land_Atm_01_F","Land_Atm_02_F"]})}} && {!(([] call life_fnc_nearestBuildingDoor) isEqualTo [])}'
 ]);
 
 switch (playerSide) do {

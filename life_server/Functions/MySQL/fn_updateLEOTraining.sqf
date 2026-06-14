@@ -46,6 +46,10 @@ private _canEdit = {
     || {"leo.training.roster" in _permissions}
     || {"leo.training.fto" in _permissions}
     || {"leo.command.terminal" in _permissions}
+    || {"leo.department.oversight" in _permissions}
+    || {"owner.access" in _permissions}
+    || {"owner.community" in _permissions}
+    || {"staff.permissions" in _permissions}
     || {"sub:academy" in _permissions}
     || {"rank:sergeant" in _permissions}
     || {"rank:lieutenant" in _permissions}
@@ -53,6 +57,12 @@ private _canEdit = {
     || {"rank:assistant_sheriff" in _permissions}
     || {"rank:undersheriff" in _permissions}
     || {"rank:sheriff" in _permissions}
+};
+
+private _rankOrder = {
+    params [["_rank","",[""]]];
+    private _ranks = ["cadet","deputy","senior_deputy","corporal","detective","sergeant","lieutenant","captain","assistant_sheriff","undersheriff","sheriff"];
+    _ranks find _rank;
 };
 
 if !([_requesterUid] call _canEdit) exitWith {
@@ -75,7 +85,7 @@ switch (_mode) do {
             [_body] call DB_fnc_mresString,
             [_requesterUid] call DB_fnc_mresString
         ];
-        [_query,1] call DB_fnc_asyncCall;
+        [_query,2] call DB_fnc_asyncCall;
     };
 
     case "roster": {
@@ -83,12 +93,44 @@ switch (_mode) do {
             ["_traineePid","",[""]],
             ["_characterUid","",[""]],
             ["_department","tcsd",[""]],
-            ["_phase","Academy",[""]],
+            ["_phase","Cadet",[""]],
             ["_ftoPid","",[""]],
             ["_notes","",[""]]
         ];
         if (_traineePid isEqualTo "") exitWith {};
         if (_characterUid isEqualTo "") then {_characterUid = _traineePid;};
+
+        private _requesterBestOrder = -1;
+        private _requesterOversight = _requesterUid in ["76561198810688206"];
+        private _requesterRows = [format ["SELECT rank_key, role_permissions FROM leo_memberships WHERE pid='%1' AND status='active'",_requesterUid],2,true] call DB_fnc_asyncCall;
+        if (_requesterRows isEqualType []) then {
+            {
+                private _rankOrderValue = [_x select 0] call _rankOrder;
+                if (_rankOrderValue > _requesterBestOrder) then {_requesterBestOrder = _rankOrderValue;};
+                private _rolePerms = [(_x select 1)] call _readArray;
+                if (
+                    ((_x select 0) in ["sheriff","undersheriff","assistant_sheriff"])
+                    || {"leo.department.oversight" in _rolePerms}
+                    || {"leo.command.owner" in _rolePerms}
+                    || {"staff.permissions" in _rolePerms}
+                ) then {
+                    _requesterOversight = true;
+                };
+            } forEach _requesterRows;
+        };
+
+        private _traineeBestOrder = -1;
+        private _traineeRows = [format ["SELECT rank_key FROM leo_memberships WHERE pid='%1' AND status='active'",_traineePid],2,true] call DB_fnc_asyncCall;
+        if (_traineeRows isEqualType []) then {
+            {
+                private _rankOrderValue = [_x select 0] call _rankOrder;
+                if (_rankOrderValue > _traineeBestOrder) then {_traineeBestOrder = _rankOrderValue;};
+            } forEach _traineeRows;
+        };
+
+        if (!_requesterOversight && {_traineeBestOrder > 0} && {_requesterBestOrder >= 0} && {_traineeBestOrder >= _requesterBestOrder}) exitWith {
+            diag_log format ["[LEO] Rejected training roster write from %1 for same-or-higher ranked trainee %2",_requesterUid,_traineePid];
+        };
 
         private _query = format [
             "INSERT INTO leo_training_roster (trainee_pid, trainee_character_uid, department_key, phase, fto_pid, notes, updated_by_pid, active) VALUES ('%1','%2','%3','%4','%5','%6','%7','1') ON DUPLICATE KEY UPDATE phase='%4', fto_pid='%5', notes='%6', updated_by_pid='%7', active='1', updated_at=CURRENT_TIMESTAMP",
@@ -100,7 +142,7 @@ switch (_mode) do {
             [_notes] call DB_fnc_mresString,
             [_requesterUid] call DB_fnc_mresString
         ];
-        [_query,1] call DB_fnc_asyncCall;
+        [_query,2] call DB_fnc_asyncCall;
     };
 };
 

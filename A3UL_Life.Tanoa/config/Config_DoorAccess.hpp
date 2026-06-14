@@ -5,8 +5,9 @@
     police, Fire/EMS, keycard, or keypad-controlled doors.
 */
 class Life_DoorAccess {
-    doorSearchDistance = 3.4;
-    buildingSearchRadius = 9;
+    doorSearchDistance = 5.0;
+    buildingSearchRadius = 14;
+    maxFallbackDoors = 40;
 
     selectionPatterns[] = {
         "Door_%1_trigger",
@@ -14,15 +15,19 @@ class Life_DoorAccess {
         "Door_%1_button",
         "Door_%1_handle",
         "Door_%1_axis",
+        "Door_%1",
         "door_%1_trigger",
         "door_%1_action",
         "door_%1_button",
         "door_%1_handle",
         "door_%1_axis",
+        "door_%1",
         "Door%1_trigger",
         "Door%1_action",
+        "Door%1",
         "door%1_trigger",
-        "door%1_action"
+        "door%1_action",
+        "door%1"
     };
 
     sourcePatterns[] = {

@@ -14,11 +14,18 @@ class Life_LEO {
             displayName = "Tanoa County Sheriff's Department";
             shortName = "TCSD";
             side = "cop";
-            defaultRank = "deputy";
+            defaultRank = "cadet";
             defaultSubdivision = "academy";
             permissions[] = {"leo.access","leo.department.tcsd","police.access"};
 
             class Ranks {
+                class cadet {
+                    displayName = "Cadet";
+                    order = 0;
+                    command = 0;
+                    legacyCopLevel = 0;
+                    permissions[] = {"leo.training.cadet","leo.training.view"};
+                };
                 class deputy {
                     displayName = "Deputy";
                     order = 1;
@@ -59,35 +66,35 @@ class Life_LEO {
                     order = 6;
                     command = 1;
                     legacyCopLevel = 5;
-                    permissions[] = {"leo.rank.tcsd.lieutenant","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.training.edit"};
+                    permissions[] = {"leo.rank.tcsd.lieutenant","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.training.view","leo.training.edit","leo.training.fto"};
                 };
                 class captain {
                     displayName = "Captain";
                     order = 7;
                     command = 1;
                     legacyCopLevel = 6;
-                    permissions[] = {"leo.rank.tcsd.captain","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.training.roster"};
+                    permissions[] = {"leo.rank.tcsd.captain","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.training.view","leo.training.edit","leo.training.roster","leo.training.fto"};
                 };
                 class assistant_sheriff {
                     displayName = "Assistant Sheriff";
                     order = 8;
                     command = 1;
                     legacyCopLevel = 7;
-                    permissions[] = {"leo.rank.tcsd.assistant_sheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.training.view","leo.training.edit","leo.training.roster"};
+                    permissions[] = {"leo.rank.tcsd.assistant_sheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.training.view","leo.training.edit","leo.training.roster","leo.training.fto"};
                 };
                 class undersheriff {
                     displayName = "Undersheriff";
                     order = 9;
                     command = 1;
                     legacyCopLevel = 7;
-                    permissions[] = {"leo.rank.tcsd.undersheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.training.view","leo.training.edit","leo.training.roster"};
+                    permissions[] = {"leo.rank.tcsd.undersheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.training.view","leo.training.edit","leo.training.roster","leo.training.fto"};
                 };
                 class sheriff {
                     displayName = "Sheriff";
                     order = 10;
                     command = 1;
                     legacyCopLevel = 7;
-                    permissions[] = {"leo.rank.tcsd.sheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.command.owner","leo.department.oversight","leo.training.view","leo.training.edit","leo.training.roster","staff.whitelist","staff.permissions"};
+                    permissions[] = {"leo.rank.tcsd.sheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.command.owner","leo.department.oversight","leo.training.view","leo.training.edit","leo.training.roster","leo.training.fto","staff.whitelist","staff.permissions"};
                 };
             };
 
@@ -99,7 +106,7 @@ class Life_LEO {
                 };
                 class academy {
                     displayName = "Training Academy";
-                    roles[] = {"recruit","field_training_officer","academy_supervisor"};
+                    roles[] = {"cadet","field_training_officer","academy_supervisor","academy_command"};
                     permissions[] = {"leo.subdivision.tcsd.academy","leo.training.view","leo.training.edit","leo.training.roster","leo.training.fto","leo.records.view"};
                 };
                 class hse {

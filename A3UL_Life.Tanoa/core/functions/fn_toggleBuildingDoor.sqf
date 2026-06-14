@@ -71,6 +71,21 @@ private _pushDoorName = {
     [_animationNames,_x] call _pushDoorName;
 } forEach (_building getVariable [format ["life_door_animations_%1",_door],_building getVariable ["life_door_animations",[]]]);
 
+private _vehicleCfg = configFile >> "CfgVehicles" >> (typeOf _building);
+{
+    private _name = configName _x;
+    private _lowerName = toLower _name;
+    private _digits = [];
+    {
+        if (_x >= 48 && {_x <= 57}) then {
+            _digits pushBack _x;
+        };
+    } forEach toArray _name;
+    if ((["door",_lowerName] call BIS_fnc_inString) && {(count _digits) > 0} && {parseNumber (toString _digits) isEqualTo _door}) then {
+        _sourceNames pushBackUnique _name;
+    };
+} forEach ("true" configClasses (_vehicleCfg >> "AnimationSources"));
+
 private _open = false;
 {
     if ((_building animationSourcePhase _x) >= 0.5 || {(_building animationPhase _x) >= 0.5}) exitWith {

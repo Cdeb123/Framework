@@ -17,10 +17,26 @@ if (playerSide isEqualTo west && {player getVariable ["isEscorting",false]}) exi
     [] call life_fnc_copInteractionMenu;
 };
 
-private _nearDoor = [] call life_fnc_nearestBuildingDoor;
-if (!(_nearDoor isEqualTo []) && {!dialog} && {isNull objectParent player}) exitWith {
-    _nearDoor call life_fnc_doorInteraction;
+private _closeCursorObject = !isNull _curObject && {player distance _curObject <= 4};
+private _cursorBlocksDoor = _closeCursorObject && {
+    (_curObject isKindOf "CAManBase")
+    || {_curObject isKindOf "LandVehicle"}
+    || {_curObject isKindOf "Ship"}
+    || {_curObject isKindOf "Air"}
+    || {_curObject isKindOf "ReammoBox_F"}
+    || {(typeOf _curObject) in ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F","Land_Money_F","Land_Atm_01_F","Land_Atm_02_F"]}
 };
+private _canTryDoor = !dialog && {isNull objectParent player} && {!_cursorBlocksDoor};
+
+private _doorHandled = false;
+if (_canTryDoor) then {
+    private _nearDoor = [] call life_fnc_nearestBuildingDoor;
+    if (!(_nearDoor isEqualTo [])) then {
+        _doorHandled = true;
+        _nearDoor call life_fnc_doorInteraction;
+    };
+};
+if (_doorHandled) exitWith {};
 
 if (LIFE_SETTINGS(getNumber,"global_ATM") isEqualTo 1) then{
     //Check if the player is near an ATM.

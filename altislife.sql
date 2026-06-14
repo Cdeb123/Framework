@@ -264,7 +264,7 @@ CREATE TABLE IF NOT EXISTS `leo_training_roster` (
     `trainee_pid`           VARCHAR(17) NOT NULL,
     `trainee_character_uid` VARCHAR(96) NOT NULL,
     `department_key`        VARCHAR(64) NOT NULL DEFAULT 'tcsd',
-    `phase`                 VARCHAR(64) NOT NULL DEFAULT 'Academy',
+    `phase`                 VARCHAR(64) NOT NULL DEFAULT 'Cadet',
     `fto_pid`               VARCHAR(17) NOT NULL,
     `notes`                 TEXT NOT NULL,
     `updated_by_pid`        VARCHAR(17) NOT NULL,
