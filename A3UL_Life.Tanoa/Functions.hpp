@@ -201,6 +201,15 @@ class Life_Client_Core {
         class toggleBuildingDoor {};
     };
 
+    class Module_ELS {
+        file = "modules\ELS";
+        class elsApplyStage {};
+        class elsGetConfig {};
+        class elsIsConfigured {};
+        class elsKey {};
+        class elsSetStage {};
+    };
+
     class Module_FrameworkData {
         file = "modules\FrameworkData";
         class frameworkDataQuery {};
@@ -265,6 +274,25 @@ class Life_Client_Core {
         class statusMonitor {};
     };
 
+    class Module_Progression {
+        file = "modules\Progression";
+        class addXP {};
+        class openSkillMenu {};
+        class perkLevel {};
+        class perkModifier {};
+        class progressionDutyLoop {};
+        class progressionInit {};
+        class progressionLevelInfo {};
+        class progressionLoad {};
+        class progressionNextUnlock {};
+        class progressionSave {};
+        class progressionSelect {};
+        class progressionSetTab {};
+        class progressionXP {};
+        class spendPerk {};
+        class xpForLevel {};
+    };
+
     class Module_RadialMenu {
         file = "modules\RadialMenu";
         class hasNearbyInteractionCategory {};
@@ -279,6 +307,10 @@ class Life_Client_Core {
     class Module_Shops {
         file = "modules\Shops";
         class applyLicenseAction {};
+        class leoVehicleShopBuy {};
+        class leoVehicleShopCategory {};
+        class leoVehicleShopLoad {};
+        class leoVehicleShopSelect {};
         class licenseAdminApply {};
         class licenseAdminLoad {};
         class licenseAdminNotify {};
@@ -286,8 +318,15 @@ class Life_Client_Core {
         class licenseShopBuy {};
         class licenseShopLoad {};
         class licenseShopSelect {};
+        class openLEOVehicleShop {};
         class openLicenseAdmin {};
         class openLicenseShop {};
+        class openWeaponShop {};
+        class weaponShopBuy {};
+        class weaponShopBuyLicense {};
+        class weaponShopCategory {};
+        class weaponShopLoad {};
+        class weaponShopSelect {};
     };
 
     class Module_VehicleControls {

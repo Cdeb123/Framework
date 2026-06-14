@@ -21,6 +21,13 @@ disableSerialization;
 //Long boring series of checks
 if (dialog) exitWith {};
 if (_shop isEqualTo "") exitWith {};
+
+private _useModernLEOShop = false;
+if (playerSide isEqualTo west) then {
+    _useModernLEOShop = isClass (missionConfigFile >> "Life_Shops" >> "VehicleShops" >> "LawEnforcement" >> _shop);
+};
+if (_useModernLEOShop) exitWith {_this call life_fnc_openLEOVehicleShop;};
+
 if (!(_sideCheck isEqualTo sideUnknown) && {!(playerSide isEqualTo _sideCheck)}) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
 
 private _conditions = M_CONFIG(getText,"CarShops",_shop,"conditions");

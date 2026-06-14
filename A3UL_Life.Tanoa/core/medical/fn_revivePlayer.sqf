@@ -69,6 +69,7 @@ if (playerSide isEqualTo independent) then {
     titleText[format [localize "STR_Medic_RevivePayReceive", _targetName,[_reviveCost] call life_fnc_numberText], "PLAIN"];
     BANK = BANK + _reviveCost;
     [1] call SOCK_fnc_updatePartial;
+    ["ems",getNumber (missionConfigFile >> "Life_Progression" >> "XPEvents" >> "revive"),"Player revived"] call life_fnc_addXP;
 };
 
 sleep .6;

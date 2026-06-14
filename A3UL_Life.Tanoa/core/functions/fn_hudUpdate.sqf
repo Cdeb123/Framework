@@ -7,9 +7,8 @@
 */
 disableSerialization;
 
-if (isNull LIFEdisplay) exitWith {[] call life_fnc_hudSetup;};
-
 private _display = LIFEdisplay;
+if (isNull _display) exitWith {};
 if (isNull (_display displayCtrl 2200)) exitWith {};
 
 private _hunger = (life_hunger max 0) min 100;
@@ -45,6 +44,9 @@ private _waterColor = switch (true) do {
 (_display displayCtrl 1200) ctrlSetTextColor _foodColor;
 (_display displayCtrl 1201) ctrlSetTextColor _healthColor;
 (_display displayCtrl 1202) ctrlSetTextColor _waterColor;
+(_display displayCtrl 1210) ctrlSetTextColor _foodColor;
+(_display displayCtrl 1211) ctrlSetTextColor _healthColor;
+(_display displayCtrl 1212) ctrlSetTextColor _waterColor;
 
 private _vehicle = vehicle player;
 private _inVehicle = !(_vehicle isEqualTo player);

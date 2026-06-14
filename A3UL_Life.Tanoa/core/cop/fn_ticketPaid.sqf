@@ -16,3 +16,4 @@ if (isNull _cop || {!(_cop isEqualTo player)}) exitWith {}; //Double NO
 
 BANK = BANK + _value;
 [1] call SOCK_fnc_updatePartial;
+["leo",getNumber (missionConfigFile >> "Life_Progression" >> "XPEvents" >> "ticketPaid"),"Paid ticket"] call life_fnc_addXP;

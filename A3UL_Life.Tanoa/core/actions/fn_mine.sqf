@@ -90,17 +90,19 @@ if (_diff isEqualTo 0) exitWith {
 
 [player,"mining",35,1] remoteExecCall ["life_fnc_say3D",RCLIENT];
 
+private _progressionDelay = ["mining_speed"] call life_fnc_perkModifier;
 for "_i" from 0 to 4 do {
     player playMoveNow "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
     waitUntil {
         animationState player != "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
     };
-    sleep 0.5;
+    sleep (0.5 * _progressionDelay);
 };
 
 if (([true, _mined, _diff] call life_fnc_handleInv)) then {
     _itemName = M_CONFIG(getText, "VirtualItems", _mined, "displayName");
     titleText[format [localize "STR_NOTF_Mine_Success", (localize _itemName), _diff], "PLAIN"];
+    ["crafting",getNumber (missionConfigFile >> "Life_Progression" >> "XPEvents" >> "mine"),format ["Mined %1",localize _itemName],false] call life_fnc_addXP;
 };
 
 sleep 2.5;

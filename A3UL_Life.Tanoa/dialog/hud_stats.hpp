@@ -20,6 +20,9 @@ class playerHUD {
         Life_HUD_FoodIcon,
         Life_HUD_HealthIcon,
         Life_HUD_WaterIcon,
+        Life_RscText_HUDFoodLabel,
+        Life_RscText_HUDHealthLabel,
+        Life_RscText_HUDWaterLabel,
         Life_RscProgress_HUDFood,
         Life_RscProgress_HUDHealth,
         Life_RscProgress_HUDWater,
@@ -66,10 +69,38 @@ class playerHUD {
 
     class LIFE_RscProgress_HUDCommon: Life_RscProgress {
         colorFrame[] = {0,0,0,0};
-        colorBackground[] = {0,0,0,0.26};
+        colorBackground[] = {0,0,0,0.34};
         x = safezoneX + 0.036 * safezoneW;
-        w = 0.072 * safezoneW;
-        h = 0.0048 * safezoneH;
+        w = 0.074 * safezoneW;
+        h = 0.0060 * safezoneH;
+    };
+
+    class Life_HUD_LabelText: Life_RscText {
+        SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.31)";
+        style = ST_LEFT;
+        colorText[] = {0.64,0.76,0.80,0.88};
+        colorBackground[] = {0,0,0,0};
+        x = safezoneX + 0.036 * safezoneW;
+        w = 0.070 * safezoneW;
+        h = 0.012 * safezoneH;
+    };
+
+    class Life_RscText_HUDFoodLabel: Life_HUD_LabelText {
+        idc = 1210;
+        text = "HUNGER";
+        y = safezoneY + 0.918 * safezoneH;
+    };
+
+    class Life_RscText_HUDHealthLabel: Life_HUD_LabelText {
+        idc = 1211;
+        text = "HEALTH";
+        y = safezoneY + 0.941 * safezoneH;
+    };
+
+    class Life_RscText_HUDWaterLabel: Life_HUD_LabelText {
+        idc = 1212;
+        text = "THIRST";
+        y = safezoneY + 0.964 * safezoneH;
     };
 
     class Life_RscProgress_HUDFood: LIFE_RscProgress_HUDCommon {
@@ -91,12 +122,12 @@ class playerHUD {
     };
 
     class Life_HUD_ValueText: Life_RscText {
-        SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.42)";
-        style = ST_RIGHT;
+        SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.48)";
+        style = ST_LEFT;
         colorText[] = {0.92,0.97,1,0.94};
         colorBackground[] = {0,0,0,0};
-        x = safezoneX + 0.110 * safezoneW;
-        w = 0.031 * safezoneW;
+        x = safezoneX + 0.114 * safezoneW;
+        w = 0.028 * safezoneW;
         h = 0.016 * safezoneH;
     };
 

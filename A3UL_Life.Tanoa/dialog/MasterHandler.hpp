@@ -35,3 +35,6 @@
 #include "..\modules\RadialMenu\radial_menu.hpp"
 #include "..\modules\Shops\license_shop.hpp"
 #include "..\modules\Shops\leo_license_admin.hpp"
+#include "..\modules\Shops\weapon_shop.hpp"
+#include "..\modules\Shops\leo_vehicle_shop.hpp"
+#include "..\modules\Progression\progression.hpp"

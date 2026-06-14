@@ -96,6 +96,19 @@ switch (_code) do {
         };
     };
 
+    //ELS code stages: 1 = off, 2 = lights, 3 = lights + siren
+    case 2: {
+        if ([_code] call life_fnc_elsKey) then {_handled = true;};
+    };
+
+    case 3: {
+        if ([_code] call life_fnc_elsKey) then {_handled = true;};
+    };
+
+    case 4: {
+        if ([_code] call life_fnc_elsKey) then {_handled = true;};
+    };
+
     //Space key for Jumping
     case 57: {
         if (isNil "jumpActionTime") then {jumpActionTime = 0;};
@@ -197,15 +210,18 @@ switch (_code) do {
             _handled = true;
         };
 
-        //If cop run checks for turning lights on.
-        if (_shift && playerSide in [west,independent]) then {
+        if (_shift && {playerSide isEqualTo west} && {!(vehicle player isEqualTo player)}) exitWith {
+            if ([vehicle player] call life_fnc_elsIsConfigured) then {
+                titleText ["ELS: use 1/2/3 for code stages","PLAIN"];
+            };
+            _handled = true;
+        };
+
+        //If medic run checks for turning lights on.
+        if (_shift && playerSide isEqualTo independent) then {
             if (!(isNull objectParent player) && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
                 if (!isNil {vehicle player getVariable "lights"}) then {
-                    if (playerSide isEqualTo west) then {
-                        [vehicle player] call life_fnc_sirenLights;
-                    } else {
-                        [vehicle player] call life_fnc_medicSirenLights;
-                    };
+                    [vehicle player] call life_fnc_medicSirenLights;
                     _handled = true;
                 };
             };
@@ -248,7 +264,14 @@ switch (_code) do {
             _handled = true;
         };
 
-        if (playerSide in [west,independent] && {vehicle player != player} && {!life_siren_active} && {((driver vehicle player) == player)}) then {
+        if (playerSide isEqualTo west && {vehicle player != player} && {((driver vehicle player) == player)}) exitWith {
+            if ([vehicle player] call life_fnc_elsIsConfigured) then {
+                titleText ["ELS: use 1/2/3 for code stages","PLAIN"];
+            };
+            _handled = true;
+        };
+
+        if (playerSide isEqualTo independent && {vehicle player != player} && {!life_siren_active} && {((driver vehicle player) == player)}) then {
             [] spawn {
                 life_siren_active = true;
                 sleep 4.7;
@@ -269,11 +292,7 @@ switch (_code) do {
                 titleText [localize "STR_MISC_SirensON","PLAIN"];
                 _veh setVariable ["siren",true,true];
                 private "_jip";
-                if (playerSide isEqualTo west) then {
-                    _jip = [_veh] remoteExec ["life_fnc_copSiren",RCLIENT,true];
-                } else {
-                    _jip = [_veh] remoteExec ["life_fnc_medicSiren",RCLIENT,true];
-                };
+                _jip = [_veh] remoteExec ["life_fnc_medicSiren",RCLIENT,true];
                 _veh setVariable ["sirenJIP",_jip,true];
             };
         };

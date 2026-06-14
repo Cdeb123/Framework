@@ -275,5 +275,15 @@ class playerSettings {
             w = (6.25 / 40);
             h = (1 / 25);
         };
+
+        class ButtonSkills: Life_RscButtonMenu {
+            idc = -1;
+            text = "Skills";
+            onButtonClick = "['xp'] call life_fnc_openSkillMenu;";
+            x = 0.42 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
+            y = 0.805;
+            w = (6.25 / 40);
+            h = (1 / 25);
+        };
     };
 };

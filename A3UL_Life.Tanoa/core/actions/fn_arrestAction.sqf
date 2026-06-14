@@ -25,6 +25,7 @@ if (isNull _unit) exitWith {}; //Not valid
 detach _unit;
 [_unit,false] remoteExecCall ["life_fnc_jail",_unit];
 [0,"STR_NOTF_Arrested_1",true, [_unit getVariable ["realname",name _unit], profileName]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
+["leo",getNumber (missionConfigFile >> "Life_Progression" >> "XPEvents" >> "arrest"),"Arrest processed"] call life_fnc_addXP;
 
 if (LIFE_SETTINGS(getNumber,"player_advancedLog") isEqualTo 1) then {
     if (LIFE_SETTINGS(getNumber,"battlEye_friendlyLogging") isEqualTo 1) then {

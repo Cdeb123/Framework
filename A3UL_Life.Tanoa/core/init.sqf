@@ -67,6 +67,8 @@ switch (playerSide) do {
 };
 [] call life_fnc_jobInit;
 [] call life_fnc_frameworkDataQuery;
+[] call life_fnc_progressionInit;
+[] spawn life_fnc_progressionDutyLoop;
 CONSTVAR(life_paycheck);
 
 player setVariable ["restrained", false, true];

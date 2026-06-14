@@ -7,6 +7,20 @@
     Something
 */
 
+private _requestedShop = _this param [3,"",[""]];
+private _modernGroup = switch (playerSide) do {
+    case west: {"LawEnforcement"};
+    case civilian: {"Civilian"};
+    default {""};
+};
+private _modernShop = _requestedShop;
+if (_modernShop isEqualTo "cop_basic") then {_modernShop = "tcsd_armory";};
+private _useModernShop = false;
+if !(_modernGroup isEqualTo "") then {
+    _useModernShop = isClass (missionConfigFile >> "Life_Shops" >> "WeaponShops" >> _modernGroup >> _modernShop);
+};
+if (_useModernShop) exitWith {_this call life_fnc_openWeaponShop;};
+
 private _shopTitle = M_CONFIG(getText,"WeaponShops",(_this select 3),"name");
 private _shopSide = M_CONFIG(getText,"WeaponShops",(_this select 3),"side");
 private _conditions = M_CONFIG(getText,"WeaponShops",(_this select 3),"conditions");

@@ -131,6 +131,19 @@ if (side _killer isEqualTo west && !(playerSide isEqualTo west)) then {
     };
 };
 
+if (!isNull _killer && {!(_killer isEqualTo _unit)} && {isPlayer _killer}) then {
+    private _victimGang = group _unit getVariable ["gang_name",""];
+    private _killerGang = group _killer getVariable ["gang_name",""];
+
+    if ((side _killer) isEqualTo west && {!(_victimGang isEqualTo "")}) then {
+        ["leo",getNumber (missionConfigFile >> "Life_Progression" >> "XPEvents" >> "leoGangKill"),"Gang-affiliated takedown"] remoteExecCall ["life_fnc_addXP",_killer];
+    };
+
+    if ((side _killer) isEqualTo civilian && {(side _unit) isEqualTo civilian} && {!(_killerGang isEqualTo "")} && {!(_victimGang isEqualTo "")} && {!(_killerGang isEqualTo _victimGang)}) then {
+        ["gang",getNumber (missionConfigFile >> "Life_Progression" >> "XPEvents" >> "gangKill"),"Rival gang takedown"] remoteExecCall ["life_fnc_addXP",_killer];
+    };
+};
+
 if (!isNull _killer && {!(_killer isEqualTo _unit)}) then {
     life_removeWanted = true;
 };

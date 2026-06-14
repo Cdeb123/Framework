@@ -25,6 +25,11 @@ if ([false,_type,_amount] call life_fnc_handleInv) then {
     hint format [localize "STR_Shop_Virt_SellItem",_amount,(localize _name),[_price] call life_fnc_numberText];
     CASH = CASH + _price;
     [0] call SOCK_fnc_updatePartial;
+    if ((ITEM_ILLEGAL(_type) isEqualTo 1) && {!((group player getVariable ["gang_name",""]) isEqualTo "")}) then {
+        private _xpRate = getNumber (missionConfigFile >> "Life_Progression" >> "XPEvents" >> "illegalSale");
+        private _xpGain = 10 max (floor ((_price / 1000) * _xpRate));
+        ["gang",_xpGain,format ["Sold %1",localize _name],false] call life_fnc_addXP;
+    };
     [] call life_fnc_virt_update;
 };
 
