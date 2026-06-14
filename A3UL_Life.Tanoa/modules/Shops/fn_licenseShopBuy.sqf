@@ -3,9 +3,9 @@
     File: fn_licenseShopBuy.sqf
 */
 disableSerialization;
-if ((lbCurSel 8301) < 0) exitWith {};
+if ((lbCurSel 8401) < 0) exitWith {};
 
-private _license = lbData [8301,lbCurSel 8301];
+private _license = lbData [8401,lbCurSel 8401];
 private _cfg = missionConfigFile >> "Licenses" >> _license;
 if !(isClass _cfg) exitWith {};
 
