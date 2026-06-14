@@ -79,7 +79,7 @@ if (!isNull cursorObject && {player distance cursorObject <= (_radius + 2)}) the
     if (!(_x isEqualTo player)) then {
         _candidates pushBackUnique _x;
     };
-} forEach (nearestObjects [player,[],_radius]);
+} forEach (player nearObjects (_radius + 2));
 
 {
     if (!(_x isEqualTo player)) then {

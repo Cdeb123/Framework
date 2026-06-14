@@ -17,9 +17,7 @@ params [
 
 private _speed = speed cursorObject;
 private _handled = false;
-private _interactionKeys = actionKeys "User10";
-if (_interactionKeys isEqualTo []) then {_interactionKeys = [219];};
-_interactionKeys pushBackUnique 219;
+private _interactionKeys = (actionKeys "User10") - [219,220];
 private _radialAction = LIFE_SETTINGS(getText,"radial_menu_customAction");
 private _radialKeys = if (_radialAction isEqualTo "") then {[]} else {actionKeys _radialAction};
 private _radialFallbackKey = LIFE_SETTINGS(getNumber,"radial_menu_key");
@@ -52,9 +50,8 @@ if (life_action_inUse) exitWith {
     _handled;
 };
 
-//Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10).
-//Only consume the actual interaction key so vanilla scroll/default actions still work.
-if (_code in _interactionKeys) exitWith {
+//Legacy interaction key. Left/Right Windows are intentionally ignored; use F1/User Action 9 for the compact menu.
+if (!(_interactionKeys isEqualTo []) && {_code in _interactionKeys}) exitWith {
     if !(shownCommandingMenu isEqualTo "") exitWith {false};
     if (!life_action_inUse) then {
         [] spawn {
