@@ -8,14 +8,19 @@ if (isNull _display) exitWith {};
 if ((lbCurSel 8401) < 0) exitWith {};
 
 private _shop = missionNamespace getVariable ["life_license_shop_type","dmv"];
-private _license = lbData [8401,lbCurSel 8401];
-private _cfg = missionConfigFile >> "Licenses" >> _license;
-if !(isClass _cfg) exitWith {};
+private _data = call compile (lbData [8401,lbCurSel 8401]);
+_data params [
+    ["_license","",[""]],
+    ["_variable","",[""]],
+    ["_displayName","",[""]],
+    ["_price",0,[0]],
+    ["_side","civ",[""]],
+    ["_desc","",[""]]
+];
 
-private _side = getText (_cfg >> "side");
-private _owned = LICENSE_VALUE(_license,_side);
-private _price = getNumber (_cfg >> "price");
-private _desc = getText (missionConfigFile >> "Life_Shops" >> "LicenseShops" >> _shop >> "Descriptions" >> _license >> "text");
+if (_variable isEqualTo "") then {_variable = _license;};
+if (_side isEqualTo "") then {_side = "civ";};
+private _owned = missionNamespace getVariable [format ["license_%1_%2",_side,_variable],false];
 if (_desc isEqualTo "" && {_shop isEqualTo "dmv"}) then {
     _desc = switch (_license) do {
         case "driver": {"Required to legally operate standard road vehicles."};
@@ -31,7 +36,7 @@ if (_desc isEqualTo "") then {_desc = "No description is available for this lice
 
 (_display displayCtrl 8402) ctrlSetStructuredText parseText format [
     "<t size='1.2' color='#f2fbfb'>%1</t><br/><t color='#7dcbd0'>Price</t><br/>$%2<br/><br/><t color='#7dcbd0'>Status</t><br/>%3<br/><br/><t color='#7dcbd0'>Description</t><br/>%4",
-    localize getText (_cfg >> "displayName"),
+    localize _displayName,
     [_price] call life_fnc_numberText,
     ["Available","Already owned"] select _owned,
     _desc
