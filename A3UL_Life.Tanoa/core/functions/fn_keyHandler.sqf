@@ -17,9 +17,6 @@ params [
 
 private _speed = speed cursorObject;
 private _handled = false;
-private _interactionKeys = actionKeys "User10";
-if (_interactionKeys isEqualTo []) then {_interactionKeys = [219];};
-_interactionKeys pushBackUnique 219;
 private _radialAction = LIFE_SETTINGS(getText,"radial_menu_customAction");
 private _radialKeys = if (_radialAction isEqualTo "") then {[]} else {actionKeys _radialAction};
 private _radialFallbackKey = LIFE_SETTINGS(getNumber,"radial_menu_key");
@@ -50,20 +47,6 @@ if (_code in _radialKeys && {!_shift} && {!_ctrlKey} && {!_alt}) exitWith {
 if (life_action_inUse) exitWith {
     if (!life_interrupted && _code in _interruptionKeys) then {life_interrupted = true};
     _handled;
-};
-
-//Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10).
-//Only consume the actual interaction key so vanilla scroll/default actions still work.
-if (_code in _interactionKeys) exitWith {
-    if !(shownCommandingMenu isEqualTo "") exitWith {false};
-    if (!life_action_inUse) then {
-        [] spawn {
-            private _handle = [] spawn life_fnc_actionKeyHandler;
-            waitUntil {scriptDone _handle};
-            life_action_inUse = false;
-        };
-    };
-    true;
 };
 
 if (life_container_active) exitwith {

@@ -82,6 +82,12 @@ if (!isNull cursorObject && {player distance cursorObject <= (_radius + 2)}) the
 } forEach (nearestObjects [player,[],_radius]);
 
 {
+    if (!(_x isEqualTo player)) then {
+        _candidates pushBackUnique _x;
+    };
+} forEach (nearestObjects [player,["CAManBase","LandVehicle","Ship","Air","ReammoBox_F","House_F","Land_Atm_01_F","Land_Atm_02_F","Land_InfoStand_V1_F","Land_InfoStand_V2_F","Land_InfoStand_V3_F"],_radius + 2]);
+
+{
     private _targetObject = _x;
     {
         private _id = _x;
@@ -96,10 +102,10 @@ if (!isNull cursorObject && {player distance cursorObject <= (_radius + 2)}) the
                 private _allowed = true;
                 if !(_condition isEqualTo "") then {
                     private _target = _targetObject;
-                    private _this = player;
                     private _originalTarget = _targetObject;
                     private _actionId = _id;
-                    _allowed = call compile _condition;
+                    _allowed = player call (compile _condition);
+                    if !(_allowed isEqualType true) then {_allowed = false;};
                 };
 
                 if (_allowed) then {

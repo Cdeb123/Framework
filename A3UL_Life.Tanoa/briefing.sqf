@@ -528,9 +528,8 @@ The following items are illegal to posses:<br/><br/>
         [
             "Tanoa Life Custom Controls",
                 "
-F1 / User Action 9: Open the Tanoa Life radial interaction menu for nearby shops, licenses, doors, garages, LEO tools, staff tools, and personal menus. Rebind in ESC -> Configure -> Controls -> Custom -> User Action 9.<br/>
-User Action 10 / Left Windows: Main interaction key for vehicles, houses, ATMs, containers, restrained players, and nearby objects. Rebind in ESC -> Configure -> Controls -> Custom -> Use Action 10.<br/>
-Scroll Wheel near vendors: License Shop, Access Shop, and Interaction Menu shortcuts. Highlight an option and press your normal action/selection key.<br/>
+F1 / User Action 9: Open the compact interaction menu for nearby shops, licenses, doors, garages, LEO tools, staff tools, and personal menus. Rebind in ESC -> Configure -> Controls -> Custom -> User Action 9.<br/>
+Scroll Wheel near vendors: use the native shop, license, garage, ATM, and service options. Highlight an option and press your normal action/selection key.<br/>
 Scroll Wheel near a building door: Door Access, including public doors, keycards, and configured keypads.<br/>
 Y: Open Player Menu.<br/>
 U: Lock and unlock owned vehicles and houses.<br/>
@@ -555,8 +554,8 @@ Left Shift + O: Toggle earplugs / sound fade.<br/><br/>
             "Police and medic controls",
                 "
 F: Vehicle siren.<br/>
-L or F1 radial: Speed radar (police only and weapon is P07 Suppressed).<br/>
-F1 radial while in a police vehicle: Mobile Data Terminal and radar access.<br/>
+L or F1 menu: Speed radar (police only and weapon is P07 Suppressed).<br/>
+F1 menu while in a police vehicle: Mobile Data Terminal and radar access.<br/>
 Left Shift + L: Activates siren lights.<br/>
 Left Shift + R: Restrain (police only).<br/><br/>
                 "
@@ -579,7 +578,6 @@ Y: Open Player Menu.<br/>
 U: Lock and unlock vehicles and houses.<br/>
 T: Vehicle trunk and house virtual item storage.<br/>
 Left Shift + B: Surrender (hands on head).<br/>
-Left Windows: Main interaction key. Used for interacting with objects like vehicles, houses, ATMs, and restrained players. Can be rebound to a single key like H by pressing ESC->Configure->Controls->Custom->Use Action 10.<br/>
 Left Shift + H: Holsters the weapon in your hands.<br/>
 Left Ctrl + H: Revert holster action.<br/>
 Shift + Spacebar: Jump.<br/>

@@ -43,52 +43,17 @@ life_canpay_bail = true;
 life_storagePlacing = scriptNull;
 life_hideoutBuildings = [];
 life_firstSpawn = true;
-life_seatbelt = false;
-life_fireMode = "SAFE";
-life_weapon_fireModes = ["SAFE","SEMI","AUTO"];
-life_door_keycards = [];
-life_door_keypad_target = [];
-life_door_keypad_lastCode = "";
-life_radial_actions = [];
-life_radial_source_actions = [];
-life_radial_category = "main";
-life_radial_page = 0;
-life_status_effects = [];
-life_toxicity = 0;
-life_alcohol = 0;
-life_effect_poisoned = false;
-life_effect_virus = false;
-life_effect_drunk = false;
-life_effect_overdose = false;
-life_pending_citations = [];
-life_pending_warrants = [];
-life_permissions = [];
-life_discord_permissions = [];
-life_jobs = [];
-life_active_job = "unemployed";
-life_owner_role = "";
-life_framework_data_loaded = false;
-life_leo_memberships = [];
-life_leo_permissions = [];
-life_leo_department = "";
-life_leo_department_display = "";
-life_leo_rank = "";
-life_leo_rank_display = "";
-life_leo_primary_subdivision = "";
-life_leo_subdivisions = [];
-life_leo_training_docs = [];
-life_leo_training_roster = [];
-life_leo_command_docs = [];
-life_characters = [];
-life_character_completed = false;
-life_character_gate_active = false;
-life_character_slot = -1;
-life_character_uid = "";
-life_character_data = [];
-life_character_preview_objects = [];
-life_character_preview_camera = objNull;
-life_character_selectedChanged = false;
-life_character_preview_committed = false;
+
+#include "..\modules\Characters\configuration.sqf"
+#include "..\modules\DoorAccess\configuration.sqf"
+#include "..\modules\FrameworkData\configuration.sqf"
+#include "..\modules\Jobs\configuration.sqf"
+#include "..\modules\LawEnforcement\configuration.sqf"
+#include "..\modules\Permissions\configuration.sqf"
+#include "..\modules\PlayerStatus\configuration.sqf"
+#include "..\modules\RadialMenu\configuration.sqf"
+#include "..\modules\VehicleControls\configuration.sqf"
+#include "..\modules\WeaponSafety\configuration.sqf"
 
 //Settings
 life_settings_enableNewsBroadcast = profileNamespace getVariable ["life_enableNewsBroadcast", true];

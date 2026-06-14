@@ -168,14 +168,8 @@ class Life_Client_Core {
         class wireTransfer {};
     };
 
-    class Functions {
-        file = "core\functions";
-        class AAN {};
-        class accType {};
-        class actionKeyHandler {};
-        class animSync {};
-        class calWeightDiff {};
-        class canUseDoor {};
+    class Module_Characters {
+        file = "modules\Characters";
         class characterApply {};
         class characterCreate {};
         class characterGate {};
@@ -185,34 +179,39 @@ class Life_Client_Core {
         class characterPreviewStop {};
         class characterPreviewUpdate {};
         class characterSelect {};
-        class checkMap {};
-        class clearVehicleAmmo {};
+    };
+
+    class Module_DoorAccess {
+        file = "modules\DoorAccess";
+        class canUseDoor {};
         class doorAccessFor {};
         class doorInteraction {};
-        class dropItems {};
-        class escInterupt {};
-        class fetchCfgDetails {};
-        class fetchDeadGear {};
-        class fetchVehInfo {};
+        class nearestBuildingDoor {};
+        class openDoorKeypad {};
+        class submitDoorCode {};
+        class toggleBuildingDoor {};
+    };
+
+    class Module_FrameworkData {
+        file = "modules\FrameworkData";
         class frameworkDataQuery {};
         class frameworkDataReceived {};
-        class isDamaged {};
-        class giveDiff {};
-        class handleDamage {};
-        class handleInv {};
-        class handleItem {};
-        class hasPermission {};
-        class hasNearbyInteractionCategory {};
-        class hideObj {};
-        class hudSetup {};
-        class hudUpdate {};
-        class inventoryClosed {};
-        class inventoryOpened {};
-        class isCommunityOwner {};
-        class isUIDActive {};
+    };
+
+    class Module_Identity {
+        file = "modules\Identity";
+        class openID {};
+        class refreshID {};
+    };
+
+    class Module_Jobs {
+        file = "modules\Jobs";
         class jobInit {};
         class jobSetActive {};
-        class keyHandler {};
+    };
+
+    class Module_LawEnforcement {
+        file = "modules\LawEnforcement";
         class leoAtLeastRank {};
         class leoCanCommand {};
         class leoCommandApply {};
@@ -229,21 +228,76 @@ class Life_Client_Core {
         class leoTrainingPostDocument {};
         class leoTrainingRosterUpdate {};
         class leoTrainingSelectDocument {};
+        class openLEOCommandTerminal {};
+        class openLEOTrainingTerminal {};
+    };
+
+    class Module_Permissions {
+        file = "modules\Permissions";
+        class hasPermission {};
+        class isCommunityOwner {};
+    };
+
+    class Module_PlayerStatus {
+        file = "modules\PlayerStatus";
+        class statusEffect {};
+        class statusMonitor {};
+    };
+
+    class Module_RadialMenu {
+        file = "modules\RadialMenu";
+        class nearbyInteractionActions {};
+        class openRadialMenu {};
+        class radialMenuExecute {};
+        class radialMenuKey {};
+        class radialMenuLoad {};
+        class radialMenuPage {};
+    };
+
+    class Module_VehicleControls {
+        file = "modules\VehicleControls";
+        class seatbeltToggle {};
+    };
+
+    class Module_WeaponSafety {
+        file = "modules\WeaponSafety";
+        class weaponFireMode {};
+    };
+
+    class Functions {
+        file = "core\functions";
+        class AAN {};
+        class accType {};
+        class actionKeyHandler {};
+        class animSync {};
+        class calWeightDiff {};
+        class checkMap {};
+        class clearVehicleAmmo {};
+        class dropItems {};
+        class escInterupt {};
+        class fetchCfgDetails {};
+        class fetchDeadGear {};
+        class fetchVehInfo {};
+        class isDamaged {};
+        class giveDiff {};
+        class handleDamage {};
+        class handleInv {};
+        class handleItem {};
+        class hideObj {};
+        class hudSetup {};
+        class hudUpdate {};
+        class inventoryClosed {};
+        class inventoryOpened {};
+        class isUIDActive {};
+        class keyHandler {};
         class loadDeadGear {};
         class loadGear {};
         class nearATM {};
-        class nearbyInteractionActions {};
-        class nearestBuildingDoor {};
         class nearestDoor {};
         class nearUnits {};
         class numberText {};
         class onFired {};
         class onTakeItem {};
-        class openID {};
-        class openDoorKeypad {};
-        class openLEOCommandTerminal {};
-        class openLEOTrainingTerminal {};
-        class openRadialMenu {};
         class playerSkins {};
         class playerTags {};
         class postNewsBroadcast {};
@@ -251,23 +305,12 @@ class Life_Client_Core {
         class pushObject {};
         class receiveItem {};
         class receiveMoney {};
-        class radialMenuExecute {};
-        class radialMenuKey {};
-        class radialMenuLoad {};
-        class radialMenuPage {};
         class revealObjects {};
-        class refreshID {};
         class saveGear {};
-        class seatbeltToggle {};
         class simDisable {};
         class startLoadout {};
-        class statusEffect {};
-        class statusMonitor {};
         class stripDownPlayer {};
-        class submitDoorCode {};
         class teleport {};
-        class toggleBuildingDoor {};
-        class weaponFireMode {};
         class whereAmI {};
         class moveIn {};
     };

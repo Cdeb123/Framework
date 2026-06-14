@@ -25,15 +25,14 @@ _textSpoiler = _display displayCtrl 1101;
 _text2 = _display displayCtrl 1102;
 
 _message = "";
-_message = _message + "<t align='center' size='8' shadow='0'>AsYetUntitled</t><br /><br />";
-_message = _message + "AsYetUntitled, formerly Altis Life RPG and ARMARPGLIFE is a roleplay framework for ArmA III originally made by TAW_Tonic.<br /><br />";
-_message = _message + "Useful links for server owners:<br /><br />";
-_message = _message + "<a color='#00DFFF'>•</a> Github: <a href='https://github.com/AsYetUntitled/Framework' color='#56BDD6'> https://github.com/AsYetUntitled/Framework</a><br />";
-_message = _message + "<a color='#00DFFF'>•</a> Wiki: <a href='https://github.com/AsYetUntitled/Framework/wiki' color='#56BDD6'> https://github.com/AsYetUntitled/Framework/wiki</a><br />";
-_message = _message + "<a color='#00DFFF'>•</a> Releases (Stable Builds): <a href='https://github.com/AsYetUntitled/Framework/releases' color='#56BDD6'> https://github.com/AsYetUntitled/Framework/releases</a><br />";
-_message = _message + "<a color='#00DFFF'>•</a> Discord: <a href='https://discord.gg/ajGUDSH' color='#56BDD6'> https://discord.gg/ajGUDSH</a><br /><br />";
+_message = _message + "<t align='center' size='8' shadow='0'>A3UL</t><br /><br />";
+_message = _message + "A3UL, a Roleplay framework for ArmA III. Forked from the original Altis Life RPG.<br /><br />";
+_message = _message + "Useful links:<br /><br />";
+_message = _message + "<a color='#00DFFF'>•</a> Github: <a href='https://github.com/Cdeb123/Framework' color='#56BDD6'> https://github.com/Cdeb123/Framework</a><br />";
+_message = _message + "<a color='#00DFFF'>•</a> Wiki: <a href='https://github.com/Cdeb123/Framework/wiki' color='#56BDD6'> https://github.com/Cdeb123/Framework/wiki</a><br />";
+_message = _message + "<a color='#00DFFF'>•</a> Releases (Stable Builds): <a href='https://github.com/Cdeb123/Framework/releases' color='#56BDD6'> https://github.com/Cdeb123/Framework/releases</a><br />";
+_message = _message + "<a color='#00DFFF'>•</a> Discord: <a href='https://discord.gg/WdJtCBWaP4' color='#56BDD6'> https://discord.gg/WdJtCBWaP4</a><br /><br />";
 _message = _message + "Thanks for joining and enjoy your stay, <a color='#B000FF'>YourServerName</a> Staff Team.<br />";
-_message = _message + "You can edit the text displayed in this box by modifying Altis_Life.Altis/core/fn_welcomeNotification.sqf";
 
 //Fill only the first text
 _text1 ctrlSetStructuredText (parseText _message);

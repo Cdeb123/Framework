@@ -68,7 +68,7 @@ _maxPage = floor _maxPage;
 if (_page > _maxPage) then {_page = _maxPage; life_radial_page = _page;};
 if (_page < 0) then {_page = 0; life_radial_page = 0;};
 
-ctrlSetText [9201,if (_category isEqualTo "main") then {"Tanoa Life Radial"} else {_category}];
+ctrlSetText [9201,if (_category isEqualTo "main") then {"F1 Menu"} else {_category}];
 ctrlSetText [9202,format ["%1 actions | Page %2/%3",count _actions,_page + 1,_maxPage + 1]];
 
 for "_i" from 0 to 7 do {
