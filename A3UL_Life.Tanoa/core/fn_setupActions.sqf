@@ -13,70 +13,21 @@ life_actions pushBack (player addAction[
     {[] call life_fnc_doorInteraction},
     "",
     -5,
-    false,
+    true,
     true,
     "",
     '!dialog && {isNull objectParent player} && {isNull cursorObject || {player distance cursorObject > 4} || {!((cursorObject isKindOf "CAManBase") || {cursorObject isKindOf "LandVehicle"} || {cursorObject isKindOf "Ship"} || {cursorObject isKindOf "Air"} || {cursorObject isKindOf "ReammoBox_F"} || {(typeOf cursorObject) in ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F","Land_Money_F","Land_Atm_01_F","Land_Atm_02_F"]})}} && {!(([] call life_fnc_nearestBuildingDoor) isEqualTo [])}'
 ]);
 
 life_actions pushBack (player addAction[
-    format ["%1 ($%2)",localize (getText(missionConfigFile >> "Licenses" >> "driver" >> "displayName")),[(getNumber(missionConfigFile >> "Licenses" >> "driver" >> "price"))] call life_fnc_numberText],
-    life_fnc_buyLicense,
-    "driver",
-    8,
-    false,
-    false,
+    "Vehicle Interaction",
+    {[cursorObject] call life_fnc_vInteractionMenu},
     "",
-    '!dialog && {isNull objectParent player} && {[] call life_fnc_nearDMV} && {!license_civ_driver} && {playerSide isEqualTo civilian}',
-    5
-]);
-
-life_actions pushBack (player addAction[
-    format ["%1 ($%2)",localize (getText(missionConfigFile >> "Licenses" >> "boat" >> "displayName")),[(getNumber(missionConfigFile >> "Licenses" >> "boat" >> "price"))] call life_fnc_numberText],
-    life_fnc_buyLicense,
-    "boat",
-    8,
-    false,
-    false,
+    0,
+    true,
+    true,
     "",
-    '!dialog && {isNull objectParent player} && {[] call life_fnc_nearDMV} && {!license_civ_boat} && {playerSide isEqualTo civilian}',
-    5
-]);
-
-life_actions pushBack (player addAction[
-    format ["%1 ($%2)",localize (getText(missionConfigFile >> "Licenses" >> "pilot" >> "displayName")),[(getNumber(missionConfigFile >> "Licenses" >> "pilot" >> "price"))] call life_fnc_numberText],
-    life_fnc_buyLicense,
-    "pilot",
-    8,
-    false,
-    false,
-    "",
-    '!dialog && {isNull objectParent player} && {[] call life_fnc_nearDMV} && {!license_civ_pilot} && {playerSide isEqualTo civilian}',
-    5
-]);
-
-life_actions pushBack (player addAction[
-    format ["%1 ($%2)",localize (getText(missionConfigFile >> "Licenses" >> "trucking" >> "displayName")),[(getNumber(missionConfigFile >> "Licenses" >> "trucking" >> "price"))] call life_fnc_numberText],
-    life_fnc_buyLicense,
-    "trucking",
-    8,
-    false,
-    false,
-    "",
-    '!dialog && {isNull objectParent player} && {[] call life_fnc_nearDMV} && {!license_civ_trucking} && {playerSide isEqualTo civilian}',
-    5
-]);
-
-life_actions pushBack (player addAction[
-    format ["%1 ($%2)",localize (getText(missionConfigFile >> "Licenses" >> "home" >> "displayName")),[(getNumber(missionConfigFile >> "Licenses" >> "home" >> "price"))] call life_fnc_numberText],
-    life_fnc_buyLicense,
-    "home",
-    8,
-    false,
-    false,
-    "",
-    '!dialog && {isNull objectParent player} && {[] call life_fnc_nearDMV} && {!license_civ_home} && {playerSide isEqualTo civilian}',
-    5
+    '!dialog && {isNull objectParent player} && {!isNull cursorObject} && {(cursorObject isKindOf "LandVehicle") || {cursorObject isKindOf "Ship"} || {cursorObject isKindOf "Air"}} && {player distance cursorObject < (((boundingBox cursorObject) select 1) select 0) + 2} && {!(player getVariable ["restrained",false])} && {!(player getVariable ["playerSurrender",false])} && {!life_isknocked} && {!life_istazed}'
 ]);
 
 switch (playerSide) do {
