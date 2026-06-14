@@ -23,41 +23,71 @@ private _health = ((1 - (damage player)) * 100) max 0 min 100;
 (_display displayCtrl 1201) ctrlSetText format ["%1%2",round _health,"%"];
 (_display displayCtrl 1202) ctrlSetText format ["%1%2",round _thirst,"%"];
 
+private _foodColor = switch (true) do {
+    case (_hunger <= 20): {[1.00,0.24,0.18,0.96]};
+    case (_hunger <= 45): {[1.00,0.70,0.20,0.94]};
+    default {[0.98,0.64,0.20,0.92]};
+};
+private _healthColor = switch (true) do {
+    case (_health <= 20): {[1.00,0.24,0.18,0.96]};
+    case (_health <= 45): {[1.00,0.70,0.20,0.94]};
+    default {[0.13,0.85,0.54,0.92]};
+};
+private _waterColor = switch (true) do {
+    case (_thirst <= 20): {[1.00,0.24,0.18,0.96]};
+    case (_thirst <= 45): {[1.00,0.70,0.20,0.94]};
+    default {[0.0,0.68,0.95,0.92]};
+};
+
+(_display displayCtrl 1203) ctrlSetTextColor _foodColor;
+(_display displayCtrl 1204) ctrlSetTextColor _healthColor;
+(_display displayCtrl 1205) ctrlSetTextColor _waterColor;
+(_display displayCtrl 1200) ctrlSetTextColor _foodColor;
+(_display displayCtrl 1201) ctrlSetTextColor _healthColor;
+(_display displayCtrl 1202) ctrlSetTextColor _waterColor;
+
 private _vehicle = vehicle player;
 private _inVehicle = !(_vehicle isEqualTo player);
-private _speed = round (abs (speed _vehicle));
-private _vehicleLabel = "ON FOOT";
-if (_inVehicle) then {
-    _vehicleLabel = switch (true) do {
-        case (_vehicle isKindOf "Air"): {"AIR"};
-        case (_vehicle isKindOf "Ship"): {"MARINE"};
-        case (_vehicle isKindOf "LandVehicle"): {"GROUND"};
-        default {"VEHICLE"};
-    };
-};
-
-(_display displayCtrl 1301) ctrlSetText _vehicleLabel;
-(_display displayCtrl 1302) ctrlSetText format ["%1 KM/H",_speed];
-
-private _gps = _display displayCtrl 2400;
-if !(isNull _gps) then {
-    _gps ctrlMapAnimAdd [0,0.055,player];
-    ctrlMapAnimCommit _gps;
-};
 
 private _weapon = currentWeapon player;
-private _mode = if (_weapon isEqualTo "") then {"SAFE"} else {missionNamespace getVariable ["life_fireMode","SEMI"]};
-(_display displayCtrl 1300) ctrlSetText _mode;
+private _fireIcon = _display displayCtrl 2308;
+private _fireText = _display displayCtrl 1300;
+if (_weapon isEqualTo "") then {
+    _fireIcon ctrlShow false;
+    _fireText ctrlShow false;
+} else {
+    private _mode = missionNamespace getVariable ["life_fireMode","SEMI"];
+    private _modeColor = switch (_mode) do {
+        case "SAFE": {[1.00,0.70,0.20,0.94]};
+        case "AUTO": {[1.00,0.24,0.18,0.94]};
+        default {[0.0,0.78,0.92,0.94]};
+    };
+    _fireIcon ctrlShow true;
+    _fireText ctrlShow true;
+    _fireIcon ctrlSetTextColor _modeColor;
+    _fireText ctrlSetTextColor _modeColor;
+    _fireText ctrlSetText _mode;
+};
 
 {
-    (_display displayCtrl _x) ctrlShow false;
+    private _ctrl = _display displayCtrl _x;
+    _ctrl ctrlShow false;
+    _ctrl ctrlSetFade 1;
+    _ctrl ctrlCommit 0;
 } forEach [2300,2301,2302,2303,2304,2305,2306,2307];
 
+private _statusSlot = 0;
 private _showIcon = {
     params ["_idc","_color"];
     private _ctrl = _display displayCtrl _idc;
+    private _x = safezoneX + safezoneW - 0.034 * safezoneW;
+    private _y = safezoneY + 0.390 * safezoneH + (_statusSlot * 0.032 * safezoneH);
+    _ctrl ctrlSetPosition [_x,_y,0.018 * safezoneW,0.024 * safezoneH];
     _ctrl ctrlShow true;
     _ctrl ctrlSetTextColor _color;
+    _ctrl ctrlSetFade 0;
+    _ctrl ctrlCommit 0;
+    _statusSlot = _statusSlot + 1;
 };
 
 if (_inVehicle) then {

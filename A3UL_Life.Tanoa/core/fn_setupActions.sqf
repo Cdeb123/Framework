@@ -9,6 +9,39 @@
 life_actions = [];
 
 life_actions pushBack (player addAction[
+    "License Shop",
+    {["License Shop"] call life_fnc_openRadialMenu},
+    "",
+    8,
+    false,
+    true,
+    "",
+    '!dialog && {isNull objectParent player} && {["License Shop"] call life_fnc_hasNearbyInteractionCategory}'
+]);
+
+life_actions pushBack (player addAction[
+    "Access Shop",
+    {["Access Shop"] call life_fnc_openRadialMenu},
+    "",
+    7,
+    false,
+    true,
+    "",
+    '!dialog && {isNull objectParent player} && {["Access Shop"] call life_fnc_hasNearbyInteractionCategory}'
+]);
+
+life_actions pushBack (player addAction[
+    "Interaction Menu",
+    {["main"] call life_fnc_openRadialMenu},
+    "",
+    6,
+    false,
+    true,
+    "",
+    '!dialog && {[] call life_fnc_hasNearbyInteractionCategory}'
+]);
+
+life_actions pushBack (player addAction[
     "Door Access",
     {[] call life_fnc_doorInteraction},
     "",

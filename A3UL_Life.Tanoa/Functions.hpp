@@ -246,6 +246,7 @@ class Life_Client_Core {
 
     class Module_RadialMenu {
         file = "modules\RadialMenu";
+        class hasNearbyInteractionCategory {};
         class nearbyInteractionActions {};
         class openRadialMenu {};
         class radialMenuExecute {};
