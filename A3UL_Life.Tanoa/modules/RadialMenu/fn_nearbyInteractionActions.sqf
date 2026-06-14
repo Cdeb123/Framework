@@ -79,7 +79,7 @@ if (!isNull cursorObject && {player distance cursorObject <= (_radius + 2)}) the
     if (!(_x isEqualTo player)) then {
         _candidates pushBackUnique _x;
     };
-} forEach (nearestObjects [player,[],_radius]);
+} forEach (player nearObjects (_radius + 2));
 
 {
     if (!(_x isEqualTo player)) then {
@@ -104,8 +104,13 @@ if (!isNull cursorObject && {player distance cursorObject <= (_radius + 2)}) the
                     private _target = _targetObject;
                     private _originalTarget = _targetObject;
                     private _actionId = _id;
-                    _allowed = player call (compile _condition);
-                    if !(_allowed isEqualType true) then {_allowed = false;};
+                    private _conditionResult = false;
+                    private _conditionFailed = isNil {
+                        private _result = player call (compile _condition);
+                        if (_result isEqualType true) then {_conditionResult = _result;};
+                        _conditionResult
+                    };
+                    _allowed = (!_conditionFailed) && {_conditionResult};
                 };
 
                 if (_allowed) then {
@@ -117,6 +122,25 @@ if (!isNull cursorObject && {player distance cursorObject <= (_radius + 2)}) the
         };
     } forEach (actionIDs _targetObject);
 } forEach _candidates;
+
+private _hasLicenseActions = ({(_x select 4) isEqualTo "License Shop"} count _actions) > 0;
+if (!_hasLicenseActions && {[] call life_fnc_nearDMV} && {!dialog} && {isNull objectParent player} && {playerSide isEqualTo civilian}) then {
+    if (!license_civ_driver) then {
+        [format ["%1 ($%2)",localize (getText(missionConfigFile >> "Licenses" >> "driver" >> "displayName")),[(getNumber(missionConfigFile >> "Licenses" >> "driver" >> "price"))] call life_fnc_numberText],"DMV","code",'[player,player,0,"driver"] call life_fnc_buyLicense',"License Shop",35] call _addAction;
+    };
+    if (!license_civ_boat) then {
+        [format ["%1 ($%2)",localize (getText(missionConfigFile >> "Licenses" >> "boat" >> "displayName")),[(getNumber(missionConfigFile >> "Licenses" >> "boat" >> "price"))] call life_fnc_numberText],"DMV","code",'[player,player,0,"boat"] call life_fnc_buyLicense',"License Shop",34] call _addAction;
+    };
+    if (!license_civ_pilot) then {
+        [format ["%1 ($%2)",localize (getText(missionConfigFile >> "Licenses" >> "pilot" >> "displayName")),[(getNumber(missionConfigFile >> "Licenses" >> "pilot" >> "price"))] call life_fnc_numberText],"DMV","code",'[player,player,0,"pilot"] call life_fnc_buyLicense',"License Shop",33] call _addAction;
+    };
+    if (!license_civ_trucking) then {
+        [format ["%1 ($%2)",localize (getText(missionConfigFile >> "Licenses" >> "trucking" >> "displayName")),[(getNumber(missionConfigFile >> "Licenses" >> "trucking" >> "price"))] call life_fnc_numberText],"DMV","code",'[player,player,0,"trucking"] call life_fnc_buyLicense',"License Shop",32] call _addAction;
+    };
+    if (!license_civ_home) then {
+        [format ["%1 ($%2)",localize (getText(missionConfigFile >> "Licenses" >> "home" >> "displayName")),[(getNumber(missionConfigFile >> "Licenses" >> "home" >> "price"))] call life_fnc_numberText],"DMV","code",'[player,player,0,"home"] call life_fnc_buyLicense',"License Shop",31] call _addAction;
+    };
+};
 
 if (([] call life_fnc_nearATM) && {!dialog}) then {
     ["ATM","Open bank account and cash controls","code","[] call life_fnc_atmMenu","Banking",30] call _addAction;

@@ -294,6 +294,7 @@ class Life_Client_Core {
         class loadDeadGear {};
         class loadGear {};
         class nearATM {};
+        class nearDMV {};
         class nearestDoor {};
         class nearUnits {};
         class numberText {};
