@@ -201,7 +201,10 @@ class Life_Client_Core {
     class Module_Identity {
         file = "modules\Identity";
         class openID {};
+        class receiveID {};
         class refreshID {};
+        class sendID {};
+        class showID {};
     };
 
     class Module_Jobs {
@@ -253,6 +256,20 @@ class Life_Client_Core {
         class radialMenuKey {};
         class radialMenuLoad {};
         class radialMenuPage {};
+    };
+
+    class Module_Shops {
+        file = "modules\Shops";
+        class applyLicenseAction {};
+        class licenseAdminApply {};
+        class licenseAdminLoad {};
+        class licenseAdminNotify {};
+        class licenseAdminSelect {};
+        class licenseShopBuy {};
+        class licenseShopLoad {};
+        class licenseShopSelect {};
+        class openLicenseAdmin {};
+        class openLicenseShop {};
     };
 
     class Module_VehicleControls {

@@ -32,3 +32,5 @@
 #include "..\modules\LawEnforcement\leo_terminals.hpp"
 #include "..\modules\DoorAccess\door_keypad.hpp"
 #include "..\modules\RadialMenu\radial_menu.hpp"
+#include "..\modules\Shops\license_shop.hpp"
+#include "..\modules\Shops\leo_license_admin.hpp"

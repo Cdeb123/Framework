@@ -28,6 +28,23 @@ private _flag = switch (playerSide) do {case west: {"cop"}; case civilian: {"civ
 } forEach (format ["getText(_x >> 'side') isEqualTo '%1'",_flag] configClasses (missionConfigFile >> "Licenses"));
 
 private _licenseText = if ((count _licenses) > 0) then {_licenses joinString ", "} else {"None"};
+private _factionText = "";
+if (playerSide isEqualTo west) then {
+    private _badge = player getVariable ["leoBadgeNumber",""];
+    if (_badge isEqualTo "") then {
+        _badge = str (10000 + floor random 90000);
+        player setVariable ["leoBadgeNumber",_badge,true];
+    };
+    _factionText = format [
+        "<br/><t color='#00c7eb'>Faction Credential</t><br/>%1<br/>%2 | %3<br/>Badge #%4<br/>Aviation: %5 | Maritime: %6",
+        missionNamespace getVariable ["life_leo_department_display","Law Enforcement"],
+        missionNamespace getVariable ["life_leo_rank_display","Officer"],
+        missionNamespace getVariable ["life_leo_primary_subdivision","Patrol"],
+        _badge,
+        ["No","Yes"] select LICENSE_VALUE("cAir","cop"),
+        ["No","Yes"] select LICENSE_VALUE("cg","cop")
+    ];
+};
 private _citations = count (missionNamespace getVariable ["life_pending_citations",[]]);
 private _warrants = count (missionNamespace getVariable ["life_pending_warrants",[]]);
 private _statuses = [];
@@ -47,10 +64,11 @@ private _statusText = if ((count _statuses) > 0) then {_statuses joinString ", "
 ];
 
 (_display displayCtrl 7904) ctrlSetStructuredText parseText format [
-    "<t color='#00c7eb'>Licenses</t><br/>%1<br/><t color='#00c7eb'>Legal</t><br/>Citations: %2 | Warrants: %3<br/><t color='#00c7eb'>Special Status</t><br/>%4<br/><t color='#647780'>Background:</t> %5",
+    "<t color='#00c7eb'>Licenses</t><br/>%1%6<br/><t color='#00c7eb'>Legal</t><br/>Citations: %2 | Warrants: %3<br/><t color='#00c7eb'>Special Status</t><br/>%4<br/><t color='#647780'>Background:</t> %5",
     _licenseText,
     _citations,
     _warrants,
     _statusText,
-    _background
+    _background,
+    _factionText
 ];

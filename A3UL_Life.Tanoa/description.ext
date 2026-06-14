@@ -8,6 +8,7 @@ unsafeCVL = 1; // Allows createVehicleLocal to be executed in Multiplayer
 #include "dialog\MasterHandler.hpp"
 #include "config\Config_Master.hpp"
 #include "modules\DoorAccess\Config.hpp"
+#include "modules\Shops\Config.hpp"
 
 class CfgServer {
     DatabaseName = "altislife"; //Config name that'll be grep in the extdb-conf.ini. Default: [altislife]

@@ -224,7 +224,11 @@ switch (_code) do {
     //I ID Card
     case 23: {
         if (_ctrlKey && {!_alt} && {!dialog}) then {
-            [] call life_fnc_openID;
+            if (!isNull cursorObject && {isPlayer cursorObject} && {player distance cursorObject < 5}) then {
+                [cursorObject] call life_fnc_showID;
+            } else {
+                [] call life_fnc_openID;
+            };
             _handled = true;
         };
     };

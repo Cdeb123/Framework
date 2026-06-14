@@ -51,9 +51,9 @@ if (player getVariable ["isEscorting",false]) then {
 _Btn1 ctrlSetText localize "STR_pInAct_Unrestrain";
 _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unrestrain; closeDialog 0;";
 
-//Set Check Licenses Button
-_Btn2 ctrlSetText localize "STR_pInAct_checkLicenses";
-_Btn2 buttonSetAction "[player] remoteExecCall [""life_fnc_licenseCheck"",life_pInact_curTarget]; closeDialog 0;";
+//Set License Administration Button
+_Btn2 ctrlSetText "Licenses / ID";
+_Btn2 buttonSetAction "private _target = life_pInact_curTarget; closeDialog 0; [_target] spawn {params [""_target""]; uiSleep 0.05; [_target] call life_fnc_openLicenseAdmin;};";
 
 //Set Search Button
 _Btn3 ctrlSetText localize "STR_pInAct_SearchPlayer";

@@ -112,7 +112,12 @@ if (!_firstSet) then {
 };
 
 player setVariable ["leoDepartment",life_leo_department,true];
+player setVariable ["leoDepartmentDisplay",life_leo_department_display,true];
 player setVariable ["leoRank",life_leo_rank,true];
 player setVariable ["leoRankDisplay",life_leo_rank_display,true];
 player setVariable ["leoPrimarySubdivision",life_leo_primary_subdivision,true];
 player setVariable ["leoSubdivisions",life_leo_subdivisions,true];
+
+if ((player getVariable ["leoBadgeNumber",""]) isEqualTo "") then {
+    player setVariable ["leoBadgeNumber",str (10000 + floor random 90000),true];
+};
