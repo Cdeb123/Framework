@@ -168,6 +168,15 @@ class Life_Client_Core {
         class wireTransfer {};
     };
 
+    class Module_ATM {
+        file = "modules\ATM";
+        class atmAction {};
+        class atmDailyDeposit {};
+        class atmLoad {};
+        class atmRecordDeposit {};
+        class openATM {};
+    };
+
     class Module_Characters {
         file = "modules\Characters";
         class characterApply {};
@@ -198,11 +207,20 @@ class Life_Client_Core {
         class frameworkDataReceived {};
     };
 
+    class Module_Government {
+        file = "modules\Government";
+        class applyTax {};
+        class governmentAddRevenue {};
+        class governmentSetTax {};
+        class taxRate {};
+    };
+
     class Module_Identity {
         file = "modules\Identity";
         class openID {};
         class receiveID {};
         class refreshID {};
+        class refreshShownID {};
         class sendID {};
         class showID {};
     };

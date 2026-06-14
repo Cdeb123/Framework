@@ -250,25 +250,43 @@ class life_id_card {
     idd = 7900;
     movingEnable = 0;
     enableSimulation = 1;
-    onLoad = "[] call life_fnc_refreshID";
+    onLoad = "[] spawn {uiSleep 0.01; [] call life_fnc_refreshID;}";
 
     class controlsBackground {
         class Back: Life_RscText {
             idc = -1;
-            colorBackground[] = {0.02,0.025,0.03,0.94};
-            x = 0.31 * safezoneW + safezoneX;
-            y = 0.22 * safezoneH + safezoneY;
-            w = 0.38 * safezoneW;
-            h = 0.46 * safezoneH;
+            colorBackground[] = {0.91,0.94,0.91,0.98};
+            x = 0.335 * safezoneW + safezoneX;
+            y = 0.315 * safezoneH + safezoneY;
+            w = 0.330 * safezoneW;
+            h = 0.205 * safezoneH;
+        };
+
+        class TopBand: Life_RscText {
+            idc = -1;
+            colorBackground[] = {0.02,0.12,0.16,1};
+            x = 0.335 * safezoneW + safezoneX;
+            y = 0.315 * safezoneH + safezoneY;
+            w = 0.330 * safezoneW;
+            h = 0.034 * safezoneH;
         };
 
         class Accent: Life_RscText {
             idc = -1;
-            colorBackground[] = {0.0,0.78,0.92,1};
-            x = 0.31 * safezoneW + safezoneX;
-            y = 0.22 * safezoneH + safezoneY;
-            w = 0.004 * safezoneW;
-            h = 0.46 * safezoneH;
+            colorBackground[] = {0.00,0.55,0.62,1};
+            x = 0.335 * safezoneW + safezoneX;
+            y = 0.349 * safezoneH + safezoneY;
+            w = 0.330 * safezoneW;
+            h = 0.005 * safezoneH;
+        };
+
+        class PhotoBack: Life_RscText {
+            idc = -1;
+            colorBackground[] = {0.78,0.82,0.80,1};
+            x = 0.352 * safezoneW + safezoneX;
+            y = 0.370 * safezoneH + safezoneY;
+            w = 0.072 * safezoneW;
+            h = 0.105 * safezoneH;
         };
     };
 
@@ -276,48 +294,48 @@ class life_id_card {
         class Face: Life_RscPictureKeepAspect {
             idc = 7901;
             text = "";
-            x = 0.335 * safezoneW + safezoneX;
-            y = 0.270 * safezoneH + safezoneY;
-            w = 0.105 * safezoneW;
-            h = 0.155 * safezoneH;
+            x = 0.356 * safezoneW + safezoneX;
+            y = 0.374 * safezoneH + safezoneY;
+            w = 0.064 * safezoneW;
+            h = 0.097 * safezoneH;
         };
 
         class Header: Life_RscText {
             idc = 7902;
-            text = "IDENTIFICATION";
-            colorText[] = {0.0,0.78,0.92,1};
+            text = "TANOA RESIDENT ID";
+            colorText[] = {0.92,0.98,0.98,1};
             colorBackground[] = {0,0,0,0};
-            sizeEx = 0.035;
-            x = 0.465 * safezoneW + safezoneX;
-            y = 0.260 * safezoneH + safezoneY;
-            w = 0.190 * safezoneW;
-            h = 0.045 * safezoneH;
+            sizeEx = 0.025;
+            x = 0.350 * safezoneW + safezoneX;
+            y = 0.318 * safezoneH + safezoneY;
+            w = 0.210 * safezoneW;
+            h = 0.030 * safezoneH;
         };
 
         class Body: Life_RscStructuredText {
             idc = 7903;
-            x = 0.465 * safezoneW + safezoneX;
-            y = 0.315 * safezoneH + safezoneY;
-            w = 0.190 * safezoneW;
-            h = 0.230 * safezoneH;
+            x = 0.435 * safezoneW + safezoneX;
+            y = 0.365 * safezoneH + safezoneY;
+            w = 0.210 * safezoneW;
+            h = 0.095 * safezoneH;
         };
 
         class Records: Life_RscStructuredText {
             idc = 7904;
-            x = 0.335 * safezoneW + safezoneX;
-            y = 0.455 * safezoneH + safezoneY;
-            w = 0.320 * safezoneW;
-            h = 0.145 * safezoneH;
+            x = 0.352 * safezoneW + safezoneX;
+            y = 0.480 * safezoneH + safezoneY;
+            w = 0.250 * safezoneW;
+            h = 0.033 * safezoneH;
         };
 
         class CloseButton: Life_RscButtonMenu {
             idc = -1;
             text = "Close";
             onButtonClick = "closeDialog 0";
-            x = 0.560 * safezoneW + safezoneX;
-            y = 0.615 * safezoneH + safezoneY;
-            w = 0.095 * safezoneW;
-            h = 0.040 * safezoneH;
+            x = 0.604 * safezoneW + safezoneX;
+            y = 0.480 * safezoneH + safezoneY;
+            w = 0.045 * safezoneW;
+            h = 0.028 * safezoneH;
         };
     };
 };
