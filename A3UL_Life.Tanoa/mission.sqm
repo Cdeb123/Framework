@@ -4107,7 +4107,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=546;
 			type="Land_Atm_02_F";
@@ -4143,7 +4143,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=547;
 			type="Land_Atm_02_F";
@@ -4178,7 +4178,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=548;
 			type="Land_Atm_02_F";
@@ -4214,7 +4214,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=549;
 			type="Land_Atm_02_F";
@@ -4249,7 +4249,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=550;
 			type="Land_Atm_02_F";
@@ -4284,7 +4284,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=551;
 			type="Land_Atm_02_F";
@@ -4318,7 +4318,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 				name="a1";
 			};
 			id=552;
@@ -4355,7 +4355,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=553;
 			type="Land_Atm_02_F";
@@ -4391,7 +4391,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=554;
 			type="Land_Atm_02_F";
@@ -4426,7 +4426,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=555;
 			type="Land_Atm_02_F";
@@ -4461,7 +4461,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=556;
 			type="Land_Atm_02_F";
@@ -4496,7 +4496,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=557;
 			type="Land_Atm_02_F";
@@ -4531,7 +4531,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=558;
 			type="Land_Atm_02_F";
@@ -4567,7 +4567,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=560;
 			type="Land_Atm_02_F";
@@ -4602,7 +4602,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=561;
 			type="Land_Atm_02_F";
@@ -4637,7 +4637,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=621;
 			type="Land_Atm_02_F";
@@ -4673,7 +4673,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 				name="atm_hospital_2";
 			};
 			id=622;
@@ -4709,7 +4709,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 				name="atm_hospital_3";
 			};
 			id=623;
@@ -4746,7 +4746,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=624;
 			type="Land_Atm_02_F";
@@ -4818,7 +4818,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=635;
 			type="Land_Atm_02_F";
@@ -4853,7 +4853,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=636;
 			type="Land_Atm_01_F";
@@ -4888,7 +4888,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Armament"",life_fnc_weaponShopMenu,""gang"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this addAction[localize""STR_Shops_C_Gang"",life_fnc_clothingMenu,""gang_clothing"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Gang Armament""];";
+				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Armament"",life_fnc_weaponShopMenu,""gang"",0,true,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this addAction[localize""STR_Shops_C_Gang"",life_fnc_clothingMenu,""gang_clothing"",0,true,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Gang Armament""];";
 			};
 			id=637;
 			type="Land_Pallet_MilBoxes_F";
@@ -4958,7 +4958,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_Process_Marijuana"",life_fnc_processAction,""marijuana"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; life_inv_cannabis > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Marijuana Processing""];";
+				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_Process_Marijuana"",life_fnc_processAction,""marijuana"",0,true,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; life_inv_cannabis > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Marijuana Processing""];";
 				name="mari_processor";
 			};
 			id=639;
@@ -5532,7 +5532,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this allowDamage false; this addAction[localize""STR_NOTF_captureGangHideout"",life_fnc_captureHideout,"""",0,false,false,"""",' playerSide isEqualTo civilian && !isNil {(group player) getVariable ""gang_owner""}'];";
+				init="this allowDamage false; this addAction[localize""STR_NOTF_captureGangHideout"",life_fnc_captureHideout,"""",0,true,false,"""",' playerSide isEqualTo civilian && !isNil {(group player) getVariable ""gang_owner""}'];";
 				name="gang_flag_1";
 			};
 			id=664;
@@ -5603,7 +5603,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=666;
 			type="Land_Atm_01_F";
@@ -5638,7 +5638,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Armament"",life_fnc_weaponShopMenu,""gang"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this addAction[localize""STR_Shops_C_Gang"",life_fnc_clothingMenu,""gang_clothing"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Gang Armament""];";
+				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Armament"",life_fnc_weaponShopMenu,""gang"",0,true,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this addAction[localize""STR_Shops_C_Gang"",life_fnc_clothingMenu,""gang_clothing"",0,true,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Gang Armament""];";
 			};
 			id=667;
 			type="Land_Pallet_MilBoxes_F";
@@ -5709,7 +5709,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_Process_Cocaine"",life_fnc_processAction,""cocaine"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; life_inv_cocaineUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Cocaine Processing""];";
+				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_Process_Cocaine"",life_fnc_processAction,""cocaine"",0,true,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; life_inv_cocaineUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Cocaine Processing""];";
 				name="coke_processor";
 			};
 			id=669;
@@ -6275,7 +6275,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this allowDamage false; this addAction[localize""STR_NOTF_captureGangHideout"",life_fnc_captureHideout,"""",0,false,false,"""",' playerSide isEqualTo civilian && !isNil {(group player) getVariable ""gang_owner""}'];";
+				init="this allowDamage false; this addAction[localize""STR_NOTF_captureGangHideout"",life_fnc_captureHideout,"""",0,true,false,"""",' playerSide isEqualTo civilian && !isNil {(group player) getVariable ""gang_owner""}'];";
 				name="gang_flag_2";
 			};
 			id=694;
@@ -6347,7 +6347,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=696;
 			type="Land_Atm_01_F";
@@ -6382,7 +6382,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Armament"",life_fnc_weaponShopMenu,""gang"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this addAction[localize""STR_Shops_C_Gang"",life_fnc_clothingMenu,""gang_clothing"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Gang Armament""];";
+				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Armament"",life_fnc_weaponShopMenu,""gang"",0,true,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this addAction[localize""STR_Shops_C_Gang"",life_fnc_clothingMenu,""gang_clothing"",0,true,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Gang Armament""];";
 			};
 			id=697;
 			type="Land_Pallet_MilBoxes_F";
@@ -6454,7 +6454,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_Process_Heroin"",life_fnc_processAction,""heroin"",0,false,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; life_inv_heroinUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Heroin Processing""];";
+				init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_Process_Heroin"",life_fnc_processAction,""heroin"",0,true,false,"""",' _b = (nearestObjects[getPosATL player,[""Land_School_01_F"",""Land_Warehouse_03_F"",""Land_House_Small_02_F""],25]) select 0; life_inv_heroinUnprocessed > 0 && !life_is_processing && !life_action_inUse && !isNil {_b getVariable ""gangOwner""} && {(_b getVariable ""gangOwner"") == (group player)} && playerSide isEqualTo civilian ']; this setVariable [""realname"",""Heroin Processing""];";
 				name="heroin_processor";
 			};
 			id=699;
@@ -7162,7 +7162,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this allowDamage false; this addAction[localize""STR_NOTF_captureGangHideout"",life_fnc_captureHideout,"""",0,false,false,"""",' playerSide isEqualTo civilian && !isNil {(group player) getVariable ""gang_owner""}'];";
+				init="this allowDamage false; this addAction[localize""STR_NOTF_captureGangHideout"",life_fnc_captureHideout,"""",0,true,false,"""",' playerSide isEqualTo civilian && !isNil {(group player) getVariable ""gang_owner""}'];";
 				name="gang_flag_3";
 			};
 			id=724;
@@ -12407,7 +12407,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Rebel_Market"",life_fnc_virt_menu,""rebel""];  this addAction[localize ""STR_MAR_Rebel_Clothing_Shop"",life_fnc_clothingMenu,""reb"",0,false,false,"""",' license_civ_rebel && playerSide isEqualTo civilian',5];  this addAction[localize ""STR_MAR_Rebel_Weapon_Shop"",life_fnc_weaponShopMenu,""rebel"",0,false,false,"""",' license_civ_rebel && playerSide isEqualTo civilian',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""rebel"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""rebel"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""rebel"",0,false,false,"""",' !license_civ_rebel && playerSide isEqualTo civilian ',5];  this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 ',5];";
+						init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Rebel_Market"",life_fnc_virt_menu,""rebel""];  this addAction[localize ""STR_MAR_Rebel_Clothing_Shop"",life_fnc_clothingMenu,""reb"",0,true,false,"""",' license_civ_rebel && playerSide isEqualTo civilian',5];  this addAction[localize ""STR_MAR_Rebel_Weapon_Shop"",life_fnc_weaponShopMenu,""rebel"",0,true,false,"""",' license_civ_rebel && playerSide isEqualTo civilian',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""rebel"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""rebel"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""rebel"",0,true,false,"""",' !license_civ_rebel && playerSide isEqualTo civilian ',5];  this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 ',5];";
 						name="reb_1";
 						disableSimulation=1;
 					};
@@ -12470,7 +12470,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_5";
 						disableSimulation=1;
 					};
@@ -12596,7 +12596,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_4";
 						disableSimulation=1;
 					};
@@ -12658,7 +12658,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Oil"",life_fnc_processAction,""oil"",0,false,false,"""",' life_inv_oilUnprocessed > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""oil"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""oil"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""oil"",0,false,false,"""",' !license_civ_oil && playerSide isEqualTo civilian ',5];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Oil"",life_fnc_processAction,""oil"",0,true,false,"""",' life_inv_oilUnprocessed > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""oil"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""oil"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""oil"",0,true,false,"""",' !license_civ_oil && playerSide isEqualTo civilian ',5];";
 						disableSimulation=1;
 					};
 					id=953;
@@ -12721,7 +12721,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_12";
 						disableSimulation=1;
 					};
@@ -12784,7 +12784,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_11";
 						disableSimulation=1;
 					};
@@ -12848,7 +12848,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Iron"",life_fnc_processAction,""iron"",0,false,false,"""",' life_inv_ironUnrefined > 0 && !life_is_processing && !life_action_inUse'];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""iron"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""iron"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""iron"",0,false,false,"""",' !license_civ_iron && playerSide isEqualTo civilian '];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Iron"",life_fnc_processAction,""iron"",0,true,false,"""",' life_inv_ironUnrefined > 0 && !life_is_processing && !life_action_inUse'];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""iron"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""iron"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""iron"",0,true,false,"""",' !license_civ_iron && playerSide isEqualTo civilian '];";
 						disableSimulation=1;
 					};
 					id=957;
@@ -12885,7 +12885,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="removeAllWeapons this; this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Drug_Dealer"",life_fnc_virt_menu,""drugdealer"",0,false,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo civilian ',5]; this addAction[localize""STR_MAR_Question_Dealer"",life_fnc_questionDealer,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo west && !life_action_inUse ',5];";
+						init="removeAllWeapons this; this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Drug_Dealer"",life_fnc_virt_menu,""drugdealer"",0,true,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo civilian ',5]; this addAction[localize""STR_MAR_Question_Dealer"",life_fnc_questionDealer,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo west && !life_action_inUse ',5];";
 						name="Dealer_1";
 						disableSimulation=1;
 					};
@@ -12948,7 +12948,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_8";
 						disableSimulation=1;
 					};
@@ -13011,7 +13011,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Marijuana"",life_fnc_processAction,""marijuana"",0,false,false,"""",' life_inv_cannabis > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""marijuana"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""marijuana"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""marijuana"",0,false,false,"""",' !license_civ_marijuana && playerSide isEqualTo civilian ',5];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Marijuana"",life_fnc_processAction,""marijuana"",0,true,false,"""",' life_inv_cannabis > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""marijuana"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""marijuana"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""marijuana"",0,true,false,"""",' !license_civ_marijuana && playerSide isEqualTo civilian ',5];";
 						disableSimulation=1;
 					};
 					id=963;
@@ -13073,7 +13073,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_10";
 						disableSimulation=1;
 					};
@@ -13260,7 +13260,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_13";
 						disableSimulation=1;
 					};
@@ -13323,7 +13323,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_15";
 						disableSimulation=1;
 					};
@@ -13386,7 +13386,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_14";
 						presence=0.76229411;
 						disableSimulation=1;
@@ -13513,7 +13513,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_20";
 						disableSimulation=1;
 					};
@@ -13576,7 +13576,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target '];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress '];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target '];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress '];";
 						name="dp_22";
 						disableSimulation=1;
 					};
@@ -13614,7 +13614,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_25";
 						disableSimulation=1;
 					};
@@ -13740,7 +13740,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_9";
 						disableSimulation=1;
 					};
@@ -13915,7 +13915,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_24";
 						disableSimulation=1;
 					};
@@ -13979,7 +13979,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_23";
 						disableSimulation=1;
 					};
@@ -14043,7 +14043,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Medical_Assistance"",life_fnc_healHospital,"""",1.5,false,false,"""",'isNull objectParent player && player distance _target < 5'];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Medical_Assistance"",life_fnc_healHospital,"""",1.5,true,false,"""",'isNull objectParent player && player distance _target < 5'];";
 						disableSimulation=1;
 					};
 					id=985;
@@ -14245,7 +14245,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false;  removeallWeapons this;  this enableSimulation false;  this addAction[localize""STR_MAR_Diving_Shop"",life_fnc_clothingMenu,""dive"",1.5,true,true,"""",""true"",5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""dive"" >> ""displayName"")),[(getNumber(missionConfigFile >> ""Licenses"" >> ""dive"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""dive"",0,false,false,"""",' !license_civ_dive && playerSide isEqualTo civilian ',5];";
+						init="this allowDamage false;  removeallWeapons this;  this enableSimulation false;  this addAction[localize""STR_MAR_Diving_Shop"",life_fnc_clothingMenu,""dive"",1.5,true,true,"""",""true"",5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""dive"" >> ""displayName"")),[(getNumber(missionConfigFile >> ""Licenses"" >> ""dive"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""dive"",0,true,false,"""",' !license_civ_dive && playerSide isEqualTo civilian ',5];";
 						disableSimulation=1;
 					};
 					id=991;
@@ -14308,7 +14308,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_1"",""cop"",""APD - Kavala District""],1.5,true,true,"""",""true"",5];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_1""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide isEqualTo west',5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store',5]; this setVariable [""realname"",""Cop Vehicle Store""]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_1"",""cop"",""APD - Kavala District""],1.5,true,true,"""",""true"",5];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_1""; life_garage_type = ""Car"";  },"""",0,true,false,"""",'playerSide isEqualTo west',5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store',5]; this setVariable [""realname"",""Cop Vehicle Store""]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
 						disableSimulation=1;
 					};
 					id=994;
@@ -14357,7 +14357,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this addAction[localize""STR_MAR_Cop_Item_Shop"",life_fnc_virt_menu,""cop""];  this allowDamage false;  this addAction[localize""STR_MAR_Cop_Clothing_Shop"",life_fnc_clothingMenu,""cop"",1.5,true,true,"""",""true"",5];  this addAction[localize""STR_MAR_Cop_Weapon_Shop"",life_fnc_weaponShopMenu,""cop_basic"",1.5,true,true,"""",""true"",5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cAir"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cAir"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cAir"",0,false,false,"""",' !license_cop_cAir && playerSide isEqualTo west ',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cg"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cg"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide isEqualTo west ',5]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
+						init="this enableSimulation false;  this addAction[localize""STR_MAR_Cop_Item_Shop"",life_fnc_virt_menu,""cop""];  this allowDamage false;  this addAction[localize""STR_MAR_Cop_Clothing_Shop"",life_fnc_clothingMenu,""cop"",1.5,true,true,"""",""true"",5];  this addAction[localize""STR_MAR_Cop_Weapon_Shop"",life_fnc_weaponShopMenu,""cop_basic"",1.5,true,true,"""",""true"",5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cAir"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cAir"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cAir"",0,true,false,"""",' !license_cop_cAir && playerSide isEqualTo west ',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cg"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cg"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,true,false,"""",' !license_cop_cg && playerSide isEqualTo west ',5]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
 						name="h1_3";
 						disableSimulation=1;
 					};
@@ -14407,7 +14407,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="removeallWeapons this; this enableSimulation false; this addAction[localize""STR_MAR_Cop_Item_Shop"",life_fnc_virt_menu,""cop""]; this allowDamage false;  this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Helicopter_Shop"",life_fnc_vehicleShopMenu,[""cop_air"",west,""cop_air_2"",""cop"",""APD - Air HQ""]];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_air_2""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide isEqualTo west'];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
+						init="removeallWeapons this; this enableSimulation false; this addAction[localize""STR_MAR_Cop_Item_Shop"",life_fnc_virt_menu,""cop""]; this allowDamage false;  this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Helicopter_Shop"",life_fnc_vehicleShopMenu,[""cop_air"",west,""cop_air_2"",""cop"",""APD - Air HQ""]];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_air_2""; life_garage_type = ""Air"";  },"""",0,true,false,"""",'playerSide isEqualTo west'];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store']; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
 						disableSimulation=1;
 					};
 					id=999;
@@ -14456,7 +14456,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_2"",""cop"",""TPD - South East District""],1.5,true,true,"""",""true"",5];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_2""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide isEqualTo west',5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store',5]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_2"",""cop"",""TPD - South East District""],1.5,true,true,"""",""true"",5];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_2""; life_garage_type = ""Car"";  },"""",0,true,false,"""",'playerSide isEqualTo west',5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store',5]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
 						disableSimulation=1;
 					};
 					id=1000;
@@ -14505,7 +14505,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="removeAllWeapons this; this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Drug_Dealer"",life_fnc_virt_menu,""drugdealer"",0,false,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo civilian ',5]; this addAction[localize""STR_MAR_Question_Dealer"",life_fnc_questionDealer,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo west && !life_action_inUse ',5];";
+						init="removeAllWeapons this; this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Drug_Dealer"",life_fnc_virt_menu,""drugdealer"",0,true,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo civilian ',5]; this addAction[localize""STR_MAR_Question_Dealer"",life_fnc_questionDealer,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo west && !life_action_inUse ',5];";
 						name="Dealer_3";
 						disableSimulation=1;
 					};
@@ -14680,7 +14680,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Diamond"",life_fnc_processAction,""diamond"",0,false,false,"""",' life_inv_diamondUncut > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""diamond"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""diamond"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""diamond"",0,false,false,"""",' !license_civ_diamond && playerSide isEqualTo civilian ',5];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Diamond"",life_fnc_processAction,""diamond"",0,true,false,"""",' life_inv_diamondUncut > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""diamond"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""diamond"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""diamond"",0,true,false,"""",' !license_civ_diamond && playerSide isEqualTo civilian ',5];";
 						presence=0.77488792;
 						disableSimulation=1;
 					};
@@ -14805,7 +14805,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Copper"",life_fnc_processAction,""copper"",0,false,false,"""",' life_inv_copperUnrefined > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""copper"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""copper"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""copper"",0,false,false,"""",' !license_civ_copper && playerSide isEqualTo civilian ',5];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Copper"",life_fnc_processAction,""copper"",0,true,false,"""",' life_inv_copperUnrefined > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""copper"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""copper"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""copper"",0,true,false,"""",' !license_civ_copper && playerSide isEqualTo civilian ',5];";
 						disableSimulation=1;
 					};
 					id=1013;
@@ -14991,7 +14991,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Process_Sand"",life_fnc_processAction,""sand"",0,false,false,"""",' life_inv_sand > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""sand"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""sand"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""sand"",0,false,false,"""",' !license_civ_sand && playerSide isEqualTo civilian ',5];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Process_Sand"",life_fnc_processAction,""sand"",0,true,false,"""",' life_inv_sand > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""sand"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""sand"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""sand"",0,true,false,"""",' !license_civ_sand && playerSide isEqualTo civilian ',5];";
 						disableSimulation=1;
 					};
 					id=1016;
@@ -15054,7 +15054,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this addAction[localize""STR_MAR_Cop_Item_Shop"",life_fnc_virt_menu,""cop"",1.5,true,true,"""",""true"",5];  this allowDamage false;  this addAction[localize""STR_MAR_Cop_Clothing_Shop"",life_fnc_clothingMenu,""cop"",1.5,true,true,"""",""true"",5];  this addAction[localize""STR_MAR_Cop_Weapon_Shop"",life_fnc_weaponShopMenu,""cop_basic""]; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cAir"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cAir"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cAir"",0,false,false,"""",' !license_cop_cAir && playerSide isEqualTo west ',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cg"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cg"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide isEqualTo west ',5]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
+						init="this enableSimulation false;  this addAction[localize""STR_MAR_Cop_Item_Shop"",life_fnc_virt_menu,""cop"",1.5,true,true,"""",""true"",5];  this allowDamage false;  this addAction[localize""STR_MAR_Cop_Clothing_Shop"",life_fnc_clothingMenu,""cop"",1.5,true,true,"""",""true"",5];  this addAction[localize""STR_MAR_Cop_Weapon_Shop"",life_fnc_weaponShopMenu,""cop_basic""]; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cAir"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cAir"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cAir"",0,true,false,"""",' !license_cop_cAir && playerSide isEqualTo west ',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cg"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cg"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,true,false,"""",' !license_cop_cg && playerSide isEqualTo west ',5]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
 						name="h1_3_2";
 						disableSimulation=1;
 					};
@@ -15166,7 +15166,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_Shops_W_Gun"",life_fnc_weaponShopMenu,""gun"",0,false,false,"""",' license_civ_gun && playerSide isEqualTo civilian',5]; this addAction[localize ""STR_Shops_C_Gun"",life_fnc_clothingMenu,""gun_clothing"",0,false,false,"""",' license_civ_gun && playerSide isEqualTo civilian',5]; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""gun"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""gun"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""gun"",0,false,false,"""",' !license_civ_gun && playerSide isEqualTo civilian ',5];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_Shops_W_Gun"",life_fnc_weaponShopMenu,""gun"",0,true,false,"""",' license_civ_gun && playerSide isEqualTo civilian',5]; this addAction[localize ""STR_Shops_C_Gun"",life_fnc_clothingMenu,""gun_clothing"",0,true,false,"""",' license_civ_gun && playerSide isEqualTo civilian',5]; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""gun"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""gun"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""gun"",0,true,false,"""",' !license_civ_gun && playerSide isEqualTo civilian ',5];";
 						disableSimulation=1;
 					};
 					id=1021;
@@ -15215,7 +15215,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Rebel_Market"",life_fnc_virt_menu,""rebel"",1.5,true,true,"""",""true"",5];  this addAction[localize ""STR_MAR_Rebel_Clothing_Shop"",life_fnc_clothingMenu,""reb"",0,false,false,"""",' license_civ_rebel && playerSide isEqualTo civilian',5];  this addAction[localize ""STR_MAR_Rebel_Weapon_Shop"",life_fnc_weaponShopMenu,""rebel"",0,false,false,"""",' license_civ_rebel && playerSide isEqualTo civilian',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""rebel"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""rebel"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""rebel"",0,false,false,"""",' !license_civ_rebel && playerSide isEqualTo civilian ',5];  this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 ',5];";
+						init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Rebel_Market"",life_fnc_virt_menu,""rebel"",1.5,true,true,"""",""true"",5];  this addAction[localize ""STR_MAR_Rebel_Clothing_Shop"",life_fnc_clothingMenu,""reb"",0,true,false,"""",' license_civ_rebel && playerSide isEqualTo civilian',5];  this addAction[localize ""STR_MAR_Rebel_Weapon_Shop"",life_fnc_weaponShopMenu,""rebel"",0,true,false,"""",' license_civ_rebel && playerSide isEqualTo civilian',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""rebel"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""rebel"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""rebel"",0,true,false,"""",' !license_civ_rebel && playerSide isEqualTo civilian ',5];  this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 ',5];";
 						name="reb_1_1";
 						disableSimulation=1;
 					};
@@ -15279,7 +15279,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Rebel_Market"",life_fnc_virt_menu,""rebel""];  this addAction[localize ""STR_MAR_Rebel_Clothing_Shop"",life_fnc_clothingMenu,""reb"",0,false,false,"""",' license_civ_rebel && playerSide isEqualTo civilian',5];  this addAction[localize ""STR_MAR_Rebel_Weapon_Shop"",life_fnc_weaponShopMenu,""rebel"",0,false,false,"""",' license_civ_rebel && playerSide isEqualTo civilian'];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""rebel"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""rebel"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""rebel"",0,false,false,"""",' !license_civ_rebel && playerSide isEqualTo civilian ',5];  this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 ',5];";
+						init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Rebel_Market"",life_fnc_virt_menu,""rebel""];  this addAction[localize ""STR_MAR_Rebel_Clothing_Shop"",life_fnc_clothingMenu,""reb"",0,true,false,"""",' license_civ_rebel && playerSide isEqualTo civilian',5];  this addAction[localize ""STR_MAR_Rebel_Weapon_Shop"",life_fnc_weaponShopMenu,""rebel"",0,true,false,"""",' license_civ_rebel && playerSide isEqualTo civilian'];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""rebel"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""rebel"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""rebel"",0,true,false,"""",' !license_civ_rebel && playerSide isEqualTo civilian ',5];  this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 ',5];";
 						name="reb_1_2";
 						disableSimulation=1;
 					};
@@ -15392,7 +15392,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Heroin"",life_fnc_processAction,""heroin"",0,false,false,"""",' life_inv_heroinUnprocessed > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""heroin"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""heroin"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""heroin"",0,false,false,"""",' !license_civ_heroin && playerSide isEqualTo civilian ',5];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Heroin"",life_fnc_processAction,""heroin"",0,true,false,"""",' life_inv_heroinUnprocessed > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""heroin"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""heroin"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""heroin"",0,true,false,"""",' !license_civ_heroin && playerSide isEqualTo civilian ',5];";
 						disableSimulation=1;
 					};
 					id=1025;
@@ -15455,7 +15455,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};  life_garage_type = ""Car""; createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""car_g_2"";  },"""",1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store',5];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};  life_garage_type = ""Car""; createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""car_g_2"";  },"""",1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store',5];";
 						disableSimulation=1;
 					};
 					id=1026;
@@ -15518,7 +15518,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];}; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""car_g_1"";  },"""",1.5,true,true,"""",""true"",5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store',5];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];}; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""car_g_1"";  },"""",1.5,true,true,"""",""true"",5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store',5];";
 						disableSimulation=1;
 					};
 					id=1028;
@@ -15580,7 +15580,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};  life_garage_type = ""Air""; createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""air_g_1"";  }];   this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};  life_garage_type = ""Air""; createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""air_g_1"";  }];   this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store'];";
 						disableSimulation=1;
 					};
 					id=1029;
@@ -15615,7 +15615,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this addAction[localize""STR_MAR_Cop_Item_Shop"",life_fnc_virt_menu,""cop"",1.5,true,true,"""",""true"",5]; this allowDamage false; this addAction[localize""STR_MAR_Cop_Clothing_Shop"",life_fnc_clothingMenu,""cop"",1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_Cop_Weapon_Shop"",life_fnc_weaponShopMenu,""cop_basic"",1.5,true,true,"""",""true"",5]; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cAir"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cAir"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cAir"",0,false,false,"""",' !license_cop_cAir && playerSide isEqualTo west ',5]; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cg"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cg"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide isEqualTo west ',5]; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 ',5]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
+						init="this enableSimulation false; this addAction[localize""STR_MAR_Cop_Item_Shop"",life_fnc_virt_menu,""cop"",1.5,true,true,"""",""true"",5]; this allowDamage false; this addAction[localize""STR_MAR_Cop_Clothing_Shop"",life_fnc_clothingMenu,""cop"",1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_Cop_Weapon_Shop"",life_fnc_weaponShopMenu,""cop_basic"",1.5,true,true,"""",""true"",5]; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cAir"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cAir"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cAir"",0,true,false,"""",' !license_cop_cAir && playerSide isEqualTo west ',5]; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cg"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cg"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,true,false,"""",' !license_cop_cg && playerSide isEqualTo west ',5]; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 ',5]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
 						name="h1_3_3";
 						disableSimulation=1;
 					};
@@ -15666,7 +15666,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_5"",""cop"",""APD - Highway Patrol""],1.5,true,true,"""",""true"",5];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_5""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide isEqualTo west',5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store',5]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_5"",""cop"",""APD - Highway Patrol""],1.5,true,true,"""",""true"",5];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_5""; life_garage_type = ""Car"";  },"""",0,true,false,"""",'playerSide isEqualTo west',5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store',5]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
 						disableSimulation=1;
 					};
 					id=1031;
@@ -15716,7 +15716,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Cocaine"",life_fnc_processAction,""cocaine"",0,false,false,"""",' life_inv_cocaineUnprocessed > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cocaine"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cocaine"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cocaine"",0,false,false,"""",' !license_civ_cocaine && playerSide isEqualTo civilian ',5];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_Process_Cocaine"",life_fnc_processAction,""cocaine"",0,true,false,"""",' life_inv_cocaineUnprocessed > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cocaine"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cocaine"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cocaine"",0,true,false,"""",' !license_civ_cocaine && playerSide isEqualTo civilian ',5];";
 						disableSimulation=1;
 					};
 					id=1032;
@@ -15778,7 +15778,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Boat_Shop"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_3"",""civ"",""Billy's Boat Rentals & Ownership""],1.5,true,true,"""",""true"",5];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Ship"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Ship"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""civ_ship_3""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide isEqualTo civilian',5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store',5];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Boat_Shop"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_3"",""civ"",""Billy's Boat Rentals & Ownership""],1.5,true,true,"""",""true"",5];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Ship"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Ship"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""civ_ship_3""; life_garage_type = ""Ship"";  },"""",0,true,false,"""",'playerSide isEqualTo civilian',5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store',5];";
 						disableSimulation=1;
 					};
 					id=1033;
@@ -15828,7 +15828,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Process_Rock"",life_fnc_processAction,""cement"",0,false,false,"""",' life_inv_rock > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cement"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cement"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cement"",0,false,false,"""",' !license_civ_cement && playerSide isEqualTo civilian ',5];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Process_Rock"",life_fnc_processAction,""cement"",0,true,false,"""",' life_inv_rock > 0 && !life_is_processing && !life_action_inUse',5];  this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""cement"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""cement"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""cement"",0,true,false,"""",' !license_civ_cement && playerSide isEqualTo civilian ',5];";
 						disableSimulation=1;
 					};
 					id=1035;
@@ -16003,7 +16003,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_ChopShop_Title"",life_fnc_chopShopMenu,""chop_shop_1"",1.5,false,false,"""",'isNull objectParent player && player distance _target < 3.5',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_ChopShop_Title"",life_fnc_chopShopMenu,""chop_shop_1"",1.5,true,false,"""",'isNull objectParent player && player distance _target < 3.5',5];";
 						disableSimulation=1;
 					};
 					id=1040;
@@ -16065,7 +16065,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_ChopShop_Title"",life_fnc_chopShopMenu,""chop_shop_4"",1.5,false,false,"""",'isNull objectParent player && player distance _target < 3.5',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_ChopShop_Title"",life_fnc_chopShopMenu,""chop_shop_4"",1.5,true,false,"""",'isNull objectParent player && player distance _target < 3.5',5];";
 						disableSimulation=1;
 					};
 					id=1041;
@@ -16127,7 +16127,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_ChopShop_Title"",life_fnc_chopShopMenu,""chop_shop_2"",1.5,false,false,"""",'isNull objectParent player && player distance _target < 3.5',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_ChopShop_Title"",life_fnc_chopShopMenu,""chop_shop_2"",1.5,true,false,"""",'isNull objectParent player && player distance _target < 3.5',5];";
 						disableSimulation=1;
 					};
 					id=1042;
@@ -16190,7 +16190,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this allowDamage false; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""mAir"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""mAir"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""mAir"",0,false,false,"""",' !license_med_mAir && playerSide isEqualTo independent ']; this addAction[localize""STR_MAR_EMS_Item_Shop"",life_fnc_weaponShopMenu,""med_basic""]; this addAction[localize""STR_MAR_EMS_Clothing_Shop"",life_fnc_clothingMenu,""med_clothing""]; this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_1"",""med"",""Kavala Hospital""]]; this addAction[localize""STR_MAR_Helicopter_Shop"", life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_1"",""med"",""Kavala Hospital""]]; this addAction[localize""STR_MAR_W_Car_Garage"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""med_car_1""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide isEqualTo independent']; this addAction[localize""STR_MAR_Helicopter_Garage"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""medic_spawn_1""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide isEqualTo independent ']; this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this addAction[localize""STR_Shops_Market"",life_fnc_virt_menu,""med_market"",1.5,false,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo independent ']; this setObjectTextureGlobal [0,""textures\medic_uniform.jpg""];";
+						init="this enableSimulation false; this allowDamage false; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""mAir"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""mAir"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""mAir"",0,true,false,"""",' !license_med_mAir && playerSide isEqualTo independent ']; this addAction[localize""STR_MAR_EMS_Item_Shop"",life_fnc_weaponShopMenu,""med_basic""]; this addAction[localize""STR_MAR_EMS_Clothing_Shop"",life_fnc_clothingMenu,""med_clothing""]; this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_1"",""med"",""Kavala Hospital""]]; this addAction[localize""STR_MAR_Helicopter_Shop"", life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_1"",""med"",""Kavala Hospital""]]; this addAction[localize""STR_MAR_W_Car_Garage"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""med_car_1""; life_garage_type = ""Car"";  },"""",0,true,false,"""",'playerSide isEqualTo independent']; this addAction[localize""STR_MAR_Helicopter_Garage"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""medic_spawn_1""; life_garage_type = ""Air"";  },"""",0,true,false,"""",'playerSide isEqualTo independent ']; this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store']; this addAction[localize""STR_Shops_Market"",life_fnc_virt_menu,""med_market"",1.5,true,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo independent ']; this setObjectTextureGlobal [0,""textures\medic_uniform.jpg""];";
 						disableSimulation=1;
 					};
 					id=1044;
@@ -16226,7 +16226,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this allowDamage false; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""mAir"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""mAir"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""mAir"",0,false,false,"""",' !license_med_mAir && playerSide isEqualTo independent ',5]; this addAction[localize""STR_MAR_EMS_Item_Shop"",life_fnc_weaponShopMenu,""med_basic""]; this addAction[localize""STR_MAR_EMS_Clothing_Shop"",life_fnc_clothingMenu,""med_clothing"",1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_2"",""med"",""Pyrgos Hospital""],1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_Helicopter_Shop"", life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_3"",""med"",""Pyrgos Hospital""],1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_W_Car_Garage"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""med_car_2""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide isEqualTo independent',5]; this addAction[localize""STR_MAR_Helicopter_Garage"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""medic_spawn_3""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide isEqualTo independent ',5]; this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store',5]; this addAction[localize""STR_Shops_Market"",life_fnc_virt_menu,""med_market"",1.5,false,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo independent ',5]; this setObjectTextureGlobal [0,""textures\medic_uniform.jpg""];";
+						init="this enableSimulation false; this allowDamage false; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""mAir"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""mAir"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""mAir"",0,true,false,"""",' !license_med_mAir && playerSide isEqualTo independent ',5]; this addAction[localize""STR_MAR_EMS_Item_Shop"",life_fnc_weaponShopMenu,""med_basic""]; this addAction[localize""STR_MAR_EMS_Clothing_Shop"",life_fnc_clothingMenu,""med_clothing"",1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_2"",""med"",""Pyrgos Hospital""],1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_Helicopter_Shop"", life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_3"",""med"",""Pyrgos Hospital""],1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_W_Car_Garage"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""med_car_2""; life_garage_type = ""Car"";  },"""",0,true,false,"""",'playerSide isEqualTo independent',5]; this addAction[localize""STR_MAR_Helicopter_Garage"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""medic_spawn_3""; life_garage_type = ""Air"";  },"""",0,true,false,"""",'playerSide isEqualTo independent ',5]; this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store',5]; this addAction[localize""STR_Shops_Market"",life_fnc_virt_menu,""med_market"",1.5,true,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo independent ',5]; this setObjectTextureGlobal [0,""textures\medic_uniform.jpg""];";
 						name="vendor_hospital_3";
 						disableSimulation=1;
 					};
@@ -16277,7 +16277,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this allowDamage false; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""mAir"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""mAir"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""mAir"",0,false,false,"""",' !license_med_mAir && playerSide isEqualTo independent ',5]; this addAction[localize""STR_MAR_EMS_Item_Shop"",life_fnc_weaponShopMenu,""med_basic"",1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_EMS_Clothing_Shop"",life_fnc_clothingMenu,""med_clothing""]; this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_3"",""med"",""Athira Hospital""],1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_Helicopter_Shop"", life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_2"",""med"",""Athira Hospital""],1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_W_Car_Garage"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""med_car_3""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide isEqualTo independent',5]; this addAction[localize""STR_MAR_Helicopter_Garage"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""medic_spawn_2""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide isEqualTo independent ',5]; this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store',5]; this addAction[localize""STR_Shops_Market"",life_fnc_virt_menu,""med_market"",1.5,false,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo independent ',5]; this setObjectTextureGlobal [0,""textures\medic_uniform.jpg""];";
+						init="this enableSimulation false; this allowDamage false; this addAction[format [""%1 ($%2)"",localize (getText(missionConfigFile >> ""Licenses"" >> ""mAir"" >> ""displayName"")), [(getNumber(missionConfigFile >> ""Licenses"" >> ""mAir"" >> ""price""))] call life_fnc_numberText],life_fnc_buyLicense,""mAir"",0,true,false,"""",' !license_med_mAir && playerSide isEqualTo independent ',5]; this addAction[localize""STR_MAR_EMS_Item_Shop"",life_fnc_weaponShopMenu,""med_basic"",1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_EMS_Clothing_Shop"",life_fnc_clothingMenu,""med_clothing""]; this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""med_shop"",independent,""med_car_3"",""med"",""Athira Hospital""],1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_Helicopter_Shop"", life_fnc_vehicleShopMenu,[""med_air_hs"",independent,""medic_spawn_2"",""med"",""Athira Hospital""],1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_W_Car_Garage"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""med_car_3""; life_garage_type = ""Car"";  },"""",0,true,false,"""",'playerSide isEqualTo independent',5]; this addAction[localize""STR_MAR_Helicopter_Garage"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""medic_spawn_2""; life_garage_type = ""Air"";  },"""",0,true,false,"""",'playerSide isEqualTo independent ',5]; this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store',5]; this addAction[localize""STR_Shops_Market"",life_fnc_virt_menu,""med_market"",1.5,true,false,"""",' isNull objectParent player && player distance _target < 5 && playerSide isEqualTo independent ',5]; this setObjectTextureGlobal [0,""textures\medic_uniform.jpg""];";
 						name="vendor_hospital_2";
 						disableSimulation=1;
 					};
@@ -16328,7 +16328,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""reb_car"",civilian,[""reb_v_1"",""reb_v_1_1""],""reb"",""Rebel Motorpool - Western Side""],0,false,false,"""",'license_civ_rebel',5];";
+						init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""reb_car"",civilian,[""reb_v_1"",""reb_v_1_1""],""reb"",""Rebel Motorpool - Western Side""],0,true,false,"""",'license_civ_rebel',5];";
 						name="reb_1_3";
 						disableSimulation=1;
 					};
@@ -16391,7 +16391,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""reb_car"",civilian,""reb_v_2"",""reb"",""Rebel Motorpool - Western Side""],0,false,false,"""",'license_civ_rebel',5];";
+						init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""reb_car"",civilian,""reb_v_2"",""reb"",""Rebel Motorpool - Western Side""],0,true,false,"""",'license_civ_rebel',5];";
 						name="reb_1_3_1";
 						disableSimulation=1;
 					};
@@ -16455,7 +16455,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="removeAllWeapons this; this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Pay_Bail"",life_fnc_postBail,"""",0,false,false,"""",' life_canpay_bail && life_is_arrested ',5];";
+						init="removeAllWeapons this; this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Pay_Bail"",life_fnc_postBail,"""",0,true,false,"""",' life_canpay_bail && life_is_arrested ',5];";
 						disableSimulation=1;
 					};
 					id=1049;
@@ -16628,7 +16628,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Boat_Shop"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_2"",""civ"",""Billy's Boat Rentals & Ownership""],1.5,true,true,"""",""true"",5];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Ship"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Ship"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""civ_ship_2""; life_garage_type = ""Ship"";  },"""",0,false,false,"""",'playerSide isEqualTo civilian',5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store',5];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_Boat_Shop"",life_fnc_vehicleShopMenu,[""civ_ship"",civilian,""civ_ship_2"",""civ"",""Billy's Boat Rentals & Ownership""],1.5,true,true,"""",""true"",5];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Ship"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Ship"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""civ_ship_2""; life_garage_type = ""Ship"";  },"""",0,true,false,"""",'playerSide isEqualTo civilian',5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store',5];";
 						disableSimulation=1;
 					};
 					id=1052;
@@ -16867,7 +16867,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_7";
 						disableSimulation=1;
 					};
@@ -18143,7 +18143,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Medical_Assistance"",life_fnc_healHospital,"""",1.5,false,false,"""",'isNull objectParent player && player distance _target < 5',5];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Medical_Assistance"",life_fnc_healHospital,"""",1.5,true,false,"""",'isNull objectParent player && player distance _target < 5',5];";
 						name="hospital_assis_3";
 						disableSimulation=1;
 					};
@@ -18207,7 +18207,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Medical_Assistance"",life_fnc_healHospital,"""",1.5,false,false,"""",'isNull objectParent player && player distance _target < 5',5];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Medical_Assistance"",life_fnc_healHospital,"""",1.5,true,false,"""",'isNull objectParent player && player distance _target < 5',5];";
 						name="hospital_assis_2";
 						disableSimulation=1;
 					};
@@ -18270,7 +18270,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_News_AddAction"",life_fnc_newsBroadcast,"""",1.5,false,false,"""",'isNull objectParent player && player distance _target < 4',5]; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 ',5];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_News_AddAction"",life_fnc_newsBroadcast,"""",1.5,true,false,"""",'isNull objectParent player && player distance _target < 4',5]; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 ',5];";
 					};
 					id=1175;
 					type="C_journalist_F";
@@ -18317,7 +18317,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_News_AddAction"",life_fnc_newsBroadcast,"""",1.5,false,false,"""",'isNull objectParent player && player distance _target < 4',5]; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 ',5];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_News_AddAction"",life_fnc_newsBroadcast,"""",1.5,true,false,"""",'isNull objectParent player && player distance _target < 4',5]; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 ',5];";
 					};
 					id=1245;
 					type="C_journalist_F";
@@ -18364,7 +18364,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_News_AddAction"",life_fnc_newsBroadcast,"""",1.5,false,false,"""",'isNull objectParent player && player distance _target < 4']; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_News_AddAction"",life_fnc_newsBroadcast,"""",1.5,true,false,"""",'isNull objectParent player && player distance _target < 4']; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 					};
 					id=1252;
 					type="C_journalist_F";
@@ -18398,7 +18398,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_News_AddAction"",life_fnc_newsBroadcast,"""",1.5,false,false,"""",'isNull objectParent player && player distance _target < 4',5]; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 ',5];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_News_AddAction"",life_fnc_newsBroadcast,"""",1.5,true,false,"""",'isNull objectParent player && player distance _target < 4',5]; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 ',5];";
 					};
 					id=1237;
 					type="C_journalist_F";
@@ -18446,7 +18446,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,false,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,false,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
+						init="this allowDamage false; this enableSimulation false; this addAction[localize""STR_MAR_Deliver_Package"",life_fnc_dpFinish,""dp_1"",0,true,false,"""",'!isNil ""life_dp_point"" && life_delivery_in_progress && life_dp_point == _target ',5];  this addAction[localize""STR_MAR_Get_Delivery_Mission"",life_fnc_getDPMission,""dp_1"",0,true,false,"""",' isNil ""life_dp_point"" && !life_delivery_in_progress ',5];";
 						name="dp_6";
 						disableSimulation=1;
 					};
@@ -18509,7 +18509,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="removeallWeapons this; this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Cop_Item_Shop"",life_fnc_virt_menu,""cop"",1.5,true,true,"""",""true"",5];  this addAction[localize""STR_MAR_Helicopter_Shop"",life_fnc_vehicleShopMenu,[""cop_air"",west,""cop_air_3"",""cop"",""TPD - South East District""]];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_air_3""; life_garage_type = ""Air"";  },"""",0,false,false,"""",'playerSide isEqualTo west',5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store',5]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
+						init="removeallWeapons this; this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Cop_Item_Shop"",life_fnc_virt_menu,""cop"",1.5,true,true,"""",""true"",5];  this addAction[localize""STR_MAR_Helicopter_Shop"",life_fnc_vehicleShopMenu,[""cop_air"",west,""cop_air_3"",""cop"",""TPD - South East District""]];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Air"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_air_3""; life_garage_type = ""Air"";  },"""",0,true,false,"""",'playerSide isEqualTo west',5];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store',5]; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
 						disableSimulation=1;
 					};
 					id=5753;
@@ -18558,7 +18558,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_3"",""cop"",""TPD - Air HQ""]];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_3""; life_garage_type = ""Car"";  },"""",0,false,false,"""",'playerSide isEqualTo west'];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
+						init="this enableSimulation false;  this allowDamage false;  this addAction[localize""STR_MAR_W_E_Vehicle Shop"",life_fnc_vehicleShopMenu,[""cop_car"",west,""cop_car_3"",""cop"",""TPD - Air HQ""]];  this addAction[localize""STR_Garage_Title"",  {   if (life_HC_isActive) then {    [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""HC_fnc_getVehicles"",HC_Life]; } else { [getPlayerUID player,playerSide,""Car"",player] remoteExecCall [""TON_fnc_getVehicles"",2];};   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_3""; life_garage_type = ""Car"";  },"""",0,true,false,"""",'playerSide isEqualTo west'];  this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,false,"""",'!life_garage_store']; this setObjectTextureGlobal [0,""textures\cop_uniform.jpg""];";
 						disableSimulation=1;
 					};
 					id=5758;
@@ -20585,7 +20585,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1396;
 			type="Land_Atm_02_F";
@@ -20632,7 +20632,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1398;
 			type="Land_Atm_02_F";
@@ -20679,7 +20679,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1400;
 			type="Land_Atm_02_F";
@@ -20725,7 +20725,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1402;
 			type="Land_Atm_02_F";
@@ -20771,7 +20771,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1404;
 			type="Land_Atm_02_F";
@@ -20817,7 +20817,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1406;
 			type="Land_Atm_02_F";
@@ -20864,7 +20864,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1410;
 			type="Land_Atm_02_F";
@@ -20910,7 +20910,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1412;
 			type="Land_Atm_02_F";
@@ -20956,7 +20956,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1414;
 			type="Land_Atm_02_F";
@@ -21002,7 +21002,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1416;
 			type="Land_Atm_02_F";
@@ -21049,7 +21049,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1418;
 			type="Land_Atm_02_F";
@@ -21096,7 +21096,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1420;
 			type="Land_Atm_02_F";
@@ -21142,7 +21142,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1422;
 			type="Land_Atm_02_F";
@@ -21188,7 +21188,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1424;
 			type="Land_Atm_02_F";
@@ -21234,7 +21234,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1426;
 			type="Land_Atm_02_F";
@@ -21281,7 +21281,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1428;
 			type="Land_Atm_02_F";
@@ -21328,7 +21328,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1430;
 			type="Land_Atm_02_F";
@@ -21374,7 +21374,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1432;
 			type="Land_Atm_02_F";
@@ -21420,7 +21420,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1434;
 			type="Land_Atm_02_F";
@@ -21467,7 +21467,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1436;
 			type="Land_Atm_02_F";
@@ -21513,7 +21513,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1438;
 			type="Land_Atm_02_F";
@@ -21560,7 +21560,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1440;
 			type="Land_Atm_02_F";
@@ -22572,7 +22572,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1993;
 			type="Land_Atm_02_F";
@@ -22619,7 +22619,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1995;
 			type="Land_Atm_02_F";
@@ -22666,7 +22666,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1997;
 			type="Land_Atm_02_F";
@@ -22713,7 +22713,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=1999;
 			type="Land_Atm_02_F";
@@ -22760,7 +22760,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=2001;
 			type="Land_Atm_02_F";
@@ -22816,7 +22816,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=2006;
 			type="Land_Atm_02_F";
@@ -22862,7 +22862,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=2008;
 			type="Land_Atm_02_F";
@@ -22909,7 +22909,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=2010;
 			type="Land_Atm_02_F";
@@ -22955,7 +22955,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=2012;
 			type="Land_Atm_02_F";
@@ -23001,7 +23001,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=2014;
 			type="Land_Atm_02_F";
@@ -23047,7 +23047,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=2016;
 			type="Land_Atm_02_F";
@@ -23093,7 +23093,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=2018;
 			type="Land_Atm_02_F";
@@ -23139,7 +23139,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=2020;
 			type="Land_Atm_02_F";
@@ -24777,7 +24777,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=4059;
 			type="Land_Atm_02_F";
@@ -24824,7 +24824,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,false,false,"""",' isNull objectParent player && player distance _target < 4 '];";
+				init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_NOTF_ATM"",life_fnc_atmMenu,"""",0,true,false,"""",' isNull objectParent player && player distance _target < 4 '];";
 			};
 			id=4061;
 			type="Land_Atm_02_F";
@@ -35428,7 +35428,7 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="this addAction[localize""STR_MAR_Open_Vault"",life_fnc_safeOpen,"""",0,false,false,"""",' playerSide isEqualTo civilian && {_target getVariable [""safe_open"",false]} '];  this addAction[localize""STR_MAR_Fix_Vault"",life_fnc_safeFix,"""",0,false,false,"""",' playerSide isEqualTo west && {_target getVariable [""safe_open"",false]} ' ];";
+				init="this addAction[localize""STR_MAR_Open_Vault"",life_fnc_safeOpen,"""",0,true,false,"""",' playerSide isEqualTo civilian && {_target getVariable [""safe_open"",false]} '];  this addAction[localize""STR_MAR_Fix_Vault"",life_fnc_safeFix,"""",0,true,false,"""",' playerSide isEqualTo west && {_target getVariable [""safe_open"",false]} ' ];";
 				name="fed_bank";
 				disableSimulation=1;
 			};
