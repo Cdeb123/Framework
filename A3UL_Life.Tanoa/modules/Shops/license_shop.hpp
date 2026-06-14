@@ -9,7 +9,7 @@ class life_license_shop {
     idd = LICENSE_SHOP_IDD;
     movingEnable = 0;
     enableSimulation = 1;
-    onLoad = "['dmv'] call life_fnc_licenseShopLoad";
+    onLoad = "[] spawn {uiSleep 0.01; [missionNamespace getVariable ['life_license_shop_type','DMV']] call life_fnc_licenseShopLoad;}";
 
     class controlsBackground {
         class Back: Life_RscText {

@@ -4,20 +4,22 @@
 */
 disableSerialization;
 params [
-    ["_shop",missionNamespace getVariable ["life_license_shop_type","dmv"],[""]]
+    ["_shop",missionNamespace getVariable ["life_license_shop_type","DMV"],[""]]
 ];
+if ((toLower _shop) isEqualTo "dmv") then {_shop = "DMV";};
 
 private _display = findDisplay 8400;
 if (isNull _display) exitWith {};
 
 private _shopCfg = missionConfigFile >> "Life_Shops" >> "LicenseShops" >> _shop;
-private _fallback = _shop isEqualTo "dmv";
+private _fallback = (toLower _shop) isEqualTo "dmv";
 if !(isClass _shopCfg || {_fallback}) exitWith {closeDialog 0;};
 life_license_shop_type = _shop;
 
 (_display displayCtrl 8404) ctrlSetText (["Department of Motor Vehicles",getText (_shopCfg >> "title")] select (isClass _shopCfg));
 (_display displayCtrl 8405) ctrlSetText (["Civil permits and transportation licenses",getText (_shopCfg >> "subtitle")] select (isClass _shopCfg));
 
+private _source = "module";
 private _licenseClasses = if (isClass (_shopCfg >> "Licenses")) then {
     "true" configClasses (_shopCfg >> "Licenses")
 } else {
@@ -25,6 +27,7 @@ private _licenseClasses = if (isClass (_shopCfg >> "Licenses")) then {
 };
 
 if (_licenseClasses isEqualTo [] && {_fallback}) then {
+    _source = "fallback";
     _licenseClasses = [
         ["driver","driver","STR_License_Driver",500,"civ","Required to legally operate standard road vehicles."],
         ["boat","boat","STR_License_Boat",1000,"civ","Required to legally operate civilian watercraft."],
@@ -74,8 +77,16 @@ lbClear 8401;
 } forEach _licenseClasses;
 
 if ((lbSize 8401) > 0) then {
+    (_display displayCtrl 8402) ctrlSetStructuredText parseText format [
+        "<t color='#7dcbd0'>Loaded %1 DMV licenses from %2.</t><br/>Select a license on the left.",
+        lbSize 8401,
+        _source
+    ];
     lbSetCurSel [8401,0];
 } else {
-    (_display displayCtrl 8402) ctrlSetStructuredText parseText "<t color='#dceaf0'>No licenses are configured for this shop.</t>";
+    (_display displayCtrl 8402) ctrlSetStructuredText parseText format [
+        "<t color='#dceaf0'>No licenses are configured for this shop.</t><br/><br/>Path checked:<br/>Life_Shops >> LicenseShops >> %1 >> Licenses",
+        _shop
+    ];
     (_display displayCtrl 8403) ctrlEnable false;
 };

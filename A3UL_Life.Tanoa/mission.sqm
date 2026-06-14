@@ -37876,7 +37876,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this allowDamage false; this enableSimulation false; this addAction[""Open License Shop"",life_fnc_openLicenseShop,""dmv"",0,true,true,"""",' playerSide isEqualTo civilian && {player distance _target < 5} ',5]; this setVariable [""realname"",""License Shop""];";
+				init="this allowDamage false; this enableSimulation false; this addAction[""Open License Shop"",life_fnc_openLicenseShop,""DMV"",0,true,true,"""",' playerSide isEqualTo civilian && {player distance _target < 5} ',5]; this setVariable [""realname"",""License Shop""];";
 				name="license_shop_2";
 			};
 			id=5784;
@@ -38218,7 +38218,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this allowDamage false; this enableSimulation false; this addAction[""Open License Shop"",life_fnc_openLicenseShop,""dmv"",0,true,true,"""",' playerSide isEqualTo civilian && {player distance _target < 5} ',5]; this setVariable [""realname"",""License Shop""];";
+				init="this allowDamage false; this enableSimulation false; this addAction[""Open License Shop"",life_fnc_openLicenseShop,""DMV"",0,true,true,"""",' playerSide isEqualTo civilian && {player distance _target < 5} ',5]; this setVariable [""realname"",""License Shop""];";
 				name="license_shop_4";
 			};
 			id=5803;
@@ -38237,7 +38237,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this allowDamage false; this enableSimulation false; this addAction[""Open License Shop"",life_fnc_openLicenseShop,""dmv"",0,true,true,"""",' playerSide isEqualTo civilian && {player distance _target < 5} ',5]; this setVariable [""realname"",""License Shop""];";
+				init="this allowDamage false; this enableSimulation false; this addAction[""Open License Shop"",life_fnc_openLicenseShop,""DMV"",0,true,true,"""",' playerSide isEqualTo civilian && {player distance _target < 5} ',5]; this setVariable [""realname"",""License Shop""];";
 				name="license_shop_1";
 			};
 			id=5804;
@@ -38255,7 +38255,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
-				init="this allowDamage false; this enableSimulation false; this addAction[""Open License Shop"",life_fnc_openLicenseShop,""dmv"",0,true,true,"""",' playerSide isEqualTo civilian && {player distance _target < 5} ',5]; this setVariable [""realname"",""License Shop""];";
+				init="this allowDamage false; this enableSimulation false; this addAction[""Open License Shop"",life_fnc_openLicenseShop,""DMV"",0,true,true,"""",' playerSide isEqualTo civilian && {player distance _target < 5} ',5]; this setVariable [""realname"",""License Shop""];";
 				name="license_shop_3";
 			};
 			id=5805;

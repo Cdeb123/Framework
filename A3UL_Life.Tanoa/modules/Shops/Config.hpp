@@ -1,6 +1,6 @@
 class Life_Shops {
     class LicenseShops {
-        class dmv {
+        class DMV {
             title = "Department of Motor Vehicles";
             subtitle = "Civil permits and transportation licenses";
 

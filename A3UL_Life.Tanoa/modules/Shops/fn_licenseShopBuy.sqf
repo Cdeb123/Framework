@@ -29,4 +29,4 @@ missionNamespace setVariable [_varName,true];
 [2] call SOCK_fnc_updatePartial;
 
 titleText [format [localize "STR_NOTF_B_1",_name,[_price] call life_fnc_numberText],"PLAIN"];
-[missionNamespace getVariable ["life_license_shop_type","dmv"]] call life_fnc_licenseShopLoad;
+[missionNamespace getVariable ["life_license_shop_type","DMV"]] call life_fnc_licenseShopLoad;
