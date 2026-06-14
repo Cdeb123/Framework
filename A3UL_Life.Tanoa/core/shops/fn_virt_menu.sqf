@@ -14,6 +14,9 @@ params [
 ];
 
 if (isNull _shopNPC || {_shopType isEqualTo ""}) exitWith {};
+if (isClass (missionConfigFile >> "Life_Shops" >> "ItemShops" >> _shopType)) exitWith {
+    _this call life_fnc_openItemShop;
+};
 
 private _shopSide = M_CONFIG(getText,"VirtualShops",_shopType,"side");
 

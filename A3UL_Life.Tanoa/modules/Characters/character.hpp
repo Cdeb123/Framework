@@ -256,37 +256,37 @@ class life_id_card {
         class Back: Life_RscText {
             idc = -1;
             colorBackground[] = {0.91,0.94,0.91,0.98};
-            x = 0.335 * safezoneW + safezoneX;
-            y = 0.315 * safezoneH + safezoneY;
-            w = 0.330 * safezoneW;
-            h = 0.205 * safezoneH;
+            x = 0.323 * safezoneW + safezoneX;
+            y = 0.285 * safezoneH + safezoneY;
+            w = 0.354 * safezoneW;
+            h = 0.326 * safezoneH;
         };
 
         class TopBand: Life_RscText {
             idc = -1;
             colorBackground[] = {0.02,0.12,0.16,1};
-            x = 0.335 * safezoneW + safezoneX;
-            y = 0.315 * safezoneH + safezoneY;
-            w = 0.330 * safezoneW;
+            x = 0.323 * safezoneW + safezoneX;
+            y = 0.285 * safezoneH + safezoneY;
+            w = 0.354 * safezoneW;
             h = 0.034 * safezoneH;
         };
 
         class Accent: Life_RscText {
             idc = -1;
             colorBackground[] = {0.00,0.55,0.62,1};
-            x = 0.335 * safezoneW + safezoneX;
-            y = 0.349 * safezoneH + safezoneY;
-            w = 0.330 * safezoneW;
+            x = 0.323 * safezoneW + safezoneX;
+            y = 0.319 * safezoneH + safezoneY;
+            w = 0.354 * safezoneW;
             h = 0.005 * safezoneH;
         };
 
         class PhotoBack: Life_RscText {
             idc = -1;
             colorBackground[] = {0.78,0.82,0.80,1};
-            x = 0.352 * safezoneW + safezoneX;
-            y = 0.370 * safezoneH + safezoneY;
-            w = 0.072 * safezoneW;
-            h = 0.105 * safezoneH;
+            x = 0.340 * safezoneW + safezoneX;
+            y = 0.340 * safezoneH + safezoneY;
+            w = 0.078 * safezoneW;
+            h = 0.118 * safezoneH;
         };
     };
 
@@ -294,10 +294,10 @@ class life_id_card {
         class Face: Life_RscPictureKeepAspect {
             idc = 7901;
             text = "";
-            x = 0.356 * safezoneW + safezoneX;
-            y = 0.374 * safezoneH + safezoneY;
-            w = 0.064 * safezoneW;
-            h = 0.097 * safezoneH;
+            x = 0.344 * safezoneW + safezoneX;
+            y = 0.345 * safezoneH + safezoneY;
+            w = 0.070 * safezoneW;
+            h = 0.108 * safezoneH;
         };
 
         class Header: Life_RscText {
@@ -306,26 +306,26 @@ class life_id_card {
             colorText[] = {0.92,0.98,0.98,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.025;
-            x = 0.350 * safezoneW + safezoneX;
-            y = 0.318 * safezoneH + safezoneY;
+            x = 0.338 * safezoneW + safezoneX;
+            y = 0.288 * safezoneH + safezoneY;
             w = 0.210 * safezoneW;
             h = 0.030 * safezoneH;
         };
 
         class Body: Life_RscStructuredText {
             idc = 7903;
-            x = 0.435 * safezoneW + safezoneX;
-            y = 0.365 * safezoneH + safezoneY;
-            w = 0.210 * safezoneW;
-            h = 0.095 * safezoneH;
+            x = 0.428 * safezoneW + safezoneX;
+            y = 0.336 * safezoneH + safezoneY;
+            w = 0.230 * safezoneW;
+            h = 0.134 * safezoneH;
         };
 
         class Records: Life_RscStructuredText {
             idc = 7904;
-            x = 0.352 * safezoneW + safezoneX;
-            y = 0.480 * safezoneH + safezoneY;
-            w = 0.250 * safezoneW;
-            h = 0.033 * safezoneH;
+            x = 0.340 * safezoneW + safezoneX;
+            y = 0.468 * safezoneH + safezoneY;
+            w = 0.318 * safezoneW;
+            h = 0.103 * safezoneH;
         };
 
         class CloseButton: Life_RscButtonMenu {
@@ -333,9 +333,9 @@ class life_id_card {
             text = "Close";
             onButtonClick = "closeDialog 0";
             x = 0.604 * safezoneW + safezoneX;
-            y = 0.480 * safezoneH + safezoneY;
-            w = 0.045 * safezoneW;
-            h = 0.028 * safezoneH;
+            y = 0.582 * safezoneH + safezoneY;
+            w = 0.054 * safezoneW;
+            h = 0.024 * safezoneH;
         };
     };
 };

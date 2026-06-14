@@ -307,6 +307,16 @@ class Life_Client_Core {
     class Module_Shops {
         file = "modules\Shops";
         class applyLicenseAction {};
+        class civVehicleShopBuy {};
+        class civVehicleShopCategory {};
+        class civVehicleShopLoad {};
+        class civVehicleShopReturn {};
+        class civVehicleShopSelect {};
+        class civVehicleShopStore {};
+        class itemShopBuy {};
+        class itemShopCategory {};
+        class itemShopLoad {};
+        class itemShopSelect {};
         class leoVehicleShopBuy {};
         class leoVehicleShopCategory {};
         class leoVehicleShopLoad {};
@@ -318,6 +328,8 @@ class Life_Client_Core {
         class licenseShopBuy {};
         class licenseShopLoad {};
         class licenseShopSelect {};
+        class openCivVehicleShop {};
+        class openItemShop {};
         class openLEOVehicleShop {};
         class openLicenseAdmin {};
         class openLicenseShop {};

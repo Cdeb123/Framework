@@ -221,6 +221,110 @@ class Life_Shops {
                     };
                 };
             };
+
+            class rebel {
+                legacyShop = "rebel";
+                title = "Rebel Trader";
+                subtitle = "Restricted weapons and field equipment";
+                side = "civ";
+                condition = "";
+                requiredLicense = "rebel";
+                requiredLicenseSide = "civ";
+
+                class License {
+                    variable = "rebel";
+                    displayName = "STR_License_Rebel";
+                    price = 75000;
+                    side = "civ";
+                    text = "Required before accessing rebel weapons, vehicles, and restricted black-market supplies.";
+                };
+
+                class Categories {
+                    class rifles {
+                        title = "Rifles";
+                        description = "Restricted rebel long guns. Modded weapons can be added to Config_Weapons.hpp class rebel items[].";
+                        legacyShop = "rebel";
+                        legacyArray = "items";
+                    };
+                    class magazines {
+                        title = "Magazines";
+                        description = "Ammunition magazines for rebel firearms.";
+                        legacyShop = "rebel";
+                        legacyArray = "mags";
+                    };
+                    class attachments {
+                        title = "Attachments";
+                        description = "Optics and accessories for rebel weapons.";
+                        legacyShop = "rebel";
+                        legacyArray = "accs";
+                    };
+                };
+            };
+
+            class gang {
+                legacyShop = "gang";
+                title = "Crime Base Armory";
+                subtitle = "Gang firearms and low-profile weapons";
+                side = "civ";
+                condition = "";
+                requiredLicense = "";
+                requiredLicenseSide = "civ";
+
+                class Categories {
+                    class sidearms {
+                        title = "Street Weapons";
+                        description = "Gang-accessible firearms. Modded weapons can be added to Config_Weapons.hpp class gang items[].";
+                        legacyShop = "gang";
+                        legacyArray = "items";
+                    };
+                    class magazines {
+                        title = "Magazines";
+                        description = "Ammunition magazines for gang firearms.";
+                        legacyShop = "gang";
+                        legacyArray = "mags";
+                    };
+                    class attachments {
+                        title = "Attachments";
+                        description = "Low-profile attachments and optics.";
+                        legacyShop = "gang";
+                        legacyArray = "accs";
+                    };
+                };
+            };
+
+            class genstore {
+                legacyShop = "genstore";
+                title = "General Store";
+                subtitle = "Navigation, medical, and utility equipment";
+                side = "civ";
+                condition = "";
+                requiredLicense = "";
+                requiredLicenseSide = "civ";
+
+                class Categories {
+                    class utility {
+                        title = "Utility";
+                        description = "General-use legal equipment from Config_Weapons.hpp class genstore.";
+                        legacyShop = "genstore";
+                        legacyArray = "items";
+                    };
+                };
+            };
+
+            class f_station_store: genstore {
+                legacyShop = "f_station_store";
+                title = "Fuel Station Store";
+                subtitle = "Roadside equipment and travel supplies";
+
+                class Categories {
+                    class utility {
+                        title = "Travel Utility";
+                        description = "Fuel station utility stock from Config_Weapons.hpp class f_station_store.";
+                        legacyShop = "f_station_store";
+                        legacyArray = "items";
+                    };
+                };
+            };
         };
 
         class LawEnforcement {
@@ -511,6 +615,156 @@ class Life_Shops {
     };
 
     class VehicleShops {
+        class Civilian {
+            class civ_car {
+                legacyShop = "civ_car";
+                title = "Tanoa Auto Gallery";
+                subtitle = "Civilian road vehicles with purchase, rental, return, and storage service";
+                side = "civ";
+                condition = "";
+                requiredLicense = "driver";
+                shopFlag = "civ";
+                allowRent = 1;
+                allowReturn = 1;
+                allowStore = 1;
+
+                class Categories {
+                    class cars {
+                        title = "Cars and Utility";
+                        description = "Daily drivers and utility platforms for civilian life.";
+                        legacyVehicles = "civ_car";
+                        features[] = {"Purchase or short-term rental","Civilian registration","Shop-point vehicle storage"};
+                    };
+                };
+            };
+
+            class kart_shop {
+                legacyShop = "kart_shop";
+                title = "Kart Center";
+                subtitle = "Recreational kart rentals and purchases";
+                side = "civ";
+                condition = "";
+                requiredLicense = "driver";
+                shopFlag = "civ";
+                allowRent = 1;
+                allowReturn = 1;
+                allowStore = 1;
+
+                class Categories {
+                    class karts {
+                        title = "Karts";
+                        description = "Light recreational vehicles.";
+                        legacyVehicles = "kart_shop";
+                        features[] = {"Low cost rental","Track-friendly handling","Small storage footprint"};
+                    };
+                };
+            };
+
+            class civ_truck {
+                legacyShop = "civ_truck";
+                title = "Commercial Truck Center";
+                subtitle = "Cargo platforms for legal transport and industry";
+                side = "civ";
+                condition = "";
+                requiredLicense = "trucking";
+                shopFlag = "civ";
+                allowRent = 1;
+                allowReturn = 1;
+                allowStore = 1;
+
+                class Categories {
+                    class trucks {
+                        title = "Commercial Trucks";
+                        description = "Cargo, box, covered, and fuel-capable trucks.";
+                        legacyVehicles = "civ_truck";
+                        features[] = {"High storage capacity","Commercial license required","Rental or ownership options"};
+                    };
+                };
+            };
+
+            class civ_air {
+                legacyShop = "civ_air";
+                title = "Civil Aviation Sales";
+                subtitle = "Aircraft for certified civilian pilots";
+                side = "civ";
+                condition = "";
+                requiredLicense = "pilot";
+                shopFlag = "civ";
+                allowRent = 1;
+                allowReturn = 1;
+                allowStore = 1;
+
+                class Categories {
+                    class aircraft {
+                        title = "Aircraft";
+                        description = "Light aircraft and helicopters.";
+                        legacyVehicles = "civ_air";
+                        features[] = {"Pilot license required","Air-capable spawn points","Rental or ownership options"};
+                    };
+                };
+            };
+
+            class civ_ship {
+                legacyShop = "civ_ship";
+                title = "Maritime Dealer";
+                subtitle = "Watercraft for certified boat operators";
+                side = "civ";
+                condition = "";
+                requiredLicense = "boat";
+                shopFlag = "civ";
+                allowRent = 1;
+                allowReturn = 1;
+                allowStore = 1;
+
+                class Categories {
+                    class boats {
+                        title = "Watercraft";
+                        description = "Civilian boats and water transport.";
+                        legacyVehicles = "civ_ship";
+                        features[] = {"Boat license required","Water spawn point service","Rental or ownership options"};
+                    };
+                };
+            };
+
+            class reb_car {
+                legacyShop = "reb_car";
+                title = "Rebel Trader Motor Yard";
+                subtitle = "Restricted rebel vehicles and off-grid transport";
+                side = "civ";
+                condition = "";
+                requiredLicense = "rebel";
+                shopFlag = "civ";
+                allowRent = 0;
+                allowReturn = 0;
+                allowStore = 1;
+
+                class Categories {
+                    class rebel {
+                        title = "Rebel Vehicles";
+                        description = "Restricted vehicles for licensed rebel access.";
+                        legacyVehicles = "reb_car";
+                        features[] = {"Rebel license required","Ownership only","Supports modded classnames in Config_Vehicles.hpp"};
+                    };
+                };
+            };
+
+            class crime_vehicle: reb_car {
+                legacyShop = "reb_car";
+                title = "Crime Base Motor Pool";
+                subtitle = "Gang transport and off-road vehicles";
+                requiredLicense = "";
+
+                class Categories {
+                    class gang {
+                        title = "Gang Vehicles";
+                        description = "Crime Base vehicles using the rebel vehicle pool until custom gang vehicles are configured.";
+                        legacyVehicles = "reb_car";
+                        features[] = {"Gang access","Ownership only","Ready for modded vehicle classnames"};
+                    };
+                };
+            };
+        };
+
         class LawEnforcement {
             class cop_car {
                 legacyShop = "cop_car";
@@ -703,6 +957,260 @@ class Life_Shops {
                             };
                         };
                     };
+                };
+            };
+        };
+    };
+
+    class ItemShops {
+        class market {
+            title = "Island Market";
+            subtitle = "Food, drinks, tools, and everyday supplies";
+            side = "civ";
+            condition = "";
+            requiredLicense = "";
+            requiredLicenseSide = "civ";
+
+            class Categories {
+                class supplies {
+                    title = "Market Goods";
+                    taxCategory = "";
+                    legacyVirtual = "market";
+                };
+            };
+        };
+
+        class med_market {
+            title = "Medical Market";
+            subtitle = "Responder supplies and recovery equipment";
+            side = "med";
+            condition = "";
+
+            class Categories {
+                class supplies {
+                    title = "Medical Supplies";
+                    taxCategory = "";
+                    legacyVirtual = "med_market";
+                };
+            };
+        };
+
+        class f_station_coffee {
+            title = "Fuel Station Market";
+            subtitle = "Roadside supplies, drinks, and tools";
+            side = "";
+            condition = "";
+
+            class Categories {
+                class travel {
+                    title = "Travel Supplies";
+                    taxCategory = "";
+                    legacyVirtual = "f_station_coffee";
+                };
+            };
+        };
+
+        class coffee {
+            title = "Coffee Stand";
+            subtitle = "Drinks and quick food";
+            side = "civ";
+            condition = "";
+
+            class Categories {
+                class food {
+                    title = "Food and Drinks";
+                    taxCategory = "food";
+                    legacyVirtual = "coffee";
+                };
+            };
+        };
+
+        class rebel {
+            title = "Rebel Trader";
+            subtitle = "Restricted supplies, field gear, and black-market tools";
+            side = "civ";
+            condition = "";
+            requiredLicense = "rebel";
+            requiredLicenseSide = "civ";
+
+            class License {
+                variable = "rebel";
+                displayName = "STR_License_Rebel";
+                price = 75000;
+                side = "civ";
+                text = "Required before accessing rebel weapons, vehicles, clothing, and restricted supplies.";
+            };
+
+            class Categories {
+                class supplies {
+                    title = "Restricted Supplies";
+                    taxCategory = "";
+                    legacyVirtual = "rebel";
+                };
+                class uniforms {
+                    title = "Rebel Clothing";
+                    taxCategory = "clothing";
+                    legacyClothing = "reb";
+                    legacySection = "uniforms";
+                };
+                class headgear {
+                    title = "Headgear";
+                    taxCategory = "clothing";
+                    legacyClothing = "reb";
+                    legacySection = "headgear";
+                };
+                class vests {
+                    title = "Vests";
+                    taxCategory = "clothing";
+                    legacyClothing = "reb";
+                    legacySection = "vests";
+                };
+                class backpacks {
+                    title = "Backpacks";
+                    taxCategory = "clothing";
+                    legacyClothing = "reb";
+                    legacySection = "backpacks";
+                };
+            };
+        };
+
+        class gang {
+            title = "Crime Base";
+            subtitle = "Gang supplies, tools, clothing, and street equipment";
+            side = "civ";
+            condition = "";
+            requiredLicense = "";
+            requiredLicenseSide = "civ";
+
+            class Categories {
+                class supplies {
+                    title = "Crime Supplies";
+                    taxCategory = "";
+                    legacyVirtual = "gang";
+                };
+                class clothing {
+                    title = "Gang Clothing";
+                    taxCategory = "clothing";
+                    legacyClothing = "gang_clothing";
+                    legacySection = "vests";
+                };
+                class backpacks {
+                    title = "Backpacks";
+                    taxCategory = "clothing";
+                    legacyClothing = "bruce";
+                    legacySection = "backpacks";
+                };
+            };
+        };
+
+        class bruce {
+            title = "Bruce's Outfits";
+            subtitle = "Civilian clothing, bags, hats, and accessories";
+            side = "civ";
+            condition = "";
+
+            class Categories {
+                class uniforms {
+                    title = "Clothing";
+                    taxCategory = "clothing";
+                    legacyClothing = "bruce";
+                    legacySection = "uniforms";
+                };
+                class headgear {
+                    title = "Hats";
+                    taxCategory = "clothing";
+                    legacyClothing = "bruce";
+                    legacySection = "headgear";
+                };
+                class goggles {
+                    title = "Glasses";
+                    taxCategory = "clothing";
+                    legacyClothing = "bruce";
+                    legacySection = "goggles";
+                };
+                class vests {
+                    title = "Vests";
+                    taxCategory = "clothing";
+                    legacyClothing = "bruce";
+                    legacySection = "vests";
+                };
+                class backpacks {
+                    title = "Backpacks";
+                    taxCategory = "clothing";
+                    legacyClothing = "bruce";
+                    legacySection = "backpacks";
+                };
+            };
+        };
+
+        class dive: bruce {
+            title = "Diving Outfitters";
+            subtitle = "Licensed diving suits and water equipment";
+            condition = "license_civ_dive";
+
+            class Categories {
+                class uniforms {
+                    title = "Wetsuits";
+                    taxCategory = "clothing";
+                    legacyClothing = "dive";
+                    legacySection = "uniforms";
+                };
+                class goggles {
+                    title = "Diving Goggles";
+                    taxCategory = "clothing";
+                    legacyClothing = "dive";
+                    legacySection = "goggles";
+                };
+                class vests {
+                    title = "Rebreathers";
+                    taxCategory = "clothing";
+                    legacyClothing = "dive";
+                    legacySection = "vests";
+                };
+            };
+        };
+
+        class reb: rebel {
+            title = "Rebel Clothing";
+            subtitle = "Restricted rebel outfits and equipment";
+        };
+
+        class gang_clothing: gang {
+            title = "Crime Base Clothing";
+            subtitle = "Gang clothing and concealment gear";
+        };
+
+        class kart: bruce {
+            title = "Kart Gear";
+            subtitle = "Racing outfits and kart accessories";
+
+            class Categories {
+                class uniforms {
+                    title = "Kart Suits";
+                    taxCategory = "clothing";
+                    legacyClothing = "kart";
+                    legacySection = "uniforms";
+                };
+                class headgear {
+                    title = "Racing Helmets";
+                    taxCategory = "clothing";
+                    legacyClothing = "kart";
+                    legacySection = "headgear";
+                };
+            };
+        };
+
+        class cop {
+            title = "Department Supply";
+            subtitle = "Law enforcement field supplies";
+            side = "cop";
+            condition = "";
+
+            class Categories {
+                class supplies {
+                    title = "Department Supplies";
+                    taxCategory = "";
+                    legacyVirtual = "cop";
                 };
             };
         };

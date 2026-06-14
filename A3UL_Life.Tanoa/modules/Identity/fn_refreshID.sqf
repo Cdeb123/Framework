@@ -36,7 +36,7 @@ if (playerSide isEqualTo west) then {
         player setVariable ["leoBadgeNumber",_badge,true];
     };
     _factionText = format [
-        "<br/><t color='#00c7eb'>Faction Credential</t><br/>%1<br/>%2 | %3<br/>Badge #%4<br/>Aviation: %5 | Maritime: %6",
+        "<br/><t color='#006776' size='0.72'>Faction:</t> <t color='#050505' size='0.68'>%1 | %2 | %3 | #%4 | Air %5 | Sea %6</t>",
         missionNamespace getVariable ["life_leo_department_display","Law Enforcement"],
         missionNamespace getVariable ["life_leo_rank_display","Officer"],
         missionNamespace getVariable ["life_leo_primary_subdivision","Patrol"],
@@ -56,7 +56,7 @@ if (missionNamespace getVariable ["life_effect_drunk",false]) then {_statuses pu
 private _statusText = if ((count _statuses) > 0) then {_statuses joinString ", "} else {"Clear"};
 
 (_display displayCtrl 7903) ctrlSetStructuredText parseText format [
-    "<t color='#dceaf0'>Name</t><br/>%1<br/><br/><t color='#dceaf0'>DOB</t><br/>%2<br/><br/><t color='#dceaf0'>Character ID</t><br/>%3<br/><br/><t color='#dceaf0'>Political Status</t><br/>%4",
+    "<t color='#173039' size='0.76'>NAME</t><br/><t color='#050505' size='0.94'>%1</t><br/><t color='#173039' size='0.76'>DOB</t> <t color='#050505' size='0.88'>%2</t><br/><t color='#173039' size='0.76'>ID</t> <t color='#050505' size='0.78'>%3</t><br/><t color='#173039' size='0.76'>STATUS</t> <t color='#050505' size='0.78'>%4</t>",
     _name,
     _dob,
     _charUID,
@@ -64,7 +64,7 @@ private _statusText = if ((count _statuses) > 0) then {_statuses joinString ", "
 ];
 
 (_display displayCtrl 7904) ctrlSetStructuredText parseText format [
-    "<t color='#00c7eb'>Licenses</t><br/>%1%6<br/><t color='#00c7eb'>Legal</t><br/>Citations: %2 | Warrants: %3<br/><t color='#00c7eb'>Special Status</t><br/>%4<br/><t color='#647780'>Background:</t> %5",
+    "<t color='#173039' size='0.72'>Licenses:</t> <t color='#050505' size='0.66'>%1</t>%6<br/><t color='#173039' size='0.72'>Legal:</t> <t color='#050505' size='0.66'>Citations %2 | Warrants %3</t><br/><t color='#173039' size='0.72'>Status:</t> <t color='#050505' size='0.66'>%4</t><br/><t color='#173039' size='0.72'>Background:</t> <t color='#050505' size='0.62'>%5</t>",
     _licenseText,
     _citations,
     _warrants,

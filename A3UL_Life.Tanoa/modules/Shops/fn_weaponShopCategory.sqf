@@ -39,6 +39,30 @@ if (_type isEqualTo "license") exitWith {
 private _categoryCfg = _shopCfg >> "Categories" >> _category;
 if !(isClass _categoryCfg) exitWith {};
 
+private _legacyShop = getText (_categoryCfg >> "legacyShop");
+private _legacyArray = getText (_categoryCfg >> "legacyArray");
+if !(_legacyShop isEqualTo "") then {
+    {
+        _x params [
+            ["_className","",[""]],
+            ["_nickname","",[""]],
+            ["_buyPrice",0,[0]],
+            ["_sellPrice",-1,[0]],
+            ["_condition","",[""]]
+        ];
+        private _info = [_className] call life_fnc_fetchCfgDetails;
+        private _displayName = _nickname;
+        if (_displayName isEqualTo "" && {!(_info isEqualTo [])}) then {_displayName = _info select 1;};
+        if (_displayName isEqualTo "") then {_displayName = _className;};
+        if ((_displayName find "STR_") isEqualTo 0) then {_displayName = localize _displayName;};
+
+        private _access = [_condition] call life_fnc_levelCheck;
+        private _idx = lbAdd [8704,format ["%1    $%2",_displayName,[_buyPrice] call life_fnc_numberText]];
+        lbSetData [8704,_idx,str [_className,_nickname,_buyPrice,_sellPrice,_condition,getText (_categoryCfg >> "description"),_category,getText (_categoryCfg >> "title")]];
+        lbSetColor [8704,_idx,[[0.95,0.78,0.42,1],[0.92,0.96,0.96,1]] select _access];
+    } forEach getArray (missionConfigFile >> "WeaponShops" >> _legacyShop >> _legacyArray);
+};
+
 {
     private _className = getText (_x >> "className");
     private _nickname = getText (_x >> "nickname");

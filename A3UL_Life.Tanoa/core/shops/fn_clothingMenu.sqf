@@ -11,6 +11,9 @@
 params ["","","",["_shop","",[""]]];
 
 if (_shop isEqualTo "") exitWith {};
+if (isClass (missionConfigFile >> "Life_Shops" >> "ItemShops" >> _shop)) exitWith {
+    _this call life_fnc_openItemShop;
+};
 if !(isNull objectParent player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
 
 /* License check & config validation */

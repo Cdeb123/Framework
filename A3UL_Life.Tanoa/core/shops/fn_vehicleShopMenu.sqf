@@ -28,6 +28,12 @@ if (playerSide isEqualTo west) then {
 };
 if (_useModernLEOShop) exitWith {_this call life_fnc_openLEOVehicleShop;};
 
+private _useModernCivShop = false;
+if (playerSide isEqualTo civilian) then {
+    _useModernCivShop = isClass (missionConfigFile >> "Life_Shops" >> "VehicleShops" >> "Civilian" >> _shop);
+};
+if (_useModernCivShop) exitWith {_this call life_fnc_openCivVehicleShop;};
+
 if (!(_sideCheck isEqualTo sideUnknown) && {!(playerSide isEqualTo _sideCheck)}) exitWith {hint localize "STR_Shop_Veh_NotAllowed"};
 
 private _conditions = M_CONFIG(getText,"CarShops",_shop,"conditions");

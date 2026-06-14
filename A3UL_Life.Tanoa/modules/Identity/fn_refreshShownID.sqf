@@ -22,15 +22,15 @@ if !(_faceTexture isEqualTo "") then {
 };
 
 (_display displayCtrl 7912) ctrlSetStructuredText parseText format [
-    "<t color='#173039' size='0.92'>Name</t><br/><t color='#050505' size='1.02'>%1</t><br/><t color='#173039' size='0.92'>DOB</t> <t color='#050505'>%2</t><br/><t color='#173039' size='0.92'>ID</t> <t color='#050505'>%3</t>",
+    "<t color='#173039' size='0.76'>NAME</t><br/><t color='#050505' size='0.94'>%1</t><br/><t color='#173039' size='0.76'>DOB</t> <t color='#050505' size='0.88'>%2</t><br/><t color='#173039' size='0.76'>ID</t> <t color='#050505' size='0.78'>%3</t>",
     _name,
     _dob,
     _charUID
 ];
 
-private _factionText = if (_faction isEqualTo "") then {""} else {format [" | %1",_faction]};
+private _factionText = if (_faction isEqualTo "") then {""} else {format ["<br/><t color='#006776' size='0.68'>Faction:</t> <t color='#050505' size='0.62'>%1</t>",_faction]};
 (_display displayCtrl 7913) ctrlSetStructuredText parseText format [
-    "<t color='#173039' size='0.82'>Licenses:</t> <t color='#050505' size='0.82'>%1%2</t>",
+    "<t color='#173039' size='0.72'>Licenses:</t> <t color='#050505' size='0.66'>%1</t>%2",
     _licenses,
     _factionText
 ];
