@@ -31,3 +31,4 @@
 #include "character.hpp"
 #include "leo_terminals.hpp"
 #include "door_keypad.hpp"
+#include "radial_menu.hpp"

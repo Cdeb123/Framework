@@ -202,6 +202,7 @@ class Life_Client_Core {
         class handleInv {};
         class handleItem {};
         class hasPermission {};
+        class hasNearbyInteractionCategory {};
         class hideObj {};
         class hudSetup {};
         class hudUpdate {};
@@ -231,6 +232,7 @@ class Life_Client_Core {
         class loadDeadGear {};
         class loadGear {};
         class nearATM {};
+        class nearbyInteractionActions {};
         class nearestBuildingDoor {};
         class nearestDoor {};
         class nearUnits {};
@@ -241,6 +243,7 @@ class Life_Client_Core {
         class openDoorKeypad {};
         class openLEOCommandTerminal {};
         class openLEOTrainingTerminal {};
+        class openRadialMenu {};
         class playerSkins {};
         class playerTags {};
         class postNewsBroadcast {};
@@ -248,6 +251,10 @@ class Life_Client_Core {
         class pushObject {};
         class receiveItem {};
         class receiveMoney {};
+        class radialMenuExecute {};
+        class radialMenuKey {};
+        class radialMenuLoad {};
+        class radialMenuPage {};
         class revealObjects {};
         class refreshID {};
         class saveGear {};
