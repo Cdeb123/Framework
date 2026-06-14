@@ -51,6 +51,7 @@ lbClear 8207;
 } forEach ["Candidate","Academy","Ride Along","Released to Patrol","Remedial","Removed"];
 lbSetCurSel [8207,0];
 
-private _canEdit = ["leo.training.edit"] call life_fnc_hasPermission;
+private _canEdit = (["leo.training.edit"] call life_fnc_hasPermission) || {["leo.training.fto"] call life_fnc_hasPermission};
+private _canRoster = _canEdit || {["leo.training.roster"] call life_fnc_hasPermission};
 (_display displayCtrl 8211) ctrlEnable _canEdit;
-(_display displayCtrl 8212) ctrlEnable _canEdit;
+(_display displayCtrl 8212) ctrlEnable _canRoster;

@@ -26,7 +26,13 @@ if (_owner) then {
             "leo.command.hire",
             "leo.command.fire",
             "leo.command.permissions",
+            "leo.command.ranks",
+            "leo.command.divisions",
+            "leo.command.roles",
+            "leo.command.documents",
+            "leo.command.executive",
             "leo.command.owner",
+            "leo.department.oversight",
             "leo.training.view",
             "leo.training.edit",
             "leo.training.roster",
@@ -108,4 +114,5 @@ if (!_firstSet) then {
 player setVariable ["leoDepartment",life_leo_department,true];
 player setVariable ["leoRank",life_leo_rank,true];
 player setVariable ["leoRankDisplay",life_leo_rank_display,true];
+player setVariable ["leoPrimarySubdivision",life_leo_primary_subdivision,true];
 player setVariable ["leoSubdivisions",life_leo_subdivisions,true];

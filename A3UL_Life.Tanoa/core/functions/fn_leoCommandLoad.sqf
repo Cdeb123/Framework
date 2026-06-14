@@ -24,5 +24,20 @@ private _defaultIndex = 0;
 } forEach ("true" configClasses (missionConfigFile >> "Life_LEO" >> "Departments"));
 lbSetCurSel [8102,_defaultIndex];
 
+lbClear 8123;
+{
+    _x params [
+        ["_id",0,[0]],
+        ["_department","",[""]],
+        ["_title","",[""]],
+        ["_body","",[""]],
+        ["_createdBy","",[""]],
+        ["_createdAt","",[""]]
+    ];
+    private _idx = lbAdd [8123,format ["%1 | %2",_department,_title]];
+    lbSetData [8123,_idx,str _x];
+} forEach (missionNamespace getVariable ["life_leo_command_docs",[]]);
+if ((lbSize 8123) > 0) then {lbSetCurSel [8123,0]; [] call life_fnc_leoCommandSelectDocument;};
+
 [] call life_fnc_leoCommandLoadDepartment;
 [] call life_fnc_leoCommandSelectPlayer;

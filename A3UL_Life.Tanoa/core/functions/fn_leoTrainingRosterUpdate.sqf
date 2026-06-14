@@ -3,7 +3,7 @@
     File: fn_leoTrainingRosterUpdate.sqf
 */
 disableSerialization;
-if !(["leo.training.edit"] call life_fnc_hasPermission) exitWith {hint "You only have view access to the training terminal.";};
+if (!((["leo.training.edit"] call life_fnc_hasPermission) || {["leo.training.fto"] call life_fnc_hasPermission} || {["leo.training.roster"] call life_fnc_hasPermission})) exitWith {hint "You only have view access to the training terminal.";};
 
 private _display = findDisplay 8200;
 if (isNull _display) exitWith {};

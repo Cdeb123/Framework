@@ -10,6 +10,11 @@ if (isNull _display) exitWith {};
 
 private _targetUid = ctrlText (_display displayCtrl 8113);
 private _characterUid = ctrlText (_display displayCtrl 8114);
+if (_targetUid isEqualTo "" && {(lbCurSel 8101) >= 0}) then {
+    private _data = call compile (lbData [8101,lbCurSel 8101]);
+    _targetUid = _data select 0;
+    _characterUid = _data select 2;
+};
 if (_targetUid isEqualTo "") exitWith {hint "Select an online player or enter a Steam ID.";};
 if (_characterUid isEqualTo "") then {_characterUid = _targetUid;};
 

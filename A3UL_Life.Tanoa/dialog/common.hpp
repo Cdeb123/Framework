@@ -62,9 +62,9 @@ class Life_Checkbox
 
 class Life_RscScrollBar
 {
-    color[] = {1,1,1,0.6};
-    colorActive[] = {1,1,1,1};
-    colorDisabled[] = {1,1,1,0.3};
+    color[] = {0.35,0.88,1,0.65};
+    colorActive[] = {0.35,0.88,1,1};
+    colorDisabled[] = {1,1,1,0.18};
     thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
     arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
     arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
@@ -404,13 +404,13 @@ class Life_RscButtonMenu : Life_RscShortcutButton {
     animTextureFocused = "#(argb,8,8,3)color(1,1,1,1)";
     animTexturePressed = "#(argb,8,8,3)color(1,1,1,1)";
     animTextureDefault = "#(argb,8,8,3)color(1,1,1,1)";
-    colorBackground[] = {0,0,0,0.8};
-    colorBackgroundFocused[] = {1,1,1,1};
-    colorBackground2[] = {0.75,0.75,0.75,1};
-    color[] = {1,1,1,1};
-    colorFocused[] = {0,0,0,1};
-    color2[] = {0,0,0,1};
-    colorText[] = {1,1,1,1};
+    colorBackground[] = {0.035,0.055,0.070,0.96};
+    colorBackgroundFocused[] = {0.0,0.60,0.78,0.96};
+    colorBackground2[] = {0.0,0.76,0.92,0.95};
+    color[] = {0.93,0.98,1,1};
+    colorFocused[] = {1,1,1,1};
+    color2[] = {0.93,0.98,1,1};
+    colorText[] = {0.93,0.98,1,1};
     colorDisabled[] = {1,1,1,0.25};
     period = 1.2;
     periodFocus = 1.2;
@@ -429,9 +429,9 @@ class Life_RscButtonMenu : Life_RscShortcutButton {
     };
     class Attributes
     {
-        font = "RobotoCondensedLight";
-        color = "#E5E5E5";
-        align = "left";
+        font = "RobotoCondensed";
+        color = "#EFFBFF";
+        align = "center";
         shadow = "false";
     };
     class ShortcutPos
@@ -521,7 +521,7 @@ class Life_RscCheckbox {
     colorBackground[] = {0, 0, 1, 1};
     colorTextSelect[] = {0, 0.8, 0, 1};
     colorSelectedBg[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
-    colorSelect[] = {0, 0, 0, 1};
+    colorSelect[] = {0.95, 0.99, 1, 1};
     colorTextDisable[] = {0.4, 0.4, 0.4, 1};
     colorDisable[] = {0.4, 0.4, 0.4, 1};
     font = "RobotoCondensed";
@@ -555,13 +555,13 @@ class Life_RscListBox
     w = 0.275;
     h = 0.04;
     font = "RobotoCondensed";
-    colorSelect[] = {1, 1, 1, 1};
-    colorText[] = {1, 1, 1, 1};
-    colorBackground[] = {0.28,0.28,0.28,0.28};
-    colorSelect2[] = {1, 1, 1, 1};
-    colorSelectBackground[] = {0.95, 0.95, 0.95, 0.5};
-    colorSelectBackground2[] = {1, 1, 1, 0.5};
-    colorScrollbar[] = {0.2, 0.2, 0.2, 1};
+    colorSelect[] = {0.95, 0.99, 1, 1};
+    colorText[] = {0.88, 0.94, 0.98, 1};
+    colorBackground[] = {0.035,0.050,0.065,0.82};
+    colorSelect2[] = {0.95, 0.99, 1, 1};
+    colorSelectBackground[] = {0.0, 0.58, 0.76, 0.72};
+    colorSelectBackground2[] = {0.0, 0.72, 0.90, 0.86};
+    colorScrollbar[] = {0.25, 0.82, 0.95, 1};
     colorPicture[] = {1,1,1,1};
     colorPictureSelected[] = {1,1,1,1};
     colorPictureDisabled[] = {1,1,1,1};
@@ -569,10 +569,10 @@ class Life_RscListBox
     arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
     wholeHeight = 0.45;
     rowHeight = 0.04;
-    color[] = {0.7, 0.7, 0.7, 1};
-    colorActive[] = {0,0,0,1};
-    colorDisabled[] = {0,0,0,0.3};
-    sizeEx = 0.023;
+    color[] = {0.35, 0.88, 1, 0.9};
+    colorActive[] = {0.35,0.88,1,1};
+    colorDisabled[] = {1,1,1,0.22};
+    sizeEx = 0.025;
     soundSelect[] = {"",0.1,1};
     soundExpand[] = {"",0.1,1};
     soundCollapse[] = {"",0.1,1};
@@ -594,15 +594,15 @@ class Life_RscEdit {
     type = 2;
     style = 0x00 + 0x40;
     font = "RobotoCondensed";
-    shadow = 2;
+    shadow = 0;
     sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-    colorBackground[] = {0, 0, 0, 1};
+    colorBackground[] = {0.025, 0.035, 0.045, 0.92};
     soundSelect[] = {"",0.1,1};
     soundExpand[] = {"",0.1,1};
-    colorText[] = {0.95, 0.95, 0.95, 1};
+    colorText[] = {0.93, 0.98, 1, 1};
     colorDisabled[] = {1, 1, 1, 0.25};
     autocomplete = false;
-    colorSelection[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 1};
+    colorSelection[] = {0.0, 0.70, 0.88, 0.85};
     canModify = 1;
 };
 
@@ -1130,12 +1130,12 @@ class Life_RscCombo {
     shadow = 0;
     colorSelect[] = {0, 0, 0, 1};
     soundExpand[] = {"",0.1,1};
-    colorText[] = {0.95, 0.95, 0.95, 1};
+    colorText[] = {0.90, 0.96, 1, 1};
     soundCollapse[] = {"",0.1,1};
     maxHistoryDelay = 1;
-    colorBackground[] = {0.4,0.4,0.4,0.4};
-    colorSelectBackground[] = {1, 1, 1, 0.7};
-    colorScrollbar[] = {1, 0, 0, 1};
+    colorBackground[] = {0.025,0.035,0.045,0.90};
+    colorSelectBackground[] = {0.0, 0.58, 0.76, 0.82};
+    colorScrollbar[] = {0.35, 0.88, 1, 1};
     soundSelect[] = {
             "", 0.000000, 1
     };
@@ -1143,7 +1143,7 @@ class Life_RscCombo {
     arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
     wholeHeight = 0.45;
     color[] = {1, 1, 1, 1};
-    colorActive[] = {1, 0, 0, 1};
+    colorActive[] = {0.35, 0.88, 1, 1};
     colorDisabled[] = {1, 1, 1, 0.25};
     font = "RobotoCondensed";
     sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";

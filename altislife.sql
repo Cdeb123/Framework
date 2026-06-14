@@ -245,6 +245,20 @@ CREATE TABLE IF NOT EXISTS `leo_training_documents` (
     INDEX `index_training_docs` (`department_key`,`active`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE IF NOT EXISTS `leo_command_documents` (
+    `id`             INT NOT NULL AUTO_INCREMENT,
+    `department_key` VARCHAR(64) NOT NULL DEFAULT 'tcsd',
+    `title`          VARCHAR(96) NOT NULL,
+    `body`           TEXT NOT NULL,
+    `created_by_pid` VARCHAR(17) NOT NULL,
+    `active`         TINYINT NOT NULL DEFAULT 1,
+    `insert_time`    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at`     TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (`id`),
+    INDEX `index_command_docs` (`department_key`,`active`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 CREATE TABLE IF NOT EXISTS `leo_training_roster` (
     `id`                    INT NOT NULL AUTO_INCREMENT,
     `trainee_pid`           VARCHAR(17) NOT NULL,
@@ -277,7 +291,7 @@ ON DUPLICATE KEY UPDATE
 INSERT INTO `steam_whitelist`
     (`pid`,`faction`,`level`,`permissions`,`active`,`notes`)
 VALUES
-    ('76561198810688206','community_owner',999,'["owner.access","owner.community","whitelist.override","jobs.override","leo.access","leo.department.tcsd","leo.rank.tcsd.sheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.owner","leo.training.view","leo.training.edit","leo.training.roster","staff.access","staff.whitelist","staff.permissions","staff.telemetry","police.access","police.cuff","police.ticket","police.warrant","police.search"]',1,'Community Owner bootstrap grant')
+    ('76561198810688206','community_owner',999,'["owner.access","owner.community","whitelist.override","jobs.override","leo.access","leo.department.tcsd","leo.rank.tcsd.sheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.command.owner","leo.department.oversight","leo.training.view","leo.training.edit","leo.training.roster","staff.access","staff.whitelist","staff.permissions","staff.telemetry","police.access","police.cuff","police.ticket","police.warrant","police.search"]',1,'Community Owner bootstrap grant')
 ON DUPLICATE KEY UPDATE
     `level`=999,
     `permissions`=VALUES(`permissions`),
@@ -287,7 +301,7 @@ ON DUPLICATE KEY UPDATE
 INSERT INTO `leo_memberships`
     (`pid`,`character_uid`,`department_key`,`rank_key`,`primary_subdivision`,`subdivisions`,`role_permissions`,`status`,`hired_by_pid`,`updated_by_pid`,`notes`)
 VALUES
-    ('76561198810688206','76561198810688206','tcsd','sheriff','patrol','["patrol","academy","hse","ert","ia","mcu","cid"]','["leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.owner","leo.training.view","leo.training.edit","leo.training.roster","staff.whitelist","staff.permissions"]','active','76561198810688206','76561198810688206','Community Owner and TCSD Sheriff bootstrap grant')
+    ('76561198810688206','76561198810688206','tcsd','sheriff','patrol','["patrol","academy","hse","ert","ia","mcu","cid"]','["leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.command.owner","leo.department.oversight","leo.training.view","leo.training.edit","leo.training.roster","staff.whitelist","staff.permissions"]','active','76561198810688206','76561198810688206','Community Owner and TCSD Sheriff bootstrap grant')
 ON DUPLICATE KEY UPDATE
     `rank_key`='sheriff',
     `primary_subdivision`='patrol',

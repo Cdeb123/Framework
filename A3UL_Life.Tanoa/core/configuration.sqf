@@ -71,6 +71,7 @@ life_leo_primary_subdivision = "";
 life_leo_subdivisions = [];
 life_leo_training_docs = [];
 life_leo_training_roster = [];
+life_leo_command_docs = [];
 life_characters = [];
 life_character_completed = false;
 life_character_gate_active = false;

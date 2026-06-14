@@ -44,6 +44,7 @@ private _canEdit = {
 
     ("leo.training.edit" in _permissions)
     || {"leo.training.roster" in _permissions}
+    || {"leo.training.fto" in _permissions}
     || {"leo.command.terminal" in _permissions}
     || {"sub:academy" in _permissions}
     || {"rank:sergeant" in _permissions}

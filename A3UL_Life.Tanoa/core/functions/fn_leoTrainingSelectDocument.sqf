@@ -17,7 +17,7 @@ _row params [
 ];
 
 (_display displayCtrl 8202) ctrlSetStructuredText parseText format [
-    "<t color='#40E0F0' size='1.1'>%1</t><br/><t color='#B8C7D8'>%2 | %3</t><br/><br/>%4",
+    "<t color='#F4B95A' size='1.1'>%1</t><br/><t color='#C9B38C'>%2 | %3</t><br/><br/><t color='#FFF8EA'>%4</t>",
     _title,
     _department,
     _createdAt,

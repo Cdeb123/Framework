@@ -81,6 +81,7 @@ class CfgRemoteExec {
         F(DB_fnc_insertRequest,SERVER)
         F(DB_fnc_fetchFrameworkData,SERVER)
         F(DB_fnc_queryRequest,SERVER)
+        F(DB_fnc_updateLEOCommandDocument,SERVER)
         F(DB_fnc_updateLEOMembership,SERVER)
         F(DB_fnc_updateLEOTraining,SERVER)
         F(DB_fnc_updatePartial,SERVER)

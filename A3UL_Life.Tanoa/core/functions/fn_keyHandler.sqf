@@ -17,7 +17,9 @@ params [
 
 private _speed = speed cursorObject;
 private _handled = false;
-private _interactionKey = if (actionKeys "User10" isEqualTo []) then {219} else {(actionKeys "User10") select 0};
+private _interactionKeys = actionKeys "User10";
+if (_interactionKeys isEqualTo []) then {_interactionKeys = [219];};
+_interactionKeys pushBackUnique 219;
 private _interruptionKeys = [17, 30, 31, 32]; //A,S,W,D
 
 //Vault handling...
@@ -40,9 +42,9 @@ if (life_action_inUse) exitWith {
     _handled;
 };
 
-//Hotfix for Interaction key not being able to be bound on some operation systems.
-if (!(actionKeys "User10" isEqualTo []) && {(inputAction "User10" > 0)}) exitWith {
-    //Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
+//Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10).
+//Only consume the actual interaction key so vanilla scroll/default actions still work.
+if (_code in _interactionKeys) exitWith {
     if (!life_action_inUse) then {
         [] spawn {
             private _handle = [] spawn life_fnc_actionKeyHandler;
@@ -148,17 +150,6 @@ switch (_code) do {
         if (!_shift && _ctrlKey && !isNil "life_curWep_h" && {!(life_curWep_h isEqualTo "")}) then {
             if (life_curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then {
                 player selectWeapon life_curWep_h;
-            };
-        };
-    };
-
-    //Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
-    case _interactionKey: {
-        if (!life_action_inUse) then {
-            [] spawn  {
-                private _handle = [] spawn life_fnc_actionKeyHandler;
-                waitUntil {scriptDone _handle};
-                life_action_inUse = false;
             };
         };
     };

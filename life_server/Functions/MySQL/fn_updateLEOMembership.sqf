@@ -61,6 +61,9 @@ private _canCommand = {
     || {"leo.command.hire" in _permissions}
     || {"leo.command.fire" in _permissions}
     || {"leo.command.permissions" in _permissions}
+    || {"leo.command.ranks" in _permissions}
+    || {"leo.command.divisions" in _permissions}
+    || {"leo.command.roles" in _permissions}
     || {"rank:lieutenant" in _permissions}
     || {"rank:captain" in _permissions}
     || {"rank:assistant_sheriff" in _permissions}

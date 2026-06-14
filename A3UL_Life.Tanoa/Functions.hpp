@@ -215,7 +215,9 @@ class Life_Client_Core {
         class leoCommandFire {};
         class leoCommandLoad {};
         class leoCommandLoadDepartment {};
+        class leoCommandPostDocument {};
         class leoCommandSelectPlayer {};
+        class leoCommandSelectDocument {};
         class leoHasSubdivision {};
         class leoRankOrder {};
         class leoSetLocalData {};

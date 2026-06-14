@@ -526,6 +526,29 @@ The following items are illegal to posses:<br/><br/>
 
     player createDiaryRecord ["controls",
         [
+            "Tanoa Life Custom Controls",
+                "
+User Action 10 / Left Windows: Main interaction key for vehicles, houses, ATMs, containers, restrained players, and nearby objects. Rebind in ESC -> Configure -> Controls -> Custom -> Use Action 10.<br/>
+Y: Open Player Menu.<br/>
+U: Lock and unlock owned vehicles and houses.<br/>
+T: Open vehicle trunk or nearby storage.<br/>
+Left Ctrl + Left Shift + T: Open the TCSD Training Academy terminal.<br/>
+Left Ctrl + Left Shift + L: Open the TCSD Command Suite.<br/>
+Left Ctrl + B: Toggle seatbelt while inside a vehicle.<br/>
+Left Ctrl + F: Toggle custom weapon fire mode.<br/>
+Left Ctrl + I: Open your ID card.<br/>
+Left Ctrl + P: Open character selection.<br/>
+Left Shift + B: Surrender.<br/>
+Left Shift + H: Holster current weapon.<br/>
+Left Ctrl + H: Draw previously holstered weapon.<br/>
+Left Shift + Spacebar: Jump.<br/>
+Left Shift + O: Toggle earplugs / sound fade.<br/><br/>
+                "
+        ]
+    ];
+
+    player createDiaryRecord ["controls",
+        [
             "Police and medic controls",
                 "
 F: Vehicle siren.<br/>

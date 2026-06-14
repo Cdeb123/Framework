@@ -20,6 +20,7 @@ class CfgFunctions {
             class queryRequest{};
             class fetchFrameworkData {};
             class updateLEOMembership {};
+            class updateLEOCommandDocument {};
             class updateLEOTraining {};
             class asyncCall{};
             class insertRequest{};

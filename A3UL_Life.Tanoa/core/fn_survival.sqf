@@ -9,39 +9,37 @@
 private ["_fnc_food","_fnc_water","_foodTime","_waterTime","_bp","_walkDis","_lastPos","_curPos"];
 _fnc_food =  {
     if (life_hunger < 2) then {player setDamage 1; hint localize "STR_NOTF_EatMSG_Death";}
-    else
-    {
-        life_hunger = life_hunger - 10;
+    else {
+        life_hunger = (life_hunger - 4) max 0;
         [] call life_fnc_hudUpdate;
         if (life_hunger < 2) then {player setDamage 1; hint localize "STR_NOTF_EatMSG_Death";};
-        switch (life_hunger) do {
-            case 30: {hint localize "STR_NOTF_EatMSG_1";};
-            case 20: {hint localize "STR_NOTF_EatMSG_2";};
-            case 10: {
+        switch (true) do {
+            case (life_hunger <= 10): {
                 hint localize "STR_NOTF_EatMSG_3";
                 if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 1) then {player setFatigue 1;};
             };
+            case (life_hunger <= 20): {hint localize "STR_NOTF_EatMSG_2";};
+            case (life_hunger <= 30): {hint localize "STR_NOTF_EatMSG_1";};
         };
     };
 };
 
 _fnc_water = {
     if (life_thirst < 2) then {player setDamage 1; hint localize "STR_NOTF_DrinkMSG_Death";}
-    else
-    {
-        life_thirst = life_thirst - 10;
+    else {
+        life_thirst = (life_thirst - 5) max 0;
         [] call life_fnc_hudUpdate;
         if (life_thirst < 2) then {player setDamage 1; hint localize "STR_NOTF_DrinkMSG_Death";};
-        switch (life_thirst) do  {
-            case 30: {hint localize "STR_NOTF_DrinkMSG_1";};
-            case 20: {
-                hint localize "STR_NOTF_DrinkMSG_2";
-                if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 1) then {player setFatigue 1;};
-            };
-            case 10: {
+        switch (true) do  {
+            case (life_thirst <= 10): {
                 hint localize "STR_NOTF_DrinkMSG_3";
                 if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 1) then {player setFatigue 1;};
             };
+            case (life_thirst <= 20): {
+                hint localize "STR_NOTF_DrinkMSG_2";
+                if (LIFE_SETTINGS(getNumber,"enable_fatigue") isEqualTo 1) then {player setFatigue 1;};
+            };
+            case (life_thirst <= 30): {hint localize "STR_NOTF_DrinkMSG_1";};
         };
     };
 };
@@ -57,8 +55,8 @@ _lastState = vehicle player;
 
 for "_i" from 0 to 1 step 0 do {
     /* Thirst / Hunger adjustment that is time based */
-    if ((time - _waterTime) > 600 && {!life_god}) then {[] call _fnc_water; _waterTime = time;};
-    if ((time - _foodTime) > 850 && {!life_god}) then {[] call _fnc_food; _foodTime = time;};
+    if ((time - _waterTime) > 240 && {!life_god}) then {[] call _fnc_water; _waterTime = time;};
+    if ((time - _foodTime) > 360 && {!life_god}) then {[] call _fnc_food; _foodTime = time;};
 
     /* Adjustment of carrying capacity based on backpack changes */
     if (backpack player isEqualTo "") then {
@@ -94,10 +92,10 @@ for "_i" from 0 to 1 step 0 do {
         _curPos = (_curPos select 0) + (_curPos select 1);
         if (!(_curPos isEqualTo _lastPos) && {(isNull objectParent player)}) then {
             _walkDis = _walkDis + 1;
-            if (_walkDis isEqualTo 650) then {
+            if (_walkDis >= 300) then {
                 _walkDis = 0;
-                life_thirst = life_thirst - 5;
-                life_hunger = life_hunger - 5;
+                life_thirst = (life_thirst - 3) max 0;
+                life_hunger = (life_hunger - 3) max 0;
                 [] call life_fnc_hudUpdate;
             };
         };

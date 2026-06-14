@@ -11,7 +11,7 @@ class Life_LEO {
 
     class Departments {
         class tcsd {
-            displayName = "Tanoa County Sheriffs Office";
+            displayName = "Tanoa County Sheriff's Department";
             shortName = "TCSD";
             side = "cop";
             defaultRank = "deputy";
@@ -59,56 +59,56 @@ class Life_LEO {
                     order = 6;
                     command = 1;
                     legacyCopLevel = 5;
-                    permissions[] = {"leo.rank.tcsd.lieutenant","leo.command.terminal","leo.command.hire","leo.command.fire","leo.training.edit"};
+                    permissions[] = {"leo.rank.tcsd.lieutenant","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.training.edit"};
                 };
                 class captain {
                     displayName = "Captain";
                     order = 7;
                     command = 1;
                     legacyCopLevel = 6;
-                    permissions[] = {"leo.rank.tcsd.captain","leo.command.permissions","leo.training.roster"};
+                    permissions[] = {"leo.rank.tcsd.captain","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.training.roster"};
                 };
                 class assistant_sheriff {
                     displayName = "Assistant Sheriff";
                     order = 8;
                     command = 1;
                     legacyCopLevel = 7;
-                    permissions[] = {"leo.rank.tcsd.assistant_sheriff","leo.command.executive"};
+                    permissions[] = {"leo.rank.tcsd.assistant_sheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.training.view","leo.training.edit","leo.training.roster"};
                 };
                 class undersheriff {
                     displayName = "Undersheriff";
                     order = 9;
                     command = 1;
                     legacyCopLevel = 7;
-                    permissions[] = {"leo.rank.tcsd.undersheriff","leo.command.executive"};
+                    permissions[] = {"leo.rank.tcsd.undersheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.training.view","leo.training.edit","leo.training.roster"};
                 };
                 class sheriff {
                     displayName = "Sheriff";
                     order = 10;
                     command = 1;
                     legacyCopLevel = 7;
-                    permissions[] = {"leo.rank.tcsd.sheriff","leo.command.owner","staff.whitelist","staff.permissions"};
+                    permissions[] = {"leo.rank.tcsd.sheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.command.owner","leo.department.oversight","leo.training.view","leo.training.edit","leo.training.roster","staff.whitelist","staff.permissions"};
                 };
             };
 
             class Subdivisions {
                 class patrol {
-                    displayName = "Patrol";
+                    displayName = "Patrol Operations";
                     roles[] = {"patrol_deputy","patrol_supervisor","patrol_command"};
                     permissions[] = {"leo.subdivision.tcsd.patrol"};
                 };
                 class academy {
-                    displayName = "Academy Division";
-                    roles[] = {"trainee","fto","academy_command"};
-                    permissions[] = {"leo.subdivision.tcsd.academy","leo.training.view"};
+                    displayName = "Training Academy";
+                    roles[] = {"recruit","field_training_officer","academy_supervisor"};
+                    permissions[] = {"leo.subdivision.tcsd.academy","leo.training.view","leo.training.edit","leo.training.roster","leo.training.fto","leo.records.view"};
                 };
                 class hse {
-                    displayName = "High Speed Enforcement";
+                    displayName = "Traffic Enforcement Unit";
                     roles[] = {"hse_deputy","hse_supervisor","hse_command"};
                     permissions[] = {"leo.subdivision.tcsd.hse","leo.vehicle.hse"};
                 };
                 class ert {
-                    displayName = "Emergency Response Team";
+                    displayName = "Emergency Response Unit";
                     roles[] = {"ert_operator","ert_team_lead","ert_command"};
                     permissions[] = {"leo.subdivision.tcsd.ert","leo.tactical.ert"};
                 };
@@ -118,12 +118,12 @@ class Life_LEO {
                     permissions[] = {"leo.subdivision.tcsd.ia","leo.records.internal"};
                 };
                 class mcu {
-                    displayName = "Major Case Unit";
+                    displayName = "Major Crimes Unit";
                     roles[] = {"mcu_detective","mcu_lead","mcu_command"};
                     permissions[] = {"leo.subdivision.tcsd.mcu","leo.investigations.major"};
                 };
                 class cid {
-                    displayName = "Criminal Investigations Division";
+                    displayName = "Criminal Investigations Bureau";
                     roles[] = {"cid_detective","cid_supervisor","cid_command"};
                     permissions[] = {"leo.subdivision.tcsd.cid","leo.investigations.criminal"};
                 };

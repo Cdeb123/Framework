@@ -9,6 +9,7 @@ params [
 
 if (_subdivision isEqualTo "") exitWith {false};
 if ([] call life_fnc_isCommunityOwner) exitWith {true};
+if (["leo.department.oversight"] call life_fnc_hasPermission) exitWith {true};
 
 private _ok = false;
 {
@@ -18,6 +19,10 @@ private _ok = false;
         ["_primary","",[""]],
         ["_subdivisions",[],[[]]]
     ];
+
+    if ((_department isEqualTo "" || {_dept isEqualTo _department}) && {_rank isEqualTo "sheriff"}) exitWith {
+        _ok = true;
+    };
 
     if ((_department isEqualTo "" || {_dept isEqualTo _department}) && {(_primary isEqualTo _subdivision) || {_subdivision in _subdivisions}}) exitWith {
         _ok = true;
