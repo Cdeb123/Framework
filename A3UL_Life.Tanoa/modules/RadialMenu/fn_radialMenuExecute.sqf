@@ -37,6 +37,32 @@ switch (_type) do {
         };
     };
 
+    case "function": {
+        closeDialog 0;
+        if (_payload isEqualType []) then {
+            _payload params [
+                ["_functionName","",[""]],
+                ["_arguments",[],[[]]]
+            ];
+
+            private _function = missionNamespace getVariable [format ["life_fnc_%1",_functionName],{}];
+            _arguments call _function;
+        };
+    };
+
+    case "spawnFunction": {
+        closeDialog 0;
+        if (_payload isEqualType []) then {
+            _payload params [
+                ["_functionName","",[""]],
+                ["_arguments",[],[[]]]
+            ];
+
+            private _function = missionNamespace getVariable [format ["life_fnc_%1",_functionName],{}];
+            _arguments spawn _function;
+        };
+    };
+
     default {
         closeDialog 0;
         if (_payload isEqualType "") then {

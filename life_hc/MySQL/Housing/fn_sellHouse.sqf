@@ -23,6 +23,7 @@ if (_houseID isEqualTo -1) then {
 
 _house setVariable ["house_id",nil,true];
 _house setVariable ["house_owner",nil,true];
+_house setVariable ["house_upgrades",nil,true];
 
 [_query,1] call HC_fnc_asyncCall;
 _house setVariable ["house_sold",nil,true];

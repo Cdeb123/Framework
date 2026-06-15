@@ -74,14 +74,18 @@ _containerss = [];
     _house setVariable ["containers",_containerss,true];
 } forEach _containers;
 
-_query = format ["SELECT pid, pos FROM houses WHERE pid='%1' AND owned='1'",_uid];
+_query = format ["SELECT pid, pos, upgrades FROM houses WHERE pid='%1' AND owned='1'",_uid];
 _houses = [_query,2,true] call HC_fnc_asyncCall;
 
 _return = [];
 {
     _pos = call compile format ["%1",_x select 1];
     _house = nearestObject [_pos, "House"];
+    _upgrades = [_x select 2] call HC_fnc_mresToArray;
+    if (_upgrades isEqualType "") then {_upgrades = call compile format ["%1",_upgrades];};
+    if !(_upgrades isEqualType []) then {_upgrades = [];};
     _house allowDamage false;
+    _house setVariable ["house_upgrades",_upgrades,true];
     _return pushBack [_x select 1];
 } forEach _houses;
 

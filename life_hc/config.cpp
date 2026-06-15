@@ -57,6 +57,7 @@ class CfgFunctions
             class sellHouseContainer {};
             class updateHouseContainers {};
             class updateHouseTrunk {};
+            class updateHouseUpgrades {};
             class houseGarage {};
         };
 

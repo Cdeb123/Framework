@@ -404,6 +404,7 @@ CREATE TABLE IF NOT EXISTS `houses` (
     `pos`         VARCHAR(32) DEFAULT NULL,
     `owned`       TINYINT DEFAULT 0,
     `garage`      TINYINT NOT NULL DEFAULT 0,
+    `upgrades`    TEXT,
     `insert_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     
     PRIMARY KEY (`id`),

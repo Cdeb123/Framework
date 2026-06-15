@@ -298,10 +298,20 @@ class Life_Client_Core {
         class hasNearbyInteractionCategory {};
         class nearbyInteractionActions {};
         class openRadialMenu {};
+        class radialHouseDoorLock {};
+        class radialHouseStorage {};
+        class radialHouseUpgrade {};
+        class radialHouseWorkbench {};
         class radialMenuExecute {};
         class radialMenuKey {};
         class radialMenuLoad {};
         class radialMenuPage {};
+        class radialMedicSiren {};
+        class radialPickupObject {};
+        class radialPulloutVehicle {};
+        class radialPutInVehicle {};
+        class radialVehicleLock {};
+        class radialVehicleTrunk {};
     };
 
     class Module_Shops {
@@ -317,6 +327,11 @@ class Life_Client_Core {
         class itemShopCategory {};
         class itemShopLoad {};
         class itemShopSelect {};
+        class leoClothingShopAccess {};
+        class leoClothingShopBuy {};
+        class leoClothingShopCategory {};
+        class leoClothingShopLoad {};
+        class leoClothingShopSelect {};
         class leoVehicleShopBuy {};
         class leoVehicleShopCategory {};
         class leoVehicleShopLoad {};
@@ -330,6 +345,7 @@ class Life_Client_Core {
         class licenseShopSelect {};
         class openCivVehicleShop {};
         class openItemShop {};
+        class openLEOClothingShop {};
         class openLEOVehicleShop {};
         class openLicenseAdmin {};
         class openLicenseShop {};

@@ -11,6 +11,9 @@
 params ["","","",["_shop","",[""]]];
 
 if (_shop isEqualTo "") exitWith {};
+if (isClass (missionConfigFile >> "Life_Shops" >> "LEOClothingShops" >> _shop)) exitWith {
+    _this call life_fnc_openLEOClothingShop;
+};
 if (isClass (missionConfigFile >> "Life_Shops" >> "ItemShops" >> _shop)) exitWith {
     _this call life_fnc_openItemShop;
 };

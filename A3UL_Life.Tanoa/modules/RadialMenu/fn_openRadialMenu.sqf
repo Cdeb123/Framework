@@ -21,7 +21,7 @@ if (_category isEqualTo "main") then {
         if (({(_x select 4) isEqualTo _group && {(_x select 5) >= 20}} count life_radial_source_actions) > 0) exitWith {
             _resolvedCategory = _group;
         };
-    } forEach ["License Shop","Access Shop","Garage","Banking","Service","Nearby"];
+    } forEach ["House","Vehicle","Door","Items","EMS","Law Enforcement","License Shop","Access Shop","Garage","Banking","Service","Nearby"];
 };
 
 life_radial_category = _resolvedCategory;

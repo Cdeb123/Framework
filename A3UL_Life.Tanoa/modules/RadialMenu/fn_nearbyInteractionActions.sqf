@@ -3,7 +3,7 @@
     File: fn_nearbyInteractionActions.sqf
 
     Builds usable interaction actions from real addActions on nearby objects,
-    plus core framework actions that do not live on a vendor object.
+    plus compact F1 shortcuts for common framework interactions.
 */
 params [
     ["_category","",[""]]
@@ -36,6 +36,7 @@ private _actionGroup = {
     if ((["garage",_lower] call BIS_fnc_inString) || {["store vehicle",_lower] call BIS_fnc_inString}) exitWith {"Garage"};
     if ((["atm",_lower] call BIS_fnc_inString) || {["bank",_lower] call BIS_fnc_inString}) exitWith {"Banking"};
     if ((["medical",_lower] call BIS_fnc_inString) || {["hospital",_lower] call BIS_fnc_inString} || {["service",_lower] call BIS_fnc_inString}) exitWith {"Service"};
+    if ((["ems",_lower] call BIS_fnc_inString) || {["fire",_lower] call BIS_fnc_inString}) exitWith {"EMS"};
     if ((["cop",_lower] call BIS_fnc_inString) || {["police",_lower] call BIS_fnc_inString} || {["apd",_lower] call BIS_fnc_inString} || {["tpd",_lower] call BIS_fnc_inString}) exitWith {"Law Enforcement"};
     if (
         (["shop",_lower] call BIS_fnc_inString)
@@ -68,6 +69,12 @@ private _vendorName = {
     };
     if (_name isEqualTo "") then {_name = "Nearby"};
     _name
+};
+
+private _isVehicle = {
+    params [["_target",objNull,[objNull]]];
+    private _filters = ["LandVehicle","Ship","Air"];
+    !isNull _target && {KINDOF_ARRAY(_target,_filters)}
 };
 
 private _candidates = [];
@@ -123,27 +130,191 @@ if (!isNull cursorObject && {player distance cursorObject <= (_radius + 2)}) the
     } forEach (actionIDs _targetObject);
 } forEach _candidates;
 
+private _targetPlayer = objNull;
+if (!isNull cursorObject && {isPlayer cursorObject} && {player distance cursorObject <= 5}) then {
+    _targetPlayer = cursorObject;
+} else {
+    {
+        if (_x != player && {player distance _x <= 5}) exitWith {
+            _targetPlayer = _x;
+        };
+    } forEach playableUnits;
+};
+
+private _vehicleTarget = objNull;
+if (!(isNull objectParent player)) then {
+    _vehicleTarget = vehicle player;
+} else {
+    if ([cursorObject] call _isVehicle && {player distance cursorObject <= 10}) then {
+        _vehicleTarget = cursorObject;
+    } else {
+        private _nearVehicles = nearestObjects [player,["LandVehicle","Ship","Air"],7];
+        if !(_nearVehicles isEqualTo []) then {_vehicleTarget = _nearVehicles select 0;};
+    };
+};
+
+private _door = [] call life_fnc_nearestBuildingDoor;
+private _doorBuilding = objNull;
+private _doorNumber = 0;
+private _doorAccess = [];
+if (!(_door isEqualTo [])) then {
+    _doorBuilding = _door select 0;
+    _doorNumber = _door select 1;
+    _doorAccess = [_doorBuilding,_doorNumber] call life_fnc_doorAccessFor;
+};
+
+private _houseTarget = objNull;
+if (!isNull _doorBuilding && {_doorBuilding isKindOf "House_F"}) then {
+    _houseTarget = _doorBuilding;
+} else {
+    if (!isNull cursorObject && {cursorObject isKindOf "House_F"} && {player distance cursorObject <= 12}) then {
+        _houseTarget = cursorObject;
+    };
+};
+
+private _houseOwner = if (!isNull _houseTarget) then {_houseTarget getVariable ["house_owner",[]]} else {[]};
+private _isOwnedHouse = (
+    !isNull _houseTarget
+    && {_houseTarget in life_vehicles}
+    && {((count _houseOwner) isEqualTo 0) || {(_houseOwner select 0) isEqualTo getPlayerUID player}}
+);
+
+private _storageCrate = objNull;
+private _nearStorage = ((ASLtoATL (getPosASL player)) nearEntities [["Box_IND_Grenades_F","B_supplyCrate_F"],2.5]);
+if !(_nearStorage isEqualTo []) then {_storageCrate = _nearStorage select 0;};
+
+private _groundItem = objNull;
+private _miscItems = ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F","Land_Money_F"];
+if (!isNull cursorObject && {(typeOf cursorObject) in _miscItems} && {player distance cursorObject <= 4}) then {
+    _groundItem = cursorObject;
+} else {
+    private _nearItems = nearestObjects [player,_miscItems,4];
+    if !(_nearItems isEqualTo []) then {_groundItem = _nearItems select 0;};
+};
+
 if (([] call life_fnc_nearATM) && {!dialog}) then {
     ["ATM","Open bank account and cash controls","code","[] call life_fnc_atmMenu","Banking",30] call _addAction;
 };
 
-private _door = [] call life_fnc_nearestBuildingDoor;
-if (!(_door isEqualTo []) && {!dialog} && {isNull objectParent player}) then {
-    ["Door Access","Open, close, keypad, or keycard access","code","[] call life_fnc_doorInteraction","Nearby",25] call _addAction;
-};
-
 if (!dialog && {!(player getVariable ["restrained",false])}) then {
     ["Player Menu","Inventory, keys, phone, money, and settings","code","[] call life_fnc_p_openMenu","Personal",10] call _addAction;
-    ["ID Card","Show or inspect identification","code","[] call life_fnc_openID","Personal",9] call _addAction;
+    ["My ID","Open your identification card","function",["openID",[]],"Personal",9] call _addAction;
+    if (!isNull _targetPlayer) then {
+        ["Show ID","Show your ID to the nearby player","function",["showID",[_targetPlayer]],"Personal",12] call _addAction;
+    };
+};
+
+if (!(_door isEqualTo []) && {!dialog} && {isNull objectParent player}) then {
+    ["Use Door","Open, close, keypad, or keycard access","function",["doorInteraction",[_doorBuilding,_doorNumber]],"Door",35] call _addAction;
+
+    _doorAccess params [
+        ["_mode","public",[""]],
+        ["_label","Door Access",[""]],
+        ["_keypad",false,[false]]
+    ];
+
+    if (_keypad) then {
+        ["Keypad","Enter the assigned door code","function",["openDoorKeypad",[_doorBuilding,_doorNumber,_doorAccess]],"Door",34] call _addAction;
+    };
+};
+
+if (_isOwnedHouse) then {
+    ["Lock / Unlock Door","Toggle the door nearest to you","function",["radialHouseDoorLock",[_houseTarget,_doorNumber]],"House",55] call _addAction;
+    ["Storage Lock","Lock or unlock placed house storage","function",["radialHouseStorage",[_houseTarget,"lock",objNull]],"House",45] call _addAction;
+    ["House Upgrades","Open installed and available upgrades","category","House Upgrades","House",42] call _addAction;
+
+    if ((missionNamespace getVariable ["life_inv_storagesmall",0]) > 0) then {
+        ["Pull Small Storage","Place a small storage crate in this house","function",["radialHouseStorage",[_houseTarget,"small",objNull]],"House",40] call _addAction;
+    };
+
+    if ((missionNamespace getVariable ["life_inv_storagebig",0]) > 0) then {
+        ["Pull Large Storage","Place a large storage crate in this house","function",["radialHouseStorage",[_houseTarget,"big",objNull]],"House",39] call _addAction;
+    };
+
+    private _installedUpgrades = _houseTarget getVariable ["house_upgrades",[]];
+    if ("workbench" in _installedUpgrades) then {
+        ["Use Workbench","Crafting workbench installed in this house","spawnFunction",["radialHouseWorkbench",[_houseTarget]],"House",38] call _addAction;
+        ["Use Workbench","Crafting workbench installed in this house","spawnFunction",["radialHouseWorkbench",[_houseTarget]],"House Upgrades",60] call _addAction;
+    };
+
+    {
+        private _upgradeKey = configName _x;
+        private _upgradeTitle = getText (_x >> "title");
+        private _upgradeDescription = getText (_x >> "description");
+        private _upgradePrice = getNumber (_x >> "price");
+        if (_upgradeTitle isEqualTo "") then {_upgradeTitle = _upgradeKey;};
+
+        if !(_upgradeKey in _installedUpgrades) then {
+            [
+                format ["Buy %1",_upgradeTitle],
+                format ["$%1 | %2",[_upgradePrice] call life_fnc_numberText,_upgradeDescription],
+                "spawnFunction",
+                ["radialHouseUpgrade",[_houseTarget,_upgradeKey]],
+                "House Upgrades",
+                50
+            ] call _addAction;
+        };
+    } forEach ("true" configClasses (missionConfigFile >> "Life_HouseUpgrades"));
+};
+
+if (!isNull _storageCrate) then {
+    ["Open Storage","Open the nearby house storage crate","spawnFunction",["radialHouseStorage",[objNull,"open",_storageCrate]],"Items",35] call _addAction;
+    ["Storage Menu","Open the normal storage interaction menu","function",["containerMenu",[_storageCrate]],"Items",20] call _addAction;
+};
+
+if (!isNull _groundItem) then {
+    ["Pick Up","Pick up the nearby item or cash","function",["radialPickupObject",[_groundItem]],"Items",30] call _addAction;
+};
+
+if (!isNull _vehicleTarget) then {
+    if (_vehicleTarget in life_vehicles) then {
+        ["Lock / Unlock","Toggle this vehicle's locks","function",["radialVehicleLock",[_vehicleTarget]],"Vehicle",45] call _addAction;
+    };
+
+    if (_vehicleTarget in life_vehicles || {locked _vehicleTarget isEqualTo 0}) then {
+        ["Open Trunk","Open vehicle storage","spawnFunction",["radialVehicleTrunk",[_vehicleTarget]],"Vehicle",44] call _addAction;
+    };
+
+    if (isNull objectParent player) then {
+        ["Vehicle Menu","Open the normal vehicle interaction menu","function",["vInteractionMenu",[_vehicleTarget]],"Vehicle",20] call _addAction;
+    };
+
+    if (playerSide isEqualTo west) then {
+        if !((crew _vehicleTarget) isEqualTo []) then {
+            ["Eject Occupants","Remove non-LEO occupants from this vehicle","function",["radialPulloutVehicle",[_vehicleTarget]],"Vehicle",38] call _addAction;
+            ["Eject Occupants","Remove non-LEO occupants from this vehicle","function",["radialPulloutVehicle",[_vehicleTarget]],"Law Enforcement",24] call _addAction;
+        };
+    };
 };
 
 if (playerSide isEqualTo west) then {
-    ["TCSD Command Terminal","Ranks, divisions, documents, and oversight","code","[] call life_fnc_openLEOCommandTerminal","Law Enforcement",14] call _addAction;
-    ["Training Academy","Cadets, FTO records, and academy documents","code","[] call life_fnc_openLEOTrainingTerminal","Law Enforcement",13] call _addAction;
+    ["TCSD Command","Ranks, divisions, documents, and oversight","code","[] call life_fnc_openLEOCommandTerminal","Law Enforcement",18] call _addAction;
+    ["Training Academy","Cadets, FTO records, and academy documents","code","[] call life_fnc_openLEOTrainingTerminal","Law Enforcement",17] call _addAction;
 
     if (vehicle player != player) then {
-        ["Mobile Data Terminal","In-vehicle TCSD command access","code","[] call life_fnc_openLEOCommandTerminal","Law Enforcement",18] call _addAction;
-        ["Radar","Track target vehicle speed","code","[] call life_fnc_radar","Law Enforcement",17] call _addAction;
+        ["Radar","Track target vehicle speed","code","[] call life_fnc_radar","Law Enforcement",16] call _addAction;
+    };
+
+    private _escorted = player getVariable ["escortingPlayer",objNull];
+    if (!isNull _escorted) then {
+        ["Put In Back Seat","Load the escorted player into a nearby vehicle","function",["radialPutInVehicle",[_escorted]],"Law Enforcement",30] call _addAction;
+    };
+
+    if (!isNull _targetPlayer && {_targetPlayer getVariable ["restrained",false]}) then {
+        ["Player Interaction","Open the normal LEO player interaction menu","function",["copInteractionMenu",[_targetPlayer]],"Law Enforcement",20] call _addAction;
+    };
+};
+
+if (playerSide isEqualTo independent) then {
+    if (!isNull _targetPlayer && {!alive _targetPlayer} && {life_inv_defibrillator > 0}) then {
+        ["Revive","Start revive on the nearby patient","spawnFunction",["revivePlayer",[_targetPlayer]],"EMS",35] call _addAction;
+    };
+
+    if (vehicle player != player && {driver (vehicle player) isEqualTo player}) then {
+        if (!isNil {vehicle player getVariable "lights"}) then {
+            ["EMS Lights","Toggle emergency lights","function",["medicSirenLights",[vehicle player]],"EMS",30] call _addAction;
+        };
+        ["EMS Siren","Toggle response siren","function",["radialMedicSiren",[vehicle player]],"EMS",29] call _addAction;
     };
 };
 

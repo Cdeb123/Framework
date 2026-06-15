@@ -8,7 +8,7 @@ private ["_queryResult","_query","_count","_blacklistedHouses","_blacklistedGara
 _count = (["SELECT COUNT(*) FROM houses WHERE owned='1'",2] call DB_fnc_asyncCall) select 0;
 
 for [{_x=0},{_x<=_count},{_x=_x+10}] do {
-    _query = format ["SELECT houses.id, houses.pid, houses.pos, players.name, houses.garage FROM houses INNER JOIN players WHERE houses.owned='1' AND houses.pid = players.pid LIMIT %1,10",_x];
+    _query = format ["SELECT houses.id, houses.pid, houses.pos, players.name, houses.garage, houses.upgrades FROM houses INNER JOIN players WHERE houses.owned='1' AND houses.pid = players.pid LIMIT %1,10",_x];
     _queryResult = [_query,2,true] call DB_fnc_asyncCall;
     if (count _queryResult isEqualTo 0) exitWith {};
     {
@@ -17,6 +17,10 @@ for [{_x=0},{_x<=_count},{_x=_x+10}] do {
         _house setVariable ["house_owner",[_x select 1,_x select 3],true];
         _house setVariable ["house_id",_x select 0,true];
         _house setVariable ["locked",true,true]; //Lock up all the stuff.
+        _upgrades = [_x select 5] call DB_fnc_mresToArray;
+        if (_upgrades isEqualType "") then {_upgrades = call compile format ["%1",_upgrades];};
+        if !(_upgrades isEqualType []) then {_upgrades = [];};
+        _house setVariable ["house_upgrades",_upgrades,true];
         if (_x select 4 isEqualTo 1) then {
             _house setVariable ["garageBought",true,true];
         };

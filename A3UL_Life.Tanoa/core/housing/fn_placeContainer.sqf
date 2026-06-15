@@ -35,7 +35,11 @@ if (!isNull _house) then {
                 _containers = _house getVariable ["containers",[]];
                 _houseCfg = [(typeOf _house)] call life_fnc_houseConfig;
                 if (_houseCfg isEqualTo []) exitWith {};
-                if (count _containers < (_houseCfg select 1)) then {
+                private _maxContainers = _houseCfg select 1;
+                if ("storage_shelving" in (_house getVariable ["house_upgrades",[]])) then {
+                    _maxContainers = _maxContainers + 1;
+                };
+                if (count _containers < _maxContainers) then {
                     _isPlaced = true;
                     if (life_HC_isActive) then {
                         [_uid,_container] remoteExec ["HC_fnc_addContainer",HC_Life];

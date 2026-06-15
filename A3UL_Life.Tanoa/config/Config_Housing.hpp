@@ -288,3 +288,35 @@ class Housing {
     };
 
 };
+
+class Life_HouseUpgrades {
+    class workbench {
+        title = "Workbench";
+        price = 85000;
+        description = "Adds a house crafting bench hook for the crafting progression path.";
+    };
+
+    class storage_shelving {
+        title = "Storage Shelving";
+        price = 60000;
+        description = "Prepares the house for expanded organized storage options.";
+    };
+
+    class reinforced_doors {
+        title = "Reinforced Doors";
+        price = 100000;
+        description = "Adds a security upgrade marker for stronger home access rules.";
+    };
+
+    class keypad_wiring {
+        title = "Keypad Wiring";
+        price = 50000;
+        description = "Prepares the house for future keypad and access-control wiring.";
+    };
+
+    class utility_lighting {
+        title = "Utility Lighting";
+        price = 25000;
+        description = "Adds an upgraded lighting marker for future interior utility options.";
+    };
+};

@@ -36,6 +36,7 @@
 #include "..\modules\Shops\license_shop.hpp"
 #include "..\modules\Shops\leo_license_admin.hpp"
 #include "..\modules\Shops\weapon_shop.hpp"
+#include "..\modules\Shops\leo_clothing_shop.hpp"
 #include "..\modules\Shops\leo_vehicle_shop.hpp"
 #include "..\modules\Shops\item_shop.hpp"
 #include "..\modules\Shops\civilian_vehicle_shop.hpp"

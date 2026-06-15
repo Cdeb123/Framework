@@ -12,7 +12,7 @@ class life_radial_menu {
             y = safezoneY;
             w = safezoneW;
             h = safezoneH;
-            colorBackground[] = {0.008,0.012,0.016,0.22};
+            colorBackground[] = {0.006,0.008,0.010,0.16};
         };
         class Panel: Life_RscText {
             idc = -1;
@@ -20,7 +20,7 @@ class life_radial_menu {
             y = 0.320 * safezoneH + safezoneY;
             w = 0.180 * safezoneW;
             h = 0.360 * safezoneH;
-            colorBackground[] = {0.025,0.032,0.040,0.92};
+            colorBackground[] = {0.015,0.019,0.024,0.95};
         };
         class PanelOutline: Life_RscFrame {
             idc = -1;
@@ -28,7 +28,7 @@ class life_radial_menu {
             y = 0.320 * safezoneH + safezoneY;
             w = 0.180 * safezoneW;
             h = 0.360 * safezoneH;
-            colorText[] = {0.24,0.86,1.00,0.55};
+            colorText[] = {0.16,0.62,0.78,0.45};
         };
         class AccentTop: Life_RscText {
             idc = -1;
@@ -36,12 +36,12 @@ class life_radial_menu {
             y = 0.320 * safezoneH + safezoneY;
             w = 0.180 * safezoneW;
             h = 0.003 * safezoneH;
-            colorBackground[] = {0.24,0.86,1.00,0.95};
+            colorBackground[] = {0.16,0.70,0.95,0.88};
         };
         class CenterMark: Life_RscPictureKeepAspect {
             idc = -1;
             text = "\A3\ui_f\data\igui\cfg\simpleTasks\types\use_ca.paa";
-            colorText[] = {0.24,0.86,1.00,0.86};
+            colorText[] = {0.16,0.70,0.95,0.72};
             x = 0.421 * safezoneW + safezoneX;
             y = 0.336 * safezoneH + safezoneY;
             w = 0.018 * safezoneW;
@@ -64,7 +64,7 @@ class life_radial_menu {
             text = "Nearby actions";
             sizeEx = 0.018;
             shadow = 0;
-            colorText[] = {0.62,0.74,0.80,1};
+            colorText[] = {0.58,0.70,0.76,1};
             colorBackground[] = {0,0,0,0};
             x = 0.421 * safezoneW + safezoneX;
             y = 0.363 * safezoneH + safezoneY;
@@ -78,6 +78,10 @@ class life_radial_menu {
             idc = 9210;
             text = "";
             sizeEx = 0.021;
+            colorBackground[] = {0.035,0.043,0.052,0.90};
+            colorBackground2[] = {0.035,0.043,0.052,0.90};
+            colorBackgroundFocused[] = {0.070,0.095,0.115,0.95};
+            colorFocused[] = {0.070,0.095,0.115,0.95};
             x = 0.421 * safezoneW + safezoneX;
             y = 0.393 * safezoneH + safezoneY;
             w = 0.158 * safezoneW;

@@ -49,6 +49,7 @@ if (_action) then {
 
     _house setVariable ["house_owner",[_uid,profileName],true];
     _house setVariable ["locked",true,true];
+    _house setVariable ["house_upgrades",[],true];
     _house setVariable ["containers",[],true];
     _house setVariable ["uid",floor(random 99999),true];
 

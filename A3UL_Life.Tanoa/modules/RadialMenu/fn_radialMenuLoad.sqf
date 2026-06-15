@@ -36,17 +36,25 @@ if (_category isEqualTo "main") then {
     {
         if (_x in _seenGroups) then {
             private _subtitle = switch (_x) do {
+                case "Personal": {"ID, player menu, and quick self actions"};
+                case "Vehicle": {"Locks, trunk, and quick vehicle actions"};
+                case "Door": {"Door access and keypad controls"};
+                case "House": {"Owned house doors and storage"};
+                case "House Upgrades": {"Workbench, security, and home improvements"};
+                case "Items": {"Nearby item pickup and storage shortcuts"};
                 case "License Shop": {"Permits, driver, boat, pilot, and job licenses"};
                 case "Access Shop": {"Markets, clothing, weapons, and vendor access"};
                 case "Garage": {"Retrieve, store, and manage vehicles"};
                 case "Banking": {"ATM and bank controls"};
                 case "Law Enforcement": {"TCSD field and command tools"};
+                case "EMS": {"Medical, rescue, and response tools"};
+                case "Service": {"Nearby service and medical counters"};
                 case "Staff": {"Server staff tools"};
                 default {"Nearby context actions"};
             };
             [_x,_subtitle,"category",_x,_x,50] call _addMenuAction;
         };
-    } forEach ["License Shop","Access Shop","Garage","Banking","Service","Law Enforcement","Personal","Staff","Nearby"];
+    } forEach ["Personal","Vehicle","Door","House","House Upgrades","Items","Law Enforcement","EMS","License Shop","Access Shop","Garage","Banking","Service","Staff","Nearby"];
 } else {
     ["Back","Return to the main radial","category","main","Menu",100] call _addMenuAction;
     {
