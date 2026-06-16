@@ -96,7 +96,7 @@ switch (_code) do {
         };
     };
 
-    //ELS code stages: 1 = off, 2 = lights, 3 = lights + siren
+    //ELS code stages: 1 = off, 2 = lights, 3 = lights + siren, 4 = airhorn
     case 2: {
         if ([_code] call life_fnc_elsKey) then {_handled = true;};
     };
@@ -106,6 +106,10 @@ switch (_code) do {
     };
 
     case 4: {
+        if ([_code] call life_fnc_elsKey) then {_handled = true;};
+    };
+
+    case 5: {
         if ([_code] call life_fnc_elsKey) then {_handled = true;};
     };
 
@@ -136,17 +140,17 @@ switch (_code) do {
         };
     };
 
-    //Holster / recall weapon. (Shift + H)
+    //Holster / recall weapon. (Shift + H / Ctrl + H)
     case 35: {
         if (_shift && !_ctrlKey && !(currentWeapon player isEqualTo "")) then {
-            life_curWep_h = currentWeapon player;
-            player action ["SwitchWeapon", player, player, 100];
-            player switchCamera cameraView;
+            [true,false] call life_fnc_resetSpawnState;
+            _handled = true;
         };
 
         if (!_shift && _ctrlKey && !isNil "life_curWep_h" && {!(life_curWep_h isEqualTo "")}) then {
             if (life_curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then {
                 player selectWeapon life_curWep_h;
+                _handled = true;
             };
         };
     };
@@ -210,23 +214,6 @@ switch (_code) do {
             _handled = true;
         };
 
-        if (_shift && {playerSide isEqualTo west} && {!(vehicle player isEqualTo player)}) exitWith {
-            if ([vehicle player] call life_fnc_elsIsConfigured) then {
-                titleText ["ELS: use 1/2/3 for code stages","PLAIN"];
-            };
-            _handled = true;
-        };
-
-        //If medic run checks for turning lights on.
-        if (_shift && playerSide isEqualTo independent) then {
-            if (!(isNull objectParent player) && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_sport_F","B_Heli_Light_01_F","B_Heli_Transport_01_F"]) then {
-                if (!isNil {vehicle player getVariable "lights"}) then {
-                    [vehicle player] call life_fnc_medicSirenLights;
-                    _handled = true;
-                };
-            };
-        };
-
         if (!_alt && !_ctrlKey) then { [] call life_fnc_radar; };
     };
 
@@ -264,38 +251,7 @@ switch (_code) do {
             _handled = true;
         };
 
-        if (playerSide isEqualTo west && {vehicle player != player} && {((driver vehicle player) == player)}) exitWith {
-            if ([vehicle player] call life_fnc_elsIsConfigured) then {
-                titleText ["ELS: use 1/2/3 for code stages","PLAIN"];
-            };
-            _handled = true;
-        };
-
-        if (playerSide isEqualTo independent && {vehicle player != player} && {!life_siren_active} && {((driver vehicle player) == player)}) then {
-            [] spawn {
-                life_siren_active = true;
-                sleep 4.7;
-                life_siren_active = false;
-            };
-
-            private _veh = vehicle player;
-            if (isNil {_veh getVariable "siren"}) then {_veh setVariable ["siren",false,true];};
-            if ((_veh getVariable "siren")) then {
-                titleText [localize "STR_MISC_SirensOFF","PLAIN"];
-                _veh setVariable ["siren",false,true];
-                if !(isNil {(_veh getVariable "sirenJIP")}) then {
-                    private _jip = _veh getVariable "sirenJIP";
-                    _veh setVariable ["sirenJIP",nil,true];
-                    remoteExec ["",_jip]; //remove from JIP queue
-                };
-            } else {
-                titleText [localize "STR_MISC_SirensON","PLAIN"];
-                _veh setVariable ["siren",true,true];
-                private "_jip";
-                _jip = [_veh] remoteExec ["life_fnc_medicSiren",RCLIENT,true];
-                _veh setVariable ["sirenJIP",_jip,true];
-            };
-        };
+        if ((playerSide in [west,independent]) && {vehicle player != player} && {((driver vehicle player) == player)}) then {_handled = true;};
     };
 
     //O Key

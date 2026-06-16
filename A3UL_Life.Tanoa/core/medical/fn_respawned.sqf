@@ -16,7 +16,6 @@ life_thirst = 100;
 life_carryWeight = 0;
 CASH = 0; //Make sure we don't get our cash back.
 life_respawned = false;
-player playMove "AmovPercMstpSnonWnonDnon";
 
 life_corpse setVariable ["Revive",nil,true];
 life_corpse setVariable ["name",nil,true];
@@ -26,6 +25,7 @@ player setVariable ["name",nil,true];
 player setVariable ["Reviving",nil,true];
 
 [] call life_fnc_startLoadout;
+[true,true] call life_fnc_resetSpawnState;
 
 //Cleanup of weapon containers near the body & hide it.
 if (!isNull life_corpse) then {

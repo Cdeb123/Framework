@@ -529,59 +529,46 @@ The following items are illegal to posses:<br/><br/>
             "Tanoa Life Custom Controls",
                 "
 F1 / User Action 9: Open the compact interaction menu for nearby shops, licenses, doors, garages, LEO tools, staff tools, and personal menus. Rebind in ESC -> Configure -> Controls -> Custom -> User Action 9.<br/>
-Scroll Wheel near vendors: use the native shop, license, garage, ATM, and service options. Highlight an option and press your normal action/selection key.<br/>
-Scroll Wheel near a building door: Door Access, including public doors, keycards, and configured keypads.<br/>
-Y: Open Player Menu.<br/>
-U: Lock and unlock owned vehicles and houses.<br/>
-T: Open vehicle trunk or nearby storage.<br/>
+F1 menu 1-8: Select the numbered action on the current page.<br/>
+F1 menu A / Left Arrow: Previous page.<br/>
+F1 menu D / Right Arrow: Next page.<br/>
+F1 menu Esc: Close the menu.<br/>
+Action / Use key or Scroll Wheel near configured doors: Use Door Access, including public doors, keycards, and keypads.<br/>
+1: ELS Code 1 / off while driving a configured emergency vehicle.<br/>
+2: ELS Code 2 / emergency lights while driving a configured emergency vehicle.<br/>
+3: ELS Code 3 / emergency lights and siren while driving a configured emergency vehicle.<br/>
+4: ELS airhorn while driving a configured emergency vehicle.<br/>
 Left Ctrl + Left Shift + T: Open the TCSD Training Academy terminal.<br/>
 Left Ctrl + Left Shift + L: Open the TCSD Command Suite.<br/>
 Left Ctrl + B: Toggle seatbelt while inside a vehicle.<br/>
 Left Ctrl + F: Toggle custom weapon fire mode.<br/>
 Left Ctrl + I: Open your ID card.<br/>
 Left Ctrl + P: Open character selection.<br/>
-Left Shift + B: Surrender.<br/>
-Left Shift + H: Holster current weapon.<br/>
-Left Ctrl + H: Draw previously holstered weapon.<br/>
-Left Shift + Spacebar: Jump.<br/>
-Left Shift + O: Toggle earplugs / sound fade.<br/><br/>
+Door keypad Enter: Submit the entered door code.<br/><br/>
                 "
         ]
     ];
 
     player createDiaryRecord ["controls",
         [
-            "Police and medic controls",
+            "Life Commands and Controls",
                 "
-F: Vehicle siren.<br/>
-L or F1 menu: Speed radar (police only and weapon is P07 Suppressed).<br/>
-F1 menu while in a police vehicle: Mobile Data Terminal and radar access.<br/>
-Left Shift + L: Activates siren lights.<br/>
-Left Shift + R: Restrain (police only).<br/><br/>
-                "
-        ]
-    ];
-    player createDiaryRecord ["controls",
-        [
-            "Civilian controls",
-                "
-Left Shift + G: Knock out / stun (Weapon required. Used for robbing).<br/>
-Spacebar: Place storage container.<br/><br/>
-                "
-        ]
-    ];
-    player createDiaryRecord ["controls",
-        [
-            "General controls",
-                "
+Action / Use key: Interact with ATMs, containers, houses, dead bodies, players, and vehicle menus when available.<br/>
+Scroll Wheel near vendors: Use native shop, license, garage, ATM, and service options.<br/>
 Y: Open Player Menu.<br/>
-U: Lock and unlock vehicles and houses.<br/>
-T: Vehicle trunk and house virtual item storage.<br/>
-Left Shift + B: Surrender (hands on head).<br/>
-Left Shift + H: Holsters the weapon in your hands.<br/>
-Left Ctrl + H: Revert holster action.<br/>
-Shift + Spacebar: Jump.<br/>
-Left Shift + O: (un)fade sound (ear plugs).<br/><br/>
+U: Lock and unlock owned vehicles and houses.<br/>
+T: Open vehicle trunk or nearby storage.<br/>
+L: Speed radar for police.<br/>
+Left Shift + R: Soft restrain as police.<br/>
+Left Ctrl + Left Shift + R: Hard restrain as police.<br/>
+Left Shift + G: Knock out / stun as civilian with a weapon equipped.<br/>
+Left Shift + B: Surrender / hands on head.<br/>
+Left Shift + H: Holster current weapon.<br/>
+Left Ctrl + H: Draw previously holstered weapon.<br/>
+Left Shift + Spacebar: Jump.<br/>
+Spacebar: Place an active storage container.<br/>
+Left Shift + O: Toggle earplugs / sound fade.<br/>
+Map: Open the map to show faction markers available to your side.<br/><br/>
                 "
         ]
     ];

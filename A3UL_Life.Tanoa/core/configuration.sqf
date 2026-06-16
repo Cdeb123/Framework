@@ -16,7 +16,6 @@ life_trunk_vehicle = objNull;
 life_session_completed = false;
 life_garage_store = false;
 life_session_tries = 0;
-life_siren_active = false;
 life_clothing_filter = 0;
 life_redgull_effect = time;
 life_is_processing = false;

@@ -118,10 +118,8 @@ class Life_Client_Core {
         class bountyReceive {};
         class containerInvSearch {};
         class copInteractionMenu {};
-        class copLights {};
         class copMarkers {};
         class copSearch {};
-        class copSiren {};
         class doorAnimate {};
         class fedCamDisplay {};
         class licenseCheck {};
@@ -132,7 +130,6 @@ class Life_Client_Core {
         class restrain {};
         class searchClient {};
         class seizeClient {};
-        class sirenLights {};
         class spikeStripEffect {};
         class ticketGive {};
         class ticketPaid {};
@@ -203,6 +200,7 @@ class Life_Client_Core {
 
     class Module_ELS {
         file = "modules\ELS";
+        class elsAirhorn {};
         class elsApplyStage {};
         class elsGetConfig {};
         class elsIsConfigured {};
@@ -306,7 +304,6 @@ class Life_Client_Core {
         class radialMenuKey {};
         class radialMenuLoad {};
         class radialMenuPage {};
-        class radialMedicSiren {};
         class radialPickupObject {};
         class radialPulloutVehicle {};
         class radialPutInVehicle {};
@@ -408,6 +405,7 @@ class Life_Client_Core {
         class pushObject {};
         class receiveItem {};
         class receiveMoney {};
+        class resetSpawnState {};
         class revealObjects {};
         class saveGear {};
         class simDisable {};
@@ -473,11 +471,8 @@ class Life_Client_Core {
     class Medical_System {
         file = "core\medical";
         class deathScreen {};
-        class medicLights {};
         class medicMarkers {};
         class medicRequest {};
-        class medicSiren {};
-        class medicSirenLights {};
         class onPlayerKilled {};
         class onPlayerRespawn {};
         class requestMedic {};

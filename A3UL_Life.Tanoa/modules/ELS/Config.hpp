@@ -3,21 +3,56 @@ class Life_ELS {
     code1Key = 2; // 1 key
     code2Key = 3; // 2 key
     code3Key = 4; // 3 key
+    airhornKey = 5; // 4 key
     requireDriver = 1;
     policeOnly = 1;
 
     class Profiles {
         class d3s_default {
+            /*
+                ELS writes configured variables/animations first, then falls
+                back to local lightpoints and mission siren audio. This keeps
+                added modded vehicles usable even when their exact animation
+                source names differ.
+            */
             lightVariable = "ani_lightbar";
             sirenVariable = "ani_siren";
+            lightVariables[] = {"ani_lightbar"};
+            sirenVariables[] = {"ani_siren"};
+            lightBooleanVariables[] = {};
+            sirenBooleanVariables[] = {};
             lightAnimation = "ani_lightbar";
             sirenAnimation = "ani_siren";
+            lightAnimations[] = {"ani_lightbar"};
+            sirenAnimations[] = {"ani_siren"};
+            lightSources[] = {"ani_lightbar","lightbar","lights","beacon","beacons","emergency_lights","emergencyLights"};
+            sirenSources[] = {"ani_siren","siren","sirens","speaker","siren_speaker"};
+            autoDetectLightSources = 1;
+            autoDetectSirenSources = 1;
             animationMode = "animate";
             engineOn = 0;
             forceHeadlights = 0;
-            fallbackSirenSound = "";
+
+            localLightpoints = 1;
+            lightTime = 0.18;
+            leftLightColor[] = {20,0.1,0.1};
+            rightLightColor[] = {0.1,0.1,20};
+            lightBrightness = 6;
+            lightIntensity = 10;
+            lightFlareSize = 0.38;
+            lightFlareMaxDistance = 150;
+            lightLeftOffset[] = {};
+            lightRightOffset[] = {};
+
+            fallbackSirenSound = "sirenLong";
             fallbackSirenDistance = 500;
             fallbackSirenDuration = 4.87;
+
+            airhornCooldown = 1;
+            airhornWeapons[] = {};
+            fallbackAirhornSound = "";
+            fallbackAirhornDistance = 350;
+            fallbackAirhornPitch = 1;
 
             class Stages {
                 class Code1 {

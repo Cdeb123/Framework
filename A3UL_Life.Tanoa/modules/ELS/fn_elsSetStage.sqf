@@ -19,15 +19,39 @@ if (_profile isEqualTo "") exitWith {};
 _stage = (_stage max 1) min 3;
 private _profileCfg = missionConfigFile >> "Life_ELS" >> "Profiles" >> _profile;
 private _stageCfg = _profileCfg >> "Stages" >> format ["Code%1",_stage];
-private _lightVariable = getText (_profileCfg >> "lightVariable");
-private _sirenVariable = getText (_profileCfg >> "sirenVariable");
 private _lightValue = getNumber (_stageCfg >> "lightValue");
 private _sirenValue = getNumber (_stageCfg >> "sirenValue");
+private _readTextList = {
+    params [
+        ["_cfg",configNull,[configNull]],
+        ["_legacy","",[""]]
+    ];
+    private _values = [];
+    if (isArray _cfg) then {
+        {
+            if (_x isEqualType "" && {!(_x isEqualTo "")}) then {_values pushBackUnique _x;};
+        } forEach (getArray _cfg);
+    };
+    if (isText _cfg) then {
+        private _value = getText _cfg;
+        if !(_value isEqualTo "") then {_values pushBackUnique _value;};
+    };
+    if !(_legacy isEqualTo "") then {_values pushBackUnique _legacy;};
+    _values;
+};
+private _lightVariables = [_profileCfg >> "lightVariables",getText (_profileCfg >> "lightVariable")] call _readTextList;
+private _sirenVariables = [_profileCfg >> "sirenVariables",getText (_profileCfg >> "sirenVariable")] call _readTextList;
+private _lightBooleanVariables = [_profileCfg >> "lightBooleanVariables",""] call _readTextList;
+private _sirenBooleanVariables = [_profileCfg >> "sirenBooleanVariables",""] call _readTextList;
 
 _vehicle setVariable ["life_els_stage",_stage,true];
 _vehicle setVariable ["life_els_profile",_profile,true];
-if !(_lightVariable isEqualTo "") then {_vehicle setVariable [_lightVariable,_lightValue,true];};
-if !(_sirenVariable isEqualTo "") then {_vehicle setVariable [_sirenVariable,_sirenValue,true];};
+_vehicle setVariable ["life_els_lights_on",_lightValue > 0,true];
+_vehicle setVariable ["life_els_siren_on",_sirenValue > 0,true];
+{_vehicle setVariable [_x,_lightValue,true];} forEach _lightVariables;
+{_vehicle setVariable [_x,_sirenValue,true];} forEach _sirenVariables;
+{_vehicle setVariable [_x,_lightValue > 0,true];} forEach _lightBooleanVariables;
+{_vehicle setVariable [_x,_sirenValue > 0,true];} forEach _sirenBooleanVariables;
 life_els_stage = _stage;
 life_els_profile = _profile;
 life_els_last_vehicle = _vehicle;

@@ -19,7 +19,7 @@ _unit setVariable ["playerSurrender",false,true];
 _unit setVariable ["steam64id",getPlayerUID player,true]; //Reset the UID.
 _unit setVariable ["realname",profileName,true]; //Reset the players name.
 
-player playMoveNow "AmovPpneMstpSrasWrflDnon";
+[true,true] call life_fnc_resetSpawnState;
 
 [] call life_fnc_setupActions;
 [_unit,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_manageSC",RSERV];

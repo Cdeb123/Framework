@@ -41,6 +41,7 @@ if (life_is_alive && {_hasSavedPosition}) exitWith {
 
     [] call life_fnc_playerSkins;
     [] call life_fnc_hudSetup;
+    [true,true] call life_fnc_resetSpawnState;
     [3] call SOCK_fnc_updatePartial;
 };
 

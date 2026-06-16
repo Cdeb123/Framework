@@ -309,13 +309,6 @@ if (playerSide isEqualTo independent) then {
     if (!isNull _targetPlayer && {!alive _targetPlayer} && {life_inv_defibrillator > 0}) then {
         ["Revive","Start revive on the nearby patient","spawnFunction",["revivePlayer",[_targetPlayer]],"EMS",35] call _addAction;
     };
-
-    if (vehicle player != player && {driver (vehicle player) isEqualTo player}) then {
-        if (!isNil {vehicle player getVariable "lights"}) then {
-            ["EMS Lights","Toggle emergency lights","function",["medicSirenLights",[vehicle player]],"EMS",30] call _addAction;
-        };
-        ["EMS Siren","Toggle response siren","function",["radialMedicSiren",[vehicle player]],"EMS",29] call _addAction;
-    };
 };
 
 if ((["staff.permissions"] call life_fnc_hasPermission) || {["owner.access"] call life_fnc_hasPermission} || {[] call life_fnc_isCommunityOwner}) then {
