@@ -1127,27 +1127,126 @@ class Life_Shops {
                             rolePermissions[] = {"leo.training.cadet"};
                             text = "Academy uniform for cadets assigned to training.";
                         };
-                        class fto_beret {
-                            className = "H_Beret_blk_POLICE";
+                        class AG_AdminServices_PatchCapAlt {
+                            className = "AG_AdminServices_PatchCapAlt";
                             itemType = "headgear";
-                            displayName = "FTO Beret";
+                            displayName = "FTO Cap Patch Alternate";
                             price = 50;
                             condition = "";
-                            rank = "corporal";
+                            rank = "deputy";
                             subdivisions[] = {"academy"};
                             rolePermissions[] = {"leo.training.fto"};
                             text = "Training officer headgear for qualified FTOs.";
                         };
-                        class academy_pack {
-                            className = "B_FieldPack_cbr";
+                        class AG_AdminServices_PatchCapAlt_Back {
+                            className = "AG_AdminServices_PatchCapAlt_Back";
+                            itemType = "headgear";
+                            displayName = "FTO Cap Patch Alternate Backwards";
+                            price = 50;
+                            condition = "";
+                            rank = "deputy";
+                            subdivisions[] = { "academy" };
+                            rolePermissions[] = { "leo.training.fto" };
+                            text = "Training officer headgear for qualified FTOs.";
+                        };
+                        class AG_AdminServices_Short_Deputy_Uni {
+                            className = "AG_AdminServices_Short_Deputy_Uni";
+                            itemType = "uniform";
+                            displayName = "FTO Deputy Uniform";
+                            price = 50;
+                            condition = "";
+                            rank = "deputy";
+                            subdivisions[] = { "academy" };
+                            rolePermissions[] = { "leo.training.fto" };
+                            text = "Acadmey Deputy FTO Uniform";
+                        };
+                        class AG_AdminServices_Long_Deputy_Uni {
+                            className = "AG_AdminServices_Long_Deputy_Uni";
+                            itemType = "uniform";
+                            displayName = "FTO Deputy Uniform Long Sleeve";
+                            price = 50;
+                            condition = "";
+                            rank = "deputy";
+                            subdivisions[] = { "academy" };
+                            rolePermissions[] = { "leo.training.fto" };
+                            text = "Acadmey Deputy FTO Uniform Long Sleeve";
+                        };
+                        class AG_AdminServices_Short_SnrDeputy_Uni {
+                            className = "AG_AdminServices_Short_SnrDeputy_Uni";
+                            itemType = "uniform";
+                            displayName = "FTO Senior Deputy Uniform";
+                            price = 50;
+                            condition = "";
+                            rank = "Senior Deputy";
+                            subdivisions[] = { "academy" };
+                            rolePermissions[] = { "leo.training.fto" };
+                            text = "Acadmey Senior Deputy FTO Uniform";
+                        };
+                        class AG_AdminServices_Short_Corporal_Uni {
+                            className = "AG_AdminServices_Short_Corporal_Uni";
+                            itemType = "uniform";
+                            displayName = "FTO Corporal Uniform";
+                            price = 50;
+                            condition = "";
+                            rank = "corporal";
+                            subdivisions[] = { "academy" };
+                            rolePermissions[] = { "leo.training.fto" };
+                            text = "Acadmey Corporal FTO Uniform";
+                        };
+                        class AG_AdminServices_CPC_Vest {
+                            className = "AG_AdminServices_CPC_Vest";
+                            itemType = "vest";
+                            displayName = "FTO CPC Vest";
+                            price = 50;
+                            condition = "";
+                            rank = "deputy";
+                            subdivisions[] = { "academy" };
+                            rolePermissions[] = { "leo.training.fto" };
+                            text = "Acadmey FTO Vest";
+                        };
+                        class AG_AdminServices_PatrolVest {
+                            className = "AG_AdminServices_PatrolVest";
+                            itemType = "vest";
+                            displayName = "FTO LBT Patrol Vest";
+                            price = 50;
+                            condition = "";
+                            rank = "deputy";
+                            subdivisions[] = { "academy" };
+                            rolePermissions[] = { "leo.training.fto" };
+                            text = "Acadmey FTO LBT Vest";
+                        };
+                        class FTO_VestCombo {
+                            className = "FTO_VestCombo";
+                            itemType = "vest";
+                            displayName = "FTO Patrol Vest";
+                            price = 50;
+                            condition = "";
+                            rank = "corporal";
+                            subdivisions[] = { "academy" };
+                            rolePermissions[] = { "leo.training.fto" };
+                            text = "Field Training Officer Patrol Vest";
+                        };
+                        class FTO_VestCombo2 {
+                            className = "FTO_VestCombo2";
+                            itemType = "vest";
+                            displayName = "FTO Patrol Vest";
+                            price = 50;
+                            condition = "";
+                            rank = "senior_deputy";
+                            subdivisions[] = { "academy" };
+                            rolePermissions[] = { "leo.training.fto" };
+                            text = "Field Training Officer Patrol Vest";
+                        };
+                        class AG_FactionInvPack {
+                            className = "AG_FactionInvPack";
                             itemType = "backpack";
-                            displayName = "Academy Field Pack";
+                            displayName = "Faction Backpack";
                             price = 500;
                             condition = "";
                             rank = "cadet";
                             subdivisions[] = {"academy"};
                             rolePermissions[] = {};
-                            text = "Academy field pack for training supplies.";
+                            text = "Standard Issue Backpack";
                         };
                     };
                 };
