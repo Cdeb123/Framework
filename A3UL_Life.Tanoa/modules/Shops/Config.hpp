@@ -367,8 +367,8 @@ class Life_Shops {
                                 condition = "";
                                 text = "Basic medical kit.";
                             };
-                            class nvg {
-                                className = "NVGoggles";
+                            class AG_PoliceThing {
+                                className = "AG_PoliceThing";
                                 nickname = "";
                                 buyPrice = 2000;
                                 sellPrice = 1000;
@@ -462,6 +462,22 @@ class Life_Shops {
                                 sellPrice = 65;
                                 condition = "['deputy'] call life_fnc_leoAtLeastRank";
                                 text = ".45 ACP sidearm magazine.";
+                            };
+                            class RH_sw659 {
+                                className = "RH_sw659";
+                                nickname = "";
+                                buyPrice = 9500;
+                                sellPrice = 4750;
+                                condition = "['sheriff'] call life_fnc_leoAtLeastRank";
+                                text = "Authorized 9mm Handgun";
+                            };
+                            class RH_14Rnd_9x19_sw {
+                                className = "RH_14Rnd_9x19_sw";
+                                nickname = "";
+                                buyPrice = 130;
+                                sellPrice = 65;
+                                condition = "['sheriff'] call life_fnc_leoAtLeastRank";
+                                text = "Smith and Wesson 9mm 14rnd Magazine";
                             };
                         };
                     };
@@ -813,6 +829,26 @@ class Life_Shops {
                                 features[] = {"Fast pursuit response","Compact footprint","Sheriff Access"};
                                 text = "A faster pursuit vehicle for qualified deputies and above.";
                             };
+                            class AG_Camaro_21_HSU_AG_TIER3 {
+                                className = "AG_Camaro_21_HSU_AG_TIER3";
+                                displayName = "2021 High Speed Unit Camaro";
+                                price = -1;
+                                condition = "";
+                                rank = "sheriff";
+                                subdivisions[] = {};
+                                features[] = { "Fast pursuit response","Compact footprint","Sheriff Access" };
+                                text = "A faster pursuit vehicle for qualified deputies and above.";
+                            };
+                            class AG_CTSV_AdminServices_AG_TIER3 {
+                                className = "AG_CTSV_AdminServices_AG_TIER3";
+                                displayName = "CTSV FTO Patrol Car";
+                                price = -1;
+                                condition = "";
+                                rank = "deputy";
+                                subdivisions[] = {"leo.training.fto"};
+                                features[] = { "Training Vehicle","Low upkeep","Fast pursuit response" };
+                                text = "A faster pursuit vehicle for qualified deputies and above.";
+                            };
                         };
                     };
 
@@ -1031,65 +1067,76 @@ class Life_Shops {
                             rolePermissions[] = {};
                             text = "Removes the currently worn backpack slot.";
                         };
-                        class patrol_uniform {
-                            className = "U_Rangemaster";
+                        class AG_KCSO_Short_Cadet_Uni {
+                            className = "AG_KCSO_Short_Cadet_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Patrol Uniform";
+                            displayName = "TCSD Cadet Patrol Uniform";
                             price = 25;
                             condition = "";
-                            rank = "";
+                            rank = "cadet";
                             subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD patrol uniform.";
+                            text = "Standard issued TCSD Cadet Uniform";
                         };
-                        class deputy_field_uniform {
-                            className = "U_B_CombatUniform_mcam_tshirt";
+                        class AG_KCSO_Long_Cadet_Uni {
+                            className = "AG_KCSO_Long_Cadet_Uni";
                             itemType = "uniform";
-                            displayName = "Deputy Field Uniform";
+                            displayName = "TCSD Cadet Patrol Uniform Long Sleeve";
                             price = 350;
+                            condition = "";
+                            rank = "cadet";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Standard issued TCSD Cadet Uniform Long Sleeve";
+                        };
+                        class AG_KCSO_Short_Trooper_Uni {
+                            className = "AG_KCSO_Short_Trooper_Uni";
+                            itemType = "uniform";
+                            displayName = "TCSD Deputy Patrol Uniform";
+                            price = 550;
                             condition = "";
                             rank = "deputy";
                             subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Field uniform available to deputies and above.";
+                            text = "Standard issued TCSD Deputy Uniform";
                         };
-                        class senior_patrol_uniform {
-                            className = "U_B_CombatUniform_mcam_worn";
+                        class AG_KCSO_Long_Trooper_Uni {
+                            className = "AG_KCSO_Long_Trooper_Uni";
                             itemType = "uniform";
-                            displayName = "Senior Patrol Uniform";
+                            displayName = "TCSD Deputy Patrol Uniform Long Sleeve";
                             price = 550;
                             condition = "";
-                            rank = "corporal";
+                            rank = "deputy";
                             subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Senior field uniform for corporal and above.";
+                            text = "Standard issued TCSD Deputy Uniform Long Sleeve";
                         };
-                        class police_cap {
-                            className = "H_Cap_police";
+                        class AG_KCSO_Beret {
+                            className = "AG_KCSO_Beret";
                             itemType = "headgear";
-                            displayName = "TCSD Patrol Cap";
+                            displayName = "TCSD Beret";
                             price = 25;
                             condition = "";
-                            rank = "";
+                            rank = "deputy";
                             subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard TCSD patrol cap.";
+                            text = "Standard TCSD Beret";
                         };
-                        class duty_belt {
-                            className = "V_Rangemaster_belt";
+                        class AG_Patrol_Belt_KCSO {
+                            className = "AG_Patrol_Belt_KCSO";
                             itemType = "vest";
-                            displayName = "Duty Belt";
+                            displayName = "TCSD Patrol Belt";
                             price = 800;
                             condition = "";
-                            rank = "";
+                            rank = "cadet";
                             subdivisions[] = {};
                             rolePermissions[] = {};
                             text = "Standard duty belt for patrol equipment.";
                         };
-                        class tac_vest {
-                            className = "V_TacVest_blk_POLICE";
+                        class AG_KCSO_CPC_Vest_Green {
+                            className = "AG_KCSO_CPC_Vest_Green";
                             itemType = "vest";
-                            displayName = "Patrol Tactical Vest";
+                            displayName = "TCSD CPC Tactical Vest";
                             price = 1000;
                             condition = "";
                             rank = "deputy";
@@ -1097,16 +1144,16 @@ class Life_Shops {
                             rolePermissions[] = {};
                             text = "Authorized tactical vest for deputies and above.";
                         };
-                        class patrol_pack {
-                            className = "B_AssaultPack_cbr";
+                        class AG_FactionInvPack {
+                            className = "AG_FactionInvPack";
                             itemType = "backpack";
-                            displayName = "Patrol Pack";
+                            displayName = "Faction Backpack";
                             price = 700;
                             condition = "";
                             rank = "";
                             subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Small patrol pack for issued field equipment.";
+                            text = "Large patrol pack for issued field equipment.";
                         };
                     };
                 };
@@ -1412,38 +1459,49 @@ class Life_Shops {
                     description = "Command staff clothing and supervisory equipment.";
 
                     class Items {
-                        class command_uniform {
-                            className = "U_Rangemaster";
+                        class U_C_Man_casual_1_F {
+                            className = "U_C_Man_casual_1_F";
                             itemType = "uniform";
-                            displayName = "Command Uniform";
-                            price = 25;
+                            displayName = "Casual Navy Plain Clothes";
+                            price = 0;
                             condition = "";
-                            rank = "lieutenant";
+                            rank = "sheriff";
                             subdivisions[] = {};
                             rolePermissions[] = {"leo.command.terminal"};
-                            text = "Command staff uniform for lieutenant and above.";
+                            text = "Casual Clothes for the Sheriff";
                         };
-                        class command_beret {
-                            className = "H_Beret_blk_POLICE";
+                        class AG_HSU_CampaignHat {
+                            className = "AG_HSU_CampaignHat";
                             itemType = "headgear";
-                            displayName = "Command Beret";
-                            price = 50;
+                            displayName = "High Speed Unit Campaign Hat";
+                            price = 0;
                             condition = "";
-                            rank = "lieutenant";
+                            rank = "sheriff";
                             subdivisions[] = {};
                             rolePermissions[] = {"leo.command.terminal"};
-                            text = "Command headgear for department leadership.";
+                            text = "HSE Command Campaign Hat";
                         };
-                        class command_cap {
-                            className = "H_MilCap_gen_F";
-                            itemType = "headgear";
-                            displayName = "Command Field Cap";
-                            price = 1200;
+                        class G_Squares_Tinted {
+                            className = "G_Squares_Tinted";
+                            itemType = "goggles";
+                            displayName = "Tinted Glasses Non Standard Issue";
+                            price = 0;
                             condition = "";
-                            rank = "lieutenant";
+                            rank = "sheriff";
+                            subdivisions[] = {};
+                            rolePermissions[] = { "leo.command.terminal" };
+                            text = "Tinted Glasses";
+                        };
+                        class AG_MMAC_Vest_HSU {
+                            className = "AG_MMAC_Vest_HSU";
+                            itemType = "vest";
+                            displayName = "High Speed Unit MMAC Tactical Vest";
+                            price = 0;
+                            condition = "";
+                            rank = "sheriff";
                             subdivisions[] = {};
                             rolePermissions[] = {"leo.command.terminal"};
-                            text = "Field cap issued to command staff.";
+                            text = "HSE Command Tactical Vest";
                         };
                     };
                 };
