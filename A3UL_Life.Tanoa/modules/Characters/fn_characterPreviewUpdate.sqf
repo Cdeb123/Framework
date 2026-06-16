@@ -3,14 +3,13 @@
     File: fn_characterPreviewUpdate.sqf
 
     Description:
-    Applies selected/edited face and uniform to the preview player.
+    Applies selected/edited face to the preview player.
 */
 disableSerialization;
 private _display = findDisplay 7800;
 if (isNull _display) exitWith {};
 
 private _face = "";
-private _uniform = "";
 private _selected = lbCurSel 7801;
 
 if (_selected >= 0) then {
@@ -19,7 +18,6 @@ if (_selected >= 0) then {
         private _character = call compile _data;
         if (_character isEqualType [] && {(count _character) >= 8}) then {
             _face = _character select 6;
-            _uniform = _character select 7;
             (_display displayCtrl 7803) ctrlSetText (_character select 2);
             (_display displayCtrl 7804) ctrlSetText (_character select 3);
             (_display displayCtrl 7805) ctrlSetText (_character select 4);
@@ -38,13 +36,8 @@ if (_selected >= 0) then {
 life_character_selectedChanged = false;
 
 if (_face isEqualTo "") then {_face = lbData [7807,lbCurSel 7807];};
-if (_uniform isEqualTo "") then {_uniform = lbData [7808,lbCurSel 7808];};
 
 if !(_face isEqualTo "") then {player setFace _face;};
-if !(_uniform isEqualTo "") then {
-    removeUniform player;
-    player forceAddUniform _uniform;
-};
 
 if (!isNil "life_character_preview_camera" && {!isNull life_character_preview_camera}) then {
     life_character_preview_camera camSetTarget (player modelToWorld [0,0,1.25]);

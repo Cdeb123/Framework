@@ -16,7 +16,6 @@ private _dob = ctrlText (_display displayCtrl 7804);
 private _political = ctrlText (_display displayCtrl 7805);
 private _background = ctrlText (_display displayCtrl 7806);
 private _face = lbData [7807,lbCurSel 7807];
-private _uniform = lbData [7808,lbCurSel 7808];
 private _cleanText = {
     params [["_value","",[""]]];
     (_value splitString "<>") joinString ""
@@ -32,7 +31,6 @@ if (_dob isEqualTo "") exitWith {hint "Enter a date of birth.";};
 if (_political isEqualTo "") exitWith {hint "Enter a political status.";};
 if (_background isEqualTo "") exitWith {hint "Enter a character background.";};
 if (_face isEqualTo "") then {_face = "WhiteHead_01";};
-if (_uniform isEqualTo "") then {_uniform = "U_C_Poloshirt_blue";};
 
 private _usedSlots = life_characters apply {_x select 0};
 private _slot = 0;
@@ -41,6 +39,7 @@ for "_i" from 0 to 2 do {
 };
 
 private _characterUID = format ["%1-%2-%3",getPlayerUID player,profileName,_slot + 1];
+private _uniform = "";
 private _character = [_slot,_characterUID,_name,_dob,_political,_background,_face,_uniform,[],[],[],[]];
 life_characters pushBack _character;
 profileNamespace setVariable [_key,life_characters];

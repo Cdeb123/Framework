@@ -55,22 +55,6 @@ lbClear 7807;
 } forEach _faces;
 lbSetCurSel [7807,0];
 
-private _uniforms = [
-    ["U_C_Poloshirt_blue","Blue Polo"],
-    ["U_C_Poloshirt_burgundy","Burgundy Polo"],
-    ["U_C_Poloshirt_stripped","Striped Polo"],
-    ["U_C_Poloshirt_tricolour","Tricolor Polo"],
-    ["U_C_Man_casual_1_F","Casual 1"],
-    ["U_C_Man_casual_2_F","Casual 2"]
-];
-
-lbClear 7808;
-{
-    private _idx = lbAdd [7808,_x select 1];
-    lbSetData [7808,_idx,_x select 0];
-} forEach _uniforms;
-lbSetCurSel [7808,0];
-
 private _remaining = 3 - (count life_characters);
 (_display displayCtrl 7802) ctrlSetStructuredText parseText format [
     "<t color='#00c7eb' size='1.1'>%1 slots available</t><br/><t color='#dceaf0'>Steam ID:</t> %2<br/><t color='#dceaf0'>Profile:</t> %3",

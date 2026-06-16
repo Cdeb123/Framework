@@ -8,9 +8,10 @@
     Description:
     Saves the players gear for syncing to the database for persistence..
 */
-private ["_return","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_uni","_ves","_bag","_handled","_savedVirtualItems"];
+private ["_return","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_uni","_ves","_bag","_handled","_savedVirtualItems","_allowWeaponSave","_unitLoadout"];
 _return = [];
 _savedVirtualItems = LIFE_SETTINGS(getArray,"saved_virtualItems");
+_allowWeaponSave = playerSide isEqualTo west || {playerSide isEqualTo civilian && {LIFE_SETTINGS(getNumber,"save_civilian_weapons") isEqualTo 1}};
 
 _return pushBack uniform player;
 _return pushBack vest player;
@@ -18,7 +19,7 @@ _return pushBack backpack player;
 _return pushBack goggles player;
 _return pushBack headgear player;
 _return pushBack assignedITems player;
-if (playerSide isEqualTo west || playerSide isEqualTo civilian && {LIFE_SETTINGS(getNumber,"save_civilian_weapons") isEqualTo 1}) then {
+if (_allowWeaponSave) then {
     _return pushBack primaryWeapon player;
     _return pushBack handgunWeapon player;
 } else {
@@ -153,5 +154,13 @@ if (LIFE_SETTINGS(getNumber,"save_virtualItems") isEqualTo 1) then {
 } else {
     _return pushBack [];
 };
+
+_unitLoadout = getUnitLoadout player;
+if (!_allowWeaponSave) then {
+    _unitLoadout set [0,[]];
+    _unitLoadout set [1,[]];
+    _unitLoadout set [2,[]];
+};
+_return pushBack _unitLoadout;
 
 life_gear = _return;

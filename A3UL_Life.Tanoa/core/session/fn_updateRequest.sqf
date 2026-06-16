@@ -10,7 +10,7 @@ private ["_packet","_array","_flag","_alive","_position"];
 _packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK];
 _array = [];
 _alive = alive player;
-_position = getPosATL player;
+_position = if (playerSide isEqualTo civilian && {_alive}) then {getPosATL player} else {[]};
 _flag = switch (playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
 
 {

@@ -33,6 +33,18 @@ _itemArray params [
     ["_yItems",[]]
 ];
 
+private _fullLoadout = _itemArray param [17,[],[[]]];
+if (_fullLoadout isEqualType [] && {(count _fullLoadout) >= 10}) exitWith {
+    player setUnitLoadout _fullLoadout;
+    life_maxWeight = if (backpack player isEqualTo "") then {LIFE_SETTINGS(getNumber,"total_maxWeight")} else {LIFE_SETTINGS(getNumber,"total_maxWeight") + round(FETCH_CONFIG2(getNumber,"CfgVehicles",(backpack player),"maximumload") / 4)};
+
+    {
+        [true,(_x select 0),(_x select 1)] call life_fnc_handleInv;
+    } forEach (_yItems);
+
+    [] call life_fnc_playerSkins;
+};
+
 private "_handle";
 if (!(_goggles isEqualTo "")) then {_handle = [_goggles,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};
 if (!(_headgear isEqualTo "")) then {_handle = [_headgear,true,false,false,false] spawn life_fnc_handleItem; waitUntil {scriptDone _handle};};

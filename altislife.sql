@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `characters` (
     `political_status` VARCHAR(64) NOT NULL DEFAULT 'Resident',
     `background`       TEXT NOT NULL,
     `face`             VARCHAR(64) NOT NULL DEFAULT 'WhiteHead_01',
-    `uniform`          VARCHAR(64) NOT NULL DEFAULT 'U_C_Poloshirt_blue',
+    `uniform`          VARCHAR(64) NOT NULL DEFAULT '',
     `licenses`         TEXT NOT NULL,
     `records`          TEXT NOT NULL,
     `tickets`          TEXT NOT NULL,

@@ -35,11 +35,15 @@ switch (_mode) do {
     case 3: {
         [] call life_fnc_saveGear;
         _packet set[2,life_gear];
+        if (playerSide isEqualTo civilian) then {
+            _packet set[4,life_is_alive];
+            _packet set[5,if (life_is_alive) then {getPosATL player} else {[]}];
+        };
     };
 
     case 4: {
         _packet set[2,life_is_alive];
-        _packet set[4,getPosATL player];
+        _packet set[4,if (life_is_alive) then {getPosATL player} else {[]}];
     };
 
     case 5: {

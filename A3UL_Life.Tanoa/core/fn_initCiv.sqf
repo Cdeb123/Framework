@@ -24,7 +24,27 @@ if (life_is_arrested) exitWith {
 
 [] call life_fnc_characterGate;
 
-if (!life_is_alive && {LIFE_SETTINGS(getNumber,"save_civilian_positionStrict") isEqualTo 1}) then {
+private _hasSavedPosition = (life_civ_position isEqualType []) && {(count life_civ_position) isEqualTo 3} && {(life_civ_position distance (getMarkerPos "respawn_civilian")) >= 300};
+
+if (life_is_alive && {_hasSavedPosition}) exitWith {
+    detach player;
+    player allowDamage true;
+    player setVelocity [0,0,0];
+    player setPosATL life_civ_position;
+    cutText ["","BLACK IN"];
+    titleText ["Welcome back. You have been restored to your last saved location.","BLACK IN"];
+
+    if (life_firstSpawn) then {
+        life_firstSpawn = false;
+        [] call life_fnc_welcomeNotification;
+    };
+
+    [] call life_fnc_playerSkins;
+    [] call life_fnc_hudSetup;
+    [3] call SOCK_fnc_updatePartial;
+};
+
+if (!life_is_alive && {!_hasSavedPosition} && {LIFE_SETTINGS(getNumber,"save_civilian_positionStrict") isEqualTo 1}) then {
     [] call life_fnc_startLoadout;
     CASH = 0;
     [0] call SOCK_fnc_updatePartial;
@@ -34,3 +54,4 @@ if (!life_is_alive && {LIFE_SETTINGS(getNumber,"save_civilian_positionStrict") i
 waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
 life_is_alive = true;
+[3] call SOCK_fnc_updatePartial;

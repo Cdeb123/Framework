@@ -6,7 +6,7 @@
     Description:
     All survival? things merged into one thread.
 */
-private ["_fnc_food","_fnc_water","_foodTime","_waterTime","_bp","_walkDis","_lastPos","_curPos"];
+private ["_fnc_food","_fnc_water","_foodTime","_waterTime","_syncTime","_bp","_walkDis","_lastPos","_curPos"];
 _fnc_food =  {
     if (life_hunger < 2) then {player setDamage 1; hint localize "STR_NOTF_EatMSG_Death";}
     else {
@@ -47,6 +47,7 @@ _fnc_water = {
 //Setup the time-based variables.
 _foodTime = time;
 _waterTime = time;
+_syncTime = time;
 _walkDis = 0;
 _bp = "";
 _lastPos = visiblePosition player;
@@ -57,6 +58,10 @@ for "_i" from 0 to 1 step 0 do {
     /* Thirst / Hunger adjustment that is time based */
     if ((time - _waterTime) > 240 && {!life_god}) then {[] call _fnc_water; _waterTime = time;};
     if ((time - _foodTime) > 360 && {!life_god}) then {[] call _fnc_food; _foodTime = time;};
+    if ((time - _syncTime) > 300 && {alive player} && {life_session_completed}) then {
+        [] call SOCK_fnc_updateRequest;
+        _syncTime = time;
+    };
 
     /* Adjustment of carrying capacity based on backpack changes */
     if (backpack player isEqualTo "") then {

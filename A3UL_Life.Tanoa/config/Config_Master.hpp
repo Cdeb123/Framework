@@ -24,7 +24,7 @@ class Life_Settings {
     save_civilian_position = true; //Save civilian location?
     save_civilian_position_restart = true; //Save civilian location only between restarts. After a server restart you'll have to spawn again.
     /* !!!TO SAVE POSITION BETWEEN RESTARTS save_civilian_position MUST BE TRUE!!! */
-    save_civilian_positionStrict = true; //Strip the player if possible combat-log?  WARNING: Server crashes and lack of reliable syncing can trigger this.
+    save_civilian_positionStrict = true; //Strip only when no valid saved position exists. Restart-reset players keep saved gear and choose a spawn.
     framework_extensionData = true; //Fetch character/legal/Discord permission extension rows. Run the SQL migration before enabling on live servers.
 
     /* Vehicle Data Saving */

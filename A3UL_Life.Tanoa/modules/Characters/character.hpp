@@ -176,7 +176,7 @@ class life_character_select {
             idc = 7807;
             x = 0.490 * safezoneW + safezoneX;
             y = 0.455 * safezoneH + safezoneY;
-            w = 0.135 * safezoneW;
+            w = 0.285 * safezoneW;
             h = 0.038 * safezoneH;
             onLBSelChanged = "[] call life_fnc_characterPreviewUpdate";
         };
@@ -189,28 +189,7 @@ class life_character_select {
             sizeEx = 0.032;
             x = 0.490 * safezoneW + safezoneX;
             y = 0.425 * safezoneH + safezoneY;
-            w = 0.135 * safezoneW;
-            h = 0.03 * safezoneH;
-        };
-
-        class UniformCombo: Life_RscCombo {
-            idc = 7808;
-            x = 0.640 * safezoneW + safezoneX;
-            y = 0.455 * safezoneH + safezoneY;
-            w = 0.135 * safezoneW;
-            h = 0.038 * safezoneH;
-            onLBSelChanged = "[] call life_fnc_characterPreviewUpdate";
-        };
-
-        class UniformLabel: Life_RscText {
-            idc = -1;
-            text = "Uniform";
-            colorText[] = {0.92,0.97,1,1};
-            colorBackground[] = {0,0,0,0};
-            sizeEx = 0.032;
-            x = 0.640 * safezoneW + safezoneX;
-            y = 0.425 * safezoneH + safezoneY;
-            w = 0.135 * safezoneW;
+            w = 0.285 * safezoneW;
             h = 0.03 * safezoneH;
         };
 
