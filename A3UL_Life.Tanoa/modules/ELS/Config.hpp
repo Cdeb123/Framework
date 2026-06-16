@@ -53,7 +53,7 @@ class Life_ELS {
         */
         class TCSD_D3S {
             profile = "d3s_default";
-            classNames[] = {};
+            classNames[] = { "AG_CROWNVIC_Police_AG", "AG_CROWNVIC_Police_ST_AG", "AG_CROWNVIC_UNM_AG_TIER3", "AG_Bearcat_KCSO_AG", "AG_Titan_Police_AG" };
         };
     };
 };
