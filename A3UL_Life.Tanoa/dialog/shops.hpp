@@ -19,7 +19,7 @@ class life_weapon_shop {
             x = 0.1;
             y = 0.2 + (11 / 250);
             w = 0.32;
-            h = 0.6 - (22 / 250);
+            h = 0.75 - (22 / 250);
         };
 
         class Title: Life_RscTitle {
@@ -39,7 +39,7 @@ class life_weapon_shop {
             x = 0.11;
             y = 0.68;
             w = 0.2;
-            h = 0.2;
+            h = 0.06;
         };
 
         class FilterList: Life_RscCombo {
@@ -61,6 +61,27 @@ class life_weapon_shop {
             y = 0.25;
             w = 0.3;
             h = 0.38;
+        };
+
+        class MagazineQuantityLabel: Life_RscText {
+            idc = 38409;
+            text = "Magazine quantity (1-100)";
+            sizeEx = 0.028;
+            x = 0.11;
+            y = 0.715;
+            w = 0.19;
+            h = 0.032;
+        };
+
+        class MagazineQuantity: Life_RscEdit {
+            idc = 38408;
+            text = "1";
+            maxChars = 3;
+            sizeEx = 0.030;
+            x = 0.31;
+            y = 0.715;
+            w = 0.10;
+            h = 0.032;
         };
 
         class ButtonBuySell: Life_RscButtonMenu {
@@ -100,6 +121,17 @@ class life_weapon_shop {
             x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
             y = 0.8 + (1 / 250 / (safezoneW / safezoneH));
             w = (6.25 / 40);
+            h = (1 / 25);
+        };
+
+        class ButtonRepack: Life_RscButtonMenu {
+            idc = 38410;
+            text = "Repack Owned";
+            tooltip = "Consolidate partial magazines of the selected type without creating rounds";
+            onButtonClick = "[] call life_fnc_repackMagazines";
+            x = 0.1;
+            y = 0.845;
+            w = 0.32;
             h = (1 / 25);
         };
     };

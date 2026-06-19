@@ -29,6 +29,10 @@ life_weapon_shop_items = [];
 (_display displayCtrl 8705) ctrlSetStructuredText parseText "<t color='#7dcbd0'>Select a category to begin.</t>";
 (_display displayCtrl 8706) ctrlSetText "";
 (_display displayCtrl 8707) ctrlEnable false;
+(_display displayCtrl 8708) ctrlSetText "1";
+ctrlShow [8708,false];
+ctrlShow [8709,false];
+ctrlShow [8710,false];
 
 lbClear 8703;
 lbClear 8704;

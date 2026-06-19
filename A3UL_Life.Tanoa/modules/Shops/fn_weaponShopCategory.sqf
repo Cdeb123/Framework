@@ -21,6 +21,10 @@ lbClear 8704;
 life_weapon_shop_items = [];
 (_display displayCtrl 8706) ctrlSetText "";
 (_display displayCtrl 8707) ctrlEnable false;
+(_display displayCtrl 8708) ctrlSetText "1";
+ctrlShow [8708,false];
+ctrlShow [8709,false];
+ctrlShow [8710,false];
 
 if (_type isEqualTo "license") exitWith {
     private _licenseCfg = _shopCfg >> "License";

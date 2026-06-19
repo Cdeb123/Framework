@@ -199,6 +199,18 @@ if (([] call life_fnc_nearATM) && {!dialog}) then {
 if (!dialog && {!(player getVariable ["restrained",false])}) then {
     ["Player Menu","Inventory, keys, phone, money, and settings","code","[] call life_fnc_p_openMenu","Personal",10] call _addAction;
     ["My ID","Open your identification card","function",["openID",[]],"Personal",9] call _addAction;
+
+    private _hasPartialMagazine = (magazinesAmmoFull player) findIf {
+        private _className = _x param [0,"",[""]];
+        private _rounds = _x param [1,0,[0]];
+        private _loaded = _x param [2,false,[false]];
+        private _capacity = getNumber (configFile >> "CfgMagazines" >> _className >> "count");
+        !_loaded && {_capacity > 1} && {_rounds < _capacity}
+    };
+    if (_hasPartialMagazine >= 0) then {
+        ["Repack Magazines","Consolidate partial inventory magazines without creating rounds","function",["repackMagazines",[]],"Personal",11] call _addAction;
+    };
+
     if (!isNull _targetPlayer) then {
         ["Show ID","Show your ID to the nearby player","function",["showID",[_targetPlayer]],"Personal",12] call _addAction;
     };

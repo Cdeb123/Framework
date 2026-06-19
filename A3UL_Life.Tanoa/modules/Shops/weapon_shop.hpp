@@ -6,6 +6,9 @@
 #define MOD_WEAPON_SHOP_DETAILS 8705
 #define MOD_WEAPON_SHOP_PICTURE 8706
 #define MOD_WEAPON_SHOP_BUY 8707
+#define MOD_WEAPON_SHOP_QUANTITY 8708
+#define MOD_WEAPON_SHOP_QUANTITY_LABEL 8709
+#define MOD_WEAPON_SHOP_REPACK 8710
 
 class life_weapon_shop_modern {
     idd = MOD_WEAPON_SHOP_IDD;
@@ -126,8 +129,29 @@ class life_weapon_shop_modern {
             x = 0.606 * safezoneW + safezoneX;
             y = 0.426 * safezoneH + safezoneY;
             w = 0.188 * safezoneW;
-            h = 0.254 * safezoneH;
+            h = 0.220 * safezoneH;
             size = 0.027;
+        };
+        class QuantityLabel: Life_RscText {
+            idc = MOD_WEAPON_SHOP_QUANTITY_LABEL;
+            text = "Magazine quantity (1-100)";
+            colorText[] = {0.62,0.78,0.78,1};
+            colorBackground[] = {0,0,0,0};
+            sizeEx = 0.022;
+            x = 0.606 * safezoneW + safezoneX;
+            y = 0.654 * safezoneH + safezoneY;
+            w = 0.188 * safezoneW;
+            h = 0.026 * safezoneH;
+        };
+        class Quantity: Life_RscEdit {
+            idc = MOD_WEAPON_SHOP_QUANTITY;
+            text = "1";
+            maxChars = 3;
+            colorBackground[] = {0.030,0.043,0.050,0.92};
+            x = 0.606 * safezoneW + safezoneX;
+            y = 0.684 * safezoneH + safezoneY;
+            w = 0.188 * safezoneW;
+            h = 0.034 * safezoneH;
         };
         class BuyButton: Life_RscButtonMenu {
             idc = MOD_WEAPON_SHOP_BUY;
@@ -145,6 +169,16 @@ class life_weapon_shop_modern {
             x = 0.718 * safezoneW + safezoneX;
             y = 0.744 * safezoneH + safezoneY;
             w = 0.078 * safezoneW;
+            h = 0.040 * safezoneH;
+        };
+        class RepackButton: Life_RscButtonMenu {
+            idc = MOD_WEAPON_SHOP_REPACK;
+            text = "Repack Owned";
+            tooltip = "Consolidate partial magazines of the selected type without creating rounds";
+            onButtonClick = "[] call life_fnc_repackMagazines";
+            x = 0.606 * safezoneW + safezoneX;
+            y = 0.796 * safezoneH + safezoneY;
+            w = 0.188 * safezoneW;
             h = 0.040 * safezoneH;
         };
     };

@@ -13,6 +13,9 @@ private _shopCfg = missionConfigFile >> "Life_Shops" >> "WeaponShops" >> _group 
 private _data = call compile (lbData [8704,lbCurSel 8704]);
 
 if ((_data param [0,"",[""]]) isEqualTo "license") exitWith {
+    ctrlShow [8708,false];
+    ctrlShow [8709,false];
+    ctrlShow [8710,false];
     private _licenseCfg = _shopCfg >> "License";
     private _variable = getText (_licenseCfg >> "variable");
     private _side = getText (_licenseCfg >> "side");
@@ -62,6 +65,15 @@ if (_displayName isEqualTo "") then {_displayName = _className;};
 if ((_displayName find "STR_") isEqualTo 0) then {_displayName = localize _displayName;};
 if (_text isEqualTo "") then {_text = _short;};
 if (_text isEqualTo "") then {_text = "No description is available for this item.";};
+
+private _isMagazine = (_cfgLocation isEqualTo "CfgMagazines") || {_category isEqualTo "magazines"};
+if (_isMagazine) then {
+    _text = _text + "<br/><br/><t color='#8fdde4'>Shop magazines are always full. Repacking preserves rounds, and resale value ignores remaining rounds.</t>";
+};
+(_display displayCtrl 8708) ctrlSetText "1";
+ctrlShow [8708,_isMagazine];
+ctrlShow [8709,_isMagazine];
+ctrlShow [8710,_isMagazine];
 
 private _requiredLicense = getText (_shopCfg >> "requiredLicense");
 private _licenseSide = getText (_shopCfg >> "requiredLicenseSide");

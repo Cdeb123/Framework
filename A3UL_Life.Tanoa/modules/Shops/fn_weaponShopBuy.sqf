@@ -43,21 +43,45 @@ if (_displayName isEqualTo "" && {!(_itemInfo isEqualTo [])}) then {_displayName
 if (_displayName isEqualTo "") then {_displayName = _className;};
 if ((_displayName find "STR_") isEqualTo 0) then {_displayName = localize _displayName;};
 
+private _isMagazine = !(_itemInfo isEqualTo []) && {(_itemInfo select 6) isEqualTo "CfgMagazines"};
+private _magazineCapacity = if (_isMagazine) then {getNumber (configFile >> "CfgMagazines" >> _className >> "count")} else {0};
+if (_isMagazine && {_magazineCapacity < 1}) then {_magazineCapacity = 1;};
+private _quantity = 1;
+if (_isMagazine) then {
+    private _quantityText = ctrlText 8708;
+    if !([_quantityText] call TON_fnc_isnumber) exitWith {_quantity = 0;};
+    _quantity = floor (parseNumber _quantityText);
+};
+if (_quantity < 1 || {_quantity > 100}) exitWith {hint "Enter a magazine quantity from 1 to 100.";};
+
 if !(player canAdd _className) exitWith {hint localize "STR_NOTF_NoRoom";};
+if (_isMagazine) then {
+    private _magazineMass = getNumber (configFile >> "CfgMagazines" >> _className >> "mass");
+    if (_magazineMass > 0 && {(loadAbs player) + (_magazineMass * _quantity) > (maxLoad player)}) exitWith {
+        _quantity = 0;
+    };
+};
+if (_quantity isEqualTo 0) exitWith {hint "You do not have room for that many magazines.";};
 
 private _taxData = [_price,"weapons",_className,true] call life_fnc_applyTax;
 _taxData params ["_base","_tax","_total","_rate"];
-if (CASH < _total) exitWith {hint localize "STR_NOTF_NotEnoughMoney";};
+private _purchasePrice = _total * _quantity;
+if (CASH < _purchasePrice) exitWith {hint localize "STR_NOTF_NotEnoughMoney";};
 
-CASH = CASH - _total;
-[_className,true] call life_fnc_handleItem;
+CASH = CASH - _purchasePrice;
+if (_isMagazine) then {
+    for "_i" from 1 to _quantity do {player addMagazine [_className,_magazineCapacity];};
+} else {
+    [_className,true] call life_fnc_handleItem;
+};
 [0] call SOCK_fnc_updatePartial;
 [3] call SOCK_fnc_updatePartial;
 
 life_action_delay = time;
 hint parseText format [
-    "Purchased <t color='#8cff9b'>%1</t> for <t color='#8cff9b'>$%2</t>.",
+    "Purchased <t color='#8cff9b'>%1%2</t> for <t color='#8cff9b'>$%3</t>.",
+    ["",format ["%1x ",_quantity]] select (_quantity > 1),
     _displayName,
-    [_total] call life_fnc_numberText
+    [_purchasePrice] call life_fnc_numberText
 ];
 [] call life_fnc_weaponShopSelect;

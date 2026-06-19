@@ -18,6 +18,10 @@ uiNamespace setVariable ["Weapon_Shop_Filter",_index];
 
 private _priceTag = ((findDisplay 38400) displayCtrl 38404);
 _priceTag ctrlSetStructuredText parseText "";
+ctrlShow [38408,false];
+ctrlShow [38409,false];
+ctrlShow [38410,false];
+ctrlSetText [38408,"1"];
 
 private _itemList = ((findDisplay 38400) displayCtrl 38403);
 lbClear _itemList;

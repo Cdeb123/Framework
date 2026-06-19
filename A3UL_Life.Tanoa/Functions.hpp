@@ -60,6 +60,7 @@ class Life_Client_Core {
         class putInCar {};
         class removeContainer {};
         class repairTruck {};
+        class repackMagazines {};
         class restrainAction {};
         class robAction {};
         class searchAction {};

@@ -56,6 +56,10 @@ ctrlShow [38406,true];
 ctrlEnable [38406,false];
 ctrlShow [38407,true];
 ctrlEnable [38407,false];
+ctrlShow [38408,false];
+ctrlShow [38409,false];
+ctrlShow [38410,false];
+ctrlSetText [38408,"1"];
 
 _filters lbAdd localize "STR_Shop_Weapon_ShopInv";
 _filters lbAdd localize "STR_Shop_Weapon_YourInv";

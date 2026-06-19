@@ -15,6 +15,16 @@ if (isNull _control) exitWith {closeDialog 0;}; //Bad data
 if (_index isEqualTo -1) exitWith {}; //Nothing selected
 
 _priceTag = CONTROL(38400,38404);
+private _selectedItem = CONTROL_DATAI(_control,_index);
+private _selectedInfo = [_selectedItem] call life_fnc_fetchCfgDetails;
+private _isMagazinePurchase =
+    (uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 0
+    && {!(_selectedInfo isEqualTo [])}
+    && {(_selectedInfo select 6) isEqualTo "CfgMagazines"};
+ctrlShow [38408,_isMagazinePurchase];
+ctrlShow [38409,_isMagazinePurchase];
+ctrlShow [38410,_isMagazinePurchase];
+if (_isMagazinePurchase) then {ctrlSetText [38408,"1"];};
 
 if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
     _item = CONTROL_DATAI(_control,_index);
