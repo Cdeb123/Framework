@@ -20,6 +20,17 @@ if (count _vInfo > 0) then {
     _uid = _vInfo select 0;
 };
 
+private _unitCharacterUid = [_unit getVariable ["characterUID",getPlayerUID _unit]] call DB_fnc_mresString;
+if (_unitCharacterUid isEqualTo "") then {_unitCharacterUid = getPlayerUID _unit;};
+private _unitSide = switch (side _unit) do {
+    case west: {"cop"};
+    case civilian: {"civ"};
+    case independent: {"med"};
+    default {"Error"};
+};
+private _vehicleCharacterUid = if ((count _vInfo) > 2) then {_vInfo select 2} else {_unitCharacterUid};
+private _vehicleSide = if ((count _vInfo) > 3) then {_vInfo select 3} else {_unitSide};
+
 // save damage.
 if (LIFE_SETTINGS(getNumber,"save_vehicle_damage") isEqualTo 1) then {
     _damage = getAllHitPointsDamage _vehicle;
@@ -66,6 +77,18 @@ if (count _vInfo isEqualTo 0) exitWith {
 
 if !(_uid isEqualTo getPlayerUID _unit) exitWith {
     [1,"STR_Garage_Store_NoOwnership",true] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
+    life_garage_store = false;
+    (owner _unit) publicVariableClient "life_garage_store";
+};
+
+if !(_vehicleCharacterUid isEqualTo _unitCharacterUid) exitWith {
+    [1,"That vehicle belongs to a different character."] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
+    life_garage_store = false;
+    (owner _unit) publicVariableClient "life_garage_store";
+};
+
+if !(_vehicleSide isEqualTo _unitSide) exitWith {
+    [1,"That vehicle belongs to a different role garage."] remoteExecCall ["life_fnc_broadcast",(owner _unit)];
     life_garage_store = false;
     (owner _unit) publicVariableClient "life_garage_store";
 };
@@ -140,7 +163,7 @@ _trunk = [_trunk] call DB_fnc_mresArray;
 _cargo = [_cargo] call DB_fnc_mresArray;
 
 // update
-_query = format ["UPDATE vehicles SET active='0', inventory='%3', gear='%4', fuel='%5', damage='%6' WHERE pid='%1' AND plate='%2'", _uid, _plate, _trunk, _cargo, _fuel, _damage];
+_query = format ["UPDATE vehicles SET active='0', inventory='%3', gear='%4', fuel='%5', damage='%6', character_uid='%7' WHERE pid='%1' AND plate='%2' AND side='%8' AND (character_uid='%7' OR character_uid='')", _uid, _plate, _trunk, _cargo, _fuel, _damage, _unitCharacterUid, _unitSide];
 _thread = [_query,1] call DB_fnc_asyncCall;
 
 if (!isNil "_vehicle" && {!isNull _vehicle}) then {

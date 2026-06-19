@@ -162,7 +162,7 @@ class LifeCfgVehicles {
     *       ChopShop: Payout = price * 0.25
     *       GarageSell: Payout = price * [0.5, 0.5, 0.5, -1]
     *       Cop Impound: Payout = price * 0.1
-    *       Pull Vehicle from Garage: Cost = price * [1, 0.5, 0.75, -1] * [0.5, 0.5, 0.5, -1]
+    *       Pull Vehicle from Garage: Free for every faction (configured in Config_Master.hpp).
     *           -- Pull Vehicle & GarageSell Array Explanation = [civ,cop,medic,east]
     *
     *       1: STRING (Condition)

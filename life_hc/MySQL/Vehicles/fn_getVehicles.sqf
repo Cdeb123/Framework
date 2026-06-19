@@ -21,6 +21,10 @@ if (_pid isEqualTo "" || _side isEqualTo sideUnknown || _type isEqualTo "" || is
     };
 };
 
+private _characterUid = _unit getVariable ["characterUID",_pid];
+_characterUid = [_characterUid] call HC_fnc_mresString;
+if (_characterUid isEqualTo "") then {_characterUid = _pid;};
+
 _side = switch (_side) do {
     case west:{"cop"};
     case civilian: {"civ"};
@@ -32,7 +36,7 @@ if (_side == "Error") exitWith {
     [[]] remoteExec ["life_fnc_impoundMenu",_unit];
 };
 
-_query = format ["SELECT id, side, classname, type, pid, alive, active, plate, color FROM vehicles WHERE pid='%1' AND alive='1' AND active='0' AND side='%2' AND type='%3'",_pid,_side,_type];
+_query = format ["SELECT id, side, classname, type, pid, alive, active, plate, color FROM vehicles WHERE pid='%1' AND alive='1' AND active='0' AND side='%2' AND type='%3' AND (character_uid='%4' OR character_uid='')",_pid,_side,_type,_characterUid];
 
 _tickTime = diag_tickTime;
 _queryResult = [_query,2,true] call HC_fnc_asyncCall;

@@ -10,6 +10,8 @@ _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _side = [_this,1,sideUnknown,[west]] call BIS_fnc_param;
 _vehicle = [_this,2,objNull,[objNull]] call BIS_fnc_param;
 _color = [_this,3,-1,[0]] call BIS_fnc_param;
+_characterUid = [_this,4,_uid,[""]] call BIS_fnc_param;
+private _characterUidPublic = _characterUid;
 
 //Error checks
 if (_uid isEqualTo "" || _side isEqualTo sideUnknown || isNull _vehicle) exitWith {};
@@ -28,7 +30,12 @@ _side = switch (_side) do {
     default {"Error"};
 };
 
-_plate = round(random(1000000));
-[_uid,_side,_type,_classname,_color,_plate] call DB_fnc_insertVehicle;
+_characterUid = [_characterUid] call DB_fnc_mresString;
+if (_characterUid isEqualTo "") then {_characterUid = _uid;};
 
-_vehicle setVariable ["dbInfo",[_uid,_plate],true];
+_plate = round(random(1000000));
+[_uid,_side,_type,_classname,_color,_plate,_characterUid] call DB_fnc_insertVehicle;
+
+_vehicle setVariable ["dbInfo",[_uid,_plate,_characterUid,_side],true];
+_vehicle setVariable ["characterUID",_characterUidPublic,true];
+_vehicle setVariable ["vehicleSide",_side,true];

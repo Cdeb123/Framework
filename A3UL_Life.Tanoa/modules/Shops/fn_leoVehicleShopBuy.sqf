@@ -111,6 +111,8 @@ _vehicle lock 2;
 
 _vehicle setVariable ["trunk_in_use",false,true];
 _vehicle setVariable ["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
+_vehicle setVariable ["characterUID",missionNamespace getVariable ["life_character_uid",getPlayerUID player],true];
+_vehicle setVariable ["vehicleSide","cop",true];
 _vehicle disableTIEquipment true;
 [_vehicle,"cop_offroad",true] spawn life_fnc_vehicleAnimate;
 _vehicle allowDamage true;
@@ -120,9 +122,9 @@ life_vehicles pushBack _vehicle;
 
 if !(_className in LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly")) then {
     if (life_HC_isActive) then {
-        [(getPlayerUID player),playerSide,_vehicle,_colorIndex] remoteExecCall ["HC_fnc_vehicleCreate",HC_Life];
+        [(getPlayerUID player),playerSide,_vehicle,_colorIndex,missionNamespace getVariable ["life_character_uid",getPlayerUID player]] remoteExecCall ["HC_fnc_vehicleCreate",HC_Life];
     } else {
-        [(getPlayerUID player),playerSide,_vehicle,_colorIndex] remoteExecCall ["TON_fnc_vehicleCreate",RSERV];
+        [(getPlayerUID player),playerSide,_vehicle,_colorIndex,missionNamespace getVariable ["life_character_uid",getPlayerUID player]] remoteExecCall ["TON_fnc_vehicleCreate",RSERV];
     };
 };
 

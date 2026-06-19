@@ -13136,7 +13136,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Helicopter_Shop"", life_fnc_vehicleShopMenu,[""civ_air"",civilian,[""civ_air_1"",""civ_air_1_2""],""civ"",""Carl's Airial Auto's""],1.5,true,true,"""",""true"",5];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Helicopter_Shop"",life_fnc_vehicleShopMenu,[""civ_air"",civilian,[""civ_air_1"",""civ_air_1_2""],""civ"",""Civil Aviation Sales""],1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_Helicopter_Garage"",{[[""civ_air_1"",""civ_air_1_2""],""Air""] spawn life_fnc_vehicleGarage},"""",0,true,true,"""",'playerSide isEqualTo civilian',5]; this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,true,"""",'playerSide isEqualTo civilian && !life_garage_store',5];";
 						disableSimulation=1;
 					};
 					id=965;
@@ -13451,7 +13451,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Helicopter_Shop"", life_fnc_vehicleShopMenu,[""civ_air"",civilian,[""civ_air_2"",""civ_air_2_1""],""civ"",""Carl's Airial Auto's""],1.5,true,true,"""",""true"",5];";
+						init="this enableSimulation false; this allowDamage false; this addAction[localize""STR_MAR_Helicopter_Shop"",life_fnc_vehicleShopMenu,[""civ_air"",civilian,[""civ_air_2"",""civ_air_2_2""],""civ"",""Civil Aviation Sales""],1.5,true,true,"""",""true"",5]; this addAction[localize""STR_MAR_Helicopter_Garage"",{[[""civ_air_2"",""civ_air_2_2""],""Air""] spawn life_fnc_vehicleGarage},"""",0,true,true,"""",'playerSide isEqualTo civilian',5]; this addAction[localize""STR_MAR_Store_vehicle_in_Garage"",life_fnc_storeVehicle,"""",0,true,true,"""",'playerSide isEqualTo civilian && !life_garage_store',5];";
 						disableSimulation=1;
 					};
 					id=974;

@@ -368,6 +368,7 @@ CREATE TABLE IF NOT EXISTS `warrants` (
 CREATE TABLE IF NOT EXISTS `vehicles` (
     `id`          INT NOT NULL AUTO_INCREMENT,
     `pid`         VARCHAR(17) NOT NULL,
+    `character_uid` VARCHAR(96) NOT NULL DEFAULT '',
     `side`        VARCHAR(10) NOT NULL,
     `classname`   VARCHAR(64) NOT NULL,
     `type`        VARCHAR(16) NOT NULL,
@@ -384,6 +385,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
     
     PRIMARY KEY (`id`),
     INDEX `fkIdx_players_vehicles` (`pid`),
+    INDEX `index_character_garage` (`pid`,`character_uid`,`side`,`type`,`alive`,`active`),
     CONSTRAINT `FK_players_vehicles` FOREIGN KEY `fkIdx_players_vehicles` (`pid`)
       REFERENCES `players` (`pid`)
       ON UPDATE CASCADE ON DELETE CASCADE,

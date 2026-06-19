@@ -20,15 +20,25 @@ params [
 private _unit_return = _unit;
 private _name = name _unit;
 private _side = side _unit;
+private _sideKey = switch (_side) do {
+    case west: {"cop"};
+    case civilian: {"civ"};
+    case independent: {"med"};
+    default {"Error"};
+};
+private _characterUidPublic = _unit getVariable ["characterUID",_pid];
+private _characterUid = _characterUidPublic;
+_characterUid = [_characterUid] call DB_fnc_mresString;
+if (_characterUid isEqualTo "") then {_characterUid = _pid;};
 _unit = owner _unit;
 
-if (_vid isEqualTo -1 || {_pid isEqualTo ""}) exitWith {};
+if (_vid isEqualTo -1 || {_pid isEqualTo ""} || {_sideKey isEqualTo "Error"}) exitWith {};
 if (_vid in serv_sv_use) exitWith {};
 serv_sv_use pushBack _vid;
 
 private _servIndex = serv_sv_use find _vid;
 
-private _query = format ["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage, blacklist FROM vehicles WHERE id='%1' AND pid='%2'",_vid,_pid];
+private _query = format ["SELECT id, side, classname, type, pid, alive, active, plate, color, inventory, gear, fuel, damage, blacklist FROM vehicles WHERE id='%1' AND pid='%2' AND side='%3' AND (character_uid='%4' OR character_uid='')",_vid,_pid,_sideKey,_characterUid];
 
 private _tickTime = diag_tickTime;
 private _queryResult = [_query,2] call DB_fnc_asyncCall;
@@ -70,7 +80,7 @@ if (count _nearVehicles > 0) exitWith {
     [1,"STR_Garage_SpawnPointError",true] remoteExecCall ["life_fnc_broadcast",_unit];
 };
 
-_query = format ["UPDATE vehicles SET active='1', damage='""[]""' WHERE pid='%1' AND id='%2'",_pid,_vid];
+_query = format ["UPDATE vehicles SET active='1', damage='""[]""', character_uid='%3' WHERE pid='%1' AND id='%2' AND side='%4'",_pid,_vid,_characterUid,_sideKey];
 
 private _trunk = [(_vInfo select 9)] call DB_fnc_mresToArray;
 private _gear = [(_vInfo select 10)] call DB_fnc_mresToArray;
@@ -104,7 +114,9 @@ _vehicle lock 2;
 //Reskin the vehicle
 [_vehicle,(_vInfo select 8)] remoteExecCall ["life_fnc_colorVehicle",_unit];
 _vehicle setVariable ["vehicle_info_owners",[[_pid,_name]],true];
-_vehicle setVariable ["dbInfo",[(_vInfo select 4),(_vInfo select 7)],true];
+_vehicle setVariable ["dbInfo",[(_vInfo select 4),(_vInfo select 7),_characterUid,_sideKey],true];
+_vehicle setVariable ["characterUID",_characterUidPublic,true];
+_vehicle setVariable ["vehicleSide",_sideKey,true];
 _vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 [_vehicle] call life_fnc_clearVehicleAmmo;
 
