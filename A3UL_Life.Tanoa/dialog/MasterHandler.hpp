@@ -30,6 +30,7 @@
 #include "newsStation.hpp"
 #include "..\modules\Characters\character.hpp"
 #include "..\modules\Identity\id_card.hpp"
+#include "..\modules\LawEnforcement\citations.hpp"
 #include "..\modules\LawEnforcement\leo_terminals.hpp"
 #include "..\modules\DoorAccess\door_keypad.hpp"
 #include "..\modules\RadialMenu\radial_menu.hpp"

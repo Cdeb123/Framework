@@ -9,6 +9,11 @@ class Life_LEO {
     defaultDepartment = "tcsd";
     commandRanks[] = {"lieutenant","captain","assistant_sheriff","undersheriff","sheriff"};
 
+    class Citations {
+        maxAmount = 250000;
+        factionBank = "law_enforcement";
+    };
+
     class Departments {
         class tcsd {
             displayName = "Tanoa County Sheriff's Department";

@@ -21,3 +21,18 @@ player addEventHandler ["InventoryOpened", {_this call life_fnc_inventoryOpened}
 player addEventHandler ["HandleRating", {0}];
 
 addMissionEventHandler ["Map", {_this call life_fnc_checkMap}];
+
+(findDisplay 46) displayAddEventHandler ["MouseButtonDown", {
+    params ["_display","_button"];
+    if !(_button isEqualTo 0) exitWith {false};
+    if ((getNumber (missionConfigFile >> "Life_ELS" >> "enabled")) isEqualTo 0) exitWith {false};
+    if ((getNumber (missionConfigFile >> "Life_ELS" >> "policeOnly")) isEqualTo 1 && {!(playerSide isEqualTo west)}) exitWith {false};
+    if (vehicle player isEqualTo player) exitWith {false};
+
+    private _vehicle = vehicle player;
+    if !(driver _vehicle isEqualTo player) exitWith {false};
+    if !([_vehicle] call life_fnc_elsIsConfigured) exitWith {false};
+
+    [_vehicle] call life_fnc_elsAirhorn;
+    true;
+}];

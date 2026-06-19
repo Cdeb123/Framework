@@ -240,6 +240,16 @@ class Life_Client_Core {
 
     class Module_LawEnforcement {
         file = "modules\LawEnforcement";
+        class citationAddRecord {};
+        class citationDecline {};
+        class citationLoad {};
+        class citationPay {};
+        class citationPrompt {};
+        class citationRecords {};
+        class citationRecordsLoad {};
+        class citationRecordsSelect {};
+        class citationResult {};
+        class citationSubmit {};
         class leoAtLeastRank {};
         class leoCanCommand {};
         class leoCommandApply {};
@@ -256,6 +266,8 @@ class Life_Client_Core {
         class leoTrainingPostDocument {};
         class leoTrainingRosterUpdate {};
         class leoTrainingSelectDocument {};
+        class openCitation {};
+        class openCitationRecords {};
         class openLEOCommandTerminal {};
         class openLEOTrainingTerminal {};
     };

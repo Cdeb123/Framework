@@ -36,9 +36,27 @@ class CfgFunctions {
 
 class CfgSounds {
     sounds[] = {};
+    class sirenWail {
+        name = "sirenWail";
+        sound[] = {"\sounds\siren.ogg", 1.0, 1};
+        titles[] = {};
+    };
+
+    class sirenPriority {
+        name = "sirenPriority";
+        sound[] = {"\sounds\priority.ogg", 1.0, 1};
+        titles[] = {};
+    };
+
+    class policeAirhorn {
+        name = "policeAirhorn";
+        sound[] = {"\sounds\airhorn.ogg", 1.0, 1};
+        titles[] = {};
+    };
+
     class sirenLong {
         name = "sirenLong";
-        sound[] = {"\sounds\sirenLong.ogg", 1.0, 1};
+        sound[] = {"\sounds\siren.ogg", 1.0, 1};
         titles[] = {};
     };
 

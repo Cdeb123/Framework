@@ -536,8 +536,9 @@ F1 menu Esc: Close the menu.<br/>
 Action / Use key or Scroll Wheel near configured doors: Use Door Access, including public doors, keycards, and keypads.<br/>
 1: ELS Code 1 / off while driving a configured emergency vehicle.<br/>
 2: ELS Code 2 / emergency lights while driving a configured emergency vehicle.<br/>
-3: ELS Code 3 / emergency lights and siren while driving a configured emergency vehicle.<br/>
-4: ELS airhorn while driving a configured emergency vehicle.<br/>
+3: ELS Code 3 / emergency lights and wail siren while driving a configured emergency vehicle.<br/>
+4: ELS priority siren mode while driving a configured emergency vehicle.<br/>
+5 or vehicle horn / fire: ELS airhorn while driving a configured emergency vehicle.<br/>
 Left Ctrl + Left Shift + T: Open the TCSD Training Academy terminal.<br/>
 Left Ctrl + Left Shift + L: Open the TCSD Command Suite.<br/>
 Left Ctrl + B: Toggle seatbelt while inside a vehicle.<br/>

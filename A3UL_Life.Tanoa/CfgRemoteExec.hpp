@@ -23,6 +23,8 @@ class CfgRemoteExec {
         F(life_fnc_adminID,CLIENT)
         F(life_fnc_adminInfo,CLIENT)
         F(life_fnc_bountyReceive,CLIENT)
+        F(life_fnc_citationPrompt,CLIENT)
+        F(life_fnc_citationResult,CLIENT)
         F(life_fnc_copSearch,CLIENT)
         JIP(life_fnc_elsApplyStage,CLIENT)
         F(life_fnc_freezePlayer,CLIENT)

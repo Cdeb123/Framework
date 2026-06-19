@@ -155,11 +155,20 @@ class Life_atm_management {
         };
         class FactionTransferButton: Life_RscButtonMenu {
             idc = -1;
-            text = "Send Faction";
+            text = "Deposit";
             onButtonClick = "['faction'] call life_fnc_atmAction";
             x = 0.555 * safezoneW + safezoneX;
             y = 0.582 * safezoneH + safezoneY;
-            w = 0.118 * safezoneW;
+            w = 0.056 * safezoneW;
+            h = 0.036 * safezoneH;
+        };
+        class FactionWithdrawButton: Life_RscButtonMenu {
+            idc = -1;
+            text = "Withdraw";
+            onButtonClick = "['factionWithdraw'] call life_fnc_atmAction";
+            x = 0.617 * safezoneW + safezoneX;
+            y = 0.582 * safezoneH + safezoneY;
+            w = 0.056 * safezoneW;
             h = 0.036 * safezoneH;
         };
         class Notice: Life_RscStructuredText {

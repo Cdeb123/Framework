@@ -14,7 +14,7 @@ class Life_ATM {
             title = "Law Enforcement Operating Fund";
             side = "cop";
             canDeposit = 1;
-            canWithdraw = 0;
+            canWithdraw = 1;
         };
         class medical {
             title = "EMS and Fire Operating Fund";

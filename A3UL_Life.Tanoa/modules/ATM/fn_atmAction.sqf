@@ -81,7 +81,15 @@ switch (_mode) do {
     case "faction": {
         if ((lbCurSel 2705) isEqualTo -1) exitWith {hint "Select a faction bank first.";};
         private _bankClass = lbData [2705,lbCurSel 2705];
-        private _bankTitle = getText (missionConfigFile >> "Life_ATM" >> "FactionBanks" >> _bankClass >> "title");
+        private _bankCfg = missionConfigFile >> "Life_ATM" >> "FactionBanks" >> _bankClass;
+        private _bankTitle = getText (_bankCfg >> "title");
+        private _bankSide = getText (_bankCfg >> "side");
+        if ((getNumber (_bankCfg >> "canDeposit")) isEqualTo 0) exitWith {hint "This faction bank does not accept deposits.";};
+        if (_bankSide isEqualTo "cop" && {!(playerSide isEqualTo west && {["deputy"] call life_fnc_leoAtLeastRank})}) exitWith {
+            hint "Only Deputy+ can deposit to the law enforcement faction bank.";
+        };
+        if (_bankSide isEqualTo "med" && {!(playerSide isEqualTo independent)}) exitWith {hint "Only EMS can deposit to this faction bank.";};
+        if (_bankSide isEqualTo "civ" && {!(playerSide isEqualTo civilian)}) exitWith {hint "Only civilians can deposit to this faction bank.";};
         if (_value > BANK) exitWith {hint localize "STR_ATM_NotEnoughFunds";};
 
         private _varName = format ["life_faction_bank_%1",_bankClass];
@@ -90,6 +98,28 @@ switch (_mode) do {
         BANK = BANK - _value;
         [1] call SOCK_fnc_updatePartial;
         hint format ["Transferred $%1 to %2.",[_value] call life_fnc_numberText,_bankTitle];
+    };
+
+    case "factionWithdraw": {
+        if ((lbCurSel 2705) isEqualTo -1) exitWith {hint "Select a faction bank first.";};
+        private _bankClass = lbData [2705,lbCurSel 2705];
+        private _bankCfg = missionConfigFile >> "Life_ATM" >> "FactionBanks" >> _bankClass;
+        private _bankTitle = getText (_bankCfg >> "title");
+        private _bankSide = getText (_bankCfg >> "side");
+        if ((getNumber (_bankCfg >> "canWithdraw")) isEqualTo 0) exitWith {hint "This faction bank does not allow withdrawals.";};
+        if !(_bankSide isEqualTo "cop" && {playerSide isEqualTo west} && {[] call life_fnc_leoCanCommand}) exitWith {
+            hint "Only law enforcement command can withdraw from faction banks.";
+        };
+
+        private _varName = format ["life_faction_bank_%1",_bankClass];
+        private _funds = missionNamespace getVariable [_varName,0];
+        if (_value > _funds) exitWith {hint "That faction bank does not have enough funds.";};
+
+        missionNamespace setVariable [_varName,_funds - _value,true];
+        publicVariable _varName;
+        BANK = BANK + _value;
+        [1] call SOCK_fnc_updatePartial;
+        hint format ["Withdrew $%1 from %2.",[_value] call life_fnc_numberText,_bankTitle];
     };
 };
 

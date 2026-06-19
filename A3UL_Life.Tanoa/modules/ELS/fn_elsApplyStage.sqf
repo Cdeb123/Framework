@@ -5,7 +5,8 @@
 params [
     ["_vehicle",objNull,[objNull]],
     ["_stage",1,[0]],
-    ["_profile","",[""]]
+    ["_profile","",[""]],
+    ["_sirenMode","",[""]]
 ];
 
 if (isNull _vehicle) exitWith {};
@@ -15,6 +16,8 @@ if (_profile isEqualTo "") exitWith {};
 private _profileCfg = missionConfigFile >> "Life_ELS" >> "Profiles" >> _profile;
 private _stageCfg = _profileCfg >> "Stages" >> format ["Code%1",(_stage max 1) min 3];
 if !(isClass _stageCfg) exitWith {};
+if (_sirenMode isEqualTo "") then {_sirenMode = _vehicle getVariable ["life_els_siren_mode","normal"];};
+if (_stage < 3 || {!(_sirenMode in ["normal","priority"])}) then {_sirenMode = "normal";};
 
 private _lightValue = getNumber (_stageCfg >> "lightValue");
 private _sirenValue = getNumber (_stageCfg >> "sirenValue");
@@ -81,6 +84,7 @@ if ((getNumber (_profileCfg >> "autoDetectSirenSources")) isEqualTo 1) then {
 
 _vehicle setVariable ["life_els_lights_on",_lightsOn,false];
 _vehicle setVariable ["life_els_siren_on",_sirenOn,false];
+_vehicle setVariable ["life_els_siren_mode",_sirenMode,false];
 {_vehicle setVariable [_x,_lightValue,false];} forEach _lightVariables;
 {_vehicle setVariable [_x,_sirenValue,false];} forEach _sirenVariables;
 {_vehicle setVariable [_x,_lightsOn,false];} forEach _lightBooleanVariables;
@@ -199,11 +203,27 @@ if ((getNumber (_profileCfg >> "localLightpoints")) isEqualTo 1 && {_lightsOn}) 
 };
 
 private _sound = getText (_profileCfg >> "fallbackSirenSound");
+private _distance = getNumber (_profileCfg >> "fallbackSirenDistance");
+private _duration = getNumber (_profileCfg >> "fallbackSirenDuration");
+if (_sirenMode isEqualTo "priority") then {
+    private _prioritySound = getText (_profileCfg >> "prioritySirenSound");
+    private _priorityDistance = getNumber (_profileCfg >> "prioritySirenDistance");
+    private _priorityDuration = getNumber (_profileCfg >> "prioritySirenDuration");
+    if !(_prioritySound isEqualTo "") then {_sound = _prioritySound;};
+    if (_priorityDistance > 0) then {_distance = _priorityDistance;};
+    if (_priorityDuration > 0) then {_duration = _priorityDuration;};
+};
 if !(_sound isEqualTo "") then {
     if (_sirenOn) then {
         private _existingSirenLoop = _vehicle getVariable ["life_els_siren_loop",scriptNull];
+        private _activeSound = _vehicle getVariable ["life_els_siren_loop_sound",""];
+        if (!isNull _existingSirenLoop && {!scriptDone _existingSirenLoop} && {!(_activeSound isEqualTo _sound)}) then {
+            terminate _existingSirenLoop;
+            _vehicle setVariable ["life_els_siren_loop",scriptNull,false];
+            _existingSirenLoop = scriptNull;
+        };
         if (isNull _existingSirenLoop || {scriptDone _existingSirenLoop}) then {
-            private _sirenLoop = [_vehicle,_sound,getNumber (_profileCfg >> "fallbackSirenDistance"),getNumber (_profileCfg >> "fallbackSirenDuration")] spawn {
+            private _sirenLoop = [_vehicle,_sound,_distance,_duration] spawn {
                 params [
                     ["_veh",objNull,[objNull]],
                     ["_snd","",[""]],
@@ -218,7 +238,15 @@ if !(_sound isEqualTo "") then {
                 };
             };
             _vehicle setVariable ["life_els_siren_loop",_sirenLoop,false];
+            _vehicle setVariable ["life_els_siren_loop_sound",_sound,false];
             life_els_fallback_siren_loop = _sirenLoop;
         };
+    } else {
+        private _existingSirenLoop = _vehicle getVariable ["life_els_siren_loop",scriptNull];
+        if (!isNull _existingSirenLoop && {!scriptDone _existingSirenLoop}) then {
+            terminate _existingSirenLoop;
+        };
+        _vehicle setVariable ["life_els_siren_loop",scriptNull,false];
+        _vehicle setVariable ["life_els_siren_loop_sound","",false];
     };
 };

@@ -29,6 +29,17 @@ if (_code in (actionKeys "GetOut") && {missionNamespace getVariable ["life_seatb
     true;
 };
 
+private _isVehicleHornKey = (_code in (actionKeys "Fire")) || {_code in (actionKeys "CarHorn")};
+if (_isVehicleHornKey
+    && {!(vehicle player isEqualTo player)}
+    && {driver (vehicle player) isEqualTo player}
+    && {(getNumber (missionConfigFile >> "Life_ELS" >> "enabled")) isEqualTo 1}
+    && {!((getNumber (missionConfigFile >> "Life_ELS" >> "policeOnly")) isEqualTo 1 && {!(playerSide isEqualTo west)})}
+    && {[vehicle player] call life_fnc_elsIsConfigured}) exitWith {
+    [vehicle player] call life_fnc_elsAirhorn;
+    true;
+};
+
 if (_code in (actionKeys "Fire") && {!(currentWeapon player isEqualTo "")} && {(missionNamespace getVariable ["life_fireMode","SAFE"]) isEqualTo "SAFE"}) exitWith {
     titleText ["Fire mode: SAFE","PLAIN"];
     true;
@@ -85,6 +96,8 @@ if (life_container_active) exitwith {
     true;
 };
 
+if ([_code] call life_fnc_elsKey) exitWith {true;};
+
 switch (_code) do {
     // -- Disable commander/tactical view
     if (LIFE_SETTINGS(getNumber,"disableCommanderView") isEqualTo 1) then {
@@ -94,23 +107,6 @@ switch (_code) do {
             hint localize "STR_NOTF_CommanderView";
             _handled = true;
         };
-    };
-
-    //ELS code stages: 1 = off, 2 = lights, 3 = lights + siren, 4 = airhorn
-    case 2: {
-        if ([_code] call life_fnc_elsKey) then {_handled = true;};
-    };
-
-    case 3: {
-        if ([_code] call life_fnc_elsKey) then {_handled = true;};
-    };
-
-    case 4: {
-        if ([_code] call life_fnc_elsKey) then {_handled = true;};
-    };
-
-    case 5: {
-        if ([_code] call life_fnc_elsKey) then {_handled = true;};
     };
 
     //Space key for Jumping

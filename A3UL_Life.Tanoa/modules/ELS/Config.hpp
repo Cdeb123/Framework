@@ -3,7 +3,8 @@ class Life_ELS {
     code1Key = 2; // 1 key
     code2Key = 3; // 2 key
     code3Key = 4; // 3 key
-    airhornKey = 5; // 4 key
+    priorityKey = 5; // 4 key
+    airhornKey = 6; // 5 key
     requireDriver = 1;
     policeOnly = 1;
 
@@ -44,13 +45,17 @@ class Life_ELS {
             lightLeftOffset[] = {};
             lightRightOffset[] = {};
 
-            fallbackSirenSound = "sirenLong";
+            fallbackSirenSound = "sirenWail";
             fallbackSirenDistance = 500;
-            fallbackSirenDuration = 4.87;
+            fallbackSirenDuration = 5.01;
+            prioritySirenSound = "sirenPriority";
+            prioritySirenDistance = 500;
+            prioritySirenDuration = 0.31;
+            priorityTitle = "Priority Siren";
 
-            airhornCooldown = 1;
+            airhornCooldown = 0.4;
             airhornWeapons[] = {};
-            fallbackAirhornSound = "";
+            fallbackAirhornSound = "policeAirhorn";
             fallbackAirhornDistance = 350;
             fallbackAirhornPitch = 1;
 

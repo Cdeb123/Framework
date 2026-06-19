@@ -290,6 +290,7 @@ if (!isNull _vehicleTarget) then {
 if (playerSide isEqualTo west) then {
     ["TCSD Command","Ranks, divisions, documents, and oversight","code","[] call life_fnc_openLEOCommandTerminal","Law Enforcement",18] call _addAction;
     ["Training Academy","Cadets, FTO records, and academy documents","code","[] call life_fnc_openLEOTrainingTerminal","Law Enforcement",17] call _addAction;
+    ["Citation Records","Search citation history by character name, plate, or offense","code","[] call life_fnc_openCitationRecords","Law Enforcement",16] call _addAction;
 
     if (vehicle player != player) then {
         ["Radar","Track target vehicle speed","code","[] call life_fnc_radar","Law Enforcement",16] call _addAction;
@@ -303,12 +304,20 @@ if (playerSide isEqualTo west) then {
     if (!isNull _targetPlayer && {_targetPlayer getVariable ["restrained",false]}) then {
         ["Player Interaction","Open the normal LEO player interaction menu","function",["copInteractionMenu",[_targetPlayer]],"Law Enforcement",20] call _addAction;
     };
+
+    if (!isNull _targetPlayer && {["police.ticket"] call life_fnc_hasPermission}) then {
+        ["Issue Citation","Open the field citation form for this person","function",["openCitation",[_targetPlayer]],"Law Enforcement",28] call _addAction;
+    };
 };
 
 if (playerSide isEqualTo independent) then {
     if (!isNull _targetPlayer && {!alive _targetPlayer} && {life_inv_defibrillator > 0}) then {
         ["Revive","Start revive on the nearby patient","spawnFunction",["revivePlayer",[_targetPlayer]],"EMS",35] call _addAction;
     };
+};
+
+if ((["doj.citation_review"] call life_fnc_hasPermission) || {["doj.records"] call life_fnc_hasPermission}) then {
+    ["Citation Records","Review citation history by character name, plate, or offense","code","[] call life_fnc_openCitationRecords","Department of Justice",16] call _addAction;
 };
 
 if ((["staff.permissions"] call life_fnc_hasPermission) || {["owner.access"] call life_fnc_hasPermission} || {[] call life_fnc_isCommunityOwner}) then {

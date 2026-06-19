@@ -28,6 +28,17 @@ life_els_airhorn_active = true;
     life_els_airhorn_active = false;
 };
 
+private _fallbackSound = getText (_profileCfg >> "fallbackAirhornSound");
+if !(_fallbackSound isEqualTo "") exitWith {
+    [
+        _vehicle,
+        _fallbackSound,
+        getNumber (_profileCfg >> "fallbackAirhornDistance"),
+        getNumber (_profileCfg >> "fallbackAirhornPitch")
+    ] remoteExec ["life_fnc_say3D",RANY];
+    true;
+};
+
 private _vehicleWeapons = weapons _vehicle;
 if (_vehicleWeapons isEqualTo []) then {
     _vehicleWeapons = getArray (configFile >> "CfgVehicles" >> typeOf _vehicle >> "weapons");
@@ -50,16 +61,6 @@ if (_weaponIndex < 0) then {
 if (_weaponIndex >= 0) exitWith {
     player action ["UseWeapon",_vehicle,player,_weaponIndex];
     true;
-};
-
-private _fallbackSound = getText (_profileCfg >> "fallbackAirhornSound");
-if !(_fallbackSound isEqualTo "") then {
-    [
-        _vehicle,
-        _fallbackSound,
-        getNumber (_profileCfg >> "fallbackAirhornDistance"),
-        getNumber (_profileCfg >> "fallbackAirhornPitch")
-    ] remoteExec ["life_fnc_say3D",RANY];
 };
 
 true;

@@ -1,4 +1,9 @@
 life_pending_citations = [];
+life_citation_records = [];
+life_citation_active = [];
+life_citation_unit = objNull;
+life_citation_officer = objNull;
+life_citation_decided = false;
 life_pending_warrants = [];
 life_leo_memberships = [];
 life_leo_permissions = [];

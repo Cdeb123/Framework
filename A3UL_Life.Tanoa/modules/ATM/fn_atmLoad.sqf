@@ -52,9 +52,34 @@ if ((lbSize _gangs) > 0) then {_gangs lbSetCurSel 0;};
 
 private _factions = _display displayCtrl 2705;
 lbClear _factions;
+
+private _canDepositFaction = {
+    params [["_cfg",configNull,[configNull]]];
+    if ((getNumber (_cfg >> "canDeposit")) isEqualTo 0) exitWith {false};
+    private _side = getText (_cfg >> "side");
+    switch (_side) do {
+        case "cop": {playerSide isEqualTo west && {["deputy"] call life_fnc_leoAtLeastRank}};
+        case "med": {playerSide isEqualTo independent};
+        case "civ": {playerSide isEqualTo civilian};
+        default {true};
+    };
+};
+
+private _canWithdrawFaction = {
+    params [["_cfg",configNull,[configNull]]];
+    if ((getNumber (_cfg >> "canWithdraw")) isEqualTo 0) exitWith {false};
+    private _side = getText (_cfg >> "side");
+    switch (_side) do {
+        case "cop": {playerSide isEqualTo west && {[] call life_fnc_leoCanCommand}};
+        default {false};
+    };
+};
+
 {
-    if ((getNumber (_x >> "canDeposit")) isEqualTo 1) then {
-        _factions lbAdd getText (_x >> "title");
+    if (([_x] call _canDepositFaction) || {[_x] call _canWithdrawFaction}) then {
+        private _bankClass = configName _x;
+        private _varName = format ["life_faction_bank_%1",_bankClass];
+        _factions lbAdd format ["%1 ($%2)",getText (_x >> "title"),[(missionNamespace getVariable [_varName,0])] call life_fnc_numberText];
         _factions lbSetData [(lbSize _factions) - 1,configName _x];
     };
 } forEach ("true" configClasses (missionConfigFile >> "Life_ATM" >> "FactionBanks"));

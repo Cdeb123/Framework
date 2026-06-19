@@ -69,8 +69,8 @@ if (player getVariable ["isEscorting",false]) then {
 };
 
 //Set Ticket Button
-_Btn5 ctrlSetText localize "STR_pInAct_TicketBtn";
-_Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
+_Btn5 ctrlSetText "Citation";
+_Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_openCitation;";
 
 _Btn6 ctrlSetText localize "STR_pInAct_Arrest";
 _Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction; closeDialog 0;";
