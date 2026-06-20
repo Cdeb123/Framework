@@ -9,6 +9,12 @@ player addEventHandler ["Killed", {_this call life_fnc_onPlayerKilled}];
 player addEventHandler ["HandleDamage", {_this call life_fnc_handleDamage}];
 player addEventHandler ["Respawn", {_this call life_fnc_onPlayerRespawn}];
 player addEventHandler ["GetOutMan", {
+    params ["_unit","_role","_vehicle"];
+    [] call life_fnc_vehicleBackupCameraStop;
+    if (!isNull _vehicle && {(_vehicle getVariable ["life_signal_state","off"]) != "off"}) then {
+        _vehicle setVariable ["life_signal_state","off",true];
+        [_vehicle,"off"] remoteExecCall ["life_fnc_vehicleSignalApply",RCLIENT];
+    };
     [] spawn {
         sleep 0.05;
         [true,false] call life_fnc_resetSpawnState;

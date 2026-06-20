@@ -37,6 +37,23 @@ switch (_type) do {
         };
     };
 
+    case "legacyAction": {
+        closeDialog 0;
+        _payload params [
+            ["_target",objNull,[objNull]],
+            ["_statement",{},[{},""]],
+            ["_arguments",nil]
+        ];
+        if (!isNull _target) then {
+            private _actionArguments = [_target,player,-1,_arguments];
+            if (_statement isEqualType {}) then {
+                _actionArguments call _statement;
+            } else {
+                _actionArguments call compile _statement;
+            };
+        };
+    };
+
     case "function": {
         closeDialog 0;
         if (_payload isEqualType []) then {

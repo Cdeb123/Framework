@@ -27,6 +27,7 @@ class CfgRemoteExec {
         F(life_fnc_citationResult,CLIENT)
         F(life_fnc_copSearch,CLIENT)
         JIP(life_fnc_elsApplyStage,CLIENT)
+        F(life_fnc_vehicleSignalApply,CLIENT)
         F(life_fnc_freezePlayer,CLIENT)
         F(life_fnc_frameworkDataReceived,CLIENT)
         F(life_fnc_frameworkDataQuery,CLIENT)

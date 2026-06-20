@@ -35,4 +35,10 @@ if (_code isEqualTo 1) exitWith {
     true
 };
 
+private _radialKey = LIFE_SETTINGS(getNumber,"radial_menu_key");
+if (_code isEqualTo _radialKey) exitWith {
+    closeDialog 0;
+    true
+};
+
 _handled

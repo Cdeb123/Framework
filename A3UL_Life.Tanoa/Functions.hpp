@@ -306,7 +306,9 @@ class Life_Client_Core {
 
     class Module_RadialMenu {
         file = "modules\RadialMenu";
+        class captureInteractionActions {};
         class hasNearbyInteractionCategory {};
+        class interactionSanitizer {};
         class nearbyInteractionActions {};
         class openRadialMenu {};
         class radialHouseDoorLock {};
@@ -314,14 +316,17 @@ class Life_Client_Core {
         class radialHouseUpgrade {};
         class radialHouseWorkbench {};
         class radialMenuExecute {};
+        class radialMenuHover {};
         class radialMenuKey {};
         class radialMenuLoad {};
         class radialMenuPage {};
+        class radialPatientAssessment {};
         class radialPickupObject {};
         class radialPulloutVehicle {};
         class radialPutInVehicle {};
         class radialVehicleLock {};
         class radialVehicleTrunk {};
+        class radialVehicleUtility {};
     };
 
     class Module_Shops {
@@ -370,6 +375,12 @@ class Life_Client_Core {
     class Module_VehicleControls {
         file = "modules\VehicleControls";
         class seatbeltToggle {};
+        class vehicleBackupCamera {};
+        class vehicleBackupCameraStop {};
+        class vehicleContextDoor {};
+        class vehicleDoorControl {};
+        class vehicleSignalApply {};
+        class vehicleSignalSet {};
     };
 
     class Module_WeaponSafety {

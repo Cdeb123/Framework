@@ -2,8 +2,8 @@
 /*
     File: fn_nearbyInteractionActions.sqf
 
-    Builds usable interaction actions from real addActions on nearby objects,
-    plus compact F1 shortcuts for common framework interactions.
+    Builds usable radial interactions from migrated legacy addActions plus
+    direct framework actions for players, vehicles, houses, LEO, and EMS.
 */
 params [
     ["_category","",[""]]
@@ -77,7 +77,7 @@ private _isVehicle = {
     !isNull _target && {KINDOF_ARRAY(_target,_filters)}
 };
 
-private _candidates = [];
+private _candidates = [player];
 if (!isNull cursorObject && {player distance cursorObject <= (_radius + 2)}) then {
     _candidates pushBackUnique cursorObject;
 };
@@ -96,38 +96,37 @@ if (!isNull cursorObject && {player distance cursorObject <= (_radius + 2)}) the
 
 {
     private _targetObject = _x;
+    private _legacyActions = [_targetObject] call life_fnc_captureInteractionActions;
     {
-        private _id = _x;
-        private _params = actionParams [_targetObject,_id];
-        if !(_params isEqualTo []) then {
-            private _title = _params param [0,"Interact",[""]];
-            private _condition = _params param [7,"true",[""]];
-            private _actionRadius = _params param [8,_radius,[0]];
-            if (_actionRadius <= 0) then {_actionRadius = _radius;};
-
-            if (player distance _targetObject <= (_actionRadius max _radius)) then {
-                private _allowed = true;
-                if !(_condition isEqualTo "") then {
-                    private _target = _targetObject;
-                    private _originalTarget = _targetObject;
-                    private _actionId = _id;
-                    private _conditionResult = false;
-                    private _conditionFailed = isNil {
-                        private _result = player call (compile _condition);
-                        if (_result isEqualType true) then {_conditionResult = _result;};
-                        _conditionResult
-                    };
-                    _allowed = (!_conditionFailed) && {_conditionResult};
+        _x params [
+            ["_title","Interact",[""]],
+            ["_statement",{},[{},""]],
+            ["_arguments",nil],
+            ["_condition","true",[""]],
+            ["_actionRadius",_radius,[0]],
+            ["_priority",0,[0]]
+        ];
+        if (_actionRadius <= 0) then {_actionRadius = _radius;};
+        if (player distance _targetObject <= (_actionRadius max _radius)) then {
+            private _allowed = true;
+            if !(_condition isEqualTo "") then {
+                private _target = _targetObject;
+                private _originalTarget = _targetObject;
+                private _conditionResult = false;
+                private _conditionFailed = isNil {
+                    private _result = player call (compile _condition);
+                    if (_result isEqualType true) then {_conditionResult = _result;};
+                    _conditionResult
                 };
-
-                if (_allowed) then {
-                    private _group = [_title] call _actionGroup;
-                    private _vendor = [_targetObject] call _vendorName;
-                    [_title,_vendor,"userAction",[_targetObject,_id],_group,20] call _addAction;
-                };
+                _allowed = (!_conditionFailed) && {_conditionResult};
+            };
+            if (_allowed) then {
+                private _group = [_title] call _actionGroup;
+                private _vendor = [_targetObject] call _vendorName;
+                [_title,_vendor,"legacyAction",[_targetObject,_statement,_arguments],_group,20 + _priority] call _addAction;
             };
         };
-    } forEach (actionIDs _targetObject);
+    } forEach _legacyActions;
 } forEach _candidates;
 
 private _targetPlayer = objNull;
@@ -139,6 +138,11 @@ if (!isNull cursorObject && {isPlayer cursorObject} && {player distance cursorOb
             _targetPlayer = _x;
         };
     } forEach playableUnits;
+    if (isNull _targetPlayer) then {
+        {
+            if (_x != player && {isPlayer _x}) exitWith {_targetPlayer = _x;};
+        } forEach (nearestObjects [player,["CAManBase"],5]);
+    };
 };
 
 private _vehicleTarget = objNull;
@@ -249,6 +253,20 @@ if (_isOwnedHouse) then {
         ["Use Workbench","Crafting workbench installed in this house","spawnFunction",["radialHouseWorkbench",[_houseTarget]],"House Upgrades",60] call _addAction;
     };
 
+    ["Sell Property","Sell this owned house or garage","spawnFunction",["sellHouse",[_houseTarget]],"House",25] call _addAction;
+    ["House Lights","Toggle the interior house lights","function",["lightHouseAction",[_houseTarget]],"House",37] call _addAction;
+
+    private _canGarage = getNumber (missionConfigFile >> "Housing" >> worldName >> typeOf _houseTarget >> "canGarage") isEqualTo 1;
+    if (_canGarage && {!(_houseTarget getVariable ["blacklistedGarage",false])}) then {
+        if (_houseTarget getVariable ["garageBought",false]) then {
+            ["Access House Garage","Retrieve a stored road vehicle","spawnFunction",["vehicleGarage",[_houseTarget,"Car"]],"House",36] call _addAction;
+            ["Store In House Garage","Store the nearest eligible vehicle","spawnFunction",["storeVehicle",[_houseTarget,player]],"House",35] call _addAction;
+            ["Sell Garage Upgrade","Remove this house's garage access","spawnFunction",["sellHouseGarage",[_houseTarget]],"House Upgrades",32] call _addAction;
+        } else {
+            ["Buy Garage Upgrade","Add vehicle storage to this property","spawnFunction",["buyHouseGarage",[_houseTarget]],"House Upgrades",34] call _addAction;
+        };
+    };
+
     {
         private _upgradeKey = configName _x;
         private _upgradeTitle = getText (_x >> "title");
@@ -269,9 +287,29 @@ if (_isOwnedHouse) then {
     } forEach ("true" configClasses (missionConfigFile >> "Life_HouseUpgrades"));
 };
 
+if (!isNull _houseTarget && {!_isOwnedHouse} && {playerSide isEqualTo civilian} && {isNil {_houseTarget getVariable "house_owner"}}) then {
+    private _houseCfg = [typeOf _houseTarget] call life_fnc_houseConfig;
+    if !(_houseCfg isEqualTo []) then {
+        ["Buy Property","Purchase this available house or garage","spawnFunction",["buyHouse",[_houseTarget]],"House",45] call _addAction;
+    };
+};
+
+if (!isNull _houseTarget && {playerSide isEqualTo west} && {!isNil {_houseTarget getVariable "house_owner"}}) then {
+    ["Property Owner","Identify the registered property owner","function",["copHouseOwner",[_houseTarget]],"Law Enforcement",27] call _addAction;
+    ["Breach Door","Break the nearest locked property door","spawnFunction",["copBreakDoor",[_houseTarget]],"Law Enforcement",26] call _addAction;
+    if (player distance _houseTarget <= 3.6) then {
+        ["Search Property","Search containers inside the raided property","spawnFunction",["raidHouse",[_houseTarget]],"Law Enforcement",25] call _addAction;
+    };
+    ["Secure Property","Close and lock every property door","spawnFunction",["lockupHouse",[_houseTarget]],"Law Enforcement",24] call _addAction;
+};
+
 if (!isNull _storageCrate) then {
     ["Open Storage","Open the nearby house storage crate","spawnFunction",["radialHouseStorage",[objNull,"open",_storageCrate]],"Items",35] call _addAction;
-    ["Storage Menu","Open the normal storage interaction menu","function",["containerMenu",[_storageCrate]],"Items",20] call _addAction;
+    if (playerSide isEqualTo west) then {
+        ["Search Storage","Search this container for contraband","spawnFunction",["containerInvSearch",[_storageCrate]],"Law Enforcement",23] call _addAction;
+    } else {
+        ["Remove Storage","Pack up this placed storage container","spawnFunction",["removeContainer",[_storageCrate]],"House",23] call _addAction;
+    };
 };
 
 if (!isNull _groundItem) then {
@@ -287,15 +325,57 @@ if (!isNull _vehicleTarget) then {
         ["Open Trunk","Open vehicle storage","spawnFunction",["radialVehicleTrunk",[_vehicleTarget]],"Vehicle",44] call _addAction;
     };
 
-    if (isNull objectParent player) then {
-        ["Vehicle Menu","Open the normal vehicle interaction menu","function",["vInteractionMenu",[_vehicleTarget]],"Vehicle",20] call _addAction;
+    if (_vehicleTarget isKindOf "LandVehicle") then {
+        ["Driver Door","Open or close the driver-side door","function",["vehicleDoorControl",[_vehicleTarget,"driver"]],"Vehicle",43] call _addAction;
+        ["All Doors","Open or close all passenger doors","function",["vehicleDoorControl",[_vehicleTarget,"all"]],"Vehicle",42] call _addAction;
+    };
+
+    if (isNull objectParent player && {life_inv_toolkit > 0} && {[_vehicleTarget] call life_fnc_isDamaged}) then {
+        ["Repair Vehicle","Use a toolkit to repair the selected vehicle","spawnFunction",["repairTruck",[_vehicleTarget]],"Vehicle",41] call _addAction;
+    };
+
+    if (vehicle player isEqualTo _vehicleTarget && {driver _vehicleTarget isEqualTo player} && {_vehicleTarget isKindOf "LandVehicle"}) then {
+        ["Left Indicator","Toggle the left turn signal | [","function",["vehicleSignalSet",[_vehicleTarget,"left"]],"Vehicle",40] call _addAction;
+        ["Right Indicator","Toggle the right turn signal | ]","function",["vehicleSignalSet",[_vehicleTarget,"right"]],"Vehicle",39] call _addAction;
+        ["Hazard Lights","Toggle both turn signals | \","function",["vehicleSignalSet",[_vehicleTarget,"hazard"]],"Vehicle",38] call _addAction;
+        ["Seatbelt","Buckle or unbuckle | Ctrl+B","function",["seatbeltToggle",[]],"Vehicle",37] call _addAction;
+
+        private _cameraClasses = getArray (missionConfigFile >> "Life_VehicleControls" >> "backupCameraVehicles");
+        if ((typeOf _vehicleTarget) in _cameraClasses || {_vehicleTarget getVariable ["life_backup_camera",false]}) then {
+            ["Backup Camera","Toggle the rear camera | Ctrl+R","function",["vehicleBackupCamera",[_vehicleTarget]],"Vehicle",36] call _addAction;
+        };
     };
 
     if (playerSide isEqualTo west) then {
+        ["Vehicle Registration","Read registered vehicle ownership","spawnFunction",["searchVehAction",[_vehicleTarget]],"Law Enforcement",34] call _addAction;
+        ["Search Vehicle","Search the trunk for illegal items","spawnFunction",["vehInvSearch",[_vehicleTarget]],"Law Enforcement",33] call _addAction;
+        ["Impound Vehicle","Send an empty vehicle to the impound lot","spawnFunction",["impoundAction",[_vehicleTarget]],"Law Enforcement",31] call _addAction;
         if !((crew _vehicleTarget) isEqualTo []) then {
             ["Eject Occupants","Remove non-LEO occupants from this vehicle","function",["radialPulloutVehicle",[_vehicleTarget]],"Vehicle",38] call _addAction;
             ["Eject Occupants","Remove non-LEO occupants from this vehicle","function",["radialPulloutVehicle",[_vehicleTarget]],"Law Enforcement",24] call _addAction;
         };
+    } else {
+        if (_vehicleTarget isKindOf "Ship" && {isNull objectParent player} && {local _vehicleTarget} && {(crew _vehicleTarget) isEqualTo []}) then {
+            ["Push Boat","Push the empty boat away from shore","spawnFunction",["radialVehicleUtility",[_vehicleTarget,"push"]],"Vehicle",28] call _addAction;
+        };
+        if (isNull objectParent player && {(crew _vehicleTarget) isEqualTo []} && {canMove _vehicleTarget} && {locked _vehicleTarget isEqualTo 0}) then {
+            ["Enter Driver Seat","Enter this unlocked empty vehicle","function",["radialVehicleUtility",[_vehicleTarget,"driver"]],"Vehicle",27] call _addAction;
+        };
+        if (isNull objectParent player && {(crew _vehicleTarget) isEqualTo []} && {!canMove _vehicleTarget}) then {
+            ["Right Vehicle","Place an overturned empty vehicle upright","function",["radialVehicleUtility",[_vehicleTarget,"unflip"]],"Vehicle",26] call _addAction;
+        };
+        if (typeOf _vehicleTarget isEqualTo "O_Truck_03_device_F" && {_vehicleTarget in life_vehicles}) then {
+            ["Mining Device","Start the vehicle's automated mining device","spawnFunction",["deviceMine",[_vehicleTarget]],"Vehicle",25] call _addAction;
+        };
+    };
+};
+
+if (playerSide isEqualTo civilian) then {
+    if (!isNull _targetPlayer && {animationState _targetPlayer isEqualTo "Incapacitated"} && {!(_targetPlayer getVariable ["robbed",false])}) then {
+        ["Rob Person","Take available cash from the incapacitated person","function",["robAction",[_targetPlayer]],"Civilian",30] call _addAction;
+    };
+    if (vehicle player isKindOf "Ship" && {surfaceIsWater (getPos vehicle player)} && {life_carryWeight < life_maxWeight} && {abs speed (vehicle player) < 2} && {!life_net_dropped}) then {
+        ["Drop Fishing Net","Collect nearby fish from the water","spawnFunction",["dropFishingNet",[]],"Civilian",24] call _addAction;
     };
 };
 
@@ -314,17 +394,33 @@ if (playerSide isEqualTo west) then {
     };
 
     if (!isNull _targetPlayer && {_targetPlayer getVariable ["restrained",false]}) then {
-        ["Player Interaction","Open the normal LEO player interaction menu","function",["copInteractionMenu",[_targetPlayer]],"Law Enforcement",20] call _addAction;
-    };
-
-    if (!isNull _targetPlayer && {["police.ticket"] call life_fnc_hasPermission}) then {
-        ["Issue Citation","Open the field citation form for this person","function",["openCitation",[_targetPlayer]],"Law Enforcement",28] call _addAction;
+        ["Unrestrain","Remove restraints from this person","function",["unrestrain",[_targetPlayer]],"Law Enforcement",40] call _addAction;
+        ["Search Person","Search this person's inventory","spawnFunction",["searchAction",[_targetPlayer]],"Law Enforcement",39] call _addAction;
+        ["License / ID","Review and administer licenses","function",["openLicenseAdmin",[_targetPlayer]],"Law Enforcement",38] call _addAction;
+        if (player getVariable ["isEscorting",false]) then {
+            ["Stop Escort","Release the currently escorted person","function",["stopEscorting",[]],"Law Enforcement",37] call _addAction;
+        } else {
+            ["Escort","Begin escorting this restrained person","function",["escortAction",[_targetPlayer]],"Law Enforcement",37] call _addAction;
+        };
+        ["Put In Vehicle","Place this person into a nearby vehicle","function",["putInCar",[_targetPlayer]],"Law Enforcement",35] call _addAction;
+        if (["police.ticket"] call life_fnc_hasPermission) then {
+            ["Issue Citation","Open the field citation form","function",["openCitation",[_targetPlayer]],"Law Enforcement",36] call _addAction;
+        };
+        if (({player distance (getMarkerPos _x) < 30} count LIFE_SETTINGS(getArray,"sendtoJail_locations")) > 0) then {
+            ["Process Arrest","Book this person into the nearby jail","function",["arrestAction",[_targetPlayer]],"Law Enforcement",34] call _addAction;
+        };
+        if (["corporal"] call life_fnc_leoAtLeastRank || {FETCH_CONST(life_coplevel) >= LIFE_SETTINGS(getNumber,"seize_minimum_rank")}) then {
+            ["Seize Weapons","Remove illegal weapons and equipment","spawnFunction",["seizePlayerAction",[_targetPlayer]],"Law Enforcement",33] call _addAction;
+        };
     };
 };
 
 if (playerSide isEqualTo independent) then {
-    if (!isNull _targetPlayer && {!alive _targetPlayer} && {life_inv_defibrillator > 0}) then {
-        ["Revive","Start revive on the nearby patient","spawnFunction",["revivePlayer",[_targetPlayer]],"EMS",35] call _addAction;
+    if (!isNull _targetPlayer) then {
+        ["Assess Patient","Read the patient's current condition","function",["radialPatientAssessment",[_targetPlayer]],"EMS",40] call _addAction;
+        if (!alive _targetPlayer && {life_inv_defibrillator > 0}) then {
+            ["Revive Patient","Use a defibrillator to begin revival","spawnFunction",["revivePlayer",[_targetPlayer]],"EMS",39] call _addAction;
+        };
     };
 };
 

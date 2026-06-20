@@ -12,7 +12,7 @@
 
 private ["_caller","_thingToPush","_dir","_speed","_vel","_thingToPushType","_nameOfThingToPush","_textString","_targetDistance","_dist","_relativePosModel","_minSetBoxLimits","_maxSetBoxLimits","_minX","_minY","_minZ","_maxX","_maxY","_maxZ","_xRPM","_yRPM","_zRPM","_thingToPushLimits","_posCaller","_headPos","_headDir"];
 _caller = player;
-_thingToPush = cursorObject;
+_thingToPush = param [0,cursorObject,[objNull]];
 _posCaller = visiblePosition _caller;
 _dir = getDir _caller;
 if (!local _thingToPush) exitWith {};

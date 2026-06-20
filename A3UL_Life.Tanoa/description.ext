@@ -9,6 +9,7 @@ unsafeCVL = 1; // Allows createVehicleLocal to be executed in Multiplayer
 #include "config\Config_Master.hpp"
 #include "modules\DoorAccess\Config.hpp"
 #include "modules\ELS\Config.hpp"
+#include "modules\VehicleControls\Config.hpp"
 #include "modules\Shops\Config.hpp"
 #include "modules\ATM\Config.hpp"
 #include "modules\Government\Config.hpp"
@@ -28,6 +29,7 @@ class RscTitles {
     #include "dialog\progress.hpp"
     #include "dialog\hud_nameTags.hpp"
     #include "dialog\hud_stats.hpp"
+    #include "modules\VehicleControls\backup_camera.hpp"
 };
 
 class CfgFunctions {

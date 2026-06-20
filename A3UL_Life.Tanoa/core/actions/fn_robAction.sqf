@@ -7,7 +7,7 @@
     Starts the robbing process?
 */
 private ["_target"];
-_target = cursorObject;
+_target = param [0,cursorObject,[objNull]];
 
 //Error checks
 if (isNull _target) exitWith {};

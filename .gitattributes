@@ -4,3 +4,4 @@
 *.hpp text eol=lf
 *.sqf text eol=lf
 *.txt text eol=lf
+*.paa binary

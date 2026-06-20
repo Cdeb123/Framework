@@ -528,12 +528,16 @@ The following items are illegal to posses:<br/><br/>
         [
             "Tanoa Life Custom Controls",
                 "
-F1 / User Action 9: Open the compact interaction menu for nearby shops, licenses, doors, garages, LEO tools, staff tools, and personal menus. Rebind in ESC -> Configure -> Controls -> Custom -> User Action 9.<br/>
+F1 / User Action 9: Open the circular interaction wheel for nearby shops, people, vehicles, houses, LEO tools, EMS tools, and personal actions. Rebind in ESC -> Configure -> Controls -> Custom -> User Action 9.<br/>
 F1 menu 1-8: Select the numbered action on the current page.<br/>
 F1 menu A / Left Arrow: Previous page.<br/>
 F1 menu D / Right Arrow: Next page.<br/>
 F1 menu Esc: Close the menu.<br/>
-Action / Use key or Scroll Wheel near configured doors: Use Door Access, including public doors, keycards, and keypads.<br/>
+Left Windows: Use the nearest building or driver door. Shift + Left Windows toggles every passenger door on your current vehicle.<br/>
+U: Lock or unlock your selected/current vehicle or owned house door.<br/>
+T: Open vehicle or nearby container storage.<br/>
+[ / ]: Toggle the left or right vehicle indicator. Backslash toggles hazard lights.<br/>
+Ctrl + R: Toggle the backup camera on supported vehicles.<br/>
 1: ELS Code 1 / off while driving a configured emergency vehicle.<br/>
 2: ELS Code 2 / emergency lights while driving a configured emergency vehicle.<br/>
 3: ELS Code 3 / emergency lights and wail siren while driving a configured emergency vehicle.<br/>
