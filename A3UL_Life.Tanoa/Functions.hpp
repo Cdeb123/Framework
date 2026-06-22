@@ -308,7 +308,6 @@ class Life_Client_Core {
         file = "modules\RadialMenu";
         class captureInteractionActions {};
         class hasNearbyInteractionCategory {};
-        class interactionSanitizer {};
         class nearbyInteractionActions {};
         class openRadialMenu {};
         class radialHouseDoorLock {};
@@ -381,11 +380,6 @@ class Life_Client_Core {
         class vehicleDoorControl {};
         class vehicleSignalApply {};
         class vehicleSignalSet {};
-    };
-
-    class Module_WeaponSafety {
-        file = "modules\WeaponSafety";
-        class weaponFireMode {};
     };
 
     class Functions {

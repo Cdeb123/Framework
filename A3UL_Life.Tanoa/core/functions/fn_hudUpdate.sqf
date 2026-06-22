@@ -51,26 +51,6 @@ private _waterColor = switch (true) do {
 private _vehicle = vehicle player;
 private _inVehicle = !(_vehicle isEqualTo player);
 
-private _weapon = currentWeapon player;
-private _fireIcon = _display displayCtrl 2308;
-private _fireText = _display displayCtrl 1300;
-if (_weapon isEqualTo "") then {
-    _fireIcon ctrlShow false;
-    _fireText ctrlShow false;
-} else {
-    private _mode = missionNamespace getVariable ["life_fireMode","SEMI"];
-    private _modeColor = switch (_mode) do {
-        case "SAFE": {[1.00,0.70,0.20,0.94]};
-        case "AUTO": {[1.00,0.24,0.18,0.94]};
-        default {[0.0,0.78,0.92,0.94]};
-    };
-    _fireIcon ctrlShow true;
-    _fireText ctrlShow true;
-    _fireIcon ctrlSetTextColor _modeColor;
-    _fireText ctrlSetTextColor _modeColor;
-    _fireText ctrlSetText _mode;
-};
-
 {
     private _ctrl = _display displayCtrl _x;
     _ctrl ctrlShow false;

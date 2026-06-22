@@ -3,7 +3,7 @@
     File: fn_openRadialMenu.sqf
 */
 params [
-    ["_category","main",[""]]
+    ["_category","quick",[""]]
 ];
 
 if (dialog && {isNull (findDisplay 9200)}) exitWith {};

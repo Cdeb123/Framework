@@ -1,8 +1,7 @@
 class Life_VehicleControls {
     enabled = 1;
 
-    // Direct controls. F1 always exposes the same actions for discoverability.
-    contextDoorKey = 219;       // Left Windows
+    // Direct driving controls. Doors are available through the action menu and F1 radial.
     leftSignalKey = 26;         // [
     rightSignalKey = 27;        // ]
     hazardSignalKey = 43;       // Backslash key

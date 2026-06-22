@@ -36,7 +36,9 @@ if (_code isEqualTo 1) exitWith {
 };
 
 private _radialKey = LIFE_SETTINGS(getNumber,"radial_menu_key");
-if (_code isEqualTo _radialKey) exitWith {
+private _radialCustom = LIFE_SETTINGS(getText,"radial_menu_customAction");
+private _radialCustomKeys = if (_radialCustom isEqualTo "") then {[]} else {actionKeys _radialCustom};
+if (_code isEqualTo _radialKey || {_code in _radialCustomKeys}) exitWith {
     closeDialog 0;
     true
 };

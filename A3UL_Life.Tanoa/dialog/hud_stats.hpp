@@ -29,8 +29,6 @@ class playerHUD {
         Life_RscText_HUDFood,
         Life_RscText_HUDHealth,
         Life_RscText_HUDWater,
-        Life_HUD_FireModeIcon,
-        Life_HUD_FireModeText,
         Life_HUD_SeatbeltIcon,
         Life_HUD_CuffedIcon,
         Life_HUD_PoisonIcon,
@@ -147,29 +145,6 @@ class playerHUD {
         idc = 1202;
         text = "100%";
         y = safezoneY + 0.973 * safezoneH;
-    };
-
-    class Life_HUD_FireModeIcon: Life_RscPictureKeepAspect {
-        idc = 2308;
-        text = "\A3\ui_f\data\igui\cfg\simpleTasks\types\rifle_ca.paa";
-        colorText[] = {0.0,0.78,0.92,0.90};
-        x = safezoneX + 0.164 * safezoneW;
-        y = safezoneY + 0.952 * safezoneH;
-        w = 0.014 * safezoneW;
-        h = 0.018 * safezoneH;
-    };
-
-    class Life_HUD_FireModeText: Life_RscText {
-        idc = 1300;
-        text = "";
-        style = ST_CENTER;
-        SizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 0.44)";
-        colorText[] = {0.92,0.97,1,0.94};
-        colorBackground[] = {0,0,0,0};
-        x = safezoneX + 0.179 * safezoneW;
-        y = safezoneY + 0.953 * safezoneH;
-        w = 0.045 * safezoneW;
-        h = 0.016 * safezoneH;
     };
 
     class Life_HUD_StatusIcon: Life_RscPictureKeepAspect {

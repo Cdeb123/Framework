@@ -326,8 +326,8 @@ if (!isNull _vehicleTarget) then {
     };
 
     if (_vehicleTarget isKindOf "LandVehicle") then {
-        ["Driver Door","Open or close the driver-side door","function",["vehicleDoorControl",[_vehicleTarget,"driver"]],"Vehicle",43] call _addAction;
-        ["All Doors","Open or close all passenger doors","function",["vehicleDoorControl",[_vehicleTarget,"all"]],"Vehicle",42] call _addAction;
+        ["Driver Door","Open or close the driver-side door","function",["vehicleDoorControl",[_vehicleTarget,"driver"]],"Vehicle",39] call _addAction;
+        ["All Doors","Open or close all passenger doors","function",["vehicleDoorControl",[_vehicleTarget,"all"]],"Vehicle",38] call _addAction;
     };
 
     if (isNull objectParent player && {life_inv_toolkit > 0} && {[_vehicleTarget] call life_fnc_isDamaged}) then {
@@ -335,14 +335,14 @@ if (!isNull _vehicleTarget) then {
     };
 
     if (vehicle player isEqualTo _vehicleTarget && {driver _vehicleTarget isEqualTo player} && {_vehicleTarget isKindOf "LandVehicle"}) then {
-        ["Left Indicator","Toggle the left turn signal | [","function",["vehicleSignalSet",[_vehicleTarget,"left"]],"Vehicle",40] call _addAction;
-        ["Right Indicator","Toggle the right turn signal | ]","function",["vehicleSignalSet",[_vehicleTarget,"right"]],"Vehicle",39] call _addAction;
-        ["Hazard Lights","Toggle both turn signals | \","function",["vehicleSignalSet",[_vehicleTarget,"hazard"]],"Vehicle",38] call _addAction;
-        ["Seatbelt","Buckle or unbuckle | Ctrl+B","function",["seatbeltToggle",[]],"Vehicle",37] call _addAction;
+        ["Left Indicator","Toggle the left turn signal | [","function",["vehicleSignalSet",[_vehicleTarget,"left"]],"Vehicle",43] call _addAction;
+        ["Right Indicator","Toggle the right turn signal | ]","function",["vehicleSignalSet",[_vehicleTarget,"right"]],"Vehicle",42] call _addAction;
+        ["Hazard Lights","Toggle both turn signals | \","function",["vehicleSignalSet",[_vehicleTarget,"hazard"]],"Vehicle",41] call _addAction;
+        ["Seatbelt","Buckle or unbuckle | Ctrl+B","function",["seatbeltToggle",[]],"Vehicle",40] call _addAction;
 
         private _cameraClasses = getArray (missionConfigFile >> "Life_VehicleControls" >> "backupCameraVehicles");
         if ((typeOf _vehicleTarget) in _cameraClasses || {_vehicleTarget getVariable ["life_backup_camera",false]}) then {
-            ["Backup Camera","Toggle the rear camera | Ctrl+R","function",["vehicleBackupCamera",[_vehicleTarget]],"Vehicle",36] call _addAction;
+            ["Backup Camera","Toggle the rear camera | Ctrl+R","function",["vehicleBackupCamera",[_vehicleTarget]],"Vehicle",47] call _addAction;
         };
     };
 

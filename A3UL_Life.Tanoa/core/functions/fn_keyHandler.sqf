@@ -29,11 +29,6 @@ if ((_code isEqualTo _radialKey || {_code in _radialCustomKeys}) && {!_shift} &&
 };
 
 private _vehicleControlsEnabled = (getNumber (missionConfigFile >> "Life_VehicleControls" >> "enabled")) isEqualTo 1;
-private _doorKey = getNumber (missionConfigFile >> "Life_VehicleControls" >> "contextDoorKey");
-if (_vehicleControlsEnabled && {_code isEqualTo _doorKey} && {!_ctrlKey} && {!_alt}) exitWith {
-    [_shift] call life_fnc_vehicleContextDoor;
-    true
-};
 
 private _isDriver = !(vehicle player isEqualTo player) && {driver (vehicle player) isEqualTo player};
 if (_vehicleControlsEnabled && {_isDriver} && {_code isEqualTo (getNumber (missionConfigFile >> "Life_VehicleControls" >> "leftSignalKey"))} && {!_ctrlKey} && {!_alt}) exitWith {
@@ -71,11 +66,6 @@ if (_isVehicleHornKey
     && {!((getNumber (missionConfigFile >> "Life_ELS" >> "policeOnly")) isEqualTo 1 && {!(playerSide isEqualTo west)})}
     && {[vehicle player] call life_fnc_elsIsConfigured}) exitWith {
     [vehicle player] call life_fnc_elsAirhorn;
-    true;
-};
-
-if (_code in (actionKeys "Fire") && {!(currentWeapon player isEqualTo "")} && {(missionNamespace getVariable ["life_fireMode","SAFE"]) isEqualTo "SAFE"}) exitWith {
-    titleText ["Fire mode: SAFE","PLAIN"];
     true;
 };
 
@@ -276,11 +266,6 @@ switch (_code) do {
 
     //F Key
     case 33: {
-        if (_ctrlKey && {!_alt}) exitWith {
-            [] call life_fnc_weaponFireMode;
-            _handled = true;
-        };
-
         if ((playerSide in [west,independent]) && {vehicle player != player} && {((driver vehicle player) == player)}) then {_handled = true;};
     };
 

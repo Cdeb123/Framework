@@ -53,7 +53,6 @@ life_firstSpawn = true;
 #include "..\modules\PlayerStatus\configuration.sqf"
 #include "..\modules\RadialMenu\configuration.sqf"
 #include "..\modules\VehicleControls\configuration.sqf"
-#include "..\modules\WeaponSafety\configuration.sqf"
 
 //Settings
 life_settings_enableNewsBroadcast = profileNamespace getVariable ["life_enableNewsBroadcast", true];

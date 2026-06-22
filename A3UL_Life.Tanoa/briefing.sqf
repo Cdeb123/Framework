@@ -533,7 +533,9 @@ F1 menu 1-8: Select the numbered action on the current page.<br/>
 F1 menu A / Left Arrow: Previous page.<br/>
 F1 menu D / Right Arrow: Next page.<br/>
 F1 menu Esc: Close the menu.<br/>
-Left Windows: Use the nearest building or driver door. Shift + Left Windows toggles every passenger door on your current vehicle.<br/>
+Mouse wheel: Browse nearby shops, signs, services, and other world interactions without cycling weapons.<br/>
+Spacebar: Use the highlighted scroll-wheel interaction.<br/>
+Doors: Select Use Door or Open / Close All Vehicle Doors with the mouse wheel, then press Spacebar.<br/>
 U: Lock or unlock your selected/current vehicle or owned house door.<br/>
 T: Open vehicle or nearby container storage.<br/>
 [ / ]: Toggle the left or right vehicle indicator. Backslash toggles hazard lights.<br/>

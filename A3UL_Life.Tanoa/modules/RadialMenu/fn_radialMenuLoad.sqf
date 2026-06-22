@@ -9,7 +9,7 @@ private _display = findDisplay 9200;
 if (isNull _display) exitWith {};
 
 private _sourceActions = missionNamespace getVariable ["life_radial_source_actions",[]];
-private _category = missionNamespace getVariable ["life_radial_category","main"];
+private _category = missionNamespace getVariable ["life_radial_category","quick"];
 private _page = missionNamespace getVariable ["life_radial_page",0];
 private _actions = [];
 private _seenGroups = [];
@@ -55,6 +55,30 @@ private _iconFor = {
     "\A3\ui_f\data\igui\cfg\simpleTasks\types\use_ca.paa"
 };
 
+if (_category isEqualTo "quick") then {
+    private _seenActions = [];
+    private _quickCandidates = [];
+    {
+        private _title = _x param [0,"",[""]];
+        private _type = _x param [2,"code",[""]];
+        if !(_type isEqualTo "category" || {_title isEqualTo ""}) then {
+            private _action = +_x;
+            private _group = _action param [4,"Nearby",[""]];
+            if (_group isEqualTo "House Upgrades") then {
+                _action set [5,((_action param [5,0,[0]]) min 34)];
+            };
+            _quickCandidates pushBack _action;
+        };
+    } forEach _sourceActions;
+    _quickCandidates = [_quickCandidates,[],{_x param [5,0,[0]]},"DESCEND"] call BIS_fnc_sortBy;
+    {
+        private _title = _x param [0,"",[""]];
+        if !(_title in _seenActions) then {
+            _seenActions pushBack _title;
+            _actions pushBack _x;
+        };
+    } forEach _quickCandidates;
+} else {
 if (_category isEqualTo "main") then {
     {
         private _group = _x select 4;
@@ -71,6 +95,7 @@ if (_category isEqualTo "main") then {
         if ((_x select 4) isEqualTo _category) then {_actions pushBack _x;};
     } forEach _sourceActions;
     _actions = [_actions,[],{_x param [5,0,[0]]},"DESCEND"] call BIS_fnc_sortBy;
+};
 };
 
 if (_actions isEqualTo []) then {
@@ -96,6 +121,7 @@ for "_i" from 0 to 7 do {
     private _labelCtrl = _display displayCtrl (9240 + _i);
     private _keyCtrl = _display displayCtrl (9250 + _i);
     private _backCtrl = _display displayCtrl (9260 + _i);
+    private _edgeCtrl = _display displayCtrl (9270 + _i);
     private _actionIndex = (_page * _pageSize) + _i;
 
     if (_actionIndex < count _actions) then {
@@ -109,14 +135,51 @@ for "_i" from 0 to 7 do {
         ];
         private _icon = _action param [6,[_title,_group] call _iconFor,[""]];
         private _wheelLabel = switch (_title) do {
+            case "Lock / Unlock": {"LOCK /<br/>UNLOCK"};
+            case "Lock / Unlock Door": {"DOOR<br/>LOCK"};
+            case "Open Trunk": {"OPEN<br/>TRUNK"};
+            case "Driver Door": {"DRIVER<br/>DOOR"};
+            case "All Doors": {"ALL<br/>DOORS"};
+            case "Repair Vehicle": {"REPAIR<br/>VEHICLE"};
+            case "Left Indicator": {"LEFT<br/>SIGNAL"};
+            case "Right Indicator": {"RIGHT<br/>SIGNAL"};
+            case "Hazard Lights": {"HAZARD<br/>LIGHTS"};
+            case "Backup Camera": {"REAR<br/>CAMERA"};
+            case "Vehicle Registration": {"VEHICLE<br/>REG."};
+            case "Search Vehicle": {"SEARCH<br/>VEHICLE"};
+            case "Impound Vehicle": {"IMPOUND<br/>VEHICLE"};
+            case "Assess Patient": {"ASSESS<br/>PATIENT"};
+            case "Revive Patient": {"REVIVE<br/>PATIENT"};
             case "Law Enforcement": {"LEO"};
-            case "Department of Justice": {"Justice"};
-            case "House Upgrades": {"Upgrades"};
-            case "License Shop": {"Licenses"};
-            case "Access Shop": {"Shops"};
-            default {if ((count _title) > 16) then {format ["%1...",_title select [0,13]]} else {_title}};
+            case "Department of Justice": {"JUSTICE"};
+            case "House Upgrades": {"HOUSE<br/>UPGRADES"};
+            case "License Shop": {"LICENSES"};
+            case "Access Shop": {"SHOPS"};
+            default {
+                private _words = (toUpper _title) splitString " ";
+                if ((count _words) <= 1) then {
+                    private _single = toUpper _title;
+                    if ((count _single) > 14) then {_single = (_single select [0,12]) + ".";};
+                    _single
+                } else {
+                    private _line1 = "";
+                    private _line2 = "";
+                    private _targetLength = ceil ((count _title) / 2);
+                    {
+                        private _candidate = _line1 + ([""," "] select !(_line1 isEqualTo "")) + _x;
+                        if ((count _candidate) <= _targetLength || {_line1 isEqualTo ""}) then {
+                            _line1 = _candidate;
+                        } else {
+                            _line2 = _line2 + ([""," "] select !(_line2 isEqualTo "")) + _x;
+                        };
+                    } forEach _words;
+                    if ((count _line1) > 14) then {_line1 = (_line1 select [0,12]) + ".";};
+                    if ((count _line2) > 14) then {_line2 = (_line2 select [0,12]) + ".";};
+                    format ["%1<br/>%2",_line1,_line2]
+                };
+            };
         };
-        _labelCtrl ctrlSetText _wheelLabel;
+        _labelCtrl ctrlSetStructuredText parseText format ["<t align='center' color='#eefaff'>%1</t>",_wheelLabel];
         _iconCtrl ctrlSetText _icon;
         _button ctrlSetTooltip _subtitle;
         _button ctrlEnable true;
@@ -125,9 +188,11 @@ for "_i" from 0 to 7 do {
         _labelCtrl ctrlSetFade 0;
         _keyCtrl ctrlSetFade 0;
         _backCtrl ctrlSetFade 0;
+        _edgeCtrl ctrlSetFade 0;
         _backCtrl ctrlSetTextColor [0.018,0.038,0.049,0.96];
+        _edgeCtrl ctrlSetTextColor [0.20,0.68,0.86,0.62];
     } else {
-        _labelCtrl ctrlSetText "";
+        _labelCtrl ctrlSetStructuredText parseText "";
         _iconCtrl ctrlSetText "";
         _button ctrlSetTooltip "";
         _button ctrlEnable false;
@@ -136,13 +201,19 @@ for "_i" from 0 to 7 do {
         _labelCtrl ctrlSetFade 1;
         _keyCtrl ctrlSetFade 1;
         _backCtrl ctrlSetFade 0.78;
+        _edgeCtrl ctrlSetFade 1;
         _backCtrl ctrlSetTextColor [0.015,0.025,0.030,0.36];
     };
-    {_x ctrlCommit 0;} forEach [_button,_iconCtrl,_labelCtrl,_keyCtrl,_backCtrl];
+    {_x ctrlCommit 0;} forEach [_button,_iconCtrl,_labelCtrl,_keyCtrl,_backCtrl,_edgeCtrl];
 };
 
 (_display displayCtrl 9220) ctrlEnable (_page > 0);
 (_display displayCtrl 9221) ctrlEnable (_page < _maxPage);
-(_display displayCtrl 9204) ctrlSetText format ["%1 / %2",_page + 1,_maxPage + 1];
-life_radial_hover = -1;
-[-1] call life_fnc_radialMenuHover;
+(_display displayCtrl 9204) ctrlSetText format ["PAGE %1 / %2  |  %3 ACTIONS",_page + 1,_maxPage + 1,count _actions];
+life_radial_hover = 0;
+if !(_actions isEqualTo []) then {
+    [0] call life_fnc_radialMenuHover;
+    ctrlSetFocus (_display displayCtrl 9210);
+} else {
+    [-1] call life_fnc_radialMenuHover;
+};

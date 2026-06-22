@@ -83,7 +83,6 @@ private _activeCharacterName = if ((count (missionNamespace getVariable ["life_c
 player setVariable ["realname", _activeCharacterName, true];
 player setVariable ["characterUID", missionNamespace getVariable ["life_character_uid",""], true];
 player setVariable ["seatbelt", false, true];
-player setVariable ["fireMode", life_fireMode, true];
 
 diag_log "[Life Client] Past Settings Init";
 [] execFSM "core\fsm\client.fsm";
