@@ -804,8 +804,8 @@ class Life_Shops {
                                 displayName = "2011 CVPI Patrol Vehicle";
                                 price = -1;
                                 condition = "";
-                                rank = "";
-                                subdivisions[] = {};
+                                rank = "deputy";
+                                subdivisions[] = {"patrol"};
                                 features[] = {"General patrol platform","Low upkeep"};
                                 text = "A dependable patrol vehicle for everyday calls and transport.";
                             };
@@ -814,8 +814,8 @@ class Life_Shops {
                                 displayName = "2011 CVPI Patrol Vehicle Slicktop";
                                 price = -1;
                                 condition = "";
-                                rank = "";
-                                subdivisions[] = {};
+                                rank = "deputy";
+                                subdivisions[] = {"patrol"};
                                 features[] = { "General patrol platform","Low upkeep" };
                                 text = "A dependable patrol vehicle for everyday calls and transport.";
                             };
@@ -824,8 +824,8 @@ class Life_Shops {
                                 displayName = "2011 CVPI Unmarked Sheriff 1";
                                 price = -1;
                                 condition = "";
-                                rank = "sheriff";
-                                subdivisions[] = {};
+                                rank = "undersheriff";
+                                subdivisions[] = { "cid", "mcu", "ia" };
                                 features[] = {"Fast pursuit response","Compact footprint","Sheriff Access"};
                                 text = "A faster pursuit vehicle for qualified deputies and above.";
                             };
@@ -834,10 +834,60 @@ class Life_Shops {
                                 displayName = "2021 High Speed Unit Camaro";
                                 price = -1;
                                 condition = "";
-                                rank = "sheriff";
-                                subdivisions[] = {};
+                                rank = "deputy";
+                                subdivisions[] = {"hse"};
                                 features[] = { "Fast pursuit response","Compact footprint","Sheriff Access" };
                                 text = "A faster pursuit vehicle for qualified deputies and above.";
+                            };
+                            class AG_MustangGT15_HSU_AG {
+                                className = "AG_MustangGT15_HSU_AG";
+                                displayName = "2015 High Speed Unit Mustang GT";
+                                price = -1;
+                                condition = "";
+                                rank = "deputy";
+                                subdivisions[] = {"hse"};
+                                features[] = { "Fast pursuit response","Compact footprint" };
+                                text = "A faster pursuit vehicle for qualified deputies and above.";
+                            };
+                            class AG_MustangGT15_HSU_ST_AG {
+                                className = "AG_MustangGT15_HSU_ST_AG";
+                                displayName = "2015 High Speed Unit Mustang GT Slicktop";
+                                price = -1;
+                                condition = "";
+                                rank = "corporal";
+                                subdivisions[] = {"hse"};
+                                features[] = { "Fast pursuit response","Compact footprint" };
+                                text = "A faster pursuit vehicle for qualified deputies and above.";
+                            };
+                            class AG_Silverado_19_Unm_AG_TIER3 {
+                                className = "AG_Silverado_19_Unm_AG_TIER3";
+                                displayName = "2019 Silverado Unmarked";
+                                price = -1;
+                                condition = "";
+                                rank = "captain";
+                                subdivisions[] = {"cid", "mcu", "ia"};
+                                features[] = { "Fast pursuit response","Utility Vehicle", "Unmarked Vehicle" };
+                                text = "A faster pursuit vehicle for qualified deputies and above.";
+                            }
+                            class AG_Taurus_Unm_AG {
+                                className = "AG_Taurus_Unm_AG";
+                                displayName = "Ford FPIS Unmarked";
+                                price = -1;
+                                condition = "";
+                                rank = "corporal";
+                                subdivisions[] = {"cid", "mcu", "ia"};
+                                features[] = { "Unmarked Vehicle" };
+                                text = "A Unmarked Patrol Vehicle for Investigations and Covert Operations.";
+                            };
+                            class AG_Suburban16_Unm_AG {
+                                className = "AG_Suburban16_Unm_AG";
+                                displayName = "2016 Suburban Unmarked";
+                                price = -1;
+                                condition = "";
+                                rank = "sergeant";
+                                subdivisions[] = {"cid", "mcu", "ia"};
+                                features[] = { "Utility Vehicle", "Unmarked Vehicle" };
+                                text = "A Unmarked Unit, For Investigations and Covert Operations.";
                             };
                             class AG_CTSV_AdminServices_AG_TIER3 {
                                 className = "AG_CTSV_AdminServices_AG_TIER3";
@@ -845,7 +895,7 @@ class Life_Shops {
                                 price = -1;
                                 condition = "";
                                 rank = "deputy";
-                                subdivisions[] = {"leo.training.fto"};
+                                subdivisions[] = {"academy"};
                                 features[] = { "Training Vehicle","Low upkeep","Fast pursuit response" };
                                 text = "A faster pursuit vehicle for qualified deputies and above.";
                             };
@@ -863,7 +913,7 @@ class Life_Shops {
                                 price = -1;
                                 condition = "";
                                 rank = "sergeant";
-                                subdivisions[] = {};
+                                subdivisions[] = {"ert"};
                                 features[] = {"Armored response","Corporal access","High-risk transport"};
                                 text = "Armored law enforcement platform for higher-risk operations.";
                             };
@@ -905,8 +955,28 @@ class Life_Shops {
                                 price = -1;
                                 condition = "";
                                 rank = "sergeant";
-                                subdivisions[] = {};
+                                subdivisions[] = {"hse"};
                                 features[] = {"Certified aviation only","Fast patrol observation","Light transport"};
+                                text = "Light helicopter for certified TCSD aviation operations.";
+                            };
+                            class AG_Hummingbird_AdminServices {
+                                className = "AG_Hummingbird_AdminServices";
+                                displayName = "TCSD FTO Hummingbird";
+                                price = -1;
+                                condition = "";
+                                rank = "lieutenant";
+                                subdivisions[] = {"academy"};
+                                features[] = { "Certified aviation only","Fast patrol observation","Light transport" };
+                                text = "Light helicopter for certified TCSD aviation operations.";
+                            };
+                            class AG_Hummingbird_Police {
+                                className = "AG_Hummingbird_Police";
+                                displayName = "TCSD Patrol Hummingbird";
+                                price = -1;
+                                condition = "";
+                                rank = "sergeant";
+                                subdivisions[] = {"patrol"};
+                                features[] = { "Certified aviation only","Fast patrol observation","Light transport" };
                                 text = "Light helicopter for certified TCSD aviation operations.";
                             };
                             class AG_UH60M_SF_Sheriff_AG {
@@ -1070,13 +1140,13 @@ class Life_Shops {
                         class AG_KCSO_Short_Cadet_Uni {
                             className = "AG_KCSO_Short_Cadet_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Cadet Patrol Uniform";
+                            displayName = "TCSD Cadet Patrol Uniform Short Sleeve";
                             price = 25;
                             condition = "";
                             rank = "cadet";
-                            subdivisions[] = {};
+                            subdivisions[] = {"patrol"};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Cadet Uniform";
+                            text = "Standard issued TCSD Cadet Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_Cadet_Uni {
                             className = "AG_KCSO_Long_Cadet_Uni";
@@ -1085,20 +1155,20 @@ class Life_Shops {
                             price = 350;
                             condition = "";
                             rank = "cadet";
-                            subdivisions[] = {};
+                            subdivisions[] = {"patrol"};
                             rolePermissions[] = {};
                             text = "Standard issued TCSD Cadet Uniform Long Sleeve";
                         };
                         class AG_KCSO_Short_Trooper_Uni {
                             className = "AG_KCSO_Short_Trooper_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Deputy Patrol Uniform";
+                            displayName = "TCSD Deputy Patrol Uniform Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {};
+                            subdivisions[] = {"patrol"};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Deputy Uniform";
+                            text = "Standard issued TCSD Deputy Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_Trooper_Uni {
                             className = "AG_KCSO_Long_Trooper_Uni";
@@ -1107,9 +1177,97 @@ class Life_Shops {
                             price = 550;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {};
+                            subdivisions[] = {"patrol"};
                             rolePermissions[] = {};
                             text = "Standard issued TCSD Deputy Uniform Long Sleeve";
+                        };
+                        class AG_KCSO_Short_SnrTrooper_Uni {
+                            className = "AG_KCSO_Short_SnrTrooper_Uni";
+                            itemType = "uniform";
+                            displayName = "TCSD Senior Deputy Patrol Uniform Short Sleeve";
+                            price = 550;
+                            condition = "";
+                            rank = "senior_deputy";
+                            subdivisions[] = {"patrol"};
+                            rolePermissions[] = {};
+                            text = "Standard issued TCSD Senior Deputy Uniform Short Sleeve";
+                        };
+                        class AG_KCSO_Long_SnrTrooper_Uni {
+                            className = "AG_KCSO_Long_SnrTrooper_Uni";
+                            itemType = "uniform";
+                            displayName = "TCSD Senior Deputy Patrol Uniform Long Sleeve";
+                            price = 550;
+                            condition = "";
+                            rank = "senior_deputy";
+                            subdivisions[] = {"patrol"};
+                            rolePermissions[] = {};
+                            text = "Standard issued TCSD Senior Deputy Uniform Long Sleeve";
+                        };
+                        class AG_KCSO_Short_Corporal_Uni {
+                            className = "AG_KCSO_Short_Corporal_Uni";
+                            itemType = "uniform";
+                            displayName = "TCSD Corporal Patrol Uniform Short Sleeve";
+                            price = 550;
+                            condition = "";
+                            rank = "corporal";
+                            subdivisions[] = {"patrol"};
+                            rolePermissions[] = {};
+                            text = "Standard issued TCSD Corporal Uniform Short Sleeve";
+                        };
+                        class AG_KCSO_Long_Corporal_Uni {
+                            className = "AG_KCSO_Long_Corporal_Uni";
+                            itemType = "uniform";
+                            displayName = "TCSD Corporal Patrol Uniform Long Sleeve";
+                            price = 550;
+                            condition = "";
+                            rank = "corporal";
+                            subdivisions[] = {"patrol"};
+                            rolePermissions[] = {};
+                            text = "Standard issued TCSD Corporal Uniform Long Sleeve";
+                        };
+                        class AG_KCSO_Short_Sergeant_Uni {
+                            className = "AG_KCSO_Short_Sergeant_Uni";
+                            itemType = "uniform";
+                            displayName = "TCSD Sergeant Patrol Uniform Short Sleeve";
+                            price = 550;
+                            condition = "";
+                            rank = "sergeant";
+                            subdivisions[] = {"patrol"};
+                            rolePermissions[] = {};
+                            text = "Standard issued TCSD Sergeant Uniform Short Sleeve";
+                        };
+                        class AG_KCSO_Long_Sergeant_Uni {
+                            className = "AG_KCSO_Long_Sergeant_Uni";
+                            itemType = "uniform";
+                            displayName = "TCSD Sergeant Patrol Uniform Long Sleeve";
+                            price = 550;
+                            condition = "";
+                            rank = "sergeant";
+                            subdivisions[] = {"patrol"};
+                            rolePermissions[] = {};
+                            text = "Standard issued TCSD Sergeant Uniform Long Sleeve";
+                        };
+                        class AG_KCSO_Short_Lieutenant_Uni {
+                            className = "AG_KCSO_Short_Lieutenant_Uni";
+                            itemType = "uniform";
+                            displayName = "TCSD Lieutenant Patrol Uniform Short Sleeve";
+                            price = 550;
+                            condition = "";
+                            rank = "lieutenant";
+                            subdivisions[] = {"patrol"};
+                            rolePermissions[] = {};
+                            text = "Standard issued TCSD Lieutenant Uniform Short Sleeve";
+                        };
+                        class AG_KCSO_Long_Lieutenant_Uni {
+                            className = "AG_KCSO_Long_Lieutenant_Uni";
+                            itemType = "uniform";
+                            displayName = "TCSD Lieutenant Patrol Uniform Long Sleeve";
+                            price = 550;
+                            condition = "";
+                            rank = "lieutenant";
+                            subdivisions[] = {"patrol"};
+                            rolePermissions[] = {};
+                            text = "Standard issued TCSD Lieutenant Uniform Long Sleeve";
                         };
                         class AG_KCSO_Beret {
                             className = "AG_KCSO_Beret";
