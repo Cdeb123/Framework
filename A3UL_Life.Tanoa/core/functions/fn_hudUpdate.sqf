@@ -114,3 +114,5 @@ if (count (missionNamespace getVariable ["life_pending_citations",[]]) > 0) then
 if (count (missionNamespace getVariable ["life_pending_warrants",[]]) > 0) then {
     [2307,[1.00,0.24,0.18,0.95]] call _showIcon;
 };
+
+[_display] call life_fnc_weaponHUDUpdate;

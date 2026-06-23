@@ -8,7 +8,8 @@
 */
 disableSerialization;
 
-showHUD [true,false,false,false,false,true,false,true,true,false,true];
+// Replace Arma's weapon and stamina widgets with the client-configurable framework HUD.
+showHUD [true,false,false,false,false,true,false,true,false,false,false];
 cutRsc ["playerHUD", "PLAIN", 2, false];
 [] spawn {
     disableSerialization;
@@ -35,7 +36,7 @@ if ((isNil "life_hud_loop") || {scriptDone life_hud_loop}) then {
                 uiSleep 0.10;
             };
             [] call life_fnc_hudUpdate;
-            uiSleep 0.25;
+            uiSleep 0.10;
         };
     };
 };

@@ -533,6 +533,7 @@ F1 menu 1-8: Select the numbered action on the current page.<br/>
 F1 menu A / Left Arrow: Previous page.<br/>
 F1 menu D / Right Arrow: Next page.<br/>
 F1 menu Esc: Close the menu.<br/>
+Player Menu -> Settings: Customize the client-side weapon HUD, stamina panel, theme, scale, opacity, and penetration details.<br/>
 Mouse wheel: Browse nearby shops, signs, services, and other world interactions without cycling weapons.<br/>
 Spacebar: Use the highlighted scroll-wheel interaction.<br/>
 Doors: Select Use Door or Open / Close All Vehicle Doors with the mouse wheel, then press Spacebar.<br/>

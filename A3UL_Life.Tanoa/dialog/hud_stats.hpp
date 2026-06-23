@@ -29,6 +29,27 @@ class playerHUD {
         Life_RscText_HUDFood,
         Life_RscText_HUDHealth,
         Life_RscText_HUDWater,
+        Life_HUD_WeaponShadow,
+        Life_HUD_WeaponPanel,
+        Life_HUD_WeaponAccent,
+        Life_HUD_WeaponDivider,
+        Life_HUD_MagazineBarBack,
+        Life_HUD_MagazineBarFill,
+        Life_HUD_WeaponIcon,
+        Life_HUD_WeaponName,
+        Life_HUD_AmmoType,
+        Life_HUD_MagazineRounds,
+        Life_HUD_MagazineCapacity,
+        Life_HUD_ReserveRounds,
+        Life_HUD_Penetration,
+        Life_HUD_TotalRounds,
+        Life_HUD_StaminaShadow,
+        Life_HUD_StaminaPanel,
+        Life_HUD_StaminaAccent,
+        Life_HUD_StaminaBarBack,
+        Life_HUD_StaminaBarFill,
+        Life_HUD_StaminaLabel,
+        Life_HUD_StaminaValue,
         Life_HUD_SeatbeltIcon,
         Life_HUD_CuffedIcon,
         Life_HUD_PoisonIcon,
@@ -145,6 +166,142 @@ class playerHUD {
         idc = 1202;
         text = "100%";
         y = safezoneY + 0.973 * safezoneH;
+    };
+
+    class Life_HUD_WeaponShadow: Life_RscText {
+        idc = 2400;
+        x = -10;
+        y = -10;
+        w = 0;
+        h = 0;
+        colorBackground[] = {0,0,0,0.38};
+        shadow = 0;
+    };
+
+    class Life_HUD_WeaponPanel: Life_HUD_WeaponShadow {
+        idc = 2401;
+        colorBackground[] = {0.018,0.026,0.034,0.92};
+    };
+
+    class Life_HUD_WeaponAccent: Life_HUD_WeaponShadow {
+        idc = 2402;
+        colorBackground[] = {0.16,0.72,0.88,0.95};
+    };
+
+    class Life_HUD_WeaponDivider: Life_HUD_WeaponShadow {
+        idc = 2406;
+        colorBackground[] = {0.50,0.63,0.68,0.25};
+    };
+
+    class Life_HUD_MagazineBarBack: Life_HUD_WeaponShadow {
+        idc = 2404;
+        colorBackground[] = {0.032,0.046,0.058,0.95};
+    };
+
+    class Life_HUD_MagazineBarFill: Life_HUD_WeaponShadow {
+        idc = 2405;
+        colorBackground[] = {0.16,0.72,0.88,0.96};
+    };
+
+    class Life_HUD_WeaponIcon: Life_RscPictureKeepAspect {
+        idc = 2403;
+        x = -10;
+        y = -10;
+        w = 0;
+        h = 0;
+        text = "";
+        colorText[] = {0.91,0.96,0.98,0.90};
+    };
+
+    class Life_HUD_WeaponText: Life_RscText {
+        x = -10;
+        y = -10;
+        w = 0;
+        h = 0;
+        colorBackground[] = {0,0,0,0};
+        colorText[] = {0.91,0.96,0.98,1};
+        font = "RobotoCondensed";
+        shadow = 0;
+        style = ST_LEFT;
+    };
+
+    class Life_HUD_WeaponName: Life_HUD_WeaponText {
+        idc = 1400;
+        font = "RobotoCondensedBold";
+        text = "WEAPON";
+    };
+
+    class Life_HUD_AmmoType: Life_HUD_WeaponText {
+        idc = 1401;
+        colorText[] = {0.16,0.72,0.88,0.94};
+        text = "AMMUNITION";
+    };
+
+    class Life_HUD_MagazineRounds: Life_HUD_WeaponText {
+        idc = 1402;
+        font = "RobotoCondensedBold";
+        text = "0";
+    };
+
+    class Life_HUD_MagazineCapacity: Life_HUD_WeaponText {
+        idc = 1403;
+        colorText[] = {0.50,0.63,0.68,0.94};
+        text = "/ 0  MAG";
+    };
+
+    class Life_HUD_ReserveRounds: Life_HUD_MagazineCapacity {
+        idc = 1404;
+        text = "0  RESERVE";
+    };
+
+    class Life_HUD_Penetration: Life_RscTextMulti {
+        idc = 1405;
+        x = -10;
+        y = -10;
+        w = 0;
+        h = 0;
+        colorBackground[] = {0,0,0,0};
+        colorText[] = {0.91,0.96,0.98,0.90};
+        font = "RobotoCondensedBold";
+        shadow = 0;
+        text = "PEN 0 / 100";
+    };
+
+    class Life_HUD_TotalRounds: Life_HUD_MagazineCapacity {
+        idc = 1406;
+        text = "0 ROUNDS TOTAL";
+    };
+
+    class Life_HUD_StaminaShadow: Life_HUD_WeaponShadow {
+        idc = 2420;
+    };
+
+    class Life_HUD_StaminaPanel: Life_HUD_WeaponPanel {
+        idc = 2421;
+    };
+
+    class Life_HUD_StaminaAccent: Life_HUD_WeaponAccent {
+        idc = 2422;
+    };
+
+    class Life_HUD_StaminaBarBack: Life_HUD_MagazineBarBack {
+        idc = 2423;
+    };
+
+    class Life_HUD_StaminaBarFill: Life_HUD_MagazineBarFill {
+        idc = 2424;
+    };
+
+    class Life_HUD_StaminaLabel: Life_HUD_MagazineCapacity {
+        idc = 1420;
+        text = "STAMINA";
+    };
+
+    class Life_HUD_StaminaValue: Life_HUD_WeaponText {
+        idc = 1421;
+        font = "RobotoCondensedBold";
+        style = ST_RIGHT;
+        text = "100%";
     };
 
     class Life_HUD_StatusIcon: Life_RscPictureKeepAspect {

@@ -1,5 +1,5 @@
 disableChannels[] = {{0,true,true},{1,true,true},{2,true,true}};    // Disabled text and voice for global, side, and command channels. Syntax: disableChannels[] = {{channelID<number>, disableChat<bool>, disableVoice<bool>}};
-showHUD[] = {1,0,0,0,0,1,0,1,1,0,1};
+showHUD[] = {1,0,0,0,0,1,0,1,0,0,0};
 overviewText = "$STR_MISC_overviewText";    // Text to be displayed below the overviewPicture on the mission selection screen when the mission is available to play.
 unsafeCVL = 1; // Allows createVehicleLocal to be executed in Multiplayer
 
@@ -14,6 +14,7 @@ unsafeCVL = 1; // Allows createVehicleLocal to be executed in Multiplayer
 #include "modules\ATM\Config.hpp"
 #include "modules\Government\Config.hpp"
 #include "modules\Progression\Config.hpp"
+#include "modules\HUD\Config.hpp"
 
 class CfgServer {
     DatabaseName = "altislife"; //Config name that'll be grep in the extdb-conf.ini. Default: [altislife]

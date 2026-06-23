@@ -223,6 +223,13 @@ class Life_Client_Core {
         class taxRate {};
     };
 
+    class Module_HUD {
+        file = "modules\HUD";
+        class hudSettingsChanged {};
+        class weaponHUDData {};
+        class weaponHUDUpdate {};
+    };
+
     class Module_Identity {
         file = "modules\Identity";
         class openID {};
