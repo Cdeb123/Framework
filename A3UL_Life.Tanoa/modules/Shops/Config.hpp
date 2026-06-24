@@ -3447,17 +3447,6 @@ class Life_Shops {
                             rolePermissions[] = {"leo.vehicle.hse"};
                             text = "Traffic enforcement beret for TCSD corporals and above.";
                         };
-                        class AG_HSU_Biker_Uni {
-                            className = "AG_HSU_Biker_Uni";
-                            itemType = "headgear";
-                            displayName = "HSE Biker Helmet";
-                            price = 50;
-                            condition = "";
-                            rank = "corporal";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement biker helmet for TCSD corporals and above.";
-                        };
                         class AG_HSU_CampaignHat {
                             className = "AG_HSU_CampaignHat";
                             itemType = "headgear";
