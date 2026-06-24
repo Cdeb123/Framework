@@ -44,6 +44,7 @@ life_hideoutBuildings = [];
 life_firstSpawn = true;
 
 #include "..\modules\Characters\configuration.sqf"
+#include "..\modules\Crafting\configuration.sqf"
 #include "..\modules\DoorAccess\configuration.sqf"
 #include "..\modules\ELS\configuration.sqf"
 #include "..\modules\FrameworkData\configuration.sqf"

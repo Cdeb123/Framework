@@ -13,9 +13,10 @@ if !("workbench" in (_house getVariable ["house_upgrades",[]])) exitWith {
     hint "Install the workbench upgrade first.";
 };
 
-private _craftInfo = ["crafting"] call life_fnc_progressionLevelInfo;
-hint parseText format [
-    "<t size='1.15' color='#8FE7FF'>House Workbench</t><br/>Crafting level %1 is ready here.<br/><br/>Recipe categories can hook into this upgrade when the crafting module is expanded.",
-    _craftInfo select 0
-];
+private _scope = if (playerSide isEqualTo civilian && {missionNamespace getVariable ["license_civ_rebel",false]}) then {
+    "rebel"
+} else {
+    "civilian"
+};
 
+[_scope,_house] call life_fnc_openCraftingMenu;

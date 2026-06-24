@@ -129,6 +129,51 @@ if (!isNull cursorObject && {player distance cursorObject <= (_radius + 2)}) the
     } forEach _legacyActions;
 } forEach _candidates;
 
+private _leoCraftingAdded = false;
+private _rebelCraftingAdded = false;
+{
+    private _targetObject = _x;
+    if (player distance _targetObject <= (_radius + 2)) then {
+        private _legacyActions = _targetObject getVariable ["life_radial_legacy_actions",[]];
+        private _legacyText = "";
+        {
+            _legacyText = _legacyText + " " + toLower (_x param [0,"",[""]]);
+        } forEach _legacyActions;
+
+        if (
+            !_leoCraftingAdded
+            && {playerSide isEqualTo west}
+            && {
+                (["cop",_legacyText] call BIS_fnc_inString)
+                || {["police",_legacyText] call BIS_fnc_inString}
+                || {["tcsd",_legacyText] call BIS_fnc_inString}
+            }
+            && {
+                (["weapon",_legacyText] call BIS_fnc_inString)
+                || {["item",_legacyText] call BIS_fnc_inString}
+                || {["clothing",_legacyText] call BIS_fnc_inString}
+                || {["armory",_legacyText] call BIS_fnc_inString}
+            }
+        ) then {
+            ["LEO Crafting","Craft rank and role-gated duty gear at this station","function",["openCraftingMenu",["leo",_targetObject]],"Law Enforcement",28] call _addAction;
+            _leoCraftingAdded = true;
+        };
+
+        if (
+            !_rebelCraftingAdded
+            && {playerSide isEqualTo civilian}
+            && {missionNamespace getVariable ["license_civ_rebel",false]}
+            && {
+                (["rebel",_legacyText] call BIS_fnc_inString)
+                || {["gang armament",_legacyText] call BIS_fnc_inString}
+            }
+        ) then {
+            ["Rebel Crafting","Craft restricted rebel gear and vehicles","function",["openCraftingMenu",["rebel",_targetObject]],"Access Shop",29] call _addAction;
+            _rebelCraftingAdded = true;
+        };
+    };
+} forEach _candidates;
+
 private _targetPlayer = objNull;
 if (!isNull cursorObject && {isPlayer cursorObject} && {player distance cursorObject <= 5}) then {
     _targetPlayer = cursorObject;

@@ -68,6 +68,7 @@ switch (playerSide) do {
 [] call life_fnc_jobInit;
 [] call life_fnc_frameworkDataQuery;
 [] call life_fnc_progressionInit;
+[] call life_fnc_craftingInit;
 [] spawn life_fnc_progressionDutyLoop;
 CONSTVAR(life_paycheck);
 

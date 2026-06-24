@@ -64,6 +64,7 @@ class CfgFunctions {
             class cleanup {};
             class huntingZone {};
             class getID {};
+            class craftingVehicleCreate {};
             class vehicleCreate {};
             class spawnVehicle {};
             class getVehicles {};

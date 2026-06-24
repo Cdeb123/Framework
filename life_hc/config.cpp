@@ -77,6 +77,7 @@ class CfgFunctions
             class getVehicles {};
             class spawnVehicle {};
             class keyManagement {};
+            class craftingVehicleCreate {};
             class vehicleStore {};
             class vehicleCreate {};
             class vehicleDelete {};

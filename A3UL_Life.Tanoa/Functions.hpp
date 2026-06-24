@@ -188,6 +188,29 @@ class Life_Client_Core {
         class characterSelect {};
     };
 
+    class Module_Crafting {
+        file = "modules\Crafting";
+        class craftingCraft {};
+        class craftingGetStorage {};
+        class craftingInit {};
+        class craftingInventoryGear {};
+        class craftingItemTitle {};
+        class craftingLoad {};
+        class craftingRecipeAllowed {};
+        class craftingSave {};
+        class craftingScope {};
+        class craftingScopeConfig {};
+        class craftingSelect {};
+        class craftingSetStorage {};
+        class craftingSetTab {};
+        class craftingStorageCapacity {};
+        class craftingStorageUsed {};
+        class craftingTransfer {};
+        class craftingUpgrade {};
+        class openCraftingMenu {};
+        class playerhideoutcrafting {};
+    };
+
     class Module_DoorAccess {
         file = "modules\DoorAccess";
         class canUseDoor {};

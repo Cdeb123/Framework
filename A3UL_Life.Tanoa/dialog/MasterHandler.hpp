@@ -42,3 +42,4 @@
 #include "..\modules\Shops\item_shop.hpp"
 #include "..\modules\Shops\civilian_vehicle_shop.hpp"
 #include "..\modules\Progression\progression.hpp"
+#include "..\modules\Crafting\craftingmenu.hpp"
