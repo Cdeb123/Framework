@@ -19,17 +19,16 @@ private _linkedItems = M_CONFIG(getArray,"Loadouts",str(playerSide),"linkedItems
 [] call life_fnc_stripDownPlayer;
 
 if !(_pUniform isEqualTo []) then {
-    if (playerSide isEqualTo civilian) then {
-        _pUniform = selectRandom _pUniform;
-        if (!(_pUniform isEqualTo []) && {!((_pUniform select 0) isEqualTo "") && {([(_pUniform select 1)] call life_fnc_levelCheck)}}) then {
-            player forceAddUniform (_pUniform select 0);
+    private _eligibleUniforms = [];
+
+    {
+        if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {([(_x select 1)] call life_fnc_levelCheck)}}) then {
+            _eligibleUniforms pushBack (_x select 0);
         };
-    } else {
-        _pUniform apply {
-            if (!(_x isEqualTo []) && {!((_x select 0) isEqualTo "") && {([(_x select 1)] call life_fnc_levelCheck)}}) then {
-                player forceAddUniform (_x select 0);
-            };
-        };
+    } forEach _pUniform;
+
+    if !(_eligibleUniforms isEqualTo []) then {
+        player forceAddUniform (selectRandom _eligibleUniforms);
     };
 };
 
