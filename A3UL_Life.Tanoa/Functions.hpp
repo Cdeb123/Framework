@@ -358,6 +358,7 @@ class Life_Client_Core {
         class radialVehicleLock {};
         class radialVehicleTrunk {};
         class radialVehicleUtility {};
+        class scrollInteractionProxy {};
     };
 
     class Module_Shops {
@@ -414,6 +415,7 @@ class Life_Client_Core {
         file = "core\functions";
         class AAN {};
         class accType {};
+        class actionMenuFilter {};
         class actionKeyHandler {};
         class animSync {};
         class calWeightDiff {};

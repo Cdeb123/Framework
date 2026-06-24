@@ -24,6 +24,8 @@ player addEventHandler ["HandleRating", {0}];
 
 addMissionEventHandler ["Map", {_this call life_fnc_checkMap}];
 
+inGameUISetEventHandler ["Action","_this call life_fnc_actionMenuFilter"];
+
 (findDisplay 46) displayAddEventHandler ["MouseButtonDown", {
     params ["_display","_button"];
     if !(_button isEqualTo 0) exitWith {false};
@@ -64,12 +66,17 @@ addMissionEventHandler ["Map", {_this call life_fnc_checkMap}];
             player setVariable ["life_scroll_weapon_time",nil,false];
             if (!alive player) exitWith {};
 
-            if (_weapon isEqualTo "") exitWith {
-                player action ["SwitchWeapon",player,player,100];
-            };
-
-            if (_weapon in weapons player) then {
-                player selectWeapon ([_muzzle,_weapon] select (_muzzle isEqualTo ""));
+            for "_i" from 0 to 5 do {
+                uiSleep 0.03;
+                if (_weapon isEqualTo "") then {
+                    if !(currentWeapon player isEqualTo "") then {
+                        player action ["SwitchWeapon",player,player,100];
+                    };
+                } else {
+                    if (_weapon in weapons player && {!(currentWeapon player isEqualTo _weapon)}) then {
+                        player selectWeapon ([_muzzle,_weapon] select (_muzzle isEqualTo ""));
+                    };
+                };
             };
         };
     };
