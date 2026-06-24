@@ -2023,17 +2023,6 @@ class Life_Shops {
                             rolePermissions[] = {};
                             text = "Standard issued TCSD Sheriff Patrol Uniform White Long Sleeve";
                         };
-                        class AG_KCSO_Long_Col_White_Uni {
-                            className = "AG_KCSO_Long_Col_White_Uni";
-                            itemType = "uniform";
-                            displayName = "TCSD Sheriff Patrol Uniform White Long Sleeve";
-                            price = 550;
-                            condition = "";
-                            rank = "sheriff";
-                            subdivisions[] = {"patrol"};
-                            rolePermissions[] = {};
-                            text = "Standard issued TCSD Sheriff Patrol Uniform White Long Sleeve";
-                        };
                         class AG_KCSO_Comm_Uni {
                             className = "AG_KCSO_Comm_Uni";
                             itemType = "uniform";
