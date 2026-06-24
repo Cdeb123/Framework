@@ -3062,17 +3062,6 @@ class Life_Shops {
                             rolePermissions[] = {"leo.vehicle.hse"};
                             text = "Traffic enforcement white long sleeve uniform for TCSD sergeants.";
                         };
-                        class AG_HSU_Long_Sergeant_White_Uni {
-                            className = "AG_HSU_Long_Sergeant_White_Uni";
-                            itemType = "uniform";
-                            displayName = "HSE Sergeant White Uniform Long Sleeve";
-                            price = 500;
-                            condition = "";
-                            rank = "sergeant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white long sleeve uniform for TCSD sergeants.";
-                        };
                         class AG_HSU_Lieutenant_Uni {
                             className = "AG_HSU_Lieutenant_Uni";
                             itemType = "uniform";
