@@ -2056,17 +2056,6 @@ class Life_Shops {
                             rolePermissions[] = {};
                             text = "Standard issued TCSD Commissioner Uniform Short Sleeve";
                         };
-                        class AG_KCSO_Long_Comm_Uni {
-                            className = "AG_KCSO_Long_Comm_Uni";
-                            itemType = "uniform";
-                            displayName = "TCSD Commissioner Patrol Uniform Long Sleeve";
-                            price = 550;
-                            condition = "";
-                            rank = "commissioner";
-                            subdivisions[] = {"patrol"};
-                            rolePermissions[] = {};
-                            text = "Standard issued TCSD Commissioner Uniform Short Sleeve";
-                        };
                         class AG_KCSO_Comm_White_Uni {
                             className = "AG_KCSO_Comm_White_Uni";
                             itemType = "uniform";
