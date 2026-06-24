@@ -2691,17 +2691,6 @@ class Life_Shops {
                             rolePermissions[] = { "leo.training.fto" };
                             text = "Academy issued short sleeve uniform for qualified Undersheriff FTOs.";
                         };
-                        class AG_AdminServices_Short_LtCol_Uni {
-                            className = "AG_AdminServices_Short_LtCol_Uni";
-                            itemType = "uniform";
-                            displayName = "Academy Undersheriff FTO Uniform Short Sleeve";
-                            price = 50;
-                            condition = "";
-                            rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued short sleeve uniform for qualified Undersheriff FTOs.";
-                        };
                         class AG_AdminServices_LtCol_White_Uni {
                             className = "AG_AdminServices_LtCol_White_Uni";
                             itemType = "uniform";
