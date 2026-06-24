@@ -3458,17 +3458,6 @@ class Life_Shops {
                             rolePermissions[] = {"leo.vehicle.hse"};
                             text = "Traffic enforcement campaign hat for TCSD deputies.";
                         };
-                        class AG_HSU_CampaignHat {
-                            className = "AG_HSU_CampaignHat";
-                            itemType = "headgear";
-                            displayName = "HSE Campaign Hat";
-                            price = 20;
-                            condition = "";
-                            rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement campaign hat for TCSD deputies.";
-                        };
                         class AG_HSU_Plate {
                             className = "AG_HSU_Plate";
                             itemType = "vest";
