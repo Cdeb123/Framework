@@ -2636,17 +2636,6 @@ class Life_Shops {
                             rolePermissions[] = { "leo.training.fto" };
                             text = "Academy issued long sleeve uniform for qualified Major FTOs.";
                         };
-                        class AG_AdminServices_Long_Major_Uni {
-                            className = "AG_AdminServices_Long_Major_Uni";
-                            itemType = "uniform";
-                            displayName = "Academy Major FTO Uniform Long Sleeve";
-                            price = 50;
-                            condition = "";
-                            rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued long sleeve uniform for qualified Major FTOs.";
-                        };
                         class AG_AdminServices_Major_White_Uni {
                             className = "AG_AdminServices_Major_White_Uni";
                             itemType = "uniform";
