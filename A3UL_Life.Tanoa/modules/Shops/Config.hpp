@@ -2845,17 +2845,6 @@ class Life_Shops {
                             rolePermissions[] = {};
                             text = "Academy issued campaign hat for qualified FTOs.";
                         };
-                        class AG_AdminServices_CampaignHat {
-                            className = "AG_AdminServices_CampaignHat";
-                            itemType = "headgear";
-                            displayName = "Academy FTO Campaign Hat";
-                            price = 100;
-                            condition = "";
-                            rank = "deputy";
-                            subdivisions[] = {"academy"};
-                            rolePermissions[] = {};
-                            text = "Academy issued campaign hat for qualified FTOs.";
-                        };
                         class AG_AdminServices_PatchCap_Back {
                             className = "AG_AdminServices_PatchCap_Back";
                             itemType = "headgear";
