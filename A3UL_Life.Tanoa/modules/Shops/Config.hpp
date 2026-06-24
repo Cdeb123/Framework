@@ -3554,17 +3554,6 @@ class Life_Shops {
                             rolePermissions[] = {"leo.tactical.ert"};
                             text = "ERT short sleeve uniform for approved tactical deployments.";
                         };
-                        class AG_SWAT_Uni_short_AAF {
-                            className = "AG_SWAT_Uni_short_AAF";
-                            itemType = "uniform";
-                            displayName = "ERT Short Sleeve Uniform";
-                            price = 550;
-                            condition = "";
-                            rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT short sleeve uniform for approved tactical deployments.";
-                        };
                         class AG_SWAT_Uni_Tshirt_Alt {
                             className = "AG_SWAT_Uni_Tshirt_Alt";
                             itemType = "uniform";
