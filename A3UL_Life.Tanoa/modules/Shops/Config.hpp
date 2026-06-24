@@ -1825,17 +1825,6 @@ class Life_Shops {
                             rolePermissions[] = {};
                             text = "Standard issued TCSD Captain Uniform White Long Sleeve";
                         };
-                        class AG_KCSO_Long_Captain_White_Uni {
-                            className = "AG_KCSO_Long_Captain_White_Uni";
-                            itemType = "uniform";
-                            displayName = "TCSD Captain Patrol Uniform White Long Sleeve";
-                            price = 550;
-                            condition = "";
-                            rank = "captain";
-                            subdivisions[] = {"patrol"};
-                            rolePermissions[] = {};
-                            text = "Standard issued TCSD Captain Uniform White Long Sleeve";
-                        };
                         class AG_KCSO_Major_Uni {
                             className = "AG_KCSO_Major_Uni";
                             itemType = "uniform";
