@@ -89,9 +89,30 @@ class CarShops {
             { "B_Quadbike_01_F", "" },
             { "B_G_Offroad_01_F", "" },
             { "O_MRAP_02_F", "" },
-            { "B_Heli_Light_01_stripped_F", "" },
             { "B_G_Offroad_01_armed_F", "" },
             { "O_T_LSV_02_unarmed_F", "" } //Apex DLC
+        };
+    };
+
+    class reb_air {
+        side = "civ";
+        conditions = "";
+        vehicles[] = {
+            { "B_Heli_Light_01_stripped_F", "" },
+            { "B_Heli_Light_01_F", "" },
+            { "O_Heli_Light_02_unarmed_F", "" }
+        };
+    };
+
+    class reb_ship {
+        side = "civ";
+        conditions = "";
+        vehicles[] = {
+            { "C_Rubberboat", "" },
+            { "C_Boat_Civil_01_F", "" },
+            { "B_SDV_01_F", "" },
+            { "C_Boat_Transport_02_F", "" }, //Apex DLC
+            { "C_Scooter_Transport_01_F", "" } //Apex DLC
         };
     };
 

@@ -60,7 +60,7 @@ class Life_Shops {
         class Civilian {
             class gun {
                 legacyShop = "gun";
-                title = "Billy Joe's Firearms";
+                title = "Bob's Gun Emporium";
                 subtitle = "Civilian firearms, magazines, and accessories";
                 side = "civ";
                 condition = "";
@@ -70,7 +70,7 @@ class Life_Shops {
                 class License {
                     variable = "gun";
                     displayName = "STR_License_Firearm";
-                    price = 10000;
+                    price = 500;
                     side = "civ";
                     text = "Required before purchasing regulated civilian firearms from licensed dealers.";
                 };
@@ -224,7 +224,7 @@ class Life_Shops {
 
             class rebel {
                 legacyShop = "rebel";
-                title = "Rebel Trader";
+                title = "Rebel Outpost Armory";
                 subtitle = "Restricted weapons and field equipment";
                 side = "civ";
                 condition = "";
@@ -234,7 +234,7 @@ class Life_Shops {
                 class License {
                     variable = "rebel";
                     displayName = "STR_License_Rebel";
-                    price = 75000;
+                    price = 7500;
                     side = "civ";
                     text = "Required before accessing rebel weapons, vehicles, and restricted black-market supplies.";
                 };
@@ -648,8 +648,17 @@ class Life_Shops {
                     class cars {
                         title = "Cars and Utility";
                         description = "Daily drivers and utility platforms for civilian life.";
-                        legacyVehicles = "civ_car";
                         features[] = {"Purchase or short-term rental","Civilian registration","Shop-point vehicle storage"};
+
+                        class Vehicles {
+                            class B_Quadbike_01_F { className = "B_Quadbike_01_F"; };
+                            class C_Hatchback_01_F { className = "C_Hatchback_01_F"; };
+                            class C_Offroad_01_F { className = "C_Offroad_01_F"; };
+                            class C_SUV_01_F { className = "C_SUV_01_F"; };
+                            class C_Hatchback_01_sport_F { className = "C_Hatchback_01_sport_F"; };
+                            class C_Van_01_transport_F { className = "C_Van_01_transport_F"; };
+                            class C_Offroad_02_unarmed_F { className = "C_Offroad_02_unarmed_F"; };
+                        };
                     };
                 };
             };
@@ -670,8 +679,14 @@ class Life_Shops {
                     class karts {
                         title = "Karts";
                         description = "Light recreational vehicles.";
-                        legacyVehicles = "kart_shop";
                         features[] = {"Low cost rental","Track-friendly handling","Small storage footprint"};
+
+                        class Vehicles {
+                            class C_Kart_01_Blu_F { className = "C_Kart_01_Blu_F"; };
+                            class C_Kart_01_Fuel_F { className = "C_Kart_01_Fuel_F"; };
+                            class C_Kart_01_Red_F { className = "C_Kart_01_Red_F"; };
+                            class C_Kart_01_Vrana_F { className = "C_Kart_01_Vrana_F"; };
+                        };
                     };
                 };
             };
@@ -692,8 +707,21 @@ class Life_Shops {
                     class trucks {
                         title = "Commercial Trucks";
                         description = "Cargo, box, covered, and fuel-capable trucks.";
-                        legacyVehicles = "civ_truck";
                         features[] = {"High storage capacity","Commercial license required","Rental or ownership options"};
+
+                        class Vehicles {
+                            class C_Van_01_box_F { className = "C_Van_01_box_F"; };
+                            class I_Truck_02_transport_F { className = "I_Truck_02_transport_F"; };
+                            class I_Truck_02_covered_F { className = "I_Truck_02_covered_F"; };
+                            class B_Truck_01_transport_F { className = "B_Truck_01_transport_F"; };
+                            class O_Truck_03_transport_F { className = "O_Truck_03_transport_F"; };
+                            class O_Truck_03_covered_F { className = "O_Truck_03_covered_F"; };
+                            class B_Truck_01_box_F { className = "B_Truck_01_box_F"; };
+                            class O_Truck_03_device_F { className = "O_Truck_03_device_F"; };
+                            class C_Van_01_fuel_F { className = "C_Van_01_fuel_F"; };
+                            class I_Truck_02_fuel_F { className = "I_Truck_02_fuel_F"; };
+                            class B_Truck_01_fuel_F { className = "B_Truck_01_fuel_F"; };
+                        };
                     };
                 };
             };
@@ -714,8 +742,14 @@ class Life_Shops {
                     class aircraft {
                         title = "Aircraft";
                         description = "Light aircraft and helicopters.";
-                        legacyVehicles = "civ_air";
                         features[] = {"Pilot license required","Air-capable spawn points","Rental or ownership options"};
+
+                        class Vehicles {
+                            class C_Heli_Light_01_civil_F { className = "C_Heli_Light_01_civil_F"; };
+                            class B_Heli_Light_01_F { className = "B_Heli_Light_01_F"; };
+                            class O_Heli_Light_02_unarmed_F { className = "O_Heli_Light_02_unarmed_F"; };
+                            class C_Plane_Civil_01_F { className = "C_Plane_Civil_01_F"; };
+                        };
                     };
                 };
             };
@@ -736,8 +770,15 @@ class Life_Shops {
                     class boats {
                         title = "Watercraft";
                         description = "Civilian boats and water transport.";
-                        legacyVehicles = "civ_ship";
                         features[] = {"Boat license required","Water spawn point service","Rental or ownership options"};
+
+                        class Vehicles {
+                            class C_Rubberboat { className = "C_Rubberboat"; };
+                            class C_Boat_Civil_01_F { className = "C_Boat_Civil_01_F"; };
+                            class B_SDV_01_F { className = "B_SDV_01_F"; };
+                            class C_Boat_Transport_02_F { className = "C_Boat_Transport_02_F"; };
+                            class C_Scooter_Transport_01_F { className = "C_Scooter_Transport_01_F"; };
+                        };
                     };
                 };
             };
@@ -755,11 +796,100 @@ class Life_Shops {
                 allowStore = 1;
 
                 class Categories {
-                    class rebel {
-                        title = "Rebel Vehicles";
-                        description = "Restricted vehicles for licensed rebel access.";
-                        legacyVehicles = "reb_car";
-                        features[] = {"Rebel license required","Ownership only","Supports modded classnames in Config_Vehicles.hpp"};
+                    class ground {
+                        title = "Ground Vehicles";
+                        description = "Rebel ground transport and off-grid utility platforms.";
+                        features[] = {"Rebel license required","Ownership only","Ground spawn service"};
+
+                        class Vehicles {
+                            class B_Quadbike_01_F { className = "B_Quadbike_01_F"; };
+                            class B_G_Offroad_01_F { className = "B_G_Offroad_01_F"; };
+                            class O_T_LSV_02_unarmed_F { className = "O_T_LSV_02_unarmed_F"; };
+                            class O_MRAP_02_F { className = "O_MRAP_02_F"; };
+                            class B_G_Offroad_01_armed_F { className = "B_G_Offroad_01_armed_F"; };
+                        };
+                    };
+
+                    class aircraft {
+                        title = "Aircraft";
+                        description = "Rebel aircraft for off-grid air transport.";
+                        features[] = {"Rebel license required","Pilot-capable vehicles use pilot access","Ownership only"};
+
+                        class Vehicles {
+                            class B_Heli_Light_01_stripped_F { className = "B_Heli_Light_01_stripped_F"; };
+                            class B_Heli_Light_01_F { className = "B_Heli_Light_01_F"; };
+                            class O_Heli_Light_02_unarmed_F { className = "O_Heli_Light_02_unarmed_F"; };
+                        };
+                    };
+
+                    class watercraft {
+                        title = "Watercraft";
+                        description = "Rebel-capable boats and submersible transport.";
+                        features[] = {"Rebel license required","Boat-capable vehicles use boat access","Ownership only"};
+
+                        class Vehicles {
+                            class C_Rubberboat { className = "C_Rubberboat"; };
+                            class C_Boat_Civil_01_F { className = "C_Boat_Civil_01_F"; };
+                            class B_SDV_01_F { className = "B_SDV_01_F"; };
+                            class C_Boat_Transport_02_F { className = "C_Boat_Transport_02_F"; };
+                            class C_Scooter_Transport_01_F { className = "C_Scooter_Transport_01_F"; };
+                        };
+                    };
+                };
+            };
+
+            class reb_air {
+                legacyShop = "reb_air";
+                title = "Rebel Air Yard";
+                subtitle = "Restricted rebel aircraft and air transport";
+                side = "civ";
+                condition = "";
+                requiredLicense = "rebel";
+                shopFlag = "reb";
+                allowRent = 0;
+                allowReturn = 0;
+                allowStore = 1;
+
+                class Categories {
+                    class aircraft {
+                        title = "Aircraft";
+                        description = "Rebel aircraft for off-grid air transport.";
+                        features[] = {"Rebel license required","Pilot-capable vehicles use pilot access","Ownership only"};
+
+                        class Vehicles {
+                            class B_Heli_Light_01_stripped_F { className = "B_Heli_Light_01_stripped_F"; };
+                            class B_Heli_Light_01_F { className = "B_Heli_Light_01_F"; };
+                            class O_Heli_Light_02_unarmed_F { className = "O_Heli_Light_02_unarmed_F"; };
+                        };
+                    };
+                };
+            };
+
+            class reb_ship {
+                legacyShop = "reb_ship";
+                title = "Rebel Maritime Yard";
+                subtitle = "Restricted rebel boats and water transport";
+                side = "civ";
+                condition = "";
+                requiredLicense = "rebel";
+                shopFlag = "reb";
+                allowRent = 0;
+                allowReturn = 0;
+                allowStore = 1;
+
+                class Categories {
+                    class watercraft {
+                        title = "Watercraft";
+                        description = "Rebel-capable boats and submersible transport.";
+                        features[] = {"Rebel license required","Boat-capable vehicles use boat access","Ownership only"};
+
+                        class Vehicles {
+                            class C_Rubberboat { className = "C_Rubberboat"; };
+                            class C_Boat_Civil_01_F { className = "C_Boat_Civil_01_F"; };
+                            class B_SDV_01_F { className = "B_SDV_01_F"; };
+                            class C_Boat_Transport_02_F { className = "C_Boat_Transport_02_F"; };
+                            class C_Scooter_Transport_01_F { className = "C_Scooter_Transport_01_F"; };
+                        };
                     };
                 };
             };
@@ -774,8 +904,15 @@ class Life_Shops {
                     class gang {
                         title = "Gang Vehicles";
                         description = "Crime Base vehicles using the rebel vehicle pool until custom gang vehicles are configured.";
-                        legacyVehicles = "reb_car";
                         features[] = {"Gang access","Ownership only","Ready for modded vehicle classnames"};
+
+                        class Vehicles {
+                            class B_Quadbike_01_F { className = "B_Quadbike_01_F"; };
+                            class B_G_Offroad_01_F { className = "B_G_Offroad_01_F"; };
+                            class O_T_LSV_02_unarmed_F { className = "O_T_LSV_02_unarmed_F"; };
+                            class O_MRAP_02_F { className = "O_MRAP_02_F"; };
+                            class B_G_Offroad_01_armed_F { className = "B_G_Offroad_01_armed_F"; };
+                        };
                     };
                 };
             };

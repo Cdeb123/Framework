@@ -19,6 +19,7 @@ life_vehicle_shop_items = [];
 (_display displayCtrl 9007) ctrlEnable false;
 (_display displayCtrl 9009) ctrlEnable false;
 
+private _addedVehicleClasses = [];
 private _addVehicle = {
     params [
         ["_className","",[""]],
@@ -30,6 +31,8 @@ private _addVehicle = {
         ["_categoryTitle","",[""]]
     ];
     if (_className isEqualTo "") exitWith {};
+    if (_className in _addedVehicleClasses) exitWith {};
+    _addedVehicleClasses pushBack _className;
     private _vehInfo = [_className] call life_fnc_fetchVehInfo;
     if (_displayName isEqualTo "" && {!(_vehInfo isEqualTo [])}) then {_displayName = _vehInfo select 3;};
     if (_displayName isEqualTo "") then {_displayName = _className;};
@@ -40,6 +43,8 @@ private _addVehicle = {
 };
 
 private _categoryTitle = getText (_categoryCfg >> "title");
+private _categoryDescription = getText (_categoryCfg >> "description");
+private _categoryFeatures = getArray (_categoryCfg >> "features");
 private _legacyVehicles = getText (_categoryCfg >> "legacyVehicles");
 if !(_legacyVehicles isEqualTo "") then {
     {
@@ -47,18 +52,23 @@ if !(_legacyVehicles isEqualTo "") then {
             ["_className","",[""]],
             ["_condition","",[""]]
         ];
-        [_className,"",-1,_condition,getText (_categoryCfg >> "description"),getArray (_categoryCfg >> "features"),_categoryTitle] call _addVehicle;
+        [_className,"",-1,_condition,_categoryDescription,_categoryFeatures,_categoryTitle] call _addVehicle;
     } forEach getArray (missionConfigFile >> "CarShops" >> _legacyVehicles >> "vehicles");
 };
 
 {
+    private _entryPrice = if (isNumber (_x >> "price")) then {getNumber (_x >> "price")} else {-1};
+    private _entryText = getText (_x >> "text");
+    if (_entryText isEqualTo "") then {_entryText = _categoryDescription;};
+    private _entryFeatures = getArray (_x >> "features");
+    if (_entryFeatures isEqualTo []) then {_entryFeatures = _categoryFeatures;};
     [
         getText (_x >> "className"),
         getText (_x >> "displayName"),
-        getNumber (_x >> "price"),
+        _entryPrice,
         getText (_x >> "condition"),
-        getText (_x >> "text"),
-        getArray (_x >> "features"),
+        _entryText,
+        _entryFeatures,
         _categoryTitle
     ] call _addVehicle;
 } forEach ("true" configClasses (_categoryCfg >> "Vehicles"));
