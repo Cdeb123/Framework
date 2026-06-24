@@ -71,7 +71,7 @@ for "_i" from 0 to 4 do {
 if ([true,_resource,_diff] call life_fnc_handleInv) then {
     _itemName = M_CONFIG(getText,"VirtualItems",_resource,"displayName");
     titleText[format [localize "STR_NOTF_Gather_Success",(localize _itemName),_diff],"PLAIN"];
-    ["crafting",getNumber (missionConfigFile >> "Life_Progression" >> "XPEvents" >> "gather"),format ["Gathered %1",localize _itemName],false] call life_fnc_addXP;
+    ["crafting",getNumber (missionConfigFile >> "Life_Progression" >> "XPEvents" >> "gather"),format ["Gathered %1",localize _itemName],true] call life_fnc_addXP;
 };
 
 sleep 1;

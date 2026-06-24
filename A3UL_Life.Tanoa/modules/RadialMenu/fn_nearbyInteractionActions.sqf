@@ -361,6 +361,22 @@ if (!isNull _groundItem) then {
     ["Pick Up","Pick up the nearby item or cash","function",["radialPickupObject",[_groundItem]],"Items",30] call _addAction;
 };
 
+private _gatherInteraction = [] call life_fnc_gatherInteraction;
+if !(_gatherInteraction isEqualTo []) then {
+    _gatherInteraction params [
+        ["_kind","",[""]],
+        ["_title","",[""]],
+        ["_subtitle","",[""]],
+        ["_functionName","",[""]],
+        ["_resource","",[""]],
+        ["_requiredItem","",[""]],
+        ["_zone","",[""]],
+        ["_priority",38,[0]]
+    ];
+
+    [_title,_subtitle,"spawnFunction",[_functionName,[]],"Items",_priority] call _addAction;
+};
+
 if (!isNull _vehicleTarget) then {
     if (_vehicleTarget in life_vehicles) then {
         ["Lock / Unlock","Toggle this vehicle's locks","function",["radialVehicleLock",[_vehicleTarget]],"Vehicle",45] call _addAction;
@@ -370,19 +386,16 @@ if (!isNull _vehicleTarget) then {
         ["Open Trunk","Open vehicle storage","spawnFunction",["radialVehicleTrunk",[_vehicleTarget]],"Vehicle",44] call _addAction;
     };
 
-    if (_vehicleTarget isKindOf "LandVehicle") then {
-        ["Driver Door","Open or close the driver-side door","function",["vehicleDoorControl",[_vehicleTarget,"driver"]],"Vehicle",39] call _addAction;
-        ["All Doors","Open or close all passenger doors","function",["vehicleDoorControl",[_vehicleTarget,"all"]],"Vehicle",38] call _addAction;
-    };
-
     if (isNull objectParent player && {life_inv_toolkit > 0} && {[_vehicleTarget] call life_fnc_isDamaged}) then {
         ["Repair Vehicle","Use a toolkit to repair the selected vehicle","spawnFunction",["repairTruck",[_vehicleTarget]],"Vehicle",41] call _addAction;
     };
 
-    if (vehicle player isEqualTo _vehicleTarget && {driver _vehicleTarget isEqualTo player} && {_vehicleTarget isKindOf "LandVehicle"}) then {
-        ["Left Indicator","Toggle the left turn signal | [","function",["vehicleSignalSet",[_vehicleTarget,"left"]],"Vehicle",43] call _addAction;
-        ["Right Indicator","Toggle the right turn signal | ]","function",["vehicleSignalSet",[_vehicleTarget,"right"]],"Vehicle",42] call _addAction;
-        ["Hazard Lights","Toggle both turn signals | \","function",["vehicleSignalSet",[_vehicleTarget,"hazard"]],"Vehicle",41] call _addAction;
+    if (vehicle player isEqualTo _vehicleTarget) then {
+        private _gpsOn = profileNamespace getVariable ["life_vehicle_gps_enabled",(getNumber (missionConfigFile >> "Life_VehicleHUD" >> "defaultGPS")) isEqualTo 1];
+        ["GPS Display",format ["%1 vehicle GPS | Ctrl+G",["Show","Hide"] select _gpsOn],"function",["vehicleHUDToggleGPS",[]],"Vehicle",46] call _addAction;
+    };
+
+    if (vehicle player isEqualTo _vehicleTarget && {driver _vehicleTarget isEqualTo player}) then {
         ["Seatbelt","Buckle or unbuckle | Ctrl+B","function",["seatbeltToggle",[]],"Vehicle",40] call _addAction;
 
         private _cameraClasses = getArray (missionConfigFile >> "Life_VehicleControls" >> "backupCameraVehicles");

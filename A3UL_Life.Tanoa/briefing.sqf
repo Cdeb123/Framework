@@ -536,10 +536,10 @@ F1 menu Esc: Close the menu.<br/>
 Player Menu -> Settings: Customize the client-side weapon HUD, stamina panel, theme, scale, opacity, and penetration details.<br/>
 Mouse wheel: Browse nearby shops, signs, services, and other world interactions without cycling weapons.<br/>
 Spacebar: Use the highlighted scroll-wheel interaction.<br/>
-Doors: Select Use Door or Open / Close All Vehicle Doors with the mouse wheel, then press Spacebar.<br/>
+Doors: Select Use Door near building doors with the mouse wheel, then press Spacebar.<br/>
 U: Lock or unlock your selected/current vehicle or owned house door.<br/>
 T: Open vehicle or nearby container storage.<br/>
-[ / ]: Toggle the left or right vehicle indicator. Backslash toggles hazard lights.<br/>
+Ctrl + G: Toggle the vehicle HUD GPS block while inside a vehicle.<br/>
 Ctrl + R: Toggle the backup camera on supported vehicles.<br/>
 1: ELS Code 1 / off while driving a configured emergency vehicle.<br/>
 2: ELS Code 2 / emergency lights while driving a configured emergency vehicle.<br/>

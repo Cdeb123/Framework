@@ -249,6 +249,8 @@ class Life_Client_Core {
     class Module_HUD {
         file = "modules\HUD";
         class hudSettingsChanged {};
+        class vehicleHUDToggleGPS {};
+        class vehicleHUDUpdate {};
         class weaponHUDData {};
         class weaponHUDUpdate {};
     };
@@ -406,10 +408,6 @@ class Life_Client_Core {
         class seatbeltToggle {};
         class vehicleBackupCamera {};
         class vehicleBackupCameraStop {};
-        class vehicleContextDoor {};
-        class vehicleDoorControl {};
-        class vehicleSignalApply {};
-        class vehicleSignalSet {};
     };
 
     class Functions {
@@ -431,6 +429,7 @@ class Life_Client_Core {
         class handleDamage {};
         class handleInv {};
         class handleItem {};
+        class gatherInteraction {};
         class hideObj {};
         class hudSetup {};
         class hudUpdate {};

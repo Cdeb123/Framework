@@ -31,16 +31,9 @@ if ((_code isEqualTo _radialKey || {_code in _radialCustomKeys}) && {!_shift} &&
 private _vehicleControlsEnabled = (getNumber (missionConfigFile >> "Life_VehicleControls" >> "enabled")) isEqualTo 1;
 
 private _isDriver = !(vehicle player isEqualTo player) && {driver (vehicle player) isEqualTo player};
-if (_vehicleControlsEnabled && {_isDriver} && {_code isEqualTo (getNumber (missionConfigFile >> "Life_VehicleControls" >> "leftSignalKey"))} && {!_ctrlKey} && {!_alt}) exitWith {
-    [vehicle player,"left"] call life_fnc_vehicleSignalSet;
-    true
-};
-if (_vehicleControlsEnabled && {_isDriver} && {_code isEqualTo (getNumber (missionConfigFile >> "Life_VehicleControls" >> "rightSignalKey"))} && {!_ctrlKey} && {!_alt}) exitWith {
-    [vehicle player,"right"] call life_fnc_vehicleSignalSet;
-    true
-};
-if (_vehicleControlsEnabled && {_isDriver} && {_code isEqualTo (getNumber (missionConfigFile >> "Life_VehicleControls" >> "hazardSignalKey"))} && {!_ctrlKey} && {!_alt}) exitWith {
-    [vehicle player,"hazard"] call life_fnc_vehicleSignalSet;
+private _vehicleHudEnabled = (getNumber (missionConfigFile >> "Life_VehicleHUD" >> "defaultVehicleHUD")) isEqualTo 1;
+if (_vehicleHudEnabled && {!(vehicle player isEqualTo player)} && {_code isEqualTo (getNumber (missionConfigFile >> "Life_VehicleHUD" >> "gpsToggleKey"))} && {_ctrlKey} && {!_shift} && {!_alt}) exitWith {
+    [] call life_fnc_vehicleHUDToggleGPS;
     true
 };
 if (_vehicleControlsEnabled && {_isDriver} && {_code isEqualTo (getNumber (missionConfigFile >> "Life_VehicleControls" >> "backupCameraKey"))} && {_ctrlKey} && {!_alt}) exitWith {
@@ -266,6 +259,22 @@ switch (_code) do {
 
     //F Key
     case 33: {
+        if (!_shift && {!_ctrlKey} && {!_alt} && {!dialog}) then {
+            private _gatherInteraction = [] call life_fnc_gatherInteraction;
+            if !(_gatherInteraction isEqualTo []) exitWith {
+                _gatherInteraction params [
+                    ["_kind","",[""]],
+                    ["_title","",[""]],
+                    ["_subtitle","",[""]],
+                    ["_functionName","",[""]]
+                ];
+
+                private _function = missionNamespace getVariable [format ["life_fnc_%1",_functionName],{}];
+                [] spawn _function;
+                _handled = true;
+            };
+        };
+
         if ((playerSide in [west,independent]) && {vehicle player != player} && {((driver vehicle player) == player)}) then {_handled = true;};
     };
 

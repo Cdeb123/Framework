@@ -34,6 +34,8 @@ switch (_option) do {
         profileNamespace setVariable ["life_hud_weapon_enabled",(getNumber (_cfg >> "defaultWeaponHUD")) isEqualTo 1];
         profileNamespace setVariable ["life_hud_stamina_enabled",(getNumber (_cfg >> "defaultStaminaHUD")) isEqualTo 1];
         profileNamespace setVariable ["life_hud_ballistics_enabled",(getNumber (_cfg >> "defaultBallistics")) isEqualTo 1];
+        profileNamespace setVariable ["life_vehicle_hud_enabled",(getNumber (missionConfigFile >> "Life_VehicleHUD" >> "defaultVehicleHUD")) isEqualTo 1];
+        profileNamespace setVariable ["life_vehicle_gps_enabled",(getNumber (missionConfigFile >> "Life_VehicleHUD" >> "defaultGPS")) isEqualTo 1];
         profileNamespace setVariable ["life_hud_theme",getText (_cfg >> "defaultTheme")];
         profileNamespace setVariable ["life_hud_scale",getNumber (_cfg >> "defaultScale")];
         profileNamespace setVariable ["life_hud_opacity",getNumber (_cfg >> "defaultOpacity")];

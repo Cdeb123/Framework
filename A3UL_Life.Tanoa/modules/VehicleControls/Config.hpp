@@ -1,17 +1,7 @@
 class Life_VehicleControls {
     enabled = 1;
 
-    // Direct driving controls. Doors are available through the action menu and F1 radial.
-    leftSignalKey = 26;         // [
-    rightSignalKey = 27;        // ]
-    hazardSignalKey = 43;       // Backslash key
     backupCameraKey = 19;       // Ctrl + R
-
-    signalInterval = 0.46;
-    signalFallbackLights = 1;
-    signalAutoDetectSources = 1;
-    leftSignalSources[] = {"turn_left","signal_left","indicator_left","blinker_left","indicators_left"};
-    rightSignalSources[] = {"turn_right","signal_right","indicator_right","blinker_right","indicators_right"};
 
     // Add modded class names here. A vehicle can also opt in at runtime with
     // vehicle setVariable ["life_backup_camera",true,true].

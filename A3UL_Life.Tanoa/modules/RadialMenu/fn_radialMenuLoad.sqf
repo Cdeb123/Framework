@@ -46,8 +46,11 @@ private _iconFor = {
     if (["back",_lower] call BIS_fnc_inString) exitWith {"\A3\ui_f\data\igui\cfg\simpleTasks\types\navigate_ca.paa"};
     if ((["ems",_lower] call BIS_fnc_inString) || {["heal",_lower] call BIS_fnc_inString} || {["revive",_lower] call BIS_fnc_inString}) exitWith {"\A3\ui_f\data\igui\cfg\simpleTasks\types\heal_ca.paa"};
     if ((["law",_lower] call BIS_fnc_inString) || {["citation",_lower] call BIS_fnc_inString} || {["police",_lower] call BIS_fnc_inString}) exitWith {"\A3\ui_f\data\igui\cfg\simpleTasks\types\defend_ca.paa"};
+    if (["gps",_lower] call BIS_fnc_inString) exitWith {"\A3\ui_f\data\igui\cfg\simpleTasks\types\map_ca.paa"};
     if ((["vehicle",_lower] call BIS_fnc_inString) || {["trunk",_lower] call BIS_fnc_inString} || {["signal",_lower] call BIS_fnc_inString} || {["camera",_lower] call BIS_fnc_inString}) exitWith {"\A3\ui_f\data\map\vehicleicons\iconCar_ca.paa"};
     if ((["house",_lower] call BIS_fnc_inString) || {["door",_lower] call BIS_fnc_inString}) exitWith {"\A3\ui_f\data\igui\cfg\simpleTasks\types\interact_ca.paa"};
+    if (["mine",_lower] call BIS_fnc_inString) exitWith {"\A3\ui_f\data\igui\cfg\simpleTasks\types\mine_ca.paa"};
+    if ((["gather",_lower] call BIS_fnc_inString) || {["harvest",_lower] call BIS_fnc_inString}) exitWith {"\A3\ui_f\data\igui\cfg\simpleTasks\types\search_ca.paa"};
     if ((["bank",_lower] call BIS_fnc_inString) || {["atm",_lower] call BIS_fnc_inString}) exitWith {"\A3\ui_f\data\igui\cfg\simpleTasks\types\documents_ca.paa"};
     if ((["repair",_lower] call BIS_fnc_inString) || {["service",_lower] call BIS_fnc_inString}) exitWith {"\A3\ui_f\data\igui\cfg\simpleTasks\types\repair_ca.paa"};
     if ((["item",_lower] call BIS_fnc_inString) || {["storage",_lower] call BIS_fnc_inString} || {["pickup",_lower] call BIS_fnc_inString}) exitWith {"\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa"};
@@ -138,12 +141,8 @@ for "_i" from 0 to 7 do {
             case "Lock / Unlock": {"LOCK /<br/>UNLOCK"};
             case "Lock / Unlock Door": {"DOOR<br/>LOCK"};
             case "Open Trunk": {"OPEN<br/>TRUNK"};
-            case "Driver Door": {"DRIVER<br/>DOOR"};
-            case "All Doors": {"ALL<br/>DOORS"};
             case "Repair Vehicle": {"REPAIR<br/>VEHICLE"};
-            case "Left Indicator": {"LEFT<br/>SIGNAL"};
-            case "Right Indicator": {"RIGHT<br/>SIGNAL"};
-            case "Hazard Lights": {"HAZARD<br/>LIGHTS"};
+            case "GPS Display": {"GPS<br/>DISPLAY"};
             case "Backup Camera": {"REAR<br/>CAMERA"};
             case "Vehicle Registration": {"VEHICLE<br/>REG."};
             case "Search Vehicle": {"SEARCH<br/>VEHICLE"};

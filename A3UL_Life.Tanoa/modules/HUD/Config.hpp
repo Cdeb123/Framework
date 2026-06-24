@@ -98,3 +98,9 @@ class Life_WeaponHUD {
         {"20Rnd_650x39_Cased_Mag_F","6.5x54 mm",61}
     };
 };
+
+class Life_VehicleHUD {
+    defaultVehicleHUD = 1;
+    defaultGPS = 1;
+    gpsToggleKey = 34; // Ctrl + G
+};

@@ -50,6 +50,35 @@ class playerHUD {
         Life_HUD_StaminaBarFill,
         Life_HUD_StaminaLabel,
         Life_HUD_StaminaValue,
+        Life_HUD_VehicleShadow,
+        Life_HUD_VehiclePanel,
+        Life_HUD_VehicleAccent,
+        Life_HUD_VehicleFuelBack,
+        Life_HUD_VehicleFuelFill,
+        Life_HUD_VehicleHullBack,
+        Life_HUD_VehicleHullFill,
+        Life_HUD_VehicleEngineBack,
+        Life_HUD_VehicleEngineFill,
+        Life_HUD_VehicleFuelSysBack,
+        Life_HUD_VehicleFuelSysFill,
+        Life_HUD_VehicleMobilityBack,
+        Life_HUD_VehicleMobilityFill,
+        Life_HUD_VehicleGPSPanel,
+        Life_HUD_VehicleTitle,
+        Life_HUD_VehicleSpeed,
+        Life_HUD_VehicleMPH,
+        Life_HUD_VehicleRole,
+        Life_HUD_VehicleFuelLabel,
+        Life_HUD_VehicleFuelValue,
+        Life_HUD_VehicleName,
+        Life_HUD_VehicleHullLabel,
+        Life_HUD_VehicleEngineLabel,
+        Life_HUD_VehicleFuelSysLabel,
+        Life_HUD_VehicleMobilityLabel,
+        Life_HUD_VehicleGPSLocation,
+        Life_HUD_VehicleGPSGrid,
+        Life_HUD_VehicleGPSHeading,
+        Life_HUD_VehicleGPSCardinal,
         Life_HUD_SeatbeltIcon,
         Life_HUD_CuffedIcon,
         Life_HUD_PoisonIcon,
@@ -302,6 +331,150 @@ class playerHUD {
         font = "RobotoCondensedBold";
         style = ST_RIGHT;
         text = "100%";
+    };
+
+    class Life_HUD_VehicleShadow: Life_HUD_WeaponShadow {
+        idc = 2500;
+    };
+
+    class Life_HUD_VehiclePanel: Life_HUD_WeaponPanel {
+        idc = 2501;
+    };
+
+    class Life_HUD_VehicleAccent: Life_HUD_WeaponAccent {
+        idc = 2502;
+    };
+
+    class Life_HUD_VehicleFuelBack: Life_HUD_MagazineBarBack {
+        idc = 2503;
+    };
+
+    class Life_HUD_VehicleFuelFill: Life_HUD_MagazineBarFill {
+        idc = 2504;
+    };
+
+    class Life_HUD_VehicleHullBack: Life_HUD_MagazineBarBack {
+        idc = 2505;
+    };
+
+    class Life_HUD_VehicleHullFill: Life_HUD_MagazineBarFill {
+        idc = 2506;
+    };
+
+    class Life_HUD_VehicleEngineBack: Life_HUD_MagazineBarBack {
+        idc = 2507;
+    };
+
+    class Life_HUD_VehicleEngineFill: Life_HUD_MagazineBarFill {
+        idc = 2508;
+    };
+
+    class Life_HUD_VehicleFuelSysBack: Life_HUD_MagazineBarBack {
+        idc = 2509;
+    };
+
+    class Life_HUD_VehicleFuelSysFill: Life_HUD_MagazineBarFill {
+        idc = 2510;
+    };
+
+    class Life_HUD_VehicleMobilityBack: Life_HUD_MagazineBarBack {
+        idc = 2511;
+    };
+
+    class Life_HUD_VehicleMobilityFill: Life_HUD_MagazineBarFill {
+        idc = 2512;
+    };
+
+    class Life_HUD_VehicleGPSPanel: Life_HUD_MagazineBarBack {
+        idc = 2513;
+    };
+
+    class Life_HUD_VehicleText: Life_HUD_WeaponText {
+        colorText[] = {0.91,0.96,0.98,1};
+        text = "";
+    };
+
+    class Life_HUD_VehicleTitle: Life_HUD_VehicleText {
+        idc = 1500;
+        font = "RobotoCondensedBold";
+        text = "VEHICLE STATUS";
+    };
+
+    class Life_HUD_VehicleSpeed: Life_HUD_VehicleText {
+        idc = 1501;
+        font = "RobotoCondensedBold";
+        text = "0";
+    };
+
+    class Life_HUD_VehicleMPH: Life_HUD_VehicleText {
+        idc = 1502;
+        text = "MPH";
+    };
+
+    class Life_HUD_VehicleRole: Life_HUD_VehicleText {
+        idc = 1503;
+        style = ST_RIGHT;
+        text = "GROUND / DRIVER";
+    };
+
+    class Life_HUD_VehicleFuelLabel: Life_HUD_VehicleText {
+        idc = 1504;
+        text = "FUEL";
+    };
+
+    class Life_HUD_VehicleFuelValue: Life_HUD_VehicleText {
+        idc = 1505;
+        style = ST_RIGHT;
+        font = "RobotoCondensedBold";
+        text = "100%";
+    };
+
+    class Life_HUD_VehicleName: Life_HUD_VehicleText {
+        idc = 1506;
+        text = "VEHICLE";
+    };
+
+    class Life_HUD_VehicleHullLabel: Life_HUD_VehicleText {
+        idc = 1507;
+        text = "HULL 0%";
+    };
+
+    class Life_HUD_VehicleEngineLabel: Life_HUD_VehicleText {
+        idc = 1508;
+        text = "ENG 0%";
+    };
+
+    class Life_HUD_VehicleFuelSysLabel: Life_HUD_VehicleText {
+        idc = 1509;
+        text = "FUEL 0%";
+    };
+
+    class Life_HUD_VehicleMobilityLabel: Life_HUD_VehicleText {
+        idc = 1510;
+        text = "MOB 0%";
+    };
+
+    class Life_HUD_VehicleGPSLocation: Life_HUD_VehicleText {
+        idc = 1511;
+        font = "RobotoCondensedBold";
+        text = "GPS";
+    };
+
+    class Life_HUD_VehicleGPSGrid: Life_HUD_VehicleText {
+        idc = 1512;
+        text = "GRID";
+    };
+
+    class Life_HUD_VehicleGPSHeading: Life_HUD_VehicleText {
+        idc = 1513;
+        text = "HDG 0";
+    };
+
+    class Life_HUD_VehicleGPSCardinal: Life_HUD_VehicleText {
+        idc = 1514;
+        style = ST_RIGHT;
+        font = "RobotoCondensedBold";
+        text = "N";
     };
 
     class Life_HUD_StatusIcon: Life_RscPictureKeepAspect {
