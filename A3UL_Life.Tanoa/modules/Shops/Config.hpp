@@ -2493,17 +2493,6 @@ class Life_Shops {
                             rolePermissions[] = { "leo.training.fto" };
                             text = "Academy issued uniform for qualified Lieutenant FTOs.";
                         };
-                        class AG_AdminServices_Lieutenant_Uni {
-                            className = "AG_AdminServices_Lieutenant_Uni";
-                            itemType = "uniform";
-                            displayName = "Academy Lieutenant FTO Uniform";
-                            price = 50;
-                            condition = "";
-                            rank = "lieutenant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued uniform for qualified Lieutenant FTOs.";
-                        };
                         class AG_AdminServices_Short_Lieutenant_Uni {
                             className = "AG_AdminServices_Short_Lieutenant_Uni";
                             itemType = "uniform";
