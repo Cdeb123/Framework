@@ -2394,17 +2394,6 @@ class Life_Shops {
                             rolePermissions[] = { "leo.training.fto" };
                             text = "Academy issued white uniform for qualified Sergeant FTOs.";
                         };
-                        class AG_AdminServices_Sergeant_White_Uni {
-                            className = "AG_AdminServices_Sergeant_White_Uni";
-                            itemType = "uniform";
-                            displayName = "Academy Sergeant FTO White Uniform";
-                            price = 50;
-                            condition = "";
-                            rank = "sergeant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white uniform for qualified Sergeant FTOs.";
-                        };
                         class AG_AdminServices_Short_Sergeant_White_Uni {
                             className = "AG_AdminServices_Short_Sergeant_White_Uni";
                             itemType = "uniform";
