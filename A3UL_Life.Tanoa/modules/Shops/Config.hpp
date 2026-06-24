@@ -2823,17 +2823,6 @@ class Life_Shops {
                             rolePermissions[] = { "leo.training.fto" };
                             text = "Academy issued vest combo for qualified FTOs.";
                         };
-                        class AG_AdminServices_VestCombo3 {
-                            className = "AG_AdminServices_VestCombo3";
-                            itemType = "vest";
-                            displayName = "Academy FTO Vest Combo";
-                            price = 50;
-                            condition = "";
-                            rank = "corporal";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued vest combo for qualified FTOs.";
-                        };
                         class AG_AdminServices_Beret {
                             className = "AG_AdminServices_Beret";
                             itemType = "headgear";
