@@ -35,9 +35,7 @@ private _locked = _house getVariable [_var,0];
 if (_locked isEqualTo 0) then {
     _house setVariable [_var,1,true];
     _house animateSource [format ["Door_%1_source",_door],0];
-    systemChat localize "STR_House_Door_Lock";
 } else {
     _house setVariable [_var,0,true];
     _house animateSource [format ["Door_%1_source",_door],1];
-    systemChat localize "STR_House_Door_Unlock";
 };

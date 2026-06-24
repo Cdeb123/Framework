@@ -12,5 +12,4 @@ profileNamespace setVariable ["life_vehicle_gps_enabled",_enabled];
 saveProfileNamespace;
 
 [] call life_fnc_hudUpdate;
-titleText [format ["Vehicle GPS %1",["off","on"] select _enabled],"PLAIN DOWN"];
 _enabled

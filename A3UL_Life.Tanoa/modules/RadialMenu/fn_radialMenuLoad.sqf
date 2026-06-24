@@ -18,7 +18,7 @@ private _categoryDetails = {
     params [["_group","",[""]]];
     switch (_group) do {
         case "Personal": {"ID, inventory, status, and quick self actions"};
-        case "Vehicle": {"Doors, locks, storage, signals, camera, and repairs"};
+        case "Vehicle": {"Locks, storage, GPS, camera, and repairs"};
         case "Door": {"Nearby building access, keycards, and keypads"};
         case "House": {"Owned doors, storage, garage, and improvements"};
         case "House Upgrades": {"Workbench, security, and home improvements"};

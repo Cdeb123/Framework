@@ -224,4 +224,20 @@ class CfgNotifications {
         duration = 10;
         priority = 5;
     };
+
+    class VehicleUnlocked {
+        title = "Vehicle Unlocked";
+        iconPicture = "\A3\ui_f\data\map\vehicleicons\iconCar_ca.paa";
+        description = "%1";
+        duration = 3;
+        priority = 4;
+    };
+
+    class VehicleLocked {
+        title = "Vehicle Locked";
+        iconPicture = "\A3\ui_f\data\map\vehicleicons\iconCar_ca.paa";
+        description = "%1";
+        duration = 3;
+        priority = 4;
+    };
 };

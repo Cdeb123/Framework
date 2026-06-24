@@ -19,12 +19,8 @@ if !(_vehicle in life_vehicles) exitWith {hint "You do not have keys to that veh
 if (player distance _vehicle > 20) exitWith {hint localize "STR_NOTF_VehicleNear";};
 
 private _newState = [2,0] select ((locked _vehicle) isEqualTo 2);
-private _phase = [0,1] select (_newState isEqualTo 0);
-private _doorAnimations = [
-    "door_back_R","door_back_L","door_R","door_L","Door_L_source","Door_rear","Door_rear_source",
-    "Door_1_source","Door_2_source","Door_3_source","Door_LM","Door_RM","Door_LF","Door_RF",
-    "Door_LB","Door_RB","DoorL_Front_Open","DoorR_Front_Open","DoorL_Back_Open","DoorR_Back_Open "
-];
+private _vehicleName = getText (configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
+if (_vehicleName isEqualTo "") then {_vehicleName = "Vehicle";};
 
 if (local _vehicle) then {
     _vehicle lock _newState;
@@ -32,14 +28,10 @@ if (local _vehicle) then {
     [_vehicle,_newState] remoteExecCall ["life_fnc_lockVehicle",_vehicle];
 };
 
-{
-    _vehicle animateDoor [_x,_phase];
-} forEach _doorAnimations;
-
 if (_newState isEqualTo 0) then {
-    systemChat localize "STR_MISC_VehUnlock";
+    ["VehicleUnlocked",[_vehicleName]] call BIS_fnc_showNotification;
     [_vehicle,"unlockCarSound",50,1] remoteExec ["life_fnc_say3D",RANY];
 } else {
-    systemChat localize "STR_MISC_VehLock";
+    ["VehicleLocked",[_vehicleName]] call BIS_fnc_showNotification;
     [_vehicle,"lockCarSound",50,1] remoteExec ["life_fnc_say3D",RANY];
 };
