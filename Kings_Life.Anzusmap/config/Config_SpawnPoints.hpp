@@ -132,42 +132,42 @@ class CfgSpawnPoints {
         };
     };
 
-    class Tanoa {
+    class Anzusmap {
 
         class Civilian {
-            class Georgetown {
-                displayName = "Georgetown";
+            class Paradise {
+                displayName = "Paradise City";
                 spawnMarker = "civ_spawn_1";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
                 spawnType = "Town Center";
-                description = "Central Georgetown arrival point near city services and main road access.";
+                description = "Kings County's Main City";
                 conditions = "";
             };
 
-            class Balavu {
-                displayName = "Balavu";
-                spawnMarker = "civ_spawn_3";
-                icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
-                spawnType = "Town Center";
-                description = "Central Balavu arrival point with short access to shops and garages.";
-                conditions = "";
-            };
-
-            class Tuvanaka {
-                displayName = "Tuvanaka";
+            class Breadville {
+                displayName = "Breadville";
                 spawnMarker = "civ_spawn_2";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
                 spawnType = "Town Center";
-                description = "Central Tuvanaka arrival point placed around the settlement core.";
+                description = "Breadville is a portfront town.";
                 conditions = "";
             };
 
-            class Lijnhaven {
-                displayName = "Lijnhaven";
+            class PortElliot {
+                displayName = "Port Elliot";
                 spawnMarker = "civ_spawn_4";
                 icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
                 spawnType = "Town Center";
-                description = "Central Lijnhaven arrival point close to the town hub.";
+                description = "Major Port for Kings County";
+                conditions = "";
+            };
+
+            class SanFernando {
+                displayName = "San Fernando";
+                spawnMarker = "civ_spawn_3";
+                icon = "\a3\ui_f\data\map\MapControl\watertower_ca.paa";
+                spawnType = "Town Center";
+                description = "Town located near the MSR";
                 conditions = "";
             };
 
