@@ -6,7 +6,7 @@
 */
 class Life_WeaponHUD {
     defaultWeaponHUD = 1;
-    defaultStaminaHUD = 1;
+    defaultStaminaHUD = 0;
     defaultBallistics = 1;
     defaultScale = 1;
     defaultOpacity = 0.88;
