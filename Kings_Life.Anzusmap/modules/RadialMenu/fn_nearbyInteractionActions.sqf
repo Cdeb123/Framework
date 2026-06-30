@@ -37,7 +37,7 @@ private _actionGroup = {
     if ((["atm",_lower] call BIS_fnc_inString) || {["bank",_lower] call BIS_fnc_inString}) exitWith {"Banking"};
     if ((["medical",_lower] call BIS_fnc_inString) || {["hospital",_lower] call BIS_fnc_inString} || {["service",_lower] call BIS_fnc_inString}) exitWith {"Service"};
     if ((["ems",_lower] call BIS_fnc_inString) || {["fire",_lower] call BIS_fnc_inString}) exitWith {"EMS"};
-    if ((["cop",_lower] call BIS_fnc_inString) || {["police",_lower] call BIS_fnc_inString} || {["apd",_lower] call BIS_fnc_inString} || {["tpd",_lower] call BIS_fnc_inString}) exitWith {"Law Enforcement"};
+    if ((["cop",_lower] call BIS_fnc_inString) || {["police",_lower] call BIS_fnc_inString} || {["kcso",_lower] call BIS_fnc_inString} || {["kings county",_lower] call BIS_fnc_inString}) exitWith {"Law Enforcement"};
     if (
         (["shop",_lower] call BIS_fnc_inString)
         || {["store",_lower] call BIS_fnc_inString}
@@ -146,7 +146,7 @@ private _rebelCraftingAdded = false;
             && {
                 (["cop",_legacyText] call BIS_fnc_inString)
                 || {["police",_legacyText] call BIS_fnc_inString}
-                || {["tcsd",_legacyText] call BIS_fnc_inString}
+                || {["kcso",_legacyText] call BIS_fnc_inString}
             }
             && {
                 (["weapon",_legacyText] call BIS_fnc_inString)
@@ -438,8 +438,8 @@ if (playerSide isEqualTo civilian) then {
 };
 
 if (playerSide isEqualTo west) then {
-    ["TCSD Command","Ranks, divisions, documents, and oversight","code","[] call life_fnc_openLEOCommandTerminal","Law Enforcement",18] call _addAction;
-    ["Training Academy","Cadets, FTO records, and academy documents","code","[] call life_fnc_openLEOTrainingTerminal","Law Enforcement",17] call _addAction;
+    ["KCSO Command","Ranks, divisions, documents, and oversight","code","[] call life_fnc_openLEOCommandTerminal","Law Enforcement",18] call _addAction;
+    ["Admin Services","Cadets, trainer records, and Admin Services documents","code","[] call life_fnc_openLEOTrainingTerminal","Law Enforcement",17] call _addAction;
     ["Citation Records","Search citation history by character name, plate, or offense","code","[] call life_fnc_openCitationRecords","Law Enforcement",16] call _addAction;
 
     if (vehicle player != player) then {
@@ -486,7 +486,7 @@ if ((["doj.citation_review"] call life_fnc_hasPermission) || {["doj.records"] ca
     ["Citation Records","Review citation history by character name, plate, or offense","code","[] call life_fnc_openCitationRecords","Department of Justice",16] call _addAction;
 };
 
-if ((["staff.permissions"] call life_fnc_hasPermission) || {["owner.access"] call life_fnc_hasPermission} || {[] call life_fnc_isCommunityOwner}) then {
+if ((["staff.permissions"] call life_fnc_hasPermission) || {["owner.access"] call life_fnc_hasPermission}) then {
     ["Staff Menu","Server staff tools placeholder","code","hint 'Staff menu framework ready. Admin tools can be added here.'","Staff",11] call _addAction;
 };
 

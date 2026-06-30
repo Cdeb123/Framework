@@ -11,7 +11,16 @@
 params ["","","",["_shop","",[""]]];
 
 if (_shop isEqualTo "") exitWith {};
-if (isClass (missionConfigFile >> "Life_Shops" >> "LEOClothingShops" >> _shop)) exitWith {
+private _modernShop = _shop;
+if (_modernShop isEqualTo "cop") then {
+    _modernShop = switch (missionNamespace getVariable ["life_leo_department","kcso"]) do {
+        case "usms": {"usms"};
+        case "dea": {"dea"};
+        case "fbi": {"fbi"};
+        default {"cop"};
+    };
+};
+if (isClass (missionConfigFile >> "Life_Shops" >> "LEOClothingShops" >> _modernShop)) exitWith {
     _this call life_fnc_openLEOClothingShop;
 };
 if (isClass (missionConfigFile >> "Life_Shops" >> "ItemShops" >> _shop)) exitWith {

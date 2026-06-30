@@ -281,7 +281,7 @@ class life_id_card {
 
         class Header: Life_RscText {
             idc = 7902;
-            text = "TANOA RESIDENT ID";
+            text = "KINGS COUNTY RESIDENT ID";
             colorText[] = {0.92,0.98,0.98,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.025;

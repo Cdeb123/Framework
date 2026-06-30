@@ -328,9 +328,9 @@ class Life_Shops {
         };
 
         class LawEnforcement {
-            class tcsd_armory {
+            class kcso_armory {
                 legacyShop = "cop_basic";
-                title = "TCSD Armory";
+                title = "KCSO Armory";
                 subtitle = "Duty equipment issued by rank, role, and subdivision";
                 side = "cop";
                 condition = "playerSide isEqualTo west";
@@ -651,6 +651,602 @@ class Life_Shops {
                     };
                 };
             };
+
+            class usms_armory {
+                legacyShop = "cop_basic";
+                title = "USMS Armory";
+                subtitle = "United States Marshal Service equipment";
+                side = "cop";
+                condition = "playerSide isEqualTo west && {['leo.department.usms'] call life_fnc_hasPermission}";
+                requiredLicense = "";
+                requiredLicenseSide = "cop";
+
+                class Categories {
+                    class duty {
+                        title = "Duty Essentials";
+                        description = "Baseline federal field equipment.";
+
+                        class Items {
+                            class binocular {
+                                className = "Binocular";
+                                nickname = "";
+                                buyPrice = 150;
+                                sellPrice = 75;
+                                condition = "";
+                                text = "Standard field binoculars.";
+                            };
+                            class gps {
+                                className = "ItemGPS";
+                                nickname = "";
+                                buyPrice = 100;
+                                sellPrice = 50;
+                                condition = "";
+                                text = "Duty GPS unit.";
+                            };
+                            class firstaid {
+                                className = "FirstAidKit";
+                                nickname = "";
+                                buyPrice = 150;
+                                sellPrice = 75;
+                                condition = "";
+                                text = "Basic medical kit.";
+                            };
+                            class AG_PoliceThing {
+                                className = "AG_PoliceThing";
+                                nickname = "";
+                                buyPrice = 2000;
+                                sellPrice = 1000;
+                                condition = "";
+                                text = "Night vision equipment.";
+                            };
+                            class flashbang {
+                                className = "HandGrenade_Stone";
+                                nickname = "Flashbang";
+                                buyPrice = 1700;
+                                sellPrice = 850;
+                                condition = "['deputy_marshal','usms'] call life_fnc_leoAtLeastRank";
+                                text = "Less-lethal distraction device.";
+                            };
+                        };
+                    };
+
+                    class sidearms {
+                        title = "Sidearms";
+                        description = "Authorized USMS duty pistols.";
+
+                        class Items {
+                            class RH_g17 {
+                                className = "RH_g17";
+                                nickname = "";
+                                buyPrice = 7500;
+                                sellPrice = 3750;
+                                condition = "";
+                                text = "Standard G17 duty sidearm.";
+                            };
+                            class RH_m9 {
+                                className = "RH_m9";
+                                nickname = "";
+                                buyPrice = 4500;
+                                sellPrice = 3500;
+                                condition = "";
+                                text = "Standard M9 sidearm.";
+                            };
+                            class RH_17Rnd_9x19_g17 {
+                                className = "RH_17Rnd_9x19_g17";
+                                nickname = "";
+                                buyPrice = 125;
+                                sellPrice = 60;
+                                condition = "";
+                                text = "Standard 9mm G17 magazine.";
+                            };
+                            class RH_15Rnd_9x19_M9 {
+                                className = "RH_15Rnd_9x19_M9";
+                                nickname = "";
+                                buyPrice = 25;
+                                sellPrice = 20;
+                                condition = "";
+                                text = "Standard 9mm M9 magazine.";
+                            };
+                            class RH_kimber_nw {
+                                className = "RH_kimber_nw";
+                                nickname = "";
+                                buyPrice = 9500;
+                                sellPrice = 4750;
+                                condition = "['senior_deputy_marshal','usms'] call life_fnc_leoAtLeastRank";
+                                text = "Authorized .45 sidearm for senior marshals and above.";
+                            };
+                            class RH_7Rnd_45cal_m1911 {
+                                className = "RH_7Rnd_45cal_m1911";
+                                nickname = "";
+                                buyPrice = 130;
+                                sellPrice = 65;
+                                condition = "['senior_deputy_marshal','usms'] call life_fnc_leoAtLeastRank";
+                                text = ".45 ACP sidearm magazine.";
+                            };
+                        };
+                    };
+
+                    class long_guns {
+                        title = "Long Guns";
+                        description = "Federal rifle platforms by rank.";
+
+                        class Items {
+                            class hlc_rifle_RU5562 {
+                                className = "hlc_rifle_RU5562";
+                                nickname = "";
+                                buyPrice = 25000;
+                                sellPrice = 15000;
+                                condition = "['deputy_marshal','usms'] call life_fnc_leoAtLeastRank";
+                                text = "USMS patrol rifle.";
+                            };
+                            class SMA_AAC_MPW_12_Black {
+                                className = "SMA_AAC_MPW_12_Black";
+                                nickname = "";
+                                buyPrice = 8500;
+                                sellPrice = 7500;
+                                condition = "['senior_deputy_marshal','usms'] call life_fnc_leoAtLeastRank";
+                                text = "Compact USMS rifle.";
+                            };
+                            class RH_Hk416c {
+                                className = "RH_Hk416c";
+                                nickname = "";
+                                buyPrice = 25000;
+                                sellPrice = 24500;
+                                condition = "['supervisory_deputy_marshal','usms'] call life_fnc_leoAtLeastRank";
+                                text = "Supervisory tactical rifle.";
+                            };
+                            class hlc_30rnd_556x45_SOST {
+                                className = "hlc_30rnd_556x45_SOST";
+                                nickname = "";
+                                buyPrice = 100;
+                                sellPrice = 95;
+                                condition = "['deputy_marshal','usms'] call life_fnc_leoAtLeastRank";
+                                text = "5.56 SOST rifle magazine.";
+                            };
+                            class hlc_30rnd_556x45_EPR {
+                                className = "hlc_30rnd_556x45_EPR";
+                                nickname = "";
+                                buyPrice = 95;
+                                sellPrice = 85;
+                                condition = "['senior_deputy_marshal','usms'] call life_fnc_leoAtLeastRank";
+                                text = "5.56 EPR rifle magazine.";
+                            };
+                        };
+                    };
+
+                    class attachments {
+                        title = "Attachments";
+                        description = "Optics, lights, and muzzle devices.";
+
+                        class Items {
+                            class RH_X300 {
+                                className = "RH_X300";
+                                nickname = "";
+                                buyPrice = 650;
+                                sellPrice = 325;
+                                condition = "";
+                                text = "Duty weapon light.";
+                            };
+                            class SMA_SFFL_BLK {
+                                className = "SMA_SFFL_BLK";
+                                nickname = "";
+                                buyPrice = 25;
+                                sellPrice = 15;
+                                condition = "['senior_deputy_marshal','usms'] call life_fnc_leoAtLeastRank";
+                                text = "Rifle flashlight.";
+                            };
+                            class RH_ta31rmr {
+                                className = "RH_ta31rmr";
+                                nickname = "ACOG RMR";
+                                buyPrice = 250;
+                                sellPrice = 125;
+                                condition = "['senior_deputy_marshal','usms'] call life_fnc_leoAtLeastRank";
+                                text = "ACOG TA31F RMR sight.";
+                            };
+                            class RH_compM2l {
+                                className = "RH_compM2l";
+                                nickname = "";
+                                buyPrice = 25;
+                                sellPrice = 15;
+                                condition = "['deputy_marshal','usms'] call life_fnc_leoAtLeastRank";
+                                text = "Aimpoint red dot.";
+                            };
+                        };
+                    };
+                };
+            };
+
+            class dea_armory {
+                legacyShop = "cop_basic";
+                title = "DEA Armory";
+                subtitle = "Drug Enforcement Administration equipment";
+                side = "cop";
+                condition = "playerSide isEqualTo west && {['leo.department.dea'] call life_fnc_hasPermission}";
+                requiredLicense = "";
+                requiredLicenseSide = "cop";
+
+                class Categories {
+                    class duty {
+                        title = "Duty Essentials";
+                        description = "Federal narcotics enforcement equipment.";
+
+                        class Items {
+                            class binocular {
+                                className = "Binocular";
+                                nickname = "";
+                                buyPrice = 150;
+                                sellPrice = 75;
+                                condition = "";
+                                text = "Standard field binoculars.";
+                            };
+                            class gps {
+                                className = "ItemGPS";
+                                nickname = "";
+                                buyPrice = 100;
+                                sellPrice = 50;
+                                condition = "";
+                                text = "Duty GPS unit.";
+                            };
+                            class firstaid {
+                                className = "FirstAidKit";
+                                nickname = "";
+                                buyPrice = 150;
+                                sellPrice = 75;
+                                condition = "";
+                                text = "Basic medical kit.";
+                            };
+                            class AG_PoliceThing {
+                                className = "AG_PoliceThing";
+                                nickname = "";
+                                buyPrice = 2000;
+                                sellPrice = 1000;
+                                condition = "";
+                                text = "Night vision equipment.";
+                            };
+                            class flashbang {
+                                className = "HandGrenade_Stone";
+                                nickname = "Flashbang";
+                                buyPrice = 1700;
+                                sellPrice = 850;
+                                condition = "['special_agent','dea'] call life_fnc_leoAtLeastRank";
+                                text = "Less-lethal distraction device.";
+                            };
+                        };
+                    };
+
+                    class sidearms {
+                        title = "Sidearms";
+                        description = "Authorized DEA duty pistols.";
+
+                        class Items {
+                            class RH_g17 {
+                                className = "RH_g17";
+                                nickname = "";
+                                buyPrice = 7500;
+                                sellPrice = 3750;
+                                condition = "";
+                                text = "Standard G17 duty sidearm.";
+                            };
+                            class RH_g19 {
+                                className = "RH_g19";
+                                nickname = "";
+                                buyPrice = 7500;
+                                sellPrice = 3750;
+                                condition = "";
+                                text = "Compact G19 sidearm.";
+                            };
+                            class RH_17Rnd_9x19_g17 {
+                                className = "RH_17Rnd_9x19_g17";
+                                nickname = "";
+                                buyPrice = 125;
+                                sellPrice = 60;
+                                condition = "";
+                                text = "Standard 9mm G17 magazine.";
+                            };
+                            class RH_kimber_nw {
+                                className = "RH_kimber_nw";
+                                nickname = "";
+                                buyPrice = 9500;
+                                sellPrice = 4750;
+                                condition = "['senior_special_agent','dea'] call life_fnc_leoAtLeastRank";
+                                text = "Authorized .45 sidearm for senior agents and above.";
+                            };
+                            class RH_7Rnd_45cal_m1911 {
+                                className = "RH_7Rnd_45cal_m1911";
+                                nickname = "";
+                                buyPrice = 130;
+                                sellPrice = 65;
+                                condition = "['senior_special_agent','dea'] call life_fnc_leoAtLeastRank";
+                                text = ".45 ACP sidearm magazine.";
+                            };
+                        };
+                    };
+
+                    class long_guns {
+                        title = "Long Guns";
+                        description = "DEA rifle platforms by rank.";
+
+                        class Items {
+                            class hlc_rifle_RU5562 {
+                                className = "hlc_rifle_RU5562";
+                                nickname = "";
+                                buyPrice = 25000;
+                                sellPrice = 15000;
+                                condition = "['special_agent','dea'] call life_fnc_leoAtLeastRank";
+                                text = "DEA field rifle.";
+                            };
+                            class SMA_AAC_MPW_12_Black {
+                                className = "SMA_AAC_MPW_12_Black";
+                                nickname = "";
+                                buyPrice = 8500;
+                                sellPrice = 7500;
+                                condition = "['senior_special_agent','dea'] call life_fnc_leoAtLeastRank";
+                                text = "Compact DEA rifle.";
+                            };
+                            class RH_Hk416c {
+                                className = "RH_Hk416c";
+                                nickname = "";
+                                buyPrice = 25000;
+                                sellPrice = 24500;
+                                condition = "['supervisory_special_agent','dea'] call life_fnc_leoAtLeastRank";
+                                text = "Supervisory tactical rifle.";
+                            };
+                            class hlc_30rnd_556x45_SOST {
+                                className = "hlc_30rnd_556x45_SOST";
+                                nickname = "";
+                                buyPrice = 100;
+                                sellPrice = 95;
+                                condition = "['special_agent','dea'] call life_fnc_leoAtLeastRank";
+                                text = "5.56 SOST rifle magazine.";
+                            };
+                            class hlc_30rnd_556x45_EPR {
+                                className = "hlc_30rnd_556x45_EPR";
+                                nickname = "";
+                                buyPrice = 95;
+                                sellPrice = 85;
+                                condition = "['senior_special_agent','dea'] call life_fnc_leoAtLeastRank";
+                                text = "5.56 EPR rifle magazine.";
+                            };
+                        };
+                    };
+
+                    class attachments {
+                        title = "Attachments";
+                        description = "Optics, lights, and muzzle devices.";
+
+                        class Items {
+                            class RH_X300 {
+                                className = "RH_X300";
+                                nickname = "";
+                                buyPrice = 650;
+                                sellPrice = 325;
+                                condition = "";
+                                text = "Duty weapon light.";
+                            };
+                            class SMA_SFFL_BLK {
+                                className = "SMA_SFFL_BLK";
+                                nickname = "";
+                                buyPrice = 25;
+                                sellPrice = 15;
+                                condition = "['senior_special_agent','dea'] call life_fnc_leoAtLeastRank";
+                                text = "Rifle flashlight.";
+                            };
+                            class RH_ta31rmr {
+                                className = "RH_ta31rmr";
+                                nickname = "ACOG RMR";
+                                buyPrice = 250;
+                                sellPrice = 125;
+                                condition = "['senior_special_agent','dea'] call life_fnc_leoAtLeastRank";
+                                text = "ACOG TA31F RMR sight.";
+                            };
+                            class RH_compM2l {
+                                className = "RH_compM2l";
+                                nickname = "";
+                                buyPrice = 25;
+                                sellPrice = 15;
+                                condition = "['special_agent','dea'] call life_fnc_leoAtLeastRank";
+                                text = "Aimpoint red dot.";
+                            };
+                        };
+                    };
+                };
+            };
+
+            class fbi_armory {
+                legacyShop = "cop_basic";
+                title = "FBI Armory";
+                subtitle = "Federal Bureau of Investigation equipment";
+                side = "cop";
+                condition = "playerSide isEqualTo west && {['leo.department.fbi'] call life_fnc_hasPermission}";
+                requiredLicense = "";
+                requiredLicenseSide = "cop";
+
+                class Categories {
+                    class duty {
+                        title = "Duty Essentials";
+                        description = "Federal investigation field equipment.";
+
+                        class Items {
+                            class binocular {
+                                className = "Binocular";
+                                nickname = "";
+                                buyPrice = 150;
+                                sellPrice = 75;
+                                condition = "";
+                                text = "Standard field binoculars.";
+                            };
+                            class gps {
+                                className = "ItemGPS";
+                                nickname = "";
+                                buyPrice = 100;
+                                sellPrice = 50;
+                                condition = "";
+                                text = "Duty GPS unit.";
+                            };
+                            class firstaid {
+                                className = "FirstAidKit";
+                                nickname = "";
+                                buyPrice = 150;
+                                sellPrice = 75;
+                                condition = "";
+                                text = "Basic medical kit.";
+                            };
+                            class AG_PoliceThing {
+                                className = "AG_PoliceThing";
+                                nickname = "";
+                                buyPrice = 2000;
+                                sellPrice = 1000;
+                                condition = "";
+                                text = "Night vision equipment.";
+                            };
+                            class flashbang {
+                                className = "HandGrenade_Stone";
+                                nickname = "Flashbang";
+                                buyPrice = 1700;
+                                sellPrice = 850;
+                                condition = "['special_agent','fbi'] call life_fnc_leoAtLeastRank";
+                                text = "Less-lethal distraction device.";
+                            };
+                        };
+                    };
+
+                    class sidearms {
+                        title = "Sidearms";
+                        description = "Authorized FBI duty pistols.";
+
+                        class Items {
+                            class RH_g17 {
+                                className = "RH_g17";
+                                nickname = "";
+                                buyPrice = 7500;
+                                sellPrice = 3750;
+                                condition = "";
+                                text = "Standard G17 duty sidearm.";
+                            };
+                            class RH_g19 {
+                                className = "RH_g19";
+                                nickname = "";
+                                buyPrice = 7500;
+                                sellPrice = 3750;
+                                condition = "";
+                                text = "Compact G19 sidearm.";
+                            };
+                            class RH_17Rnd_9x19_g17 {
+                                className = "RH_17Rnd_9x19_g17";
+                                nickname = "";
+                                buyPrice = 125;
+                                sellPrice = 60;
+                                condition = "";
+                                text = "Standard 9mm G17 magazine.";
+                            };
+                            class RH_kimber_nw {
+                                className = "RH_kimber_nw";
+                                nickname = "";
+                                buyPrice = 9500;
+                                sellPrice = 4750;
+                                condition = "['senior_special_agent','fbi'] call life_fnc_leoAtLeastRank";
+                                text = "Authorized .45 sidearm for senior agents and above.";
+                            };
+                            class RH_7Rnd_45cal_m1911 {
+                                className = "RH_7Rnd_45cal_m1911";
+                                nickname = "";
+                                buyPrice = 130;
+                                sellPrice = 65;
+                                condition = "['senior_special_agent','fbi'] call life_fnc_leoAtLeastRank";
+                                text = ".45 ACP sidearm magazine.";
+                            };
+                        };
+                    };
+
+                    class long_guns {
+                        title = "Long Guns";
+                        description = "FBI rifle platforms by rank.";
+
+                        class Items {
+                            class hlc_rifle_RU5562 {
+                                className = "hlc_rifle_RU5562";
+                                nickname = "";
+                                buyPrice = 25000;
+                                sellPrice = 15000;
+                                condition = "['special_agent','fbi'] call life_fnc_leoAtLeastRank";
+                                text = "FBI field rifle.";
+                            };
+                            class SMA_AAC_MPW_12_Black {
+                                className = "SMA_AAC_MPW_12_Black";
+                                nickname = "";
+                                buyPrice = 8500;
+                                sellPrice = 7500;
+                                condition = "['senior_special_agent','fbi'] call life_fnc_leoAtLeastRank";
+                                text = "Compact FBI rifle.";
+                            };
+                            class RH_Hk416c {
+                                className = "RH_Hk416c";
+                                nickname = "";
+                                buyPrice = 25000;
+                                sellPrice = 24500;
+                                condition = "['supervisory_special_agent','fbi'] call life_fnc_leoAtLeastRank";
+                                text = "Supervisory tactical rifle.";
+                            };
+                            class hlc_30rnd_556x45_SOST {
+                                className = "hlc_30rnd_556x45_SOST";
+                                nickname = "";
+                                buyPrice = 100;
+                                sellPrice = 95;
+                                condition = "['special_agent','fbi'] call life_fnc_leoAtLeastRank";
+                                text = "5.56 SOST rifle magazine.";
+                            };
+                            class hlc_30rnd_556x45_EPR {
+                                className = "hlc_30rnd_556x45_EPR";
+                                nickname = "";
+                                buyPrice = 95;
+                                sellPrice = 85;
+                                condition = "['senior_special_agent','fbi'] call life_fnc_leoAtLeastRank";
+                                text = "5.56 EPR rifle magazine.";
+                            };
+                        };
+                    };
+
+                    class attachments {
+                        title = "Attachments";
+                        description = "Optics, lights, and muzzle devices.";
+
+                        class Items {
+                            class RH_X300 {
+                                className = "RH_X300";
+                                nickname = "";
+                                buyPrice = 650;
+                                sellPrice = 325;
+                                condition = "";
+                                text = "Duty weapon light.";
+                            };
+                            class SMA_SFFL_BLK {
+                                className = "SMA_SFFL_BLK";
+                                nickname = "";
+                                buyPrice = 25;
+                                sellPrice = 15;
+                                condition = "['senior_special_agent','fbi'] call life_fnc_leoAtLeastRank";
+                                text = "Rifle flashlight.";
+                            };
+                            class RH_ta31rmr {
+                                className = "RH_ta31rmr";
+                                nickname = "ACOG RMR";
+                                buyPrice = 250;
+                                sellPrice = 125;
+                                condition = "['senior_special_agent','fbi'] call life_fnc_leoAtLeastRank";
+                                text = "ACOG TA31F RMR sight.";
+                            };
+                            class RH_compM2l {
+                                className = "RH_compM2l";
+                                nickname = "";
+                                buyPrice = 25;
+                                sellPrice = 15;
+                                condition = "['special_agent','fbi'] call life_fnc_leoAtLeastRank";
+                                text = "Aimpoint red dot.";
+                            };
+                        };
+                    };
+                };
+            };
         };
     };
 
@@ -658,7 +1254,7 @@ class Life_Shops {
         class Civilian {
             class civ_car {
                 legacyShop = "civ_car";
-                title = "Tanoa Auto Gallery";
+                title = "Kings County Auto Gallery";
                 subtitle = "Civilian road vehicles with purchase, rental, return, and storage service";
                 side = "civ";
                 condition = "";
@@ -935,12 +1531,12 @@ class Life_Shops {
         class LawEnforcement {
             class cop_car {
                 legacyShop = "cop_car";
-                title = "TCSD Motor Pool";
+                title = "KCSO Motor Pool";
                 subtitle = "Patrol and specialty ground vehicles";
                 side = "cop";
                 condition = "playerSide isEqualTo west";
                 requiredCertification = "";
-                department = "tcsd";
+                department = "kcso";
                 shopFlag = "cop";
                 useFactionBank = 1;
 
@@ -952,209 +1548,209 @@ class Life_Shops {
                         class Vehicles {
                             class AG_CROWNVIC_Police_AG {
                                 className = "AG_CROWNVIC_Police_AG";
-                                displayName = "TCSD CVPI Patrol";
+                                displayName = "KCSO CVPI Patrol";
                                 price = 5000;
                                 condition = "";
                                 rank = "deputy";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = {"Basic Patrol Vehicle","Low Maintenance","Prisoner Transport" };
                                 text = "A dependable patrol vehicle for everyday calls and transport.";
                             };
                             class AG_CROWNVIC_Police_ST_AG {
                                 className = "AG_CROWNVIC_Police_ST_AG";
-                                displayName = "TCSD CVPI Patrol Slicktop";
+                                displayName = "KCSO CVPI Patrol Slicktop";
                                 price = 5000;
                                 condition = "";
                                 rank = "deputy";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = {"Basic Patrol Vehicle","Low Maintenance","Prisoner Transport" };
                                 text = "A dependable patrol vehicle for everyday calls and transport.";
                             };
                             class AG_CTSV_Police_AG {
                                 className = "AG_CTSV_Police_AG";
-                                displayName = "TCSD Cadillac CTS-V Patrol";
+                                displayName = "KCSO Cadillac CTS-V Patrol";
                                 price = 35000;
                                 condition = "";
                                 rank = "senior_deputy";
-                                subdivisions[] = { "patrol" };
+                                subdivisions[] = {};
                                 features[] = {"Fast Pursuit Response", "Low Maintenance", "Patrol Vehicle", "Prisoner Transport" };
                                 text = "A Dependable Patrol Vehicle for Everyday Calls and Transport";
                             };
                             class AG_CHARGER_Police_AG {
                                 className = "AG_CHARGER_Police_AG";
-                                displayName = "TCSD Charger Patrol";
+                                displayName = "KCSO Charger Patrol";
                                 price = 25000;
                                 condition = "";
                                 rank = "senior_deputy";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = {"Basic Patrol Vehicle","Low Maintenance","Prisoner Transport" };
                                 text = "A dependable patrol vehicle for everyday calls and transport.";
                             };
                             class AG_CHARGER_Police_ST_AG {
                                 className = "AG_CHARGER_Police_ST_AG";
-                                displayName = "TCSD Charger Patrol Slicktop";
+                                displayName = "KCSO Charger Patrol Slicktop";
                                 price = 24000;
                                 condition = "";
                                 rank = "senior_deputy";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = {"Basic Patrol Vehicle","Low Maintenance","Prisoner Transport Qualified" };
                                 text = "A dependable patrol vehicle for everyday calls and transport.";
                             };
                             class AG_Suburban16_Police_AG {
                                 className = "AG_Suburban16_Police_AG";
-                                displayName = "TCSD Suburban Patrol Utility";
+                                displayName = "KCSO Suburban Patrol Utility";
                                 price = 33000;
                                 condition = "";
                                 rank = "corporal";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = { "Utility Vehicle","Patrol Vehicle","Prisoner Transport","All Terrain Response" };
                                 text = "A Utility Patrol Vehicle for qualified corporals and above.";
                             };
                             class AG_Suburban16_Police_ST_AG {
                                 className = "AG_Suburban16_Police_ST_AG";
-                                displayName = "TCSD Suburban Patrol Utility Slicktop";
+                                displayName = "KCSO Suburban Patrol Utility Slicktop";
                                 price = 32000;
                                 condition = "";
                                 rank = "sergeant";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = { "Utility Vehicle","Patrol Vehicle","Prisoner Transport","All Terrain Response" };
                                 text = "A Utility Patrol Vehicle for qualified corporals and above.";
-                            }
+                            };
                             class AG_TAHOE08_Police_AG {
                                 className = "AG_TAHOE08_Police_AG";
-                                displayName = "TCSD Tahoe Patrol Utility";
+                                displayName = "KCSO Tahoe Patrol Utility";
                                 price = 7500;
                                 condition = "";
                                 rank = "sergeant";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = { "Utility Vehicle","Patrol Vehicle","Prisoner Transport","All Terrain Response" };
                                 text = "A Utility Patrol Vehicle for qualified corporals and above.";
                             };
                             class AG_TAHOE08_Police_ST_AG {
                                 className = "AG_TAHOE08_Police_ST_AG";
-                                displayName = "TCSD Tahoe Patrol Utility Slicktop";
+                                displayName = "KCSO Tahoe Patrol Utility Slicktop";
                                 price = 7500;
                                 condition = "";
                                 rank = "sergeant";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = { "Utility Vehicle","Patrol Vehicle","Prisoner Transport","All Terrain Response" };
                                 text = "A Utility Patrol Vehicle for Qualified Corporals and Above.";
                             };
                             class AG_Silverado_19_Police_AG {
                                 className = "AG_Silverado_19_Police_AG";
-                                displayName = "TCSD Silverado Patrol Truck";
+                                displayName = "KCSO Silverado Patrol Truck";
                                 price = 75000;
                                 condition = "";
                                 rank = "lieutenant";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = { "Pickup Truck","All Terrain Response","Supervisor Access","Utility Vehicle" };
                                 text = "A Utility Patrol Pickup Truck for Qualified Lieutenants and Above.";
                             };
                             class AG_Silverado_19_Police_ST_AG {
                                 className = "AG_Silverado_19_Police_ST_AG";
-                                displayName = "TCSD Silverado Patrol Truck Slicktop";
+                                displayName = "KCSO Silverado Patrol Truck Slicktop";
                                 price = 74000;
                                 condition = "";
                                 rank = "lieutenant";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = { "Pickup Truck","All Terrain Response","Supervisor Access","Utility Vehicle" };
                                 text = "A Utility Patrol Pickup Truck for Qualified Lieutenants and Above.";
                             };
                             class AG_Durango_Police_AG {
                                 className = "AG_Durango_Police_AG";
-                                displayName = "TCSD Durango Pursuit Vehicle Utility";
+                                displayName = "KCSO Durango Pursuit Vehicle Utility";
                                 price = 85000;
                                 condition = "";
                                 rank = "captain";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = { "Utility Vehicle","Fast Response Vehicle","Supervisor Access","Prisoner Transport" };
                                 text = "A Utility Patrol Pickup Truck for Qualified Lieutenants and Above.";
                             };
                             class AG_Durango_Police_ST_AG {
                                 className = "AG_Durango_Police_ST_AG";
-                                displayName = "TCSD Durango Pursuit Vehicle Utility Slicktop";
+                                displayName = "KCSO Durango Pursuit Vehicle Utility Slicktop";
                                 price = 84000;
                                 condition = "";
                                 rank = "captain";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = { "Utility Vehicle","Fast Response Vehicle","Supervisor Access","Prisoner Transport" };
                                 text = "A Utility Patrol Pickup Truck for Qualified Lieutenants and Above.";
                             };
                             class AG_EXPLORER_Police_AG {
                                 className = "AG_EXPLORER_Police_AG";
-                                displayName = "TCSD FPIU Patrol";
+                                displayName = "KCSO FPIU Patrol";
                                 price = 15000;
                                 condition = "";
                                 rank = "corporal";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = { "Utility Vehicle","Prisoner Transport","Low Maintenance" };
                                 text = "A Utility Patrol Vehicle for Qualified Corporals and Above.";
                             };
                             class AG_EXPLORER_Police_ST_AG {
                                 className = "AG_EXPLORER_Police_ST_AG";
-                                displayName = "TCSD FPIU Patrol Slicktop";
+                                displayName = "KCSO FPIU Patrol Slicktop";
                                 price = 14000;
                                 condition = "";
                                 rank = "corporal";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = { "Utility Vehicle","Prisoner Transport","Low Maintenance" };
                                 text = "A Utility Patrol Vehicle for Qualified Corporals and Above.";
                             };
                             class AG_Titan_Police_AG {
                                 className = "AG_Titan_Police_AG";
-                                displayName = "TCSD Titan Pickup Truck Utility";
+                                displayName = "KCSO Titan Pickup Truck Utility";
                                 price = 95000;
                                 condition = "";
                                 rank = "major";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = { "Pickup Truck","All Terrain Response","Supervisor Access","Utility Vehicle" };
                                 text = "A Utility Patrol Pickup Truck for Qualified Majors and Above.";
                             };
                         };
                     };
 
-                    class hse {
+                    class hsu {
                         title = "Speed Enforcement";
                         description = "Speed Enforcement Vehicles";
 
                         class Vehicles {
                             class AG_MustangGT15_HSU_AG {
                                 className = "AG_MustangGT15_HSU_AG";
-                                displayName = "TCSD HSE Mustang Pursuit Vehicle";
+                                displayName = "KCSO HSU Mustang Pursuit Vehicle";
                                 price = 5000;
                                 condition = "";
                                 rank = "deputy";
-                                subdivisions[] = {"hse"};
+                                subdivisions[] = {"hsu"};
                                 features[] = {"Rapid Response Unit","Pursuit Vehicle","Pit Certified","High Risk Unit"};
                                 text = "A Fast Pursuit Vehicle for Qualified Deputies";
                             };
                             class AG_MustangGT15_HSU_ST_AG {
                                 className = "AG_MustangGT15_HSU_ST_AG";
-                                displayName = "TCSD HSE Mustang Pursuit Vehicle Slicktop";
+                                displayName = "KCSO HSU Mustang Pursuit Vehicle Slicktop";
                                 price = 5400;
                                 condition = "";
                                 rank = "deputy";
-                                subdivisions[] = {"hse"};
+                                subdivisions[] = {"hsu"};
                                 features[] = {"Rapid Response Unit","Pursuit Vehicle","Pit Certified","High Risk Unit"};
                                 text = "A Fast Pursuit Vehicle for Qualified Deputies";
                             };
                             class AG_MustangGT500_HSU_AG {
                                 className = "AG_MustangGT500_HSU_AG";
-                                displayName = "TCSD HSE Mustang GT500";
+                                displayName = "KCSO HSU Mustang GT500";
                                 price = 7500;
                                 condition = "";
                                 rank = "senior_deputy";
-                                subdivisions[] = {"hse"};
+                                subdivisions[] = {"hsu"};
                                 features[] = {"Rapid Response Unit","Pursuit Vehicle","Pit Certified","High Risk Unit"};
                                 text = "A Fast Pursuit Vehicle for Qualified Deputies";
                             };
                             class AG_MustangGT500_HSU_ST_AG {
                                 className = "AG_MustangGT500_HSU_ST_AG";
-                                displayName = "TCSD HSE Mustang GT500 Slicktop";
+                                displayName = "KCSO HSU Mustang GT500 Slicktop";
                                 price = 7400;
                                 condition = "";
                                 rank = "senior_deputy";
-                                subdivisions[] = {"hse"};
+                                subdivisions[] = {"hsu"};
                                 features[] = {"Rapid Response Unit","Pursuit Vehicle","Pit Certified","High Risk Unit"};
                                 text = "A Fast Pursuit Vehicle for Qualified Deputies";
                             };
@@ -1168,20 +1764,20 @@ class Life_Shops {
                         class Vehicles {
                            class AG_CROWNVIC_UNM_AG {
                                 className = "AG_CROWNVIC_UNM_AG";
-                                displayName = "TCSD CVPI Unmarked Unit";
+                                displayName = "KCSO CVPI Unmarked Unit";
                                 price = 10000;
                                 condition = "";
-                                rank = "detective";
+                                rank = "deputy";
                                 subdivisions[] = {"cid"};
                                 features[] = {"Unmarked Unit","Covert Operations","Investigations Unit"};
                                 text = "A Unmarked Patrol Car for Criminal Investigators";
                             };
                             class AG_CHARGER_SRT_UNM_AG {
                                 className = "AG_CHARGER_SRT_UNM_AG";
-                                displayName = "TCSD Charger SRT Unmarked Unit";
+                                displayName = "KCSO Charger SRT Unmarked Unit";
                                 price = 15000;
                                 condition = "";
-                                rank = "detective";
+                                rank = "deputy";
                                 subdivisions[] = {"cid"};
                                 features[] = {"Unmarked Unit","Covert Operations","Investigations Unit","Rapid Response Unit"};
                                 text = "A Unmarked Patrol Car for Criminal Investigators";
@@ -1189,29 +1785,29 @@ class Life_Shops {
                         };
                     };
 
-                    class academy {
-                        title = "Academy FTO Patrol Vehicles";
-                        description = "Academy Patrol Cars for Field Training Officers";
+                    class admin_services {
+                        title = "Admin Services Trainer Patrol Vehicles";
+                        description = "Admin Services patrol cars for Admin Services trainers";
 
                         class Vehicles {
                            class AG_X5_AdminServices_AG {
                                 className = "AG_X5_AdminServices_AG";
-                                displayName = "TCSD FTO X5 Patrol Car";
+                                displayName = "KCSO Trainer X5 Patrol Car";
                                 price = 25000;
                                 condition = "";
                                 rank = "deputy";
-                                subdivisions[] = {"academy"};
-                                features[] = {"Field Training Vehicle","Pursuit Training Vehicle","Rapid Response Unit"};
+                                subdivisions[] = {"admin_services"};
+                                features[] = {"Admin Services Training Vehicle","Pursuit Training Vehicle","Rapid Response Unit"};
                                 text = "A Training Vehicle for Deputies";
                             };
                             class AG_amgGT_19_AdminServices_AG {
                                 className = "AG_amgGT_19_AdminServices_AG";
-                                displayName = "TCSD FTO AMG GT Patrol Car";
+                                displayName = "KCSO Trainer AMG GT Patrol Car";
                                 price = 35000;
                                 condition = "";
                                 rank = "deputy";
-                                subdivisions[] = {"academy"};
-                                features[] = {"Field Training Vehicle","Pursuit Training Vehicle","Rapid Response Unit"};
+                                subdivisions[] = {"admin_services"};
+                                features[] = {"Admin Services Training Vehicle","Pursuit Training Vehicle","Rapid Response Unit"};
                                 text = "A Training Vehicle for Deputies";
                             };
                         };
@@ -1224,33 +1820,33 @@ class Life_Shops {
                         class Vehicles {
                             class AG_Bearcat_KCSO_AG {
                                 className = "AG_Bearcat_KCSO_AG";
-                                displayName = "Lenco Bearcat Tanoa County ERT";
+                                displayName = "Lenco Bearcat Kings County SWAT";
                                 price = 5500;
                                 condition = "";
                                 rank = "sergeant";
-                                subdivisions[] = {"ert"};
+                                subdivisions[] = {"swat"};
                                 features[] = {"Armored response","Sergeant Access","High-risk transport"};
                                 text = "Armored law enforcement platform for higher-risk operations.";
                             };
                             class AG_Suburban16_SWAT_AG {
                                 className = "AG_Suburban16_SWAT_AG";
-                                displayName = "TCSD ERT Suburban Utility Vehicle";
+                                displayName = "KCSO SWAT Suburban Utility Vehicle";
                                 price = 8500;
                                 condition = "";
                                 rank = "deputy";
-                                subdivisions[] = {"ert"};
-                                features[] = {"Armed armored response","Deputy Access","ERT restricted"};
-                                text = "Restricted tactical vehicle for authorized command and ERT use.";
+                                subdivisions[] = {"swat"};
+                                features[] = {"Armed armored response","Deputy Access","SWAT restricted"};
+                                text = "Restricted tactical vehicle for authorized command and SWAT use.";
                             };
                             class AG_Cherokee_SWAT_AG {
                                 className = "AG_Cherokee_SWAT_AG";
-                                displayName = "TCSD ERT Cherokee Utility Vehicle";
+                                displayName = "KCSO SWAT Cherokee Utility Vehicle";
                                 price = 10000;
                                 condition = "";
                                 rank = "senior_deputy";
-                                subdivisions[] = {"ert"};
-                                features[] = {"Armed armored response","Senior Deputy Access","ERT restricted"};
-                                text = "Restricted tactical vehicle for authorized command and ERT use.";
+                                subdivisions[] = {"swat"};
+                                features[] = {"Armed armored response","Senior Deputy Access","SWAT restricted"};
+                                text = "Restricted tactical vehicle for authorized command and SWAT use.";
                             };
                         };
                     };
@@ -1259,12 +1855,12 @@ class Life_Shops {
 
             class cop_air {
                 legacyShop = "cop_air";
-                title = "TCSD Aviation";
+                title = "KCSO Aviation";
                 subtitle = "Aircraft requiring LEO Aviation certification";
                 side = "cop";
                 condition = "['sergeant'] call life_fnc_leoAtLeastRank";
                 requiredCertification = "cAir";
-                department = "tcsd";
+                department = "kcso";
                 shopFlag = "cop";
                 useFactionBank = 1;
 
@@ -1276,41 +1872,41 @@ class Life_Shops {
                         class Vehicles {
                             class AG_Hummingbird_Police {
                                 className = "AG_Hummingbird_Police";
-                                displayName = "TCSD Hummingbird Patrol Helicopter";
+                                displayName = "KCSO Hummingbird Patrol Helicopter";
                                 price = 95000;
                                 condition = "";
                                 rank = "sergeant";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = {"Certified aviation only","Fast patrol observation","Light transport"};
-                                text = "Light Helicopter for Certified TCSD Aviation Operations.";
+                                text = "Light Helicopter for Certified KCSO Aviation Operations.";
                             };
                             class AG_Hummingbird_Police_Adv {
                                 className = "AG_Hummingbird_Police_Adv";
-                                displayName = "TCSD Hummingbird Advanced Patrol Helicopter";
+                                displayName = "KCSO Hummingbird Advanced Patrol Helicopter";
                                 price = 96000;
                                 condition = "";
                                 rank = "lieutenant";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = { "Certified aviation only","Fast patrol observation","Light transport" };
-                                text = "Light helicopter for certified TCSD aviation operations.";
+                                text = "Light helicopter for certified KCSO aviation operations.";
                             };
                             class AG_Hummingbird_HSU {
                                 className = "AG_Hummingbird_HSU";
-                                displayName = "TCSD High Speed Enforcement Patrol Helicopter";
+                                displayName = "KCSO High Speed Enforcement Patrol Helicopter";
                                 price = 98000;
                                 condition = "";
                                 rank = "deputy";
-                                subdivisions[] = {"hse"};
+                                subdivisions[] = {"hsu"};
                                 features[] = {"Speed Enforcement","Advanced Pilot","Pursuit Helicopter"};
                                 text = "High Speed Pursuit Helicopter for Aviation Operations";
                             };
                             class AG_UH60M_Sheriff_AG {
                                 className = "AG_UH60M_Sheriff_AG";
-                                displayName = "TCSD UH60 Utility Helicopter";
+                                displayName = "KCSO UH60 Utility Helicopter";
                                 price = 97000;
                                 condition = "";
                                 rank = "sergeant";
-                                subdivisions[] = {"patrol"};
+                                subdivisions[] = {};
                                 features[] = {"Transport Helicopter","Advanced Pilot","Air Operations"};
                                 text = "Heavy Police Helicopter for Transport";
                             };
@@ -1321,12 +1917,12 @@ class Life_Shops {
 
             class cop_ship {
                 legacyShop = "cop_ship";
-                title = "TCSD Maritime";
+                title = "KCSO Maritime";
                 subtitle = "Marine units requiring LEO Maritime certification";
                 side = "cop";
                 condition = "playerSide isEqualTo west";
                 requiredCertification = "cg";
-                department = "tcsd";
+                department = "kcso";
                 shopFlag = "cop";
                 useFactionBank = 1;
 
@@ -1372,8 +1968,8 @@ class Life_Shops {
                                 price = -1;
                                 condition = "";
                                 rank = "sergeant";
-                                subdivisions[] = {"ert"};
-                                features[] = {"Armed maritime platform","Sergeant access","ERT restricted"};
+                                subdivisions[] = {"swat"};
+                                features[] = {"Armed maritime platform","Sergeant access","SWAT restricted"};
                                 text = "Restricted armed marine platform for approved operations.";
                             };
                             class sdv {
@@ -1382,9 +1978,273 @@ class Life_Shops {
                                 price = -1;
                                 condition = "";
                                 rank = "";
-                                subdivisions[] = {"hse"};
-                                features[] = {"Submersible operations","HSE restricted","Low visibility movement"};
+                                subdivisions[] = {"hsu"};
+                                features[] = {"Submersible operations","HSU restricted","Low visibility movement"};
                                 text = "Specialty submersible for maritime search and interdiction.";
+                            };
+                        };
+                    };
+                };
+            };
+
+            class usms_motor_pool {
+                legacyShop = "cop_car";
+                title = "USMS Motor Pool";
+                subtitle = "United States Marshal Service ground vehicles";
+                side = "cop";
+                condition = "playerSide isEqualTo west && {['leo.department.usms'] call life_fnc_hasPermission}";
+                requiredCertification = "";
+                department = "usms";
+                shopFlag = "cop";
+                useFactionBank = 1;
+
+                class Categories {
+                    class field_operations {
+                        title = "Field Operations";
+                        description = "Unmarked service vehicles for routine federal operations.";
+
+                        class Vehicles {
+                            class AG_CROWNVIC_UNM_AG {
+                                className = "AG_CROWNVIC_UNM_AG";
+                                displayName = "USMS CVPI Unmarked";
+                                price = 10000;
+                                condition = "";
+                                rank = "deputy_marshal";
+                                subdivisions[] = {};
+                                features[] = {"Unmarked Unit","Federal Operations","Transport"};
+                                text = "Unmarked USMS service vehicle.";
+                            };
+                            class AG_CHARGER_SRT_UNM_AG {
+                                className = "AG_CHARGER_SRT_UNM_AG";
+                                displayName = "USMS Charger SRT Unmarked";
+                                price = 15000;
+                                condition = "";
+                                rank = "deputy_marshal";
+                                subdivisions[] = {};
+                                features[] = {"Unmarked Unit","Rapid Response","Transport"};
+                                text = "Unmarked USMS rapid response vehicle.";
+                            };
+                        };
+                    };
+
+                    class fugitive_task_force {
+                        title = "Fugitive Task Force";
+                        description = "Specialized transport and apprehension vehicles.";
+
+                        class Vehicles {
+                            class AG_Taurus_Unm_AG {
+                                className = "AG_Taurus_Unm_AG";
+                                displayName = "USMS Taurus Unmarked";
+                                price = 18000;
+                                condition = "";
+                                rank = "senior_deputy_marshal";
+                                subdivisions[] = {"fugitive_task_force"};
+                                features[] = {"Fugitive Operations","Unmarked Unit","Covert Response"};
+                                text = "Unmarked fugitive task force vehicle.";
+                            };
+                            class AG_Suburban16_Unm_AG {
+                                className = "AG_Suburban16_Unm_AG";
+                                displayName = "USMS Suburban Unmarked";
+                                price = 30000;
+                                condition = "";
+                                rank = "senior_deputy_marshal";
+                                subdivisions[] = {"fugitive_task_force"};
+                                features[] = {"Team Transport","Federal Operations","Utility Vehicle"};
+                                text = "USMS task force utility vehicle.";
+                            };
+                        };
+                    };
+
+                    class command {
+                        title = "Command";
+                        description = "Supervisor and command vehicles.";
+
+                        class Vehicles {
+                            class AG_Silverado_19_Unm_AG_TIER3 {
+                                className = "AG_Silverado_19_Unm_AG_TIER3";
+                                displayName = "USMS Silverado Command";
+                                price = 74000;
+                                condition = "";
+                                rank = "supervisory_deputy_marshal";
+                                subdivisions[] = {};
+                                features[] = {"Command Vehicle","Utility Vehicle","Federal Operations"};
+                                text = "USMS command utility vehicle.";
+                            };
+                        };
+                    };
+                };
+            };
+
+            class dea_motor_pool {
+                legacyShop = "cop_car";
+                title = "DEA Motor Pool";
+                subtitle = "Drug Enforcement Administration ground vehicles";
+                side = "cop";
+                condition = "playerSide isEqualTo west && {['leo.department.dea'] call life_fnc_hasPermission}";
+                requiredCertification = "";
+                department = "dea";
+                shopFlag = "cop";
+                useFactionBank = 1;
+
+                class Categories {
+                    class field_operations {
+                        title = "Field Operations";
+                        description = "Unmarked vehicles for federal narcotics enforcement.";
+
+                        class Vehicles {
+                            class AG_CROWNVIC_UNM_AG {
+                                className = "AG_CROWNVIC_UNM_AG";
+                                displayName = "DEA CVPI Unmarked";
+                                price = 10000;
+                                condition = "";
+                                rank = "special_agent";
+                                subdivisions[] = {};
+                                features[] = {"Unmarked Unit","Narcotics Enforcement","Surveillance"};
+                                text = "Unmarked DEA field operations vehicle.";
+                            };
+                            class AG_CHARGER_SRT_UNM_AG {
+                                className = "AG_CHARGER_SRT_UNM_AG";
+                                displayName = "DEA Charger SRT Unmarked";
+                                price = 15000;
+                                condition = "";
+                                rank = "special_agent";
+                                subdivisions[] = {};
+                                features[] = {"Unmarked Unit","Rapid Response","Surveillance"};
+                                text = "Unmarked DEA rapid response vehicle.";
+                            };
+                        };
+                    };
+
+                    class narcotics_enforcement {
+                        title = "Narcotics Enforcement";
+                        description = "Specialized narcotics and diversion enforcement vehicles.";
+
+                        class Vehicles {
+                            class AG_Taurus_Unm_AG {
+                                className = "AG_Taurus_Unm_AG";
+                                displayName = "DEA Taurus Unmarked";
+                                price = 18000;
+                                condition = "";
+                                rank = "senior_special_agent";
+                                subdivisions[] = {"narcotics_enforcement"};
+                                features[] = {"Narcotics Enforcement","Unmarked Unit","Covert Response"};
+                                text = "Unmarked DEA narcotics enforcement vehicle.";
+                            };
+                            class AG_Suburban16_Unm_AG {
+                                className = "AG_Suburban16_Unm_AG";
+                                displayName = "DEA Suburban Unmarked";
+                                price = 30000;
+                                condition = "";
+                                rank = "senior_special_agent";
+                                subdivisions[] = {"narcotics_enforcement","diversion_control"};
+                                features[] = {"Team Transport","Federal Operations","Utility Vehicle"};
+                                text = "DEA team utility vehicle.";
+                            };
+                        };
+                    };
+
+                    class command {
+                        title = "Command";
+                        description = "Supervisor and command vehicles.";
+
+                        class Vehicles {
+                            class AG_Silverado_19_Unm_AG_TIER3 {
+                                className = "AG_Silverado_19_Unm_AG_TIER3";
+                                displayName = "DEA Silverado Command";
+                                price = 74000;
+                                condition = "";
+                                rank = "supervisory_special_agent";
+                                subdivisions[] = {};
+                                features[] = {"Command Vehicle","Utility Vehicle","Federal Operations"};
+                                text = "DEA command utility vehicle.";
+                            };
+                        };
+                    };
+                };
+            };
+
+            class fbi_motor_pool {
+                legacyShop = "cop_car";
+                title = "FBI Motor Pool";
+                subtitle = "Federal Bureau of Investigation ground vehicles";
+                side = "cop";
+                condition = "playerSide isEqualTo west && {['leo.department.fbi'] call life_fnc_hasPermission}";
+                requiredCertification = "";
+                department = "fbi";
+                shopFlag = "cop";
+                useFactionBank = 1;
+
+                class Categories {
+                    class field_office {
+                        title = "Field Office";
+                        description = "Unmarked vehicles for federal investigations.";
+
+                        class Vehicles {
+                            class AG_CROWNVIC_UNM_AG {
+                                className = "AG_CROWNVIC_UNM_AG";
+                                displayName = "FBI CVPI Unmarked";
+                                price = 10000;
+                                condition = "";
+                                rank = "special_agent";
+                                subdivisions[] = {};
+                                features[] = {"Unmarked Unit","Federal Investigations","Surveillance"};
+                                text = "Unmarked FBI field office vehicle.";
+                            };
+                            class AG_CHARGER_SRT_UNM_AG {
+                                className = "AG_CHARGER_SRT_UNM_AG";
+                                displayName = "FBI Charger SRT Unmarked";
+                                price = 15000;
+                                condition = "";
+                                rank = "special_agent";
+                                subdivisions[] = {};
+                                features[] = {"Unmarked Unit","Rapid Response","Surveillance"};
+                                text = "Unmarked FBI rapid response vehicle.";
+                            };
+                        };
+                    };
+
+                    class investigations {
+                        title = "Investigations";
+                        description = "Criminal investigation and major case vehicles.";
+
+                        class Vehicles {
+                            class AG_Taurus_Unm_AG {
+                                className = "AG_Taurus_Unm_AG";
+                                displayName = "FBI Taurus Unmarked";
+                                price = 18000;
+                                condition = "";
+                                rank = "senior_special_agent";
+                                subdivisions[] = {"criminal_investigations"};
+                                features[] = {"Criminal Investigations","Unmarked Unit","Covert Response"};
+                                text = "Unmarked FBI investigation vehicle.";
+                            };
+                            class AG_Suburban16_Unm_AG {
+                                className = "AG_Suburban16_Unm_AG";
+                                displayName = "FBI Suburban Unmarked";
+                                price = 30000;
+                                condition = "";
+                                rank = "senior_special_agent";
+                                subdivisions[] = {"criminal_investigations","major_case"};
+                                features[] = {"Team Transport","Federal Operations","Utility Vehicle"};
+                                text = "FBI team utility vehicle.";
+                            };
+                        };
+                    };
+
+                    class command {
+                        title = "Command";
+                        description = "Supervisor and command vehicles.";
+
+                        class Vehicles {
+                            class AG_Silverado_19_Unm_AG_TIER3 {
+                                className = "AG_Silverado_19_Unm_AG_TIER3";
+                                displayName = "FBI Silverado Command";
+                                price = 74000;
+                                condition = "";
+                                rank = "supervisory_special_agent";
+                                subdivisions[] = {};
+                                features[] = {"Command Vehicle","Utility Vehicle","Federal Operations"};
+                                text = "FBI command utility vehicle.";
                             };
                         };
                     };
@@ -1395,11 +2255,11 @@ class Life_Shops {
 
     class LEOClothingShops {
         class cop {
-            title = "TCSD Uniform Locker";
+            title = "KCSO Uniform Locker";
             subtitle = "Duty clothing issued by rank, role, and subdivision";
             side = "cop";
             condition = "playerSide isEqualTo west";
-            department = "tcsd";
+            department = "kcso";
 
             class Categories {
                 class patrol {
@@ -1465,645 +2325,645 @@ class Life_Shops {
                         class AG_KCSO_Cadet_Uni {
                             className = "AG_KCSO_Cadet_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Cadet Patrol Uniform";
+                            displayName = "KCSO Cadet Patrol Uniform";
                             price = 25;
                             condition = "";
                             rank = "cadet";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Cadet Uniform";
+                            text = "Standard issued KCSO Cadet Uniform";
                         };
                         class AG_KCSO_Short_Cadet_Uni {
                             className = "AG_KCSO_Short_Cadet_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Cadet Patrol Uniform Short Sleeve";
+                            displayName = "KCSO Cadet Patrol Uniform Short Sleeve";
                             price = 25;
                             condition = "";
                             rank = "cadet";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Cadet Uniform Short Sleeve";
+                            text = "Standard issued KCSO Cadet Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_Cadet_Uni {
                             className = "AG_KCSO_Long_Cadet_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Cadet Patrol Uniform Long Sleeve";
+                            displayName = "KCSO Cadet Patrol Uniform Long Sleeve";
                             price = 350;
                             condition = "";
                             rank = "cadet";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Cadet Uniform Long Sleeve";
+                            text = "Standard issued KCSO Cadet Uniform Long Sleeve";
                         };
                         class AG_KCSO_PTrooper_Uni {
                             className = "AG_KCSO_PTrooper_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Probationary Deputy Uniform";
+                            displayName = "KCSO Probationary Deputy Uniform";
                             price = 350;
                             condition = "";
                             rank = "probationary_deputy";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Probationary Deputy Uniform";
+                            text = "Standard issued KCSO Probationary Deputy Uniform";
                         };
                         class AG_KCSO_Short_PTrooper_Uni {
                             className = "AG_KCSO_Short_PTrooper_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Probationary Deputy Uniform Short Sleeve";
+                            displayName = "KCSO Probationary Deputy Uniform Short Sleeve";
                             price = 350;
                             condition = "";
                             rank = "probationary_deputy";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Probationary Deputy Uniform Short Sleeve";
+                            text = "Standard issued KCSO Probationary Deputy Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_PTrooper_Uni {
                             className = "AG_KCSO_Long_PTrooper_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Probationary Deputy Uniform Long Sleeve";
+                            displayName = "KCSO Probationary Deputy Uniform Long Sleeve";
                             price = 350;
                             condition = "";
                             rank = "probationary_deputy";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Probationary Deputy Uniform Long Sleeve";
+                            text = "Standard issued KCSO Probationary Deputy Uniform Long Sleeve";
                         };
                         class AG_KCSO_Trooper_Uni {
                             className = "AG_KCSO_Trooper_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Deputy Patrol Uniform";
+                            displayName = "KCSO Deputy Patrol Uniform";
                             price = 550;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Deputy Uniform";
+                            text = "Standard issued KCSO Deputy Uniform";
                         };
                         class AG_KCSO_Short_Trooper_Uni {
                             className = "AG_KCSO_Short_Trooper_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Deputy Patrol Uniform Short Sleeve";
+                            displayName = "KCSO Deputy Patrol Uniform Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Deputy Uniform Short Sleeve";
+                            text = "Standard issued KCSO Deputy Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_Trooper_Uni {
                             className = "AG_KCSO_Long_Trooper_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Deputy Patrol Uniform Long Sleeve";
+                            displayName = "KCSO Deputy Patrol Uniform Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Deputy Uniform Long Sleeve";
+                            text = "Standard issued KCSO Deputy Uniform Long Sleeve";
                         };
                         class AG_KCSO_SnrTrooper_Uni {
                             className = "AG_KCSO_SnrTrooper_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Senior Deputy Patrol Uniform";
+                            displayName = "KCSO Senior Deputy Patrol Uniform";
                             price = 550;
                             condition = "";
                             rank = "senior_deputy";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Senior Deputy Uniform";
+                            text = "Standard issued KCSO Senior Deputy Uniform";
                         };
                         class AG_KCSO_Short_SnrTrooper_Uni {
                             className = "AG_KCSO_Short_SnrTrooper_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Senior Deputy Patrol Uniform Short Sleeve";
+                            displayName = "KCSO Senior Deputy Patrol Uniform Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "senior_deputy";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Senior Deputy Uniform Short Sleeve";
+                            text = "Standard issued KCSO Senior Deputy Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_SnrTrooper_Uni {
                             className = "AG_KCSO_Long_SnrTrooper_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Senior Deputy Patrol Uniform Long Sleeve";
+                            displayName = "KCSO Senior Deputy Patrol Uniform Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "senior_deputy";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Senior Deputy Uniform Long Sleeve";
+                            text = "Standard issued KCSO Senior Deputy Uniform Long Sleeve";
                         };
                         class AG_KCSO_Short_Corporal_Uni {
                             className = "AG_KCSO_Short_Corporal_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Corporal Patrol Uniform Short Sleeve";
+                            displayName = "KCSO Corporal Patrol Uniform Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Corporal Uniform Short Sleeve";
+                            text = "Standard issued KCSO Corporal Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_Corporal_Uni {
                             className = "AG_KCSO_Long_Corporal_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Corporal Patrol Uniform Long Sleeve";
+                            displayName = "KCSO Corporal Patrol Uniform Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Corporal Uniform Long Sleeve";
+                            text = "Standard issued KCSO Corporal Uniform Long Sleeve";
                         };
                         class AG_KCSO_Corporal_Uni {
                             className = "AG_KCSO_Corporal_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Corporal Patrol Uniform";
+                            displayName = "KCSO Corporal Patrol Uniform";
                             price = 550;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Corporal Uniform";
+                            text = "Standard issued KCSO Corporal Uniform";
                         };
                         class AG_KCSO_Sergeant_Uni {
                             className = "AG_KCSO_Sergeant_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sergeant Patrol Uniform";
+                            displayName = "KCSO Sergeant Patrol Uniform";
                             price = 550;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Sergeant Uniform";
+                            text = "Standard issued KCSO Sergeant Uniform";
                         };
                         class AG_KCSO_Short_Sergeant_Uni {
                             className = "AG_KCSO_Short_Sergeant_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sergeant Patrol Uniform Short Sleeve";
+                            displayName = "KCSO Sergeant Patrol Uniform Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Sergeant Uniform Short Sleeve";
+                            text = "Standard issued KCSO Sergeant Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_Sergeant_Uni {
                             className = "AG_KCSO_Long_Sergeant_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sergeant Patrol Uniform Long Sleeve";
+                            displayName = "KCSO Sergeant Patrol Uniform Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Sergeant Uniform Long Sleeve";
+                            text = "Standard issued KCSO Sergeant Uniform Long Sleeve";
                         };
                         class AG_KCSO_Sergeant_White_Uni {
                             className = "AG_KCSO_Sergeant_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sergeant Patrol White Uniform";
+                            displayName = "KCSO Sergeant Patrol White Uniform";
                             price = 550;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Sergeant White Uniform";
+                            text = "Standard issued KCSO Sergeant White Uniform";
                         };
                         class AG_KCSO_Short_Sergeant_White_Uni {
                             className = "AG_KCSO_Short_Sergeant_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sergeant Patrol White Uniform Short Sleeve";
+                            displayName = "KCSO Sergeant Patrol White Uniform Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Sergeant White Uniform Short Sleeve";
+                            text = "Standard issued KCSO Sergeant White Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_Sergeant_White_Uni {
                             className = "AG_KCSO_Long_Sergeant_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sergeant Patrol White Uniform Long Sleeve";
+                            displayName = "KCSO Sergeant Patrol White Uniform Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Sergeant White Uniform Long Sleeve";
+                            text = "Standard issued KCSO Sergeant White Uniform Long Sleeve";
                         };
                         class AG_KCSO_Lieutenant_Uni {
                             className = "AG_KCSO_Lieutenant_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Lieutenant Patrol Uniform";
+                            displayName = "KCSO Lieutenant Patrol Uniform";
                             price = 550;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Lieutenant Uniform";
+                            text = "Standard issued KCSO Lieutenant Uniform";
                         };
                         class AG_KCSO_Short_Lieutenant_Uni {
                             className = "AG_KCSO_Short_Lieutenant_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Lieutenant Patrol Uniform Short Sleeve";
+                            displayName = "KCSO Lieutenant Patrol Uniform Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Lieutenant Uniform Short Sleeve";
+                            text = "Standard issued KCSO Lieutenant Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_Lieutenant_Uni {
                             className = "AG_KCSO_Long_Lieutenant_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Lieutenant Patrol Uniform Long Sleeve";
+                            displayName = "KCSO Lieutenant Patrol Uniform Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Lieutenant Uniform Long Sleeve";
+                            text = "Standard issued KCSO Lieutenant Uniform Long Sleeve";
                         };
                         class AG_KCSO_Lieutenant_White_Uni {
                             className = "AG_KCSO_Lieutenant_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Lieutenant Patrol Uniform White";
+                            displayName = "KCSO Lieutenant Patrol Uniform White";
                             price = 550;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Lieutenant Uniform White";
+                            text = "Standard issued KCSO Lieutenant Uniform White";
                         };
                         class AG_KCSO_Short_Lieutenant_White_Uni {
                             className = "AG_KCSO_Short_Lieutenant_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Lieutenant Patrol Uniform White Short Sleeve";
+                            displayName = "KCSO Lieutenant Patrol Uniform White Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Lieutenant Uniform White Short Sleeve";
+                            text = "Standard issued KCSO Lieutenant Uniform White Short Sleeve";
                         };
                         class AG_KCSO_Long_Lieutenant_White_Uni {
                             className = "AG_KCSO_Long_Lieutenant_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Lieutenant Patrol Uniform White Long Sleeve";
+                            displayName = "KCSO Lieutenant Patrol Uniform White Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Lieutenant Uniform White Long Sleeve";
+                            text = "Standard issued KCSO Lieutenant Uniform White Long Sleeve";
                         };
                         class AG_KCSO_Captain_Uni {
                             className = "AG_KCSO_Captain_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Captain Patrol Uniform";
+                            displayName = "KCSO Captain Patrol Uniform";
                             price = 550;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Captain Uniform";
+                            text = "Standard issued KCSO Captain Uniform";
                         };
                         class AG_KCSO_Short_Captain_Uni {
                             className = "AG_KCSO_Short_Captain_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Captain Patrol Uniform Short Sleeve";
+                            displayName = "KCSO Captain Patrol Uniform Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Captain Uniform Short Sleeve";
+                            text = "Standard issued KCSO Captain Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_Captain_Uni {
                             className = "AG_KCSO_Long_Captain_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Captain Patrol Uniform Long Sleeve";
+                            displayName = "KCSO Captain Patrol Uniform Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Captain Uniform Long Sleeve";
+                            text = "Standard issued KCSO Captain Uniform Long Sleeve";
                         };
                         class AG_KCSO_Captain_White_Uni {
                             className = "AG_KCSO_Captain_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Captain Patrol Uniform White";
+                            displayName = "KCSO Captain Patrol Uniform White";
                             price = 550;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Captain Uniform White";
+                            text = "Standard issued KCSO Captain Uniform White";
                         };
                         class AG_KCSO_Short_Captain_White_Uni {
                             className = "AG_KCSO_Short_Captain_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Captain Patrol Uniform White Short Sleeve";
+                            displayName = "KCSO Captain Patrol Uniform White Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Captain Uniform White Short Sleeve";
+                            text = "Standard issued KCSO Captain Uniform White Short Sleeve";
                         };
                         class AG_KCSO_Long_Captain_White_Uni {
                             className = "AG_KCSO_Long_Captain_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Captain Patrol Uniform White Long Sleeve";
+                            displayName = "KCSO Captain Patrol Uniform White Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Captain Uniform White Long Sleeve";
+                            text = "Standard issued KCSO Captain Uniform White Long Sleeve";
                         };
                         class AG_KCSO_Major_Uni {
                             className = "AG_KCSO_Major_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Major Patrol Uniform";
+                            displayName = "KCSO Major Patrol Uniform";
                             price = 550;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Major Uniform";
+                            text = "Standard issued KCSO Major Uniform";
                         };
                         class AG_KCSO_Short_Major_Uni {
                             className = "AG_KCSO_Short_Major_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Major Patrol Uniform Short Sleeve";
+                            displayName = "KCSO Major Patrol Uniform Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Major Uniform Short Sleeve";
+                            text = "Standard issued KCSO Major Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_Major_Uni {
                             className = "AG_KCSO_Long_Major_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Major Patrol Uniform Long Sleeve";
+                            displayName = "KCSO Major Patrol Uniform Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Major Uniform Long Sleeve";
+                            text = "Standard issued KCSO Major Uniform Long Sleeve";
                         };
                         class AG_KCSO_Major_White_Uni {
                             className = "AG_KCSO_Major_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Major Patrol Uniform White";
+                            displayName = "KCSO Major Patrol Uniform White";
                             price = 550;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Major Uniform White";
+                            text = "Standard issued KCSO Major Uniform White";
                         };
                         class AG_KCSO_Short_Major_White_Uni {
                             className = "AG_KCSO_Short_Major_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Major Patrol Uniform White Short Sleeve";
+                            displayName = "KCSO Major Patrol Uniform White Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Major Uniform White Short Sleeve";
+                            text = "Standard issued KCSO Major Uniform White Short Sleeve";
                         };
                         class AG_KCSO_Long_Major_White_Uni {
                             className = "AG_KCSO_Long_Major_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Major Patrol Uniform White Long Sleeve";
+                            displayName = "KCSO Major Patrol Uniform White Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Major Uniform White Long Sleeve";
+                            text = "Standard issued KCSO Major Uniform White Long Sleeve";
                         };
                         class AG_KCSO_LtCol_Uni {
                             className = "AG_KCSO_LtCol_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Undersheriff Patrol Uniform";
+                            displayName = "KCSO Undersheriff Patrol Uniform";
                             price = 550;
                             condition = "";
                             rank = "undersheriff";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Undersheriff Patrol Uniform";
+                            text = "Standard issued KCSO Undersheriff Patrol Uniform";
                         };
                         class AG_KCSO_Short_LtCol_Uni {
                             className = "AG_KCSO_Short_LtCol_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Undersheriff Patrol Uniform Short Sleeve";
+                            displayName = "KCSO Undersheriff Patrol Uniform Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "undersheriff";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Undersheriff Patrol Uniform Short Sleeve";
+                            text = "Standard issued KCSO Undersheriff Patrol Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_LtCol_Uni {
                             className = "AG_KCSO_Long_LtCol_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Undersheriff Patrol Uniform Long Sleeve";
+                            displayName = "KCSO Undersheriff Patrol Uniform Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "undersheriff";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Undersheriff Patrol Uniform Long Sleeve";
+                            text = "Standard issued KCSO Undersheriff Patrol Uniform Long Sleeve";
                         };
                         class AG_KCSO_LtCol_White_Uni {
                             className = "AG_KCSO_LtCol_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Undersheriff Patrol White";
+                            displayName = "KCSO Undersheriff Patrol White";
                             price = 550;
                             condition = "";
                             rank = "undersheriff";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Undersheriff Patrol White";
+                            text = "Standard issued KCSO Undersheriff Patrol White";
                         };
                         class AG_KCSO_Short_LtCol_White_Uni {
                             className = "AG_KCSO_Short_LtCol_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Undersheriff Patrol White Short Sleeve";
+                            displayName = "KCSO Undersheriff Patrol White Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "undersheriff";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Undersheriff Patrol White Short Sleeve";
+                            text = "Standard issued KCSO Undersheriff Patrol White Short Sleeve";
                         };
                         class AG_KCSO_Long_LtCol_White_Uni {
                             className = "AG_KCSO_Long_LtCol_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Undersheriff Patrol White Long Sleeve";
+                            displayName = "KCSO Undersheriff Patrol White Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Undersheriff Patrol White Long Sleeve";
+                            text = "Standard issued KCSO Undersheriff Patrol White Long Sleeve";
                         };
                         class AG_KCSO_Col_Uni {
                             className = "AG_KCSO_Col_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sheriff Patrol Uniform";
+                            displayName = "KCSO Sheriff Patrol Uniform";
                             price = 550;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Sheriff Patrol Uniform";
+                            text = "Standard issued KCSO Sheriff Patrol Uniform";
                         };
                         class AG_KCSO_Short_Col_Uni {
                             className = "AG_KCSO_Short_Col_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sheriff Patrol Uniform Short Sleeve";
+                            displayName = "KCSO Sheriff Patrol Uniform Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Sheriff Patrol Uniform Short Sleeve";
+                            text = "Standard issued KCSO Sheriff Patrol Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_Col_Uni {
                             className = "AG_KCSO_Long_Col_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sheriff Patrol Uniform Long Sleeve";
+                            displayName = "KCSO Sheriff Patrol Uniform Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Sheriff Patrol Uniform Long Sleeve";
+                            text = "Standard issued KCSO Sheriff Patrol Uniform Long Sleeve";
                         };
                         class AG_KCSO_Col_White_Uni {
                             className = "AG_KCSO_Col_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sheriff Patrol Uniform White";
+                            displayName = "KCSO Sheriff Patrol Uniform White";
                             price = 550;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Sheriff Patrol Uniform White";
+                            text = "Standard issued KCSO Sheriff Patrol Uniform White";
                         };
                         class AG_KCSO_Short_Col_White_Uni {
                             className = "AG_KCSO_Short_Col_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sheriff Patrol Uniform White Short Sleeve";
+                            displayName = "KCSO Sheriff Patrol Uniform White Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Sheriff Patrol Uniform White Short Sleeve";
+                            text = "Standard issued KCSO Sheriff Patrol Uniform White Short Sleeve";
                         };
                         class AG_KCSO_Long_Col_White_Uni {
                             className = "AG_KCSO_Long_Col_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sheriff Patrol Uniform White Long Sleeve";
+                            displayName = "KCSO Sheriff Patrol Uniform White Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Sheriff Patrol Uniform White Long Sleeve";
+                            text = "Standard issued KCSO Sheriff Patrol Uniform White Long Sleeve";
                         };
                         class AG_KCSO_Comm_Uni {
                             className = "AG_KCSO_Comm_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Commissioner Patrol Uniform";
+                            displayName = "KCSO Commissioner Patrol Uniform";
                             price = 550;
                             condition = "";
                             rank = "commissioner";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Commissioner Uniform";
+                            text = "Standard issued KCSO Commissioner Uniform";
                         };
                         class AG_KCSO_Short_Comm_Uni {
                             className = "AG_KCSO_Short_Comm_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Commissioner Patrol Uniform Short Sleeve";
+                            displayName = "KCSO Commissioner Patrol Uniform Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "commissioner";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Commissioner Uniform Short Sleeve";
+                            text = "Standard issued KCSO Commissioner Uniform Short Sleeve";
                         };
                         class AG_KCSO_Long_Comm_Uni {
                             className = "AG_KCSO_Long_Comm_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Commissioner Patrol Uniform Long Sleeve";
+                            displayName = "KCSO Commissioner Patrol Uniform Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "commissioner";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Commissioner Uniform Short Sleeve";
+                            text = "Standard issued KCSO Commissioner Uniform Short Sleeve";
                         };
                         class AG_KCSO_Comm_White_Uni {
                             className = "AG_KCSO_Comm_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Commissioner Patrol Uniform White";
+                            displayName = "KCSO Commissioner Patrol Uniform White";
                             price = 550;
                             condition = "";
                             rank = "commissioner";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Commissioner Uniform White";
+                            text = "Standard issued KCSO Commissioner Uniform White";
                         };
                         class AG_KCSO_Short_Comm_White_Uni {
                             className = "AG_KCSO_Short_Comm_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Commissioner Patrol Uniform White Short Sleeve";
+                            displayName = "KCSO Commissioner Patrol Uniform White Short Sleeve";
                             price = 550;
                             condition = "";
                             rank = "commissioner";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Commissioner Uniform White Short Sleeve";
+                            text = "Standard issued KCSO Commissioner Uniform White Short Sleeve";
                         };
                         class AG_KCSO_Long_Comm_White_Uni {
                             className = "AG_KCSO_Long_Comm_White_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Commissioner Patrol Uniform White Long Sleeve";
+                            displayName = "KCSO Commissioner Patrol Uniform White Long Sleeve";
                             price = 550;
                             condition = "";
                             rank = "commissioner";
-                            subdivisions[] = {"patrol"};
+                            subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard issued TCSD Commissioner Uniform Long Sleeve";
+                            text = "Standard issued KCSO Commissioner Uniform Long Sleeve";
                         };
                         class AG_KCSO_Beret {
                             className = "AG_KCSO_Beret";
                             itemType = "headgear";
-                            displayName = "TCSD Beret";
+                            displayName = "KCSO Beret";
                             price = 25;
                             condition = "";
                             rank = "deputy";
                             subdivisions[] = {};
                             rolePermissions[] = {};
-                            text = "Standard TCSD Beret";
+                            text = "Standard KCSO Beret";
                         };
                         class AG_KCSO_CampaignHat {
                             className = "AG_KCSO_CampaignHat";
                             itemType = "headgear";
-                            displayName = "TCSD Patrol Campaign Hat";
+                            displayName = "KCSO Patrol Campaign Hat";
                             price = 25;
                             condition = "";
                             rank = "deputy";
@@ -2114,7 +2974,7 @@ class Life_Shops {
                         class AG_KCSO_PatchCap {
                             className = "AG_KCSO_PatchCap";
                             itemType = "headgear";
-                            displayName = "TCSD Patrol Patch Cap";
+                            displayName = "KCSO Patrol Patch Cap";
                             price = 25;
                             condition = "";
                             rank = "cadet";
@@ -2125,7 +2985,7 @@ class Life_Shops {
                         class AG_KCSO_PatchCap_Alt {
                             className = "AG_KCSO_PatchCap_Alt";
                             itemType = "headgear";
-                            displayName = "TCSD Patrol Patch Cap Alt";
+                            displayName = "KCSO Patrol Patch Cap Alt";
                             price = 25;
                             condition = "";
                             rank = "cadet";
@@ -2136,7 +2996,7 @@ class Life_Shops {
                         class AG_Patrol_Belt_KCSO {
                             className = "AG_Patrol_Belt_KCSO";
                             itemType = "vest";
-                            displayName = "TCSD Patrol Belt";
+                            displayName = "KCSO Patrol Belt";
                             price = 20;
                             condition = "";
                             rank = "cadet";
@@ -2147,7 +3007,7 @@ class Life_Shops {
                         class AG_KCSO_CPC_Vest_Green {
                             className = "AG_KCSO_CPC_Vest_Green";
                             itemType = "vest";
-                            displayName = "TCSD CPC Tactical Vest";
+                            displayName = "KCSO CPC Tactical Vest";
                             price = 20;
                             condition = "";
                             rank = "deputy";
@@ -2158,7 +3018,7 @@ class Life_Shops {
                         class AG_JPC_Vest_KCSO_Green {
                             className = "AG_JPC_Vest_KCSO_Green";
                             itemType = "vest";
-                            displayName = "TCSD JPC Tactical Vest";
+                            displayName = "KCSO JPC Tactical Vest";
                             price = 1000;
                             condition = "";
                             rank = "deputy";
@@ -2169,7 +3029,7 @@ class Life_Shops {
                         class AG_KCSO_PatrolVest_Green {
                             className = "AG_KCSO_PatrolVest_Green";
                             itemType = "vest";
-                            displayName = "TCSD LBT Vest";
+                            displayName = "KCSO LBT Vest";
                             price = 1000;
                             condition = "";
                             rank = "senior_deputy";
@@ -2180,7 +3040,7 @@ class Life_Shops {
                         class AG_MMAC_Vest_KCSO_Green {
                             className = "AG_MMAC_Vest_KCSO_Green";
                             itemType = "vest";
-                            displayName = "TCSD MMAC Patrol Vest";
+                            displayName = "KCSO MMAC Patrol Vest";
                             price = 1000;
                             condition = "";
                             rank = "corporal";
@@ -2191,7 +3051,7 @@ class Life_Shops {
                         class AG_KCSO_Plate {
                             className = "AG_KCSO_Plate";
                             itemType = "vest";
-                            displayName = "TCSD Plate Carrier";
+                            displayName = "KCSO Plate Carrier";
                             price = 500;
                             condition = "";
                             rank = "cadet";
@@ -2213,1566 +3073,1566 @@ class Life_Shops {
                     };
                 };
 
-                class academy {
-                    title = "Training Academy";
-                    description = "Academy clothing and FTO-issued gear.";
+                class admin_services {
+                    title = "Admin Services";
+                    description = "Admin Services clothing and Trainer-issued gear.";
 
                     class Items {
                         class AG_AdminServices_PDeputy_Uni {
                             className = "AG_AdminServices_PDeputy_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Probationary Deputy Uniform";
+                            displayName = "Admin Services Probationary Deputy Uniform";
                             price = 25;
                             condition = "";
                             rank = "probationary_deputy";
-                            subdivisions[] = {"academy"};
-                            rolePermissions[] = {"leo.training.fto"};
-                            text = "Academy issued uniform for probationary deputies in training.";
+                            subdivisions[] = {"admin_services"};
+                            rolePermissions[] = {"leo.training.admin_services"};
+                            text = "Admin Services issued uniform for probationary deputies in training.";
                         };
                         class AG_AdminServices_Short_PDeputy_Uni {
                             className = "AG_AdminServices_Short_PDeputy_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Probationary Deputy Uniform Short Sleeve";
+                            displayName = "Admin Services Probationary Deputy Uniform Short Sleeve";
                             price = 25;
                             condition = "";
                             rank = "probationary_deputy";
-                            subdivisions[] = {"academy"};
-                            rolePermissions[] = {"leo.training.fto"};
-                            text = "Academy issued short sleeve uniform for probationary deputies in training.";
+                            subdivisions[] = {"admin_services"};
+                            rolePermissions[] = {"leo.training.admin_services"};
+                            text = "Admin Services issued short sleeve uniform for probationary deputies in training.";
                         };
                         class AG_AdminServices_Long_PDeputy_Uni {
                             className = "AG_AdminServices_Long_PDeputy_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Probationary Deputy Uniform Long Sleeve";
+                            displayName = "Admin Services Probationary Deputy Uniform Long Sleeve";
                             price = 25;
                             condition = "";
                             rank = "probationary_deputy";
-                            subdivisions[] = {"academy"};
-                            rolePermissions[] = {"leo.training.fto"};
-                            text = "Academy issued long sleeve uniform for probationary deputies in training.";
+                            subdivisions[] = {"admin_services"};
+                            rolePermissions[] = {"leo.training.admin_services"};
+                            text = "Admin Services issued long sleeve uniform for probationary deputies in training.";
                         };
                         class AG_AdminService_PDeputy_Sweater {
                             className = "AG_AdminService_PDeputy_Sweater";
                             itemType = "uniform";
-                            displayName = "Academy Probationary Deputy Sweater Uniform";
+                            displayName = "Admin Services Probationary Deputy Sweater Uniform";
                             price = 25;
                             condition = "";
                             rank = "probationary_deputy";
-                            subdivisions[] = {"academy"};
-                            rolePermissions[] = {"leo.training.fto"};
-                            text = "Academy issued sweater uniform for probationary deputies in training.";
+                            subdivisions[] = {"admin_services"};
+                            rolePermissions[] = {"leo.training.admin_services"};
+                            text = "Admin Services issued sweater uniform for probationary deputies in training.";
                         };
                         class AG_AdminServices_Deputy_Uni {
                             className = "AG_AdminServices_Deputy_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Deputy Uniform";
+                            displayName = "Admin Services Deputy Uniform";
                             price = 25;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"academy"};
-                            rolePermissions[] = {"leo.training.fto"};
-                            text = "Academy issued uniform for qualified FTOs.";
+                            subdivisions[] = {"admin_services"};
+                            rolePermissions[] = {"leo.training.admin_services"};
+                            text = "Admin Services issued uniform for qualified trainers.";
                         };
                         class AG_AdminServices_Short_Deputy_Uni {
                             className = "AG_AdminServices_Short_Deputy_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Deputy Short Sleeve Uniform";
+                            displayName = "Admin Services Deputy Short Sleeve Uniform";
                             price = 25;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"academy"};
-                            rolePermissions[] = {"leo.training.fto"};
-                            text = "Academy issued short sleeve uniform for qualified FTOs.";
+                            subdivisions[] = {"admin_services"};
+                            rolePermissions[] = {"leo.training.admin_services"};
+                            text = "Admin Services issued short sleeve uniform for qualified trainers.";
                         };
                         class AG_AdminServices_Long_Deputy_Uni {
                             className = "AG_AdminServices_Long_Deputy_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Deputy Long Sleeve Uniform";
+                            displayName = "Admin Services Deputy Long Sleeve Uniform";
                             price = 50;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued long sleeve uniform for qualified FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued long sleeve uniform for qualified trainers.";
                         };
                         class AG_AdminService_Deputy_Sweater {
                             className = "AG_AdminService_Deputy_Sweater";
                             itemType = "uniform";
-                            displayName = "Academy Deputy Sweater Uniform";
+                            displayName = "Admin Services Deputy Sweater Uniform";
                             price = 25;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"academy"};
-                            rolePermissions[] = {"leo.training.fto"};
-                            text = "Academy issued sweater uniform for qualified FTOs.";
+                            subdivisions[] = {"admin_services"};
+                            rolePermissions[] = {"leo.training.admin_services"};
+                            text = "Admin Services issued sweater uniform for qualified trainers.";
                         };
                         class AG_AdminServices_SnrDeputy_Uni {
                             className = "AG_AdminServices_SnrDeputy_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Senior Deputy FTO Uniform";
+                            displayName = "Admin Services Senior Deputy Trainer Uniform";
                             price = 50;
                             condition = "";
                             rank = "senior_deputy";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued uniform for qualified Senior Deputy FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued uniform for qualified Senior Deputy trainers.";
                         };
                         class AG_AdminServices_Short_SnrDeputy_Uni {
                             className = "AG_AdminServices_Short_SnrDeputy_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Senior Deputy FTO Uniform Short Sleeve";
+                            displayName = "Admin Services Senior Deputy Trainer Uniform Short Sleeve";
                             price = 50;
                             condition = "";
                             rank = "senior_deputy";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued short sleeve uniform for qualified Senior Deputy FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued short sleeve uniform for qualified Senior Deputy trainers.";
                         };
                         class AG_AdminServices_Long_SnrDeputy_Uni {
                             className = "AG_AdminServices_Long_SnrDeputy_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Senior Deputy FTO Uniform Long Sleeve";
+                            displayName = "Admin Services Senior Deputy Trainer Uniform Long Sleeve";
                             price = 50;
                             condition = "";
                             rank = "senior_deputy";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued long sleeve uniform for qualified Senior Deputy FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued long sleeve uniform for qualified Senior Deputy trainers.";
                         };
                         class AG_AdminServices_Corporal_Uni {
                             className = "AG_AdminServices_Corporal_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Corporal FTO Uniform";
+                            displayName = "Admin Services Corporal Trainer Uniform";
                             price = 50;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued uniform for qualified Corporal FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued uniform for qualified Corporal trainers.";
                         };
                         class AG_AdminServices_Short_Corporal_Uni {
                             className = "AG_AdminServices_Short_Corporal_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Corporal FTO Uniform Short Sleeve";
+                            displayName = "Admin Services Corporal Trainer Uniform Short Sleeve";
                             price = 50;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued short sleeve uniform for qualified Corporal FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued short sleeve uniform for qualified Corporal trainers.";
                         };
                         class AG_AdminServices_Long_Corporal_Uni {
                             className = "AG_AdminServices_Long_Corporal_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Corporal FTO Uniform Long Sleeve";
+                            displayName = "Admin Services Corporal Trainer Uniform Long Sleeve";
                             price = 50;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued long sleeve uniform for qualified Corporal FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued long sleeve uniform for qualified Corporal trainers.";
                         };
                         class AG_AdminService_Corporal_Sweater {
                             className = "AG_AdminService_Corporal_Sweater";
                             itemType = "uniform";
-                            displayName = "Academy Corporal FTO Sweater Uniform";
+                            displayName = "Admin Services Corporal Trainer Sweater Uniform";
                             price = 50;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued sweater uniform for qualified Corporal FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued sweater uniform for qualified Corporal trainers.";
                         };
                         class AG_AdminServices_Sergeant_White_Uni {
                             className = "AG_AdminServices_Sergeant_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Sergeant FTO White Uniform";
+                            displayName = "Admin Services Sergeant Trainer White Uniform";
                             price = 50;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white uniform for qualified Sergeant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white uniform for qualified Sergeant trainers.";
                         };
                         class AG_AdminServices_Short_Sergeant_White_Uni {
                             className = "AG_AdminServices_Short_Sergeant_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Sergeant FTO White Uniform Short Sleeve";
+                            displayName = "Admin Services Sergeant Trainer White Uniform Short Sleeve";
                             price = 50;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white short sleeve uniform for qualified Sergeant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white short sleeve uniform for qualified Sergeant trainers.";
                         };
                         class AG_AdminServices_Long_Sergeant_White_Uni {
                             className = "AG_AdminServices_Long_Sergeant_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Sergeant FTO White Uniform Long Sleeve";
+                            displayName = "Admin Services Sergeant Trainer White Uniform Long Sleeve";
                             price = 50;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white long sleeve uniform for qualified Sergeant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white long sleeve uniform for qualified Sergeant trainers.";
                         };
                         class AG_AdminServices_Short_Sergeant_Uni {
                             className = "AG_AdminServices_Short_Sergeant_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Sergeant FTO Uniform Short Sleeve";
+                            displayName = "Admin Services Sergeant Trainer Uniform Short Sleeve";
                             price = 50;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued short sleeve uniform for qualified Sergeant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued short sleeve uniform for qualified Sergeant trainers.";
                         };
                         class AG_AdminServices_Long_Sergeant_Uni {
                             className = "AG_AdminServices_Long_Sergeant_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Sergeant FTO Uniform Long Sleeve";
+                            displayName = "Admin Services Sergeant Trainer Uniform Long Sleeve";
                             price = 50;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued long sleeve uniform for qualified Sergeant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued long sleeve uniform for qualified Sergeant trainers.";
                         };
                         class AG_AdminService_Sergeant_Sweater {
                             className = "AG_AdminService_Sergeant_Sweater";
                             itemType = "uniform";
-                            displayName = "Academy Sergeant FTO Sweater Uniform";
+                            displayName = "Admin Services Sergeant Trainer Sweater Uniform";
                             price = 50;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued sweater uniform for qualified Sergeant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued sweater uniform for qualified Sergeant trainers.";
                         };
                         class AG_AdminServices_Lieutenant_White_Uni {
                             className = "AG_AdminServices_Lieutenant_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Lieutenant FTO White Uniform";
+                            displayName = "Admin Services Lieutenant Trainer White Uniform";
                             price = 50;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white uniform for qualified Lieutenant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white uniform for qualified Lieutenant trainers.";
                         };
                         class AG_AdminServices_Short_Lieutenant_White_Uni {
                             className = "AG_AdminServices_Short_Lieutenant_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Lieutenant FTO White Uniform Short Sleeve";
+                            displayName = "Admin Services Lieutenant Trainer White Uniform Short Sleeve";
                             price = 50;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white short sleeve uniform for qualified Lieutenant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white short sleeve uniform for qualified Lieutenant trainers.";
                         };
                         class AG_AdminServices_Long_Lieutenant_White_Uni {
                             className = "AG_AdminServices_Long_Lieutenant_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Lieutenant FTO White Uniform Long Sleeve";
+                            displayName = "Admin Services Lieutenant Trainer White Uniform Long Sleeve";
                             price = 50;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white long sleeve uniform for qualified Lieutenant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white long sleeve uniform for qualified Lieutenant trainers.";
                         };
                         class AG_AdminServices_Lieutenant_Uni {
                             className = "AG_AdminServices_Lieutenant_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Lieutenant FTO Uniform";
+                            displayName = "Admin Services Lieutenant Trainer Uniform";
                             price = 50;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued uniform for qualified Lieutenant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued uniform for qualified Lieutenant trainers.";
                         };
                         class AG_AdminServices_Short_Lieutenant_Uni {
                             className = "AG_AdminServices_Short_Lieutenant_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Lieutenant FTO Uniform Short Sleeve";
+                            displayName = "Admin Services Lieutenant Trainer Uniform Short Sleeve";
                             price = 50;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued short sleeve uniform for qualified Lieutenant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued short sleeve uniform for qualified Lieutenant trainers.";
                         };
                         class AG_AdminServices_Long_Lieutenant_Uni {
                             className = "AG_AdminServices_Long_Lieutenant_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Lieutenant FTO Uniform Long Sleeve";
+                            displayName = "Admin Services Lieutenant Trainer Uniform Long Sleeve";
                             price = 50;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued long sleeve uniform for qualified Lieutenant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued long sleeve uniform for qualified Lieutenant trainers.";
                         };
                         class AG_AdminService_Lieutenant_Sweater {
                             className = "AG_AdminService_Lieutenant_Sweater";
                             itemType = "uniform";
-                            displayName = "Academy Lieutenant FTO Sweater Uniform";
+                            displayName = "Admin Services Lieutenant Trainer Sweater Uniform";
                             price = 50;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued sweater uniform for qualified Lieutenant FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued sweater uniform for qualified Lieutenant trainers.";
                         };
                         class AG_AdminServices_Captain_Uni {
                             className = "AG_AdminServices_Captain_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Captain FTO Uniform";
+                            displayName = "Admin Services Captain Trainer Uniform";
                             price = 50;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued uniform for qualified Captain FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued uniform for qualified Captain trainers.";
                         };
                         class AG_AdminServices_Short_Captain_Uni {
                             className = "AG_AdminServices_Short_Captain_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Captain FTO Uniform Short Sleeve";
+                            displayName = "Admin Services Captain Trainer Uniform Short Sleeve";
                             price = 50;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued short sleeve uniform for qualified Captain FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued short sleeve uniform for qualified Captain trainers.";
                         };
                         class AG_AdminServices_Long_Captain_Uni {
                             className = "AG_AdminServices_Long_Captain_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Captain FTO Uniform Long Sleeve";
+                            displayName = "Admin Services Captain Trainer Uniform Long Sleeve";
                             price = 50;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued long sleeve uniform for qualified Captain FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued long sleeve uniform for qualified Captain trainers.";
                         };
                         class AG_AdminService_Captain_Sweater {
                             className = "AG_AdminService_Captain_Sweater";
                             itemType = "uniform";
-                            displayName = "Academy Captain FTO Sweater Uniform";
+                            displayName = "Admin Services Captain Trainer Sweater Uniform";
                             price = 50;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued sweater uniform for qualified Captain FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued sweater uniform for qualified Captain trainers.";
                         };
                         class AG_AdminServices_Captain_White_Uni {
                             className = "AG_AdminServices_Captain_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Captain FTO White Uniform";
+                            displayName = "Admin Services Captain Trainer White Uniform";
                             price = 50;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white uniform for qualified Captain FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white uniform for qualified Captain trainers.";
                         };
                         class AG_AdminServices_Short_Captain_White_Uni {
                             className = "AG_AdminServices_Short_Captain_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Captain FTO White Uniform Short Sleeve";
+                            displayName = "Admin Services Captain Trainer White Uniform Short Sleeve";
                             price = 50;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white short sleeve uniform for qualified Captain FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white short sleeve uniform for qualified Captain trainers.";
                         };
                         class AG_AdminServices_Long_Captain_White_Uni {
                             className = "AG_AdminServices_Long_Captain_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Captain FTO White Uniform Long Sleeve";
+                            displayName = "Admin Services Captain Trainer White Uniform Long Sleeve";
                             price = 50;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white long sleeve uniform for qualified Captain FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white long sleeve uniform for qualified Captain trainers.";
                         };
                         class AG_AdminServices_Major_Uni {
                             className = "AG_AdminServices_Major_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Major FTO Uniform";
+                            displayName = "Admin Services Major Trainer Uniform";
                             price = 50;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued uniform for qualified Major FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued uniform for qualified Major trainers.";
                         };
                         class AG_AdminServices_Short_Major_Uni {
                             className = "AG_AdminServices_Short_Major_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Major FTO Uniform Short Sleeve";
+                            displayName = "Admin Services Major Trainer Uniform Short Sleeve";
                             price = 50;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued short sleeve uniform for qualified Major FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued short sleeve uniform for qualified Major trainers.";
                         };
                         class AG_AdminServices_Long_Major_Uni {
                             className = "AG_AdminServices_Long_Major_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Major FTO Uniform Long Sleeve";
+                            displayName = "Admin Services Major Trainer Uniform Long Sleeve";
                             price = 50;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued long sleeve uniform for qualified Major FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued long sleeve uniform for qualified Major trainers.";
                         };
                         class AG_AdminServices_Major_White_Uni {
                             className = "AG_AdminServices_Major_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Major FTO White Uniform";
+                            displayName = "Admin Services Major Trainer White Uniform";
                             price = 50;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white uniform for qualified Major FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white uniform for qualified Major trainers.";
                         };
                         class AG_AdminServices_Short_Major_White_Uni {
                             className = "AG_AdminServices_Short_Major_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Major FTO White Uniform Short Sleeve";
+                            displayName = "Admin Services Major Trainer White Uniform Short Sleeve";
                             price = 50;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white short sleeve uniform for qualified Major FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white short sleeve uniform for qualified Major trainers.";
                         };
                         class AG_AdminServices_Long_Major_White_Uni {
                             className = "AG_AdminServices_Long_Major_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Major FTO White Uniform";
+                            displayName = "Admin Services Major Trainer White Uniform";
                             price = 50;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white long sleeve uniform for qualified Major FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white long sleeve uniform for qualified Major trainers.";
                         };
                         class AG_AdminServices_LtCol_Uni {
                             className = "AG_AdminServices_LtCol_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Undersheriff FTO Uniform";
+                            displayName = "Admin Services Undersheriff Trainer Uniform";
                             price = 50;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued uniform for qualified Undersheriff FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued uniform for qualified Undersheriff trainers.";
                         };
                         class AG_AdminServices_Short_LtCol_Uni {
                             className = "AG_AdminServices_Short_LtCol_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Undersheriff FTO Uniform Short Sleeve";
+                            displayName = "Admin Services Undersheriff Trainer Uniform Short Sleeve";
                             price = 50;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued short sleeve uniform for qualified Undersheriff FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued short sleeve uniform for qualified Undersheriff trainers.";
                         };
                         class AG_AdminServices_LtCol_White_Uni {
                             className = "AG_AdminServices_LtCol_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Undersheriff FTO White Uniform";
+                            displayName = "Admin Services Undersheriff Trainer White Uniform";
                             price = 50;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white uniform for qualified Undersheriff FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white uniform for qualified Undersheriff trainers.";
                         };
                         class AG_AdminServices_Short_LtCol_White_Uni {
                             className = "AG_AdminServices_Short_LtCol_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Undersheriff FTO White Uniform Short Sleeve";
+                            displayName = "Admin Services Undersheriff Trainer White Uniform Short Sleeve";
                             price = 50;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white short sleeve uniform for qualified Undersheriff FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white short sleeve uniform for qualified Undersheriff trainers.";
                         };
                         class AG_AdminServices_Long_LtCol_White_Uni {
                             className = "AG_AdminServices_Long_LtCol_White_Uni";
                             itemType = "uniform";
-                            displayName = "Academy Undersheriff FTO White Uniform Long Sleeve";
+                            displayName = "Admin Services Undersheriff Trainer White Uniform Long Sleeve";
                             price = 50;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued white long sleeve uniform for qualified Undersheriff FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued white long sleeve uniform for qualified Undersheriff trainers.";
                         };
                         class AG_AdminServices_Plate {
                             className = "AG_AdminServices_Plate";
                             itemType = "vest";
-                            displayName = "Academy FTO Plate Carrier";
+                            displayName = "Admin Services Trainer Plate Carrier";
                             price = 55;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"academy"};
-                            rolePermissions[] = {"leo.training.fto"};
-                            text = "Academy issued plate carrier for qualified FTOs.";
+                            subdivisions[] = {"admin_services"};
+                            rolePermissions[] = {"leo.training.admin_services"};
+                            text = "Admin Services issued plate carrier for qualified trainers.";
                         };
                         class AG_AdminServices_PatchCap {
                             className = "AG_AdminServices_PatchCap";
                             itemType = "headgear";
-                            displayName = "Academy FTO Patch Cap";
+                            displayName = "Admin Services Trainer Patch Cap";
                             price = 10;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued patch cap for qualified FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued patch cap for qualified trainers.";
                         };
                         class AG_JPC_Vest_Admin {
                             className = "AG_JPC_Vest_Admin";
                             itemType = "uniform";
-                            displayName = "Academy FTO JPC Vest";
+                            displayName = "Admin Services Trainer JPC Vest";
                             price = 50;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued JPC vest for qualified FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued JPC vest for qualified trainers.";
                         };
                         class AG_AdminServices_CPC_Vest {
                             className = "AG_AdminServices_CPC_Vest";
                             itemType = "vest";
-                            displayName = "Academy FTO CPC Vest";
+                            displayName = "Admin Services Trainer CPC Vest";
                             price = 50;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued CPC vest for qualified FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued CPC vest for qualified trainers.";
                         };
                         class AG_AdminServices_PatrolVest {
                             className = "AG_AdminServices_PatrolVest";
                             itemType = "vest";
-                            displayName = "Academy FTO Patrol Vest";
+                            displayName = "Admin Services Trainer Patrol Vest";
                             price = 50;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued patrol vest for qualified FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued patrol vest for qualified trainers.";
                         };
                         class AG_MMAC_Vest_Admin {
                             className = "AG_MMAC_Vest_Admin";
                             itemType = "vest";
-                            displayName = "Academy FTO MMAC Vest";
+                            displayName = "Admin Services Trainer MMAC Vest";
                             price = 50;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued MMAC vest for qualified FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued MMAC vest for qualified trainers.";
                         };
                         class AG_AdminServices_VestCombo {
                             className = "AG_AdminServices_VestCombo";
                             itemType = "vest";
-                            displayName = "Academy FTO Vest Combo";
+                            displayName = "Admin Services Trainer Vest Combo";
                             price = 50;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued vest combo for qualified FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued vest combo for qualified trainers.";
                         };
                         class AG_AdminServices_VestCombo2 {
                             className = "AG_AdminServices_VestCombo2";
                             itemType = "vest";
-                            displayName = "Academy FTO Vest Combo";
+                            displayName = "Admin Services Trainer Vest Combo";
                             price = 50;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued vest combo for qualified FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued vest combo for qualified trainers.";
                         };
                         class AG_AdminServices_VestCombo3 {
                             className = "AG_AdminServices_VestCombo3";
                             itemType = "vest";
-                            displayName = "Academy FTO Vest Combo";
+                            displayName = "Admin Services Trainer Vest Combo";
                             price = 50;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = { "academy" };
-                            rolePermissions[] = { "leo.training.fto" };
-                            text = "Academy issued vest combo for qualified FTOs.";
+                            subdivisions[] = { "admin_services" };
+                            rolePermissions[] = { "leo.training.admin_services" };
+                            text = "Admin Services issued vest combo for qualified trainers.";
                         };
                         class AG_AdminServices_Beret {
                             className = "AG_AdminServices_Beret";
                             itemType = "headgear";
-                            displayName = "Academy FTO Beret";
+                            displayName = "Admin Services Trainer Beret";
                             price = 100;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"academy"};
+                            subdivisions[] = {"admin_services"};
                             rolePermissions[] = {};
-                            text = "Academy issued beret for qualified FTOs.";
+                            text = "Admin Services issued beret for qualified trainers.";
                         };
                         class AG_AdminServices_CampaignHat {
                             className = "AG_AdminServices_CampaignHat";
                             itemType = "headgear";
-                            displayName = "Academy FTO Campaign Hat";
+                            displayName = "Admin Services Trainer Campaign Hat";
                             price = 100;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"academy"};
+                            subdivisions[] = {"admin_services"};
                             rolePermissions[] = {};
-                            text = "Academy issued campaign hat for qualified FTOs.";
+                            text = "Admin Services issued campaign hat for qualified trainers.";
                         };
                         class AG_AdminServices_PatchCap_Back {
                             className = "AG_AdminServices_PatchCap_Back";
                             itemType = "headgear";
-                            displayName = "Academy FTO Patch Cap (Back)";
+                            displayName = "Admin Services Trainer Patch Cap (Back)";
                             price = 100;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"academy"};
+                            subdivisions[] = {"admin_services"};
                             rolePermissions[] = {};
-                            text = "Academy issued patch cap for qualified FTOs.";
+                            text = "Admin Services issued patch cap for qualified trainers.";
                         };
                         class AG_AdminServices_PatchCapAlt {
                             className = "AG_AdminServices_PatchCapAlt";
                             itemType = "headgear";
-                            displayName = "Academy FTO Patch Cap (Alt)";
+                            displayName = "Admin Services Trainer Patch Cap (Alt)";
                             price = 100;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"academy"};
+                            subdivisions[] = {"admin_services"};
                             rolePermissions[] = {};
-                            text = "Academy issued patch cap for qualified FTOs.";
+                            text = "Admin Services issued patch cap for qualified trainers.";
                         };
                         class AG_AdminServices_PatchCapAlt_Back {
                             className = "AG_AdminServices_PatchCapAlt_Back";
                             itemType = "headgear";
-                            displayName = "Academy FTO Patch Cap (Alt Back)";
+                            displayName = "Admin Services Trainer Patch Cap (Alt Back)";
                             price = 100;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"academy"};
+                            subdivisions[] = {"admin_services"};
                             rolePermissions[] = {};
-                            text = "Academy issued patch cap for qualified FTOs.";
+                            text = "Admin Services issued patch cap for qualified trainers.";
                         };
                     };
                 };
 
-                class hse {
-                    title = "TCSD Speed Enforcement";
-                    description = "Speed Enforcement clothing and equipment for TCSD deputies.";
+                class hsu {
+                    title = "KCSO Speed Enforcement";
+                    description = "Speed Enforcement clothing and equipment for KCSO deputies.";
 
                     class Items {
                         class AG_FactionInvPack {
                             className = "AG_FactionInvPack";
                             itemType = "backpack";
-                            displayName = "TCSD Faction Inventory Pack";
+                            displayName = "KCSO Faction Inventory Pack";
                             price = 100;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Faction inventory pack for TCSD deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Faction inventory pack for KCSO deputies.";
                         };
                         class AG_HSU_Biker_Uni {
                             className = "AG_HSU_Biker_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Biker Uniform";
+                            displayName = "KCSO Biker Uniform";
                             price = 100;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
                             text = "Traffic enforcement motor unit uniform";
                         };
                         class AG_HSU_Trooper_Uni {
                             className = "AG_HSU_Trooper_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Deputy Uniform";
+                            displayName = "HSU Deputy Uniform";
                             price = 500;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement uniform for TCSD deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement uniform for KCSO deputies.";
                         };
                         class AG_HSU_Short_Trooper_Uni {
                             className = "AG_HSU_Short_Trooper_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Deputy Uniform Short Sleeve";
+                            displayName = "HSU Deputy Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement short sleeve uniform for TCSD deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement short sleeve uniform for KCSO deputies.";
                         };
                         class AG_HSU_SnrTrooper_Uni {
                             className = "AG_HSU_SnrTrooper_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Senior Deputy Uniform";
+                            displayName = "HSU Senior Deputy Uniform";
                             price = 500;
                             condition = "";
                             rank = "senior_deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement uniform for TCSD senior deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement uniform for KCSO senior deputies.";
                         };
                         class AG_HSU_Short_SnrTrooper_Uni {
                             className = "AG_HSU_Short_SnrTrooper_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Senior Deputy Uniform Short Sleeve";
+                            displayName = "HSU Senior Deputy Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "senior_deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement short sleeve uniform for TCSD senior deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement short sleeve uniform for KCSO senior deputies.";
                         };
                         class AG_HSU_Long_SnrTrooper_Uni {
                             className = "AG_HSU_Long_SnrTrooper_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Senior Deputy Uniform Long Sleeve";
+                            displayName = "HSU Senior Deputy Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "senior_deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement long sleeve uniform for TCSD senior deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement long sleeve uniform for KCSO senior deputies.";
                         };
                         class AG_HSU_Corporal_Uni {
                             className = "AG_HSU_Corporal_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Corporal Uniform";
+                            displayName = "HSU Corporal Uniform";
                             price = 500;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement uniform for TCSD corporals.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement uniform for KCSO corporals.";
                         };
                         class AG_HSU_Short_Corporal_Uni {
                             className = "AG_HSU_Short_Corporal_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Corporal Uniform Short Sleeve";
+                            displayName = "HSU Corporal Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement short sleeve uniform for TCSD corporals.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement short sleeve uniform for KCSO corporals.";
                         };
                         class AG_HSU_Long_Corporal_Uni {
                             className = "AG_HSU_Long_Corporal_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Corporal Uniform Long Sleeve";
+                            displayName = "HSU Corporal Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement long sleeve uniform for TCSD corporals.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement long sleeve uniform for KCSO corporals.";
                         };
                         class AG_HSU_Sergeant_Uni {
                             className = "AG_HSU_Sergeant_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Sergeant Uniform";
+                            displayName = "HSU Sergeant Uniform";
                             price = 500;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement uniform for TCSD sergeants.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement uniform for KCSO sergeants.";
                         };
                         class AG_HSU_Short_Sergeant_Uni {
                             className = "AG_HSU_Short_Sergeant_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Sergeant Uniform Short Sleeve";
+                            displayName = "HSU Sergeant Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement uniform for TCSD sergeants.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement uniform for KCSO sergeants.";
                         };
                         class AG_HSU_Long_Sergeant_Uni {
                             className = "AG_HSU_Long_Sergeant_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Sergeant Uniform Long Sleeve";
+                            displayName = "HSU Sergeant Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement Long Sleeve uniform for TCSD sergeants.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement Long Sleeve uniform for KCSO sergeants.";
                         };
                         class AG_HSU_Sergeant_White_Uni {
                             className = "AG_HSU_Sergeant_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Sergeant White Uniform";
+                            displayName = "HSU Sergeant White Uniform";
                             price = 500;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white uniform for TCSD sergeants.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white uniform for KCSO sergeants.";
                         };
                         class AG_HSU_Short_Sergeant_White_Uni {
                             className = "AG_HSU_Short_Sergeant_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Sergeant White Uniform Short Sleeve";
+                            displayName = "HSU Sergeant White Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white short sleeve uniform for TCSD sergeants.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white short sleeve uniform for KCSO sergeants.";
                         };
                         class AG_HSU_Long_Sergeant_White_Uni {
                             className = "AG_HSU_Long_Sergeant_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Sergeant White Uniform Long Sleeve";
+                            displayName = "HSU Sergeant White Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white long sleeve uniform for TCSD sergeants.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white long sleeve uniform for KCSO sergeants.";
                         };
                         class AG_HSU_Lieutenant_Uni {
                             className = "AG_HSU_Lieutenant_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Lieutenant Uniform";
+                            displayName = "HSU Lieutenant Uniform";
                             price = 500;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement uniform for TCSD lieutenants.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement uniform for KCSO lieutenants.";
                         };
                         class AG_HSU_Short_Lieutenant_Uni {
                             className = "AG_HSU_Short_Lieutenant_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Lieutenant Uniform Short Sleeve";
+                            displayName = "HSU Lieutenant Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement short sleeve uniform for TCSD lieutenants.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement short sleeve uniform for KCSO lieutenants.";
                         };
                         class AG_HSU_Long_Lieutenant_Uni {
                             className = "AG_HSU_Long_Lieutenant_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Lieutenant Uniform Long Sleeve";
+                            displayName = "HSU Lieutenant Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement long sleeve uniform for TCSD lieutenants.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement long sleeve uniform for KCSO lieutenants.";
                         };
                         class AG_HSU_Lieutenant_White_Uni {
                             className = "AG_HSU_Lieutenant_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Lieutenant White Uniform";
+                            displayName = "HSU Lieutenant White Uniform";
                             price = 500;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white uniform for TCSD lieutenants.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white uniform for KCSO lieutenants.";
                         };
                         class AG_HSU_Short_Lieutenant_White_Uni {
                             className = "AG_HSU_Short_Lieutenant_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Lieutenant White Uniform Short Sleeve";
+                            displayName = "HSU Lieutenant White Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white short sleeve uniform for TCSD lieutenants.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white short sleeve uniform for KCSO lieutenants.";
                         };
                         class AG_HSU_Long_Lieutenant_White_Uni {
                             className = "AG_HSU_Long_Lieutenant_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Lieutenant White Uniform Long Sleeve";
+                            displayName = "HSU Lieutenant White Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white long sleeve uniform for TCSD lieutenants.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white long sleeve uniform for KCSO lieutenants.";
                         };
                         class AG_HSU_Captain_Uni {
                             className = "AG_HSU_Captain_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Captain Uniform";
+                            displayName = "HSU Captain Uniform";
                             price = 500;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement uniform for TCSD captains.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement uniform for KCSO captains.";
                         };
                         class AG_HSU_Short_Captain_Uni {
                             className = "AG_HSU_Short_Captain_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Captain Uniform Short Sleeve";
+                            displayName = "HSU Captain Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement short sleeve uniform for TCSD captains.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement short sleeve uniform for KCSO captains.";
                         };
                         class AG_HSU_Long_Captain_Uni {
                             className = "AG_HSU_Long_Captain_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Captain Uniform Long Sleeve";
+                            displayName = "HSU Captain Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement long sleeve uniform for TCSD captains.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement long sleeve uniform for KCSO captains.";
                         };
                         class AG_HSU_Captain_White_Uni {
                             className = "AG_HSU_Captain_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Captain White Uniform";
+                            displayName = "HSU Captain White Uniform";
                             price = 500;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white uniform for TCSD captains.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white uniform for KCSO captains.";
                         };
                         class AG_HSU_Short_Captain_White_Uni {
                             className = "AG_HSU_Short_Captain_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Captain White Uniform Short Sleeve";
+                            displayName = "HSU Captain White Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white short sleeve uniform for TCSD captains.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white short sleeve uniform for KCSO captains.";
                         };
                         class AG_HSU_Long_Captain_White_Uni {
                             className = "AG_HSU_Long_Captain_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Captain White Uniform Long Sleeve";
+                            displayName = "HSU Captain White Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white long sleeve uniform for TCSD captains.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white long sleeve uniform for KCSO captains.";
                         };
                         class AG_HSU_Major_Uni {
                             className = "AG_HSU_Major_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Major Uniform";
+                            displayName = "HSU Major Uniform";
                             price = 500;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement uniform for TCSD majors.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement uniform for KCSO majors.";
                         };
                         class AG_HSU_Short_Major_Uni {
                             className = "AG_HSU_Short_Major_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Major Uniform Short Sleeve";
+                            displayName = "HSU Major Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement short sleeve uniform for TCSD majors.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement short sleeve uniform for KCSO majors.";
                         };
                         class AG_HSU_Long_Major_Uni {
                             className = "AG_HSU_Long_Major_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Major Uniform Long Sleeve";
+                            displayName = "HSU Major Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement long sleeve uniform for TCSD majors.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement long sleeve uniform for KCSO majors.";
                         };
                         class AG_HSU_Major_White_Uni {
                             className = "AG_HSU_Major_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Major White Uniform";
+                            displayName = "HSU Major White Uniform";
                             price = 500;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white uniform for TCSD majors.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white uniform for KCSO majors.";
                         };
                         class AG_HSU_Short_Major_White_Uni {
                             className = "AG_HSU_Short_Major_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Major White Uniform Short Sleeve";
+                            displayName = "HSU Major White Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white short sleeve uniform for TCSD majors.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white short sleeve uniform for KCSO majors.";
                         };
                         class AG_HSU_Long_Major_White_Uni {
                             className = "AG_HSU_Long_Major_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Major White Uniform Long Sleeve";
+                            displayName = "HSU Major White Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "major";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white long sleeve uniform for TCSD majors.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white long sleeve uniform for KCSO majors.";
                         };
                         class AG_HSU_LtCol_Uni {
                             className = "AG_HSU_LtCol_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Undersheriff Uniform";
+                            displayName = "HSU Undersheriff Uniform";
                             price = 500;
                             condition = "";
                             rank = "undersheriff";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement uniform for TCSD undersheriffs.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement uniform for KCSO undersheriffs.";
                         };
                         class AG_HSU_Short_LtCol_Uni {
                             className = "AG_HSU_Short_LtCol_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Undersheriff Uniform Short Sleeve";
+                            displayName = "HSU Undersheriff Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "undersheriff";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement short sleeve uniform for TCSD undersheriffs.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement short sleeve uniform for KCSO undersheriffs.";
                         };
                         class AG_HSU_Long_LtCol_Uni {
                             className = "AG_HSU_Long_LtCol_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Undersheriff Uniform Long Sleeve";
+                            displayName = "HSU Undersheriff Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "undersheriff";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement long sleeve uniform for TCSD undersheriffs.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement long sleeve uniform for KCSO undersheriffs.";
                         };
                         class AG_HSU_LtCol_White_Uni {
                             className = "AG_HSU_LtCol_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Undersheriff White Uniform";
+                            displayName = "HSU Undersheriff White Uniform";
                             price = 500;
                             condition = "";
                             rank = "undersheriff";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white uniform for TCSD undersheriffs.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white uniform for KCSO undersheriffs.";
                         };
                         class AG_HSU_Short_LtCol_White_Uni {
                             className = "AG_HSU_Short_LtCol_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Undersheriff Uniform Short Sleeve";
+                            displayName = "HSU Undersheriff Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "undersheriff";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white short sleeve uniform for TCSD undersheriffs.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white short sleeve uniform for KCSO undersheriffs.";
                         };
                         class AG_HSU_Long_LtCol_White_Uni {
                             className = "AG_HSU_Long_LtCol_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Undersheriff Uniform Long Sleeve";
+                            displayName = "HSU Undersheriff Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "undersheriff";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white long sleeve uniform for TCSD undersheriffs.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white long sleeve uniform for KCSO undersheriffs.";
                         };
                         class AG_HSU_Col_Uni {
                             className = "AG_HSU_Col_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Sheriff Uniform";
+                            displayName = "HSU Sheriff Uniform";
                             price = 500;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement uniform for TCSD sheriffs.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement uniform for KCSO sheriffs.";
                         };
                         class AG_HSU_Short_Col_Uni {
                             className = "AG_HSU_Short_Col_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Sheriff Uniform Short Sleeve";
+                            displayName = "HSU Sheriff Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement short sleeve uniform for TCSD sheriffs.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement short sleeve uniform for KCSO sheriffs.";
                         };
                         class AG_HSU_Long_Col_Uni {
                             className = "AG_HSU_Long_Col_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Sheriff Uniform Long Sleeve";
+                            displayName = "HSU Sheriff Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement long sleeve uniform for TCSD sheriffs.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement long sleeve uniform for KCSO sheriffs.";
                         };
                         class AG_HSU_Col_White_Uni {
                             className = "AG_HSU_Col_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Sheriff White Uniform";
+                            displayName = "HSU Sheriff White Uniform";
                             price = 500;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white uniform for TCSD sheriffs.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white uniform for KCSO sheriffs.";
                         };
                         class AG_HSU_Short_Col_White_Uni {
                             className = "AG_HSU_Short_Col_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Sheriff White Uniform Short Sleeve";
+                            displayName = "HSU Sheriff White Uniform Short Sleeve";
                             price = 500;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white short sleeve uniform for TCSD sheriffs.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white short sleeve uniform for KCSO sheriffs.";
                         };
                         class AG_HSU_Long_Col_White_Uni {
                             className = "AG_HSU_Long_Col_White_Uni";
                             itemType = "uniform";
-                            displayName = "HSE Sheriff White Uniform Long Sleeve";
+                            displayName = "HSU Sheriff White Uniform Long Sleeve";
                             price = 500;
                             condition = "";
                             rank = "sheriff";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement white long sleeve uniform for TCSD sheriffs.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement white long sleeve uniform for KCSO sheriffs.";
                         };
                         class AG_HSU_PatchCap {
                             className = "AG_HSU_PatchCap";
                             itemType = "headgear";
-                            displayName = "HSE Patch Cap";
+                            displayName = "HSU Patch Cap";
                             price = 50;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement patch cap for TCSD deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement patch cap for KCSO deputies.";
                         };
                         class AG_HSU_PatchCap_Back {
                             className = "AG_HSU_PatchCap_Back";
                             itemType = "headgear";
-                            displayName = "HSE Patch Cap (Back)";
+                            displayName = "HSU Patch Cap (Back)";
                             price = 50;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement patch cap with back logo for TCSD deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement patch cap with back logo for KCSO deputies.";
                         };
                         class AG_HSU_PatchCapAlt {
                             className = "AG_HSU_PatchCapAlt";
                             itemType = "headgear";
-                            displayName = "HSE Patch Cap (Alt)";
+                            displayName = "HSU Patch Cap (Alt)";
                             price = 50;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement patch cap with alternate logo for TCSD deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement patch cap with alternate logo for KCSO deputies.";
                         };
                         class AG_HSU_PatchCapAlt_Back {
                             className = "AG_HSU_PatchCapAlt_Back";
                             itemType = "headgear";
-                            displayName = "HSE Patch Cap (Alt Back)";
+                            displayName = "HSU Patch Cap (Alt Back)";
                             price = 50;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement patch cap with alternate logo and back logo for TCSD deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement patch cap with alternate logo and back logo for KCSO deputies.";
                         };
                         class AG_HSU_Beret {
                             className = "AG_HSU_Beret";
                             itemType = "headgear";
-                            displayName = "HSE Beret";
+                            displayName = "HSU Beret";
                             price = 50;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement beret for TCSD corporals and above.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement beret for KCSO corporals and above.";
                         };
                         class AG_HSU_CampaignHat {
                             className = "AG_HSU_CampaignHat";
                             itemType = "headgear";
-                            displayName = "HSE Campaign Hat";
+                            displayName = "HSU Campaign Hat";
                             price = 20;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement campaign hat for TCSD deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement campaign hat for KCSO deputies.";
                         };
                         class AG_HSU_Plate {
                             className = "AG_HSU_Plate";
                             itemType = "vest";
-                            displayName = "HSE Tactical Vest";
+                            displayName = "HSU Tactical Vest";
                             price = 150;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement tactical vest for TCSD deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement tactical vest for KCSO deputies.";
                         };
                         class AG_JPC_Vest_HSU {
                             className = "AG_JPC_Vest_HSU";
                             itemType = "vest";
-                            displayName = "HSE JPC Tactical Vest";
+                            displayName = "HSU JPC Tactical Vest";
                             price = 20;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement JPC tactical vest for TCSD senior deputies and above.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement JPC tactical vest for KCSO senior deputies and above.";
                         };
                         class AG_HSU_PatrolVest {
                             className = "AG_HSU_PatrolVest";
                             itemType = "vest";
-                            displayName = "HSE Patrol Tactical Vest";
+                            displayName = "HSU Patrol Tactical Vest";
                             price = 20;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
                             text = "Traffic enforcement patrol tactical vest";
                         };
                         class AG_MMAC_Vest_HSU {
                             className = "AG_MMAC_Vest_HSU";
                             itemType = "vest";
-                            displayName = "HSE MMAC Tactical Vest";
+                            displayName = "HSU MMAC Tactical Vest";
                             price = 20;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement MMAC tactical vest for TCSD senior deputies and above.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement MMAC tactical vest for KCSO senior deputies and above.";
                         };
                         class AG_HSU_VestCombo {
                             className = "AG_HSU_VestCombo";
                             itemType = "vest";
-                            displayName = "HSE Vest Combo";
+                            displayName = "HSU Vest Combo";
                             price = 20;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement vest combo for TCSD deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement vest combo for KCSO deputies.";
                         };
                         class AG_HSU_VestCombo2 {
                             className = "AG_HSU_VestCombo2";
                             itemType = "vest";
-                            displayName = "HSE Vest Combo 2";
+                            displayName = "HSU Vest Combo 2";
                             price = 20;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement vest combo 2 for TCSD deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement vest combo 2 for KCSO deputies.";
                         };
                         class AG_HSU_VestCombo3 {
                             className = "AG_HSU_VestCombo3";
                             itemType = "vest";
-                            displayName = "HSE Vest Combo 3";
+                            displayName = "HSU Vest Combo 3";
                             price = 20;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"hse"};
-                            rolePermissions[] = {"leo.vehicle.hse"};
-                            text = "Traffic enforcement vest combo 3 for TCSD deputies.";
+                            subdivisions[] = {"hsu"};
+                            rolePermissions[] = {"leo.vehicle.hsu"};
+                            text = "Traffic enforcement vest combo 3 for KCSO deputies.";
                         };
                     };
                 };
 
-                class ert {
-                    title = "Emergency Response";
-                    description = "ERT tactical clothing and heavy equipment.";
+                class swat {
+                    title = "SWAT";
+                    description = "SWAT tactical clothing and heavy equipment.";
 
                     class Items {
                         class AG_SWAT_Uni_short_AAF {
                             className = "AG_SWAT_Uni_short_AAF";
                             itemType = "uniform";
-                            displayName = "ERT Short Sleeve Uniform";
+                            displayName = "SWAT Short Sleeve Uniform";
                             price = 550;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT short sleeve uniform for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT short sleeve uniform for approved tactical deployments.";
                         };
                         class AG_SWAT_Uni_Tshirt_Alt {
                             className = "AG_SWAT_Uni_Tshirt_Alt";
                             itemType = "uniform";
-                            displayName = "ERT T Shirt Alt Uniform";
+                            displayName = "SWAT T Shirt Alt Uniform";
                             price = 450;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT t-shirt uniform for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT t-shirt uniform for approved tactical deployments.";
                         };
                         class AG_SWAT_Combat_Uni {
                             className = "AG_SWAT_Combat_Uni";
                             itemType = "uniform";
-                            displayName = "ERT Combat Uniform";
+                            displayName = "SWAT Combat Uniform";
                             price = 550;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT combat uniform for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT combat uniform for approved tactical deployments.";
                         };
                         class AG_SWAT_Trooper_Uni {
                             className = "AG_SWAT_Trooper_Uni";
                             itemType = "uniform";
-                            displayName = "ERT Tactical Uniform";
+                            displayName = "SWAT Tactical Uniform";
                             price = 550;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT tactical uniform for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT tactical uniform for approved tactical deployments.";
                         };
                         class AG_SWAT_SnrTrooper_Uni {
                             className = "AG_SWAT_SnrTrooper_Uni";
                             itemType = "uniform";
-                            displayName = "ERT Senior Tactical Uniform";
+                            displayName = "SWAT Senior Tactical Uniform";
                             price = 550;
                             condition = "";
                             rank = "senior_deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT senior tactical uniform for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT senior tactical uniform for approved tactical deployments.";
                         };
                         class AG_SWAT_Corporal_Uni {
                             className = "AG_SWAT_Corporal_Uni";
                             itemType = "uniform";
-                            displayName = "ERT Corporal Tactical Uniform";
+                            displayName = "SWAT Corporal Tactical Uniform";
                             price = 550;
                             condition = "";
                             rank = "corporal";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT corporal tactical uniform for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT corporal tactical uniform for approved tactical deployments.";
                         };
                         class AG_SWAT_Sergeant_Uni {
                             className = "AG_SWAT_Sergeant_Uni";
                             itemType = "uniform";
-                            displayName = "ERT Sergeant Tactical Uniform";
+                            displayName = "SWAT Sergeant Tactical Uniform";
                             price = 550;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT sergeant tactical uniform for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT sergeant tactical uniform for approved tactical deployments.";
                         };
                         class AG_SWAT_Lieutenant_Uni {
                             className = "AG_SWAT_Lieutenant_Uni";
                             itemType = "uniform";
-                            displayName = "ERT Lieutenant Tactical Uniform";
+                            displayName = "SWAT Lieutenant Tactical Uniform";
                             price = 550;
                             condition = "";
                             rank = "lieutenant";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT lieutenant tactical uniform for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT lieutenant tactical uniform for approved tactical deployments.";
                         };
                         class AG_SWAT_Captain_Uni {
                             className = "AG_SWAT_Captain_Uni";
                             itemType = "uniform";
-                            displayName = "ERT Captain Tactical Uniform";
+                            displayName = "SWAT Captain Tactical Uniform";
                             price = 550;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT captain tactical uniform for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT captain tactical uniform for approved tactical deployments.";
                         };
                         class AG_SWAT_Beret {
                             className = "AG_SWAT_Beret";
                             itemType = "headgear";
-                            displayName = "ERT Beret";
+                            displayName = "SWAT Beret";
                             price = 80;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT beret for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT beret for approved tactical deployments.";
                         };
                         class AG_SWAT_Cap2 {
                             className = "AG_SWAT_Cap2";
                             itemType = "headgear";
-                            displayName = "ERT Cap";
+                            displayName = "SWAT Cap";
                             price = 80;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT cap for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT cap for approved tactical deployments.";
                         };
                         class AG_SWAT_PatchCap {
                             className = "AG_SWAT_PatchCap";
                             itemType = "headgear";
-                            displayName = "ERT Patch Cap";
+                            displayName = "SWAT Patch Cap";
                             price = 80;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT patch cap for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT patch cap for approved tactical deployments.";
                         };
                         class AG_SWAT_Helmet {
                             className = "AG_SWAT_Helmet";
                             itemType = "headgear";
-                            displayName = "ERT Helmet";
+                            displayName = "SWAT Helmet";
                             price = 80;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT helmet for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT helmet for approved tactical deployments.";
                         };
                         class AG_SWAT_LightCarrier {
                             className = "AG_SWAT_LightCarrier";
                             itemType = "vest";
-                            displayName = "ERT Plate Carrier";
+                            displayName = "SWAT Plate Carrier";
                             price = 500;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT plate carrier for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT plate carrier for approved tactical deployments.";
                         };
                         class AG_SWAT_PatrolVest {
                             className = "AG_SWAT_PatrolVest";
                             itemType = "vest";
-                            displayName = "ERT Plate Carrier";
+                            displayName = "SWAT Plate Carrier";
                             price = 500;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT plate carrier for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT plate carrier for approved tactical deployments.";
                         };
                         class AG_MMAC_Vest_SWAT {
                             className = "AG_MMAC_Vest_SWAT";
                             itemType = "vest";
-                            displayName = "ERT MMAC Vest";
+                            displayName = "SWAT MMAC Vest";
                             price = 500;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT MMAC Vest for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT MMAC Vest for approved tactical deployments.";
                         };
                         class SWAT_VestCombo {
                             className = "SWAT_VestCombo";
                             itemType = "vest";
-                            displayName = "ERT Vest Combo";
+                            displayName = "SWAT Vest Combo";
                             price = 500;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT vest combo for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT vest combo for approved tactical deployments.";
                         };
                         class SWAT_VestCombo2 {
                             className = "SWAT_VestCombo2";
                             itemType = "vest";
-                            displayName = "ERT Vest Combo 2";
+                            displayName = "SWAT Vest Combo 2";
                             price = 500;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT vest combo 2 for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT vest combo 2 for approved tactical deployments.";
                         };
                         class AG_SWAT_HeavyCarrier {
                             className = "AG_SWAT_HeavyCarrier";
                             itemType = "vest";
-                            displayName = "ERT Heavy Carrier";
+                            displayName = "SWAT Heavy Carrier";
                             price = 500;
                             condition = "";
                             rank = "sergeant";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT heavy carrier for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT heavy carrier for approved tactical deployments.";
                         };
                         class AG_FactionInvPack {
                             className = "AG_FactionInvPack";
                             itemType = "backpack";
-                            displayName = "TCSD Backpack";
+                            displayName = "KCSO Backpack";
                             price = 100;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "TCSD Backpack";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "KCSO Backpack";
                         };
                         class AG_SWAT_Assault_Backpack {
                             className = "AG_SWAT_Assault_Backpack";
                             itemType = "backpack";
-                            displayName = "ERT Assault Backpack";
+                            displayName = "SWAT Assault Backpack";
                             price = 100;
                             condition = "";
                             rank = "deputy";
-                            subdivisions[] = {"ert"};
-                            rolePermissions[] = {"leo.tactical.ert"};
-                            text = "ERT assault backpack for approved tactical deployments.";
+                            subdivisions[] = {"swat"};
+                            rolePermissions[] = {"leo.tactical.swat"};
+                            text = "SWAT assault backpack for approved tactical deployments.";
                         };
                     };
                 };
@@ -3785,29 +4645,29 @@ class Life_Shops {
                         class AG_CID_Trooper_Uni {
                             className = "AG_CID_Trooper_Uni";
                             itemType = "uniform";
-                            displayName = "CID Detective Uniform";
+                            displayName = "CID Investigator Uniform";
                             price = 5000;
                             condition = "";
-                            rank = "detective";
+                            rank = "deputy";
                             subdivisions[] = {"cid"};
                             rolePermissions[] = {"leo.investigations.criminal"};
-                            text = "CID detective uniform for criminal investigations.";
+                            text = "CID investigator uniform for criminal investigations.";
                         };
                         class AG_CID_SnrTrooper_Uni {
                             className = "AG_CID_SnrTrooper_Uni";
                             itemType = "uniform";
-                            displayName = "CID Senior Detective Uniform";
+                            displayName = "CID Senior Investigator Uniform";
                             price = 5000;
                             condition = "";
-                            rank = "senior_detective";
+                            rank = "senior_deputy";
                             subdivisions[] = {"cid"};
                             rolePermissions[] = {"leo.investigations.criminal"};
-                            text = "CID senior detective uniform for criminal investigations.";
+                            text = "CID senior investigator uniform for criminal investigations.";
                         };
                         class AG_CID_Corporal_Uni {
                             className = "AG_CID_Corporal_Uni";
                             itemType = "uniform";
-                            displayName = "CID Corporal Detective Uniform";
+                            displayName = "CID Corporal Investigator Uniform";
                             price = 5000;
                             condition = "";
                             rank = "corporal";
@@ -3833,7 +4693,7 @@ class Life_Shops {
                             price = 3000;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"ia"};
+                            subdivisions[] = {"kcia"};
                             rolePermissions[] = {"leo.records.internal"};
                             text = "Internal Affairs investigator uniform for internal investigations.";
                         };
@@ -3843,7 +4703,7 @@ class Life_Shops {
                             displayName = "CID Tactical Vest";
                             price = 800;
                             condition = "";
-                            rank = "detective";
+                            rank = "deputy";
                             subdivisions[] = {"cid"};
                             rolePermissions[] = {};
                             text = "CID tactical vest for investigative operations.";
@@ -3855,7 +4715,7 @@ class Life_Shops {
                             price = 800;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"ia"};
+                            subdivisions[] = {"kcia"};
                             rolePermissions[] = {"leo.records.internal"};
                             text = "Internal Affairs tactical vest for investigative operations.";
                         };
@@ -3865,7 +4725,7 @@ class Life_Shops {
                             displayName = "";
                             price = 800;
                             condition = "";
-                            rank = "detective";
+                            rank = "deputy";
                             subdivisions[] = {"cid"};
                             rolePermissions[] = {""};
                             text = "CID Light Plate Carrier for criminal investigations";
@@ -3876,7 +4736,7 @@ class Life_Shops {
                             displayName = "";
                             price = 800;
                             condition = "";
-                            rank = "detective";
+                            rank = "deputy";
                             subdivisions[] = {"cid"};
                             rolePermissions[] = {""};
                             text = "CID Tiger Vest for criminal investigations";
@@ -3887,7 +4747,7 @@ class Life_Shops {
                             displayName = "CID Beret";
                             price = 100;
                             condition = "";
-                            rank = "detective";
+                            rank = "deputy";
                             subdivisions[] = {"cid"};
                             rolePermissions[] = {};
                             text = "CID beret for investigative operations.";
@@ -3899,7 +4759,7 @@ class Life_Shops {
                             price = 100;
                             condition = "";
                             rank = "captain";
-                            subdivisions[] = {"ia"};
+                            subdivisions[] = {"kcia"};
                             rolePermissions[] = {"leo.records.internal"};
                             text = "Internal Affairs beret for investigative operations.";
                         };
@@ -3909,7 +4769,7 @@ class Life_Shops {
                             displayName = "CID Patch Cap";
                             price = 100;
                             condition = "";
-                            rank = "detective";
+                            rank = "deputy";
                             subdivisions[] = {"cid"};
                             rolePermissions[] = {};
                             text = "CID Patch Cap for investigations";
@@ -3925,57 +4785,57 @@ class Life_Shops {
                         class AG_KCSO_Cmd_Major_Uni {
                             className = "AG_KCSO_Cmd_Major_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Major Command Uniform";
+                            displayName = "KCSO Major Command Uniform";
                             price = 1500;
                             condition = "";
                             rank = "major";
                             subdivisions[] = {};
                             rolePermissions[] = {"leo.command.terminal"};
-                            text = "State Command Major Uniform";
+                            text = "KCSO Command Major Uniform";
                         };
                         class AG_KCSO_Cmd_LtCol_Uni {
                             className = "AG_KCSO_Cmd_LtCol_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Undersheriff Command Uniform";
+                            displayName = "KCSO Undersheriff Command Uniform";
                             price = 1500;
                             condition = "";
                             rank = "undersheriff";
                             subdivisions[] = {};
                             rolePermissions[] = {"leo.command.terminal"};
-                            text = "State Command Undersheriff Uniform";
+                            text = "KCSO Command Undersheriff Uniform";
                         };
                         class AG_KCSO_Cmd_Col_Uni {
                             className = "AG_KCSO_Cmd_Col_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Sheriff Command Uniform";
+                            displayName = "KCSO Sheriff Command Uniform";
                             price = 1500;
                             condition = "";
                             rank = "sheriff";
                             subdivisions[] = {};
                             rolePermissions[] = {"leo.command.terminal"};
-                            text = "State Command Sheriff Uniform";
+                            text = "KCSO Command Sheriff Uniform";
                         };
                         class AG_KCSO_Cmd_Comm_Uni {
                             className = "AG_KCSO_Cmd_Comm_Uni";
                             itemType = "uniform";
-                            displayName = "TCSD Commissioner Command Uniform";
+                            displayName = "KCSO Commissioner Command Uniform";
                             price = 1500;
                             condition = "";
                             rank = "commissioner";
                             subdivisions[] = {};
                             rolePermissions[] = {"leo.command.terminal"};
-                            text = "State Command Commissioner Uniform";
+                            text = "KCSO Command Commissioner Uniform";
                         };
                         class AG_KCSO_CampaignHat_Cmd {
                             className = "AG_KCSO_CampaignHat_Cmd";
                             itemType = "headgear";
-                            displayName = "TCSD Command Campaign Hat";
+                            displayName = "KCSO Command Campaign Hat";
                             price = 250;
                             condition = "";
                             rank = "major";
                             subdivisions[] = {};
                             rolePermissions[] = {"leo.command.terminal"};
-                            text = "State Command Campaign Hat";
+                            text = "KCSO Command Campaign Hat";
                         };
                         class G_Squares_Tinted {
                             className = "G_Squares_Tinted";
@@ -3991,46 +4851,511 @@ class Life_Shops {
                         class AG_KCSO_Cmd_Beret {
                             className = "AG_KCSO_Cmd_Beret";
                             itemType = "headgear";
-                            displayName = "TCSD Command Beret";
+                            displayName = "KCSO Command Beret";
                             price = 50;
                             condition = "";
                             rank = "major";
                             subdivisions[] = {};
                             rolePermissions[] = { "leo.command.terminal" };
-                            text = "State Command Beret";
+                            text = "KCSO Command Beret";
                         };
                         class AG_KCSOCmd_VestCombo {
                             className = "AG_KCSOCmd_VestCombo";
                             itemType = "vest";
-                            displayName = "TCSD State Command Vest Combo";
+                            displayName = "KCSO Command Vest Combo";
                             price = 120;
                             condition = "";
                             rank = "major";
                             subdivisions[] = {};
                             rolePermissions[] = {"leo.command.terminal"};
-                            text = "State Command Vest Combo";
+                            text = "KCSO Command Vest Combo";
                         };
                         class AG_KCSOCmd_VestCombo2 {
                             className = "AG_KCSOCmd_VestCombo2";
                             itemType = "vest";
-                            displayName = "TCSD State Command Vest Combo 2";
+                            displayName = "KCSO Command Vest Combo 2";
                             price = 120;
                             condition = "";
                             rank = "major";
                             subdivisions[] = {};
                             rolePermissions[] = {"leo.command.terminal"};
-                            text = "State Command Vest Combo 2";
+                            text = "KCSO Command Vest Combo 2";
                         };
                         class AG_KCSOCmd_VestCombo3 {
                             className = "AG_KCSOCmd_VestCombo3";
                             itemType = "vest";
-                            displayName = "TCSD State Command Vest Combo 3";
+                            displayName = "KCSO Command Vest Combo 3";
                             price = 120;
                             condition = "";
                             rank = "major";
                             subdivisions[] = {};
                             rolePermissions[] = {"leo.command.terminal"};
-                            text = "State Command Vest Combo 3";
+                            text = "KCSO Command Vest Combo 3";
+                        };
+                    };
+                };
+            };
+        };
+
+        class usms {
+            title = "USMS Uniform Locker";
+            subtitle = "United States Marshal Service clothing and field gear";
+            side = "cop";
+            condition = "playerSide isEqualTo west && {['leo.department.usms'] call life_fnc_hasPermission}";
+            department = "usms";
+
+            class Categories {
+                class uniforms {
+                    title = "Uniforms";
+                    description = "Federal field and command uniforms.";
+
+                    class Items {
+                        class remove_uniform {
+                            className = "NONE";
+                            itemType = "uniform";
+                            displayName = "Remove Uniform";
+                            price = 0;
+                            condition = "";
+                            rank = "";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Removes the currently worn uniform slot.";
+                        };
+                        class U_B_GEN_Soldier_F {
+                            className = "U_B_GEN_Soldier_F";
+                            itemType = "uniform";
+                            displayName = "USMS Field Uniform";
+                            price = 350;
+                            condition = "";
+                            rank = "deputy_marshal";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Standard USMS field uniform.";
+                        };
+                        class U_B_GEN_Commander_F {
+                            className = "U_B_GEN_Commander_F";
+                            itemType = "uniform";
+                            displayName = "USMS Command Uniform";
+                            price = 550;
+                            condition = "";
+                            rank = "supervisory_deputy_marshal";
+                            subdivisions[] = {};
+                            rolePermissions[] = {"leo.command.terminal"};
+                            text = "USMS command uniform.";
+                        };
+                    };
+                };
+
+                class headgear {
+                    title = "Headgear";
+                    description = "Federal caps and command headgear.";
+
+                    class Items {
+                        class remove_headgear {
+                            className = "NONE";
+                            itemType = "headgear";
+                            displayName = "Remove Headgear";
+                            price = 0;
+                            condition = "";
+                            rank = "";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Removes the currently worn headgear slot.";
+                        };
+                        class H_Cap_police {
+                            className = "H_Cap_police";
+                            itemType = "headgear";
+                            displayName = "USMS Field Cap";
+                            price = 25;
+                            condition = "";
+                            rank = "deputy_marshal";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "USMS field cap.";
+                        };
+                        class H_Beret_blk_POLICE {
+                            className = "H_Beret_blk_POLICE";
+                            itemType = "headgear";
+                            displayName = "USMS Command Beret";
+                            price = 50;
+                            condition = "";
+                            rank = "supervisory_deputy_marshal";
+                            subdivisions[] = {};
+                            rolePermissions[] = {"leo.command.terminal"};
+                            text = "USMS command beret.";
+                        };
+                    };
+                };
+
+                class equipment {
+                    title = "Equipment";
+                    description = "Vests, glasses, and bags.";
+
+                    class Items {
+                        class remove_vest {
+                            className = "NONE";
+                            itemType = "vest";
+                            displayName = "Remove Vest";
+                            price = 0;
+                            condition = "";
+                            rank = "";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Removes the currently worn vest slot.";
+                        };
+                        class remove_backpack {
+                            className = "NONE";
+                            itemType = "backpack";
+                            displayName = "Remove Backpack";
+                            price = 0;
+                            condition = "";
+                            rank = "";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Removes the currently worn backpack slot.";
+                        };
+                        class V_TacVest_blk_POLICE {
+                            className = "V_TacVest_blk_POLICE";
+                            itemType = "vest";
+                            displayName = "USMS Tactical Vest";
+                            price = 1000;
+                            condition = "";
+                            rank = "deputy_marshal";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "USMS tactical vest.";
+                        };
+                        class B_AssaultPack_blk {
+                            className = "B_AssaultPack_blk";
+                            itemType = "backpack";
+                            displayName = "USMS Field Bag";
+                            price = 2000;
+                            condition = "";
+                            rank = "deputy_marshal";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "USMS field bag.";
+                        };
+                        class G_Aviator {
+                            className = "G_Aviator";
+                            itemType = "goggles";
+                            displayName = "USMS Sunglasses";
+                            price = 100;
+                            condition = "";
+                            rank = "deputy_marshal";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "USMS sunglasses.";
+                        };
+                    };
+                };
+            };
+        };
+
+        class dea {
+            title = "DEA Uniform Locker";
+            subtitle = "Drug Enforcement Administration clothing and field gear";
+            side = "cop";
+            condition = "playerSide isEqualTo west && {['leo.department.dea'] call life_fnc_hasPermission}";
+            department = "dea";
+
+            class Categories {
+                class uniforms {
+                    title = "Uniforms";
+                    description = "Federal field and command uniforms.";
+
+                    class Items {
+                        class remove_uniform {
+                            className = "NONE";
+                            itemType = "uniform";
+                            displayName = "Remove Uniform";
+                            price = 0;
+                            condition = "";
+                            rank = "";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Removes the currently worn uniform slot.";
+                        };
+                        class U_B_CombatUniform_mcam_tshirt {
+                            className = "U_B_CombatUniform_mcam_tshirt";
+                            itemType = "uniform";
+                            displayName = "DEA Field Uniform";
+                            price = 350;
+                            condition = "";
+                            rank = "special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Standard DEA field uniform.";
+                        };
+                        class U_B_GEN_Commander_F {
+                            className = "U_B_GEN_Commander_F";
+                            itemType = "uniform";
+                            displayName = "DEA Command Uniform";
+                            price = 550;
+                            condition = "";
+                            rank = "supervisory_special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {"leo.command.terminal"};
+                            text = "DEA command uniform.";
+                        };
+                    };
+                };
+
+                class headgear {
+                    title = "Headgear";
+                    description = "Federal caps and command headgear.";
+
+                    class Items {
+                        class remove_headgear {
+                            className = "NONE";
+                            itemType = "headgear";
+                            displayName = "Remove Headgear";
+                            price = 0;
+                            condition = "";
+                            rank = "";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Removes the currently worn headgear slot.";
+                        };
+                        class H_Cap_police {
+                            className = "H_Cap_police";
+                            itemType = "headgear";
+                            displayName = "DEA Field Cap";
+                            price = 25;
+                            condition = "";
+                            rank = "special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "DEA field cap.";
+                        };
+                        class H_Beret_blk_POLICE {
+                            className = "H_Beret_blk_POLICE";
+                            itemType = "headgear";
+                            displayName = "DEA Command Beret";
+                            price = 50;
+                            condition = "";
+                            rank = "supervisory_special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {"leo.command.terminal"};
+                            text = "DEA command beret.";
+                        };
+                    };
+                };
+
+                class equipment {
+                    title = "Equipment";
+                    description = "Vests, glasses, and bags.";
+
+                    class Items {
+                        class remove_vest {
+                            className = "NONE";
+                            itemType = "vest";
+                            displayName = "Remove Vest";
+                            price = 0;
+                            condition = "";
+                            rank = "";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Removes the currently worn vest slot.";
+                        };
+                        class remove_backpack {
+                            className = "NONE";
+                            itemType = "backpack";
+                            displayName = "Remove Backpack";
+                            price = 0;
+                            condition = "";
+                            rank = "";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Removes the currently worn backpack slot.";
+                        };
+                        class V_TacVest_blk_POLICE {
+                            className = "V_TacVest_blk_POLICE";
+                            itemType = "vest";
+                            displayName = "DEA Tactical Vest";
+                            price = 1000;
+                            condition = "";
+                            rank = "special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "DEA tactical vest.";
+                        };
+                        class B_AssaultPack_blk {
+                            className = "B_AssaultPack_blk";
+                            itemType = "backpack";
+                            displayName = "DEA Field Bag";
+                            price = 2000;
+                            condition = "";
+                            rank = "special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "DEA field bag.";
+                        };
+                        class G_Aviator {
+                            className = "G_Aviator";
+                            itemType = "goggles";
+                            displayName = "DEA Sunglasses";
+                            price = 100;
+                            condition = "";
+                            rank = "special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "DEA sunglasses.";
+                        };
+                    };
+                };
+            };
+        };
+
+        class fbi {
+            title = "FBI Uniform Locker";
+            subtitle = "Federal Bureau of Investigation clothing and field gear";
+            side = "cop";
+            condition = "playerSide isEqualTo west && {['leo.department.fbi'] call life_fnc_hasPermission}";
+            department = "fbi";
+
+            class Categories {
+                class uniforms {
+                    title = "Uniforms";
+                    description = "Federal field and command uniforms.";
+
+                    class Items {
+                        class remove_uniform {
+                            className = "NONE";
+                            itemType = "uniform";
+                            displayName = "Remove Uniform";
+                            price = 0;
+                            condition = "";
+                            rank = "";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Removes the currently worn uniform slot.";
+                        };
+                        class U_B_CombatUniform_mcam_worn {
+                            className = "U_B_CombatUniform_mcam_worn";
+                            itemType = "uniform";
+                            displayName = "FBI Field Uniform";
+                            price = 350;
+                            condition = "";
+                            rank = "special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Standard FBI field uniform.";
+                        };
+                        class U_B_GEN_Commander_F {
+                            className = "U_B_GEN_Commander_F";
+                            itemType = "uniform";
+                            displayName = "FBI Command Uniform";
+                            price = 550;
+                            condition = "";
+                            rank = "supervisory_special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {"leo.command.terminal"};
+                            text = "FBI command uniform.";
+                        };
+                    };
+                };
+
+                class headgear {
+                    title = "Headgear";
+                    description = "Federal caps and command headgear.";
+
+                    class Items {
+                        class remove_headgear {
+                            className = "NONE";
+                            itemType = "headgear";
+                            displayName = "Remove Headgear";
+                            price = 0;
+                            condition = "";
+                            rank = "";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Removes the currently worn headgear slot.";
+                        };
+                        class H_Cap_police {
+                            className = "H_Cap_police";
+                            itemType = "headgear";
+                            displayName = "FBI Field Cap";
+                            price = 25;
+                            condition = "";
+                            rank = "special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "FBI field cap.";
+                        };
+                        class H_Beret_blk_POLICE {
+                            className = "H_Beret_blk_POLICE";
+                            itemType = "headgear";
+                            displayName = "FBI Command Beret";
+                            price = 50;
+                            condition = "";
+                            rank = "supervisory_special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {"leo.command.terminal"};
+                            text = "FBI command beret.";
+                        };
+                    };
+                };
+
+                class equipment {
+                    title = "Equipment";
+                    description = "Vests, glasses, and bags.";
+
+                    class Items {
+                        class remove_vest {
+                            className = "NONE";
+                            itemType = "vest";
+                            displayName = "Remove Vest";
+                            price = 0;
+                            condition = "";
+                            rank = "";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Removes the currently worn vest slot.";
+                        };
+                        class remove_backpack {
+                            className = "NONE";
+                            itemType = "backpack";
+                            displayName = "Remove Backpack";
+                            price = 0;
+                            condition = "";
+                            rank = "";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "Removes the currently worn backpack slot.";
+                        };
+                        class V_TacVest_blk_POLICE {
+                            className = "V_TacVest_blk_POLICE";
+                            itemType = "vest";
+                            displayName = "FBI Tactical Vest";
+                            price = 1000;
+                            condition = "";
+                            rank = "special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "FBI tactical vest.";
+                        };
+                        class B_AssaultPack_blk {
+                            className = "B_AssaultPack_blk";
+                            itemType = "backpack";
+                            displayName = "FBI Field Bag";
+                            price = 2000;
+                            condition = "";
+                            rank = "special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "FBI field bag.";
+                        };
+                        class G_Aviator {
+                            className = "G_Aviator";
+                            itemType = "goggles";
+                            displayName = "FBI Sunglasses";
+                            price = 100;
+                            condition = "";
+                            rank = "special_agent";
+                            subdivisions[] = {};
+                            rolePermissions[] = {};
+                            text = "FBI sunglasses.";
                         };
                     };
                 };

@@ -27,7 +27,7 @@ if (_isOwner) then {
 {
     private _jobKey = configName _x;
     private _conditions = getText (_x >> "conditions");
-    private _allowed = _isOwner || {if (_conditions isEqualTo "") then {true} else {call compile _conditions}};
+    private _allowed = if (_conditions isEqualTo "") then {true} else {call compile _conditions};
 
     if (_allowed) then {
         private _displayName = getText (_x >> "displayName");

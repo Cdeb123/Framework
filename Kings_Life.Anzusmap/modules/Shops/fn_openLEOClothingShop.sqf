@@ -24,6 +24,14 @@ if (_input isEqualType "") then {
 };
 
 if (_shop isEqualTo "") exitWith {};
+if (_shop isEqualTo "cop") then {
+    _shop = switch (missionNamespace getVariable ["life_leo_department","kcso"]) do {
+        case "usms": {"usms"};
+        case "dea": {"dea"};
+        case "fbi": {"fbi"};
+        default {"cop"};
+    };
+};
 if !(isNull objectParent player) exitWith {titleText[localize "STR_NOTF_ActionInVehicle","PLAIN"];};
 
 private _shopCfg = missionConfigFile >> "Life_Shops" >> "LEOClothingShops" >> _shop;

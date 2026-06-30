@@ -6,7 +6,7 @@
     Master client initialization file
 */
 diag_log "----------------------------------------------------------------------------------------------------";
-diag_log "--------------------------------- Starting Altis Life Client Init ----------------------------------";
+diag_log "--------------------------------- Starting Kings Life Client Init ----------------------------------";
 diag_log format["------------------------------------------ Version %1 -------------------------------------------",(LIFE_SETTINGS(getText,"framework_version"))];
 diag_log "----------------------------------------------------------------------------------------------------";
 
@@ -140,5 +140,5 @@ if (life_HC_isActive) then {
 [] call life_fnc_hudSetup;
 
 diag_log "----------------------------------------------------------------------------------------------------";
-diag_log format ["               End of Altis Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime - _timeStamp)];
+diag_log format ["               End of Kings Life Client Init :: Total Execution Time %1 seconds ",(diag_tickTime - _timeStamp)];
 diag_log "----------------------------------------------------------------------------------------------------";

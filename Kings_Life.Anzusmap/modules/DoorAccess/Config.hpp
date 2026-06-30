@@ -110,7 +110,7 @@ class Life_DoorAccess {
             label = "Command Access";
             keypad = 0;
             sides[] = {};
-            permissions[] = {"leo.command.terminal","leo.command.owner","leo.department.oversight","staff.permissions"};
+            permissions[] = {"leo.command.terminal","leo.department.oversight","leo.department.oversight","staff.permissions"};
             keycards[] = {"commandKeycard"};
             codes[] = {};
         };

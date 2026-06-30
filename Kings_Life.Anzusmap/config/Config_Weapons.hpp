@@ -104,7 +104,7 @@ class WeaponShops {
 
     //Basic Shops
     class genstore {
-        name = "Altis General Store";
+        name = "Kings County General Store";
         side = "civ";
         conditions = "";
         items[] = {
@@ -125,7 +125,7 @@ class WeaponShops {
     };
 
     class f_station_store {
-        name = "Altis Fuel Station Store";
+        name = "Kings County Fuel Station Store";
         side = "";
         conditions = "";
         items[] = {
@@ -147,7 +147,7 @@ class WeaponShops {
 
     //Cop Shops
     class cop_basic {
-        name = "Altis Cop Shop";
+        name = "KCSO Shop";
         side = "cop";
         conditions = "";
         items[] = {

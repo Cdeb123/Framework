@@ -2,7 +2,6 @@
 /*
     File: fn_leoCanCommand.sqf
 */
-if ([] call life_fnc_isCommunityOwner) exitWith {true};
 if (["leo.command.terminal"] call life_fnc_hasPermission) exitWith {true};
 
 private _ok = false;

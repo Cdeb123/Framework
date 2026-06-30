@@ -63,7 +63,7 @@ class Life_Crafting {
             muted[] = {0.82,0.62,0.56,1};
         };
         class leo {
-            title = "TCSD Fabrication Bench";
+            title = "KCSO Fabrication Bench";
             subtitle = "Ranked duty equipment, certified platforms, and department vehicles";
             accent[] = {0.0,0.72,0.92,1};
             header[] = {0.018,0.030,0.040,0.98};

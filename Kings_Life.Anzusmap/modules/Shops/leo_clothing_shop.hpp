@@ -76,7 +76,7 @@ class life_leo_clothing_shop {
     class controls {
         class Title: Life_RscText {
             idc = LEO_CLOTHING_SHOP_TITLE;
-            text = "TCSD Uniform Locker";
+            text = "KCSO Uniform Locker";
             colorText[] = {0.92,0.98,0.98,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.038;

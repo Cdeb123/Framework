@@ -2,16 +2,16 @@
 /*
     File: fn_updateLEOMembership.sqf
 
-    Server-side write endpoint for the TCSD/LEO Command Terminal.
+    Server-side write endpoint for the KCSO/LEO Command Terminal.
 */
 params [
     ["_requesterUid","",[""]],
     ["_targetUid","",[""]],
     ["_targetName","",[""]],
     ["_characterUid","",[""]],
-    ["_department","tcsd",[""]],
-    ["_rank","deputy",[""]],
-    ["_primarySubdivision","patrol",[""]],
+    ["_department","kcso",[""]],
+    ["_rank","probationary_deputy",[""]],
+    ["_primarySubdivision","admin_services",[""]],
     ["_subdivisions",[],[[]]],
     ["_rolePermissions",[],[[]]],
     ["_status","active",[""]]
@@ -32,7 +32,6 @@ private _readArray = {
 
 private _canCommand = {
     params [["_uid","",[""]]];
-    if (_uid in ["76561198810688206"]) exitWith {true};
 
     private _permissions = [];
     private _rows = [format ["SELECT permissions FROM steam_whitelist WHERE pid='%1' AND active='1'",_uid],2,true] call DB_fnc_asyncCall;
@@ -66,17 +65,14 @@ private _canCommand = {
     || {"leo.command.roles" in _permissions}
     || {"leo.command.documents" in _permissions}
     || {"leo.command.executive" in _permissions}
-    || {"leo.command.owner" in _permissions}
     || {"leo.department.oversight" in _permissions}
-    || {"owner.access" in _permissions}
-    || {"owner.community" in _permissions}
-    || {"whitelist.override" in _permissions}
     || {"staff.permissions" in _permissions}
     || {"rank:lieutenant" in _permissions}
     || {"rank:captain" in _permissions}
-    || {"rank:assistant_sheriff" in _permissions}
+    || {"rank:major" in _permissions}
     || {"rank:undersheriff" in _permissions}
     || {"rank:sheriff" in _permissions}
+    || {"rank:commissioner" in _permissions}
 };
 
 if !([_requesterUid] call _canCommand) exitWith {

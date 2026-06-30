@@ -12,7 +12,7 @@ params [
 if (_requesterUid isEqualTo "") exitWith {};
 
 _data params [
-    ["_department","tcsd",[""]],
+    ["_department","kcso",[""]],
     ["_title","",[""]],
     ["_body","",[""]]
 ];
@@ -29,7 +29,6 @@ private _readArray = {
 
 private _canPostCommandDocument = {
     params [["_uid","",[""]]];
-    if (_uid in ["76561198810688206"]) exitWith {true};
 
     private _permissions = [];
     private _rows = [format ["SELECT permissions FROM steam_whitelist WHERE pid='%1' AND active='1'",_uid],2,true] call DB_fnc_asyncCall;
@@ -58,16 +57,14 @@ private _canPostCommandDocument = {
     || {"leo.command.terminal" in _permissions}
     || {"leo.command.permissions" in _permissions}
     || {"leo.command.executive" in _permissions}
-    || {"leo.command.owner" in _permissions}
     || {"leo.department.oversight" in _permissions}
-    || {"owner.access" in _permissions}
-    || {"owner.community" in _permissions}
     || {"staff.permissions" in _permissions}
     || {"rank:lieutenant" in _permissions}
     || {"rank:captain" in _permissions}
-    || {"rank:assistant_sheriff" in _permissions}
+    || {"rank:major" in _permissions}
     || {"rank:undersheriff" in _permissions}
     || {"rank:sheriff" in _permissions}
+    || {"rank:commissioner" in _permissions}
 };
 
 if !([_requesterUid] call _canPostCommandDocument) exitWith {

@@ -6,19 +6,20 @@ Discord bots and admin panels can grant permissions without changing the live
 job by writing SQF-style array text to `steam_whitelist.permissions` or
 `discord_permissions.permissions`.
 
-Built-in owner grants are configured in `Life_CommunityOwnerGrant` inside
-`A3UL_Life.Tanoa\modules\Jobs\Config.hpp`. Steam64 `76561198810688206` is registered there as
-`Community Owner`; this grants all framework permissions and bypasses Police/EMS
-whitelist gates even before Discord or database permission rows are synced.
+Built-in Community Manager grants are configured in `Life_CommunityOwnerGrant` inside
+`Kings_Life.Anzusmap\modules\Jobs\Config.hpp`. Steam64 `76561198810688206` is registered there as
+`Community Manager`. That grant is not tied to KCSO rank or department access;
+law enforcement roles come from `leo_memberships`, where George Dunn is seeded
+as KCSO Commissioner.
 
 Example values:
 
 ```sql
 INSERT INTO steam_whitelist (pid, faction, level, permissions, notes)
-VALUES ('76561198000000000', 'police', 3, '["police.access","police.cuff","police.ticket"]', 'Initial whitelist');
+VALUES ('76561198000000000', 'kcso', 3, '["leo.access","leo.department.kcso","police.access"]', 'Initial KCSO whitelist');
 
 INSERT INTO discord_permissions (pid, discord_id, roles, permissions)
-VALUES ('76561198000000000', '123456789012345678', '["LEO","Staff"]', '["police.access","staff.access"]');
+VALUES ('76561198000000000', '123456789012345678', '["LEO","Staff"]', '["leo.access","staff.access"]');
 ```
 
 The client merges those grants into `life_permissions`. The signed-on job stays

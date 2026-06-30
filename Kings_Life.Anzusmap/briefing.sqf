@@ -27,14 +27,14 @@ TEXT HERE<br/><br/>
         [
             "AsYetUntitled",
                 "
-AsYetUntitled (formerly ArmaLife) is a GitHub project which aims to update and keep adding new features to the original 'Altis Life RPG' by Tonic.<br/><br/>
+Kings Life is built on the AsYetUntitled framework and customized for Kings County on Anzusmap.<br/><br/>
                 "
         ]
     ];
 
     player createDiaryRecord ["changelog",
         [
-            "Altis Life Changelog",
+            "Kings Life Changelog",
                 "
 The full changelog can be found on the AsYetUntitled/Framework repository on GitHub. https://github.com/AsYetUntitled/Framework/<br/><br/>
 v5.0.0<br/>
@@ -234,10 +234,9 @@ Crisis Negotiation must be handled by a Sergeant. If one is not available, the p
             "Aviation",
                 "
 1. No helicopter can land within city limits without authorization from the highest ranking officer online. (Exceptions being what is listed below.)<br/>
-Kavala: The hospital helipad (037129) or docks (031128).<br/>
-Athira: The sports field (138185) or behind the DMV (140188).<br/>
-Pyrgos: The fields North/East of DMV (170127)<br/>
-Sofia: Opposite the car shop (258214) or the fields Southeast of the garage (257212)<br/>
+Kings County Medical Center: the hospital helipad or designated emergency landing zone.<br/>
+Kings County fields and docks: only where safe, clear, and authorized.<br/>
+Kings County airports: only on marked pads, runways, or taxiways.<br/>
 Small towns: An appropriate location may be chosen. This is to be judged by officers on a case by case basis.<br/><br/>
 2. Helicopters may not land on roads.<br/>
 3. Police may temporarily forbid landing at  but it cannot remain closed for a long period of time.<br/>
@@ -312,7 +311,7 @@ Proper Checkpoint Procedure:<br/>
         [
             "Speeding",
                 "
-The following speeds are to be enforced by the Altis Police Force for the absolute safety of the citizens of Kavala and all travelling beyond the city.<br/><br/>
+The following speeds are to be enforced by the Kings County Sheriff's Office for the safety of Kings County residents and visitors.<br/><br/>
 Inside major cities:<br/>
 Small roads: 50km/h<br/>
 Main roads: 65km/h<br/>
@@ -327,7 +326,7 @@ Main roads: 110km/h<br/><br/>
         [
             "City Protocol",
                 "
-1. Officers may patrol major cities - Kavala, Athira, Pyrgos and Sofia.<br/>
+1. Officers may patrol major Kings County cities and towns.<br/>
 2. Officers may stop by the car shop to make sure there are no cars that need to be impounded.<br/>
 3. Officers may not stand around or loiter in the centre of town.<br/>
 4. Officers may enter the town in a large number should a rebellious act occur. After the area is clear, they need to leave the town again.<br/>
@@ -526,7 +525,7 @@ The following items are illegal to posses:<br/><br/>
 
     player createDiaryRecord ["controls",
         [
-            "Tanoa Life Custom Controls",
+            "Kings Life Custom Controls",
                 "
 F1 / User Action 9: Open the circular interaction wheel for nearby shops, people, vehicles, houses, LEO tools, EMS tools, and personal actions. Rebind in ESC -> Configure -> Controls -> Custom -> User Action 9.<br/>
 F1 menu 1-8: Select the numbered action on the current page.<br/>
@@ -546,8 +545,8 @@ Ctrl + R: Toggle the backup camera on supported vehicles.<br/>
 3: ELS Code 3 / emergency lights and wail siren while driving a configured emergency vehicle.<br/>
 4: ELS priority siren mode while driving a configured emergency vehicle.<br/>
 5 or vehicle horn / fire: ELS airhorn while driving a configured emergency vehicle.<br/>
-Left Ctrl + Left Shift + T: Open the TCSD Training Academy terminal.<br/>
-Left Ctrl + Left Shift + L: Open the TCSD Command Suite.<br/>
+Left Ctrl + Left Shift + T: Open the KCSO Admin Services terminal.<br/>
+Left Ctrl + Left Shift + L: Open the KCSO Command Suite.<br/>
 Left Ctrl + B: Toggle seatbelt while inside a vehicle.<br/>
 Left Ctrl + F: Toggle custom weapon fire mode.<br/>
 Left Ctrl + I: Open your ID card.<br/>

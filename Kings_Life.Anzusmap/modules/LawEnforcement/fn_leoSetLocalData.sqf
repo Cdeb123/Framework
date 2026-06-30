@@ -10,38 +10,8 @@ params [
     ["_rows",[],[[]]]
 ];
 
-private _owner = [] call life_fnc_isCommunityOwner;
 private _defaultDept = getText (missionConfigFile >> "Life_LEO" >> "defaultDepartment");
-if (_defaultDept isEqualTo "") then {_defaultDept = "tcsd";};
-
-if (_owner) then {
-    _rows pushBackUnique [
-        "tcsd",
-        "sheriff",
-        "patrol",
-        ["patrol","academy","hse","ert","ia","mcu","cid"],
-        [
-            "leo.access",
-            "leo.command.terminal",
-            "leo.command.hire",
-            "leo.command.fire",
-            "leo.command.permissions",
-            "leo.command.ranks",
-            "leo.command.divisions",
-            "leo.command.roles",
-            "leo.command.documents",
-            "leo.command.executive",
-            "leo.command.owner",
-            "leo.department.oversight",
-            "leo.training.view",
-            "leo.training.edit",
-            "leo.training.roster",
-            "staff.whitelist",
-            "staff.permissions"
-        ],
-        "active"
-    ];
-};
+if (_defaultDept isEqualTo "") then {_defaultDept = "kcso";};
 
 private _memberships = [];
 private _permissions = [];
@@ -62,7 +32,7 @@ private _firstSet = false;
         private _deptCfg = missionConfigFile >> "Life_LEO" >> "Departments" >> _department;
         if (_rank isEqualTo "") then {_rank = getText (_deptCfg >> "defaultRank");};
         if (_primary isEqualTo "") then {_primary = getText (_deptCfg >> "defaultSubdivision");};
-        if !(_primary in _subdivisions) then {_subdivisions pushBack _primary;};
+        if (!(_primary isEqualTo "") && {!(_primary in _subdivisions)}) then {_subdivisions pushBack _primary;};
 
         private _deptName = getText (_deptCfg >> "displayName");
         private _rankCfg = _deptCfg >> "Ranks" >> _rank;
@@ -77,10 +47,12 @@ private _firstSet = false;
         _permissions pushBackUnique format ["leo.rank.%1.%2",_department,_rank];
 
         {
-            private _subCfg = _deptCfg >> "Subdivisions" >> _x;
-            _permissions pushBackUnique format ["leo.subdivision.%1.%2",_department,_x];
-            _permissions pushBackUnique format ["leo.subdivision.%1",_x];
-            { _permissions pushBackUnique _x; } forEach getArray (_subCfg >> "permissions");
+            if !(_x isEqualTo "") then {
+                private _subCfg = _deptCfg >> "Subdivisions" >> _x;
+                _permissions pushBackUnique format ["leo.subdivision.%1.%2",_department,_x];
+                _permissions pushBackUnique format ["leo.subdivision.%1",_x];
+                { _permissions pushBackUnique _x; } forEach getArray (_subCfg >> "permissions");
+            };
         } forEach _subdivisions;
 
         {

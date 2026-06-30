@@ -10,7 +10,7 @@ if ((lbCurSel 8804) < 0) exitWith {};
 private _shop = missionNamespace getVariable ["life_vehicle_shop_type","cop_car"];
 private _shopCfg = missionConfigFile >> "Life_Shops" >> "VehicleShops" >> "LawEnforcement" >> _shop;
 private _department = getText (_shopCfg >> "department");
-if (_department isEqualTo "") then {_department = "tcsd";};
+if (_department isEqualTo "") then {_department = "kcso";};
 private _context = missionNamespace getVariable ["life_vehicle_shop_context",[_shop,"","cop",false]];
 _context params ["_contextShop","_spawnPoints","_shopFlag","_disableBuy"];
 
@@ -71,14 +71,14 @@ private _featureText = "";
 {
     _featureText = _featureText + format ["<br/>- %1",_x];
 } forEach _features;
-if (_featureText isEqualTo "") then {_featureText = "<br/>- Standard TCSD configuration";};
+if (_featureText isEqualTo "") then {_featureText = "<br/>- Standard KCSO configuration";};
 
 private _trunkSpace = [_className] call life_fnc_vehicleWeightCfg;
 private _funds = missionNamespace getVariable ["life_faction_bank_law_enforcement",0];
 
 (_display displayCtrl 8806) ctrlSetText _picture;
 (_display displayCtrl 8805) ctrlSetStructuredText parseText format [
-    "<t size='1.2' color='#f2fbfb'>%1</t><br/><t color='#7dcbd0'>Category</t><br/>%2<br/><br/><t color='#7dcbd0'>Purchase</t><br/>$%3<br/><t color='#7dcbd0'>TCSD Bank</t> $%4<br/><t color='#7dcbd0'>Personal Bank</t> $%5<br/><br/><t color='#7dcbd0'>Access</t><br/>%6<br/><br/><t color='#7dcbd0'>Features</t>%7<br/><br/><t color='#7dcbd0'>Specs</t><br/>%8 km/h | %9 seats | trunk %10 | armor %11 | fuel %12",
+    "<t size='1.2' color='#f2fbfb'>%1</t><br/><t color='#7dcbd0'>Category</t><br/>%2<br/><br/><t color='#7dcbd0'>Purchase</t><br/>$%3<br/><t color='#7dcbd0'>KCSO Bank</t> $%4<br/><t color='#7dcbd0'>Personal Bank</t> $%5<br/><br/><t color='#7dcbd0'>Access</t><br/>%6<br/><br/><t color='#7dcbd0'>Features</t>%7<br/><br/><t color='#7dcbd0'>Specs</t><br/>%8 km/h | %9 seats | trunk %10 | armor %11 | fuel %12",
     _displayName,
     _categoryTitle,
     [_price] call life_fnc_numberText,

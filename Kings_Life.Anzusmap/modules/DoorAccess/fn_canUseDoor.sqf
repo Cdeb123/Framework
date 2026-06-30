@@ -22,8 +22,8 @@ _access params [
 ];
 
 if (_mode isEqualTo "" || {_mode isEqualTo "public"}) exitWith {true};
-if ([] call life_fnc_isCommunityOwner) exitWith {true};
-if (!isNil "life_adminlevel" && {call life_adminlevel >= 5}) exitWith {true};
+if (["owner.access"] call life_fnc_hasPermission) exitWith {true};
+if (["staff.permissions"] call life_fnc_hasPermission) exitWith {true};
 if (["leo.department.oversight"] call life_fnc_hasPermission) exitWith {true};
 
 private _sideKeys = switch (playerSide) do {

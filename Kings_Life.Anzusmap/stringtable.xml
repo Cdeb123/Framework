@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project name="Altis Life RPG">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project name="Kings County Life RPG">
     <Package name="Init">
         <Key ID="STR_Init_ClientSetup">
             <Original>Setting up client, please wait...</Original>
@@ -64,15 +64,15 @@
 			<Chinesesimp>服装商店</Chinesesimp>
         </Key>
         <Key ID="STR_Shops_C_Police">
-            <Original>Altis Police Department Shop</Original>
-            <Czech>Altis policejní oddělení Shop</Czech>
+            <Original>KCSO Department Shop</Original>
+            <Czech>Kings County policejní oddělení Shop</Czech>
             <French>Vêtements policiers</French>
             <Spanish>Tienda del Departamento de Policía</Spanish>
             <Russian></Russian>
             <Portuguese>Loja de Roupas Policiais</Portuguese>
             <Polish>Sklep Policyjny</Polish>
-            <Italian>Dipartimento della Polizia di Altis</Italian>
-            <German>Altis Polizei Department Geschäft</German>
+            <Italian>Dipartimento della Polizia di Kings County</Italian>
+            <German>Kings County Polizei Department Geschäft</German>
 			<Chinesesimp>警局商店</Chinesesimp>
         </Key>
         <Key ID="STR_Shops_C_Rebel">
@@ -136,15 +136,15 @@
 			<Chinesesimp>卡丁车赛车服</Chinesesimp>
         </Key>
         <Key ID="STR_Shops_Market">
-            <Original>Altis Market</Original>
-            <Czech>Altis Market</Czech>
-            <Spanish>Mercado de Altis</Spanish>
+            <Original>Kings County Market</Original>
+            <Czech>Kings County Market</Czech>
+            <Spanish>Mercado de Kings County</Spanish>
             <Russian></Russian>
-            <German>Altis Markt</German>
+            <German>Kings County Markt</German>
             <Italian>Mercato</Italian>
-            <French>Marché d'Altis</French>
+            <French>Marché d'Kings County</French>
             <Portuguese>Mercado</Portuguese>
-            <Polish>Market Altis</Polish>
+            <Polish>Market Kings County</Polish>
 			<Chinesesimp>市场</Chinesesimp>
         </Key>
         <Key ID="STR_Shops_Rebel">
@@ -256,11 +256,11 @@
 			<Chinesesimp>玻璃贸易商</Chinesesimp>
         </Key>
         <Key ID="STR_Shops_Minerals">
-            <Original>Altis Industrial Trader</Original>
-            <Czech>Altis Industrial Trader</Czech>
+            <Original>Kings County Industrial Trader</Original>
+            <Czech>Kings County Industrial Trader</Czech>
             <Spanish>Comerciante Industrial</Spanish>
             <Russian></Russian>
-            <German>Altis Industriehandel</German>
+            <German>Kings County Industriehandel</German>
             <Italian>Vendita materiali industriali</Italian>
             <French>Acheteur de minerais</French>
             <Portuguese>Comprador de Material Indústrial</Portuguese>
@@ -268,11 +268,11 @@
 			<Chinesesimp>铁/铜贸易</Chinesesimp>
         </Key>
         <Key ID="STR_Shops_Cop">
-            <Original>APD Item Shop</Original>
-            <Czech>APD Item Shop</Czech>
+            <Original>KCSO Item Shop</Original>
+            <Czech>KCSO Item Shop</Czech>
             <Spanish>Equipamiento Policial</Spanish>
             <Russian></Russian>
-            <German>APD Ausrüstung</German>
+            <German>KCSO Ausrüstung</German>
             <Italian>Negozio Polizia</Italian>
             <French>Equipement policier</French>
             <Portuguese>Equipamentos da Polícia</Portuguese>
@@ -1040,7 +1040,7 @@
             <French>Gestion du Compte Bancaire</French>
             <Italian>Gestione Bancaria</Italian>
             <Portuguese>Conta Bancária</Portuguese>
-            <Polish>Bankomat Altis</Polish>
+            <Polish>Bankomat Kings County</Polish>
 			<Chinesesimp>银行账户管理</Chinesesimp>
         </Key>
         <Key ID="STR_ATM_Withdraw">
@@ -1345,13 +1345,13 @@
     </Package>
     <Package name="Cell_Phone">
         <Key ID="STR_CELL_Title">
-            <Original>Altis Mobile</Original>
-            <Czech>Altis Mobile</Czech>
+            <Original>Kings Mobile</Original>
+            <Czech>Kings Mobile</Czech>
             <Spanish>Celular</Spanish>
             <Russian></Russian>
-            <German>Altis Mobilfunk</German>
-            <French>Altis Mobile</French>
-            <Italian>Cellulare Altis</Italian>
+            <German>Kings County Mobilfunk</German>
+            <French>Kings Mobile</French>
+            <Italian>Cellulare Kings County</Italian>
             <Portuguese>Celular</Portuguese>
             <Polish>Telefon</Polish>
 			<Chinesesimp>手机</Chinesesimp>
@@ -3159,14 +3159,14 @@
     </Package>
     <Package name="Wanted_Menu">
         <Key ID="STR_Wanted_Title">
-            <Original>APD Wanted List</Original>
-            <Czech>LAPD seznamu hledaných</Czech>
+            <Original>KCSO Wanted List</Original>
+            <Czech>KCSO seznamu hledaných</Czech>
             <Spanish>Lista de Busqueda</Spanish>
             <Russian></Russian>
             <German>Fahndungsliste</German>
             <French>Interpol</French>
             <Italian>Lista Ricercati</Italian>
-            <Polish>Lista APD Poszukiwane</Polish>
+            <Polish>Lista KCSO Poszukiwane</Polish>
             <Portuguese>Lista de Procurados</Portuguese>
 			<Chinesesimp>通缉名单</Chinesesimp>
         </Key>
@@ -10504,29 +10504,17 @@
             <Italian>Processo del sale</Italian>
 			<Chinesesimp>食盐制造厂</Chinesesimp>
         </Key>
-        <Key ID="STR_MAR_Altis_Corrections">
-            <Original>Altis Corrections</Original>
-            <Czech>Altis Opravy</Czech>
-            <French>Prison d'Altis</French>
-            <Spanish>Prisión de Altis</Spanish>
+        <Key ID="STR_MAR_Kings_County_Corrections">
+            <Original>Kings County Corrections</Original>
+            <Czech>Kings County Opravy</Czech>
+            <French>Prison de Kings County</French>
+            <Spanish>Prisión de Kings County</Spanish>
             <Russian></Russian>
-            <German>Altis Bundesgefängnis</German>
-            <Portuguese>Prisão de Altis</Portuguese>
-            <Polish>Więzienie Altis</Polish>
-            <Italian>Penitenziario di Altis</Italian>
-			<Chinesesimp>监狱</Chinesesimp>
-        </Key>
-        <Key ID="STR_MAR_Tanoa_Corrections">
-            <Original>Tanoa Corrections</Original>
-            <Czech>Tanoa Opravy</Czech>
-            <French>Prison de Tanoa</French>
-            <Spanish>Prisión de Tanoa</Spanish>
-            <Russian></Russian>
-            <German>Tanoa Bundesgefängnis</German>
-            <Portuguese>Prisão de Tanoa</Portuguese>
-            <Polish>Więzienie Tanoa</Polish>
-            <Italian>Penitenziario di Tanoa</Italian>
-			<Chinesesimp>Tanoa更正</Chinesesimp>
+            <German>Kings County Bundesgefängnis</German>
+            <Portuguese>Prisão de Kings County</Portuguese>
+            <Polish>Więzienie Kings County</Polish>
+            <Italian>Penitenziario di Kings County</Italian>
+			<Chinesesimp>Kings County更正</Chinesesimp>
         </Key>
         <Key ID="STR_MAR_Police_HQ">
             <Original>Police HQ</Original>
@@ -10537,7 +10525,7 @@
             <Russian></Russian>
             <German>Polizei HQ</German>
             <Portuguese>QG Policial</Portuguese>
-            <Polish>KG Policji Altis</Polish>
+            <Polish>KG Policji Kings County</Polish>
 			<Chinesesimp>警察总部</Chinesesimp>
         </Key>
         <Key ID="STR_MAR_Coast_Guard">
@@ -10681,7 +10669,7 @@
             <Russian></Russian>
             <German>Zentralbank</German>
             <Portuguese>Banco Local</Portuguese>
-            <Polish>Bank Altis</Polish>
+            <Polish>Bank Kings County</Polish>
 			<Chinesesimp>银行</Chinesesimp>
         </Key>
         <Key ID="STR_MAR_Car_Shop">
@@ -10705,7 +10693,7 @@
             <Russian></Russian>
             <German>Krankenhaus</German>
             <Portuguese>Hospital/Clínica</Portuguese>
-            <Polish>Klinika Altis</Polish>
+            <Polish>Klinika Kings County</Polish>
 			<Chinesesimp>医院/诊所</Chinesesimp>
         </Key>
         <Key ID="STR_MAR_Diamond_Mine">
@@ -10821,7 +10809,7 @@
             <Czech>Channel 7 News</Czech>
             <French>Chaine d'infos Numéro 7</French>
             <Spanish>Canal de Noticias 7</Spanish>
-            <Italian>Notiziario di Altis</Italian>
+            <Italian>Notiziario di Kings County</Italian>
             <Russian></Russian>
             <German>Kanal 7 Nachrichtensender</German>
             <Portuguese>Canal de Notícias 7</Portuguese>
@@ -11117,7 +11105,7 @@
 			<Chinesesimp>金库</Chinesesimp>
         </Key>
         <Key ID="STR_MAR_Highway_Patrol">
-            <Original>Highway Patrol Outpost</Original>
+            <Original>KCSO HSU Outpost</Original>
             <Czech>Dálniční hlídka Outpost</Czech>
             <French>Avant-poste de Police</French>
             <Spanish>Puesto de Patrulla de Carretera</Spanish>
@@ -11875,40 +11863,40 @@
 			<Chinesesimp>东北叛军基地</Chinesesimp>
         </Key>
         <Key ID="STR_SP_EMS_Kav">
-            <Original>Kavala Hospital</Original>
-            <Czech>Kavala Hospital</Czech>
-            <Spanish>Kavala Hospital</Spanish>
-            <Russian>Kavala Hospital</Russian>
-            <German>Kavala Krankenhaus</German>
-            <French>Hôpital de Kavala</French>
-            <Italian>Kavala Hospital</Italian>
-            <Portuguese>Kavala Hospital</Portuguese>
-            <Polish>Kavala Hospital</Polish>
-			<Chinesesimp>Kavala医院</Chinesesimp>
+            <Original>Kings County Hospital</Original>
+            <Czech>Kings County Hospital</Czech>
+            <Spanish>Kings County Hospital</Spanish>
+            <Russian>Kings County Hospital</Russian>
+            <German>Kings County Krankenhaus</German>
+            <French>Hôpital de Kings County</French>
+            <Italian>Kings County Hospital</Italian>
+            <Portuguese>Kings County Hospital</Portuguese>
+            <Polish>Kings County Hospital</Polish>
+			<Chinesesimp>Kings County医院</Chinesesimp>
         </Key>
         <Key ID="STR_SP_EMS_Ath">
-            <Original>Athira Regional</Original>
-            <Czech>Athira Regional</Czech>
-            <Spanish>Athira Regional</Spanish>
-            <Russian>Athira Regional</Russian>
-            <German>Athira Krankenhaus</German>
-            <French>Hôpital d'Athira</French>
-            <Italian>Athira Regional</Italian>
-            <Portuguese>Athira Regional</Portuguese>
-            <Polish>Athira Regional</Polish>
-			<Chinesesimp>Athira地区</Chinesesimp>
+            <Original>Kings County Regional</Original>
+            <Czech>Kings County Regional</Czech>
+            <Spanish>Kings County Regional</Spanish>
+            <Russian>Kings County Regional</Russian>
+            <German>Kings County Krankenhaus</German>
+            <French>Hôpital d'Kings County</French>
+            <Italian>Kings County Regional</Italian>
+            <Portuguese>Kings County Regional</Portuguese>
+            <Polish>Kings County Regional</Polish>
+			<Chinesesimp>Kings County地区</Chinesesimp>
         </Key>
         <Key ID="STR_SP_EMS_Pyr">
-            <Original>Pyrgos Hospital</Original>
-            <Czech>Pyrgos Hospital</Czech>
-            <Spanish>Pyrgos Hospital</Spanish>
-            <Russian>Pyrgos Hospital</Russian>
-            <German>Pyrgos Krankenhaus</German>
-            <French>Hôpital de Pyrgos</French>
-            <Italian>Pyrgos Hospital</Italian>
-            <Portuguese>Pyrgos Hospital</Portuguese>
-            <Polish>Pyrgos Hospital</Polish>
-			<Chinesesimp>Pyrgos医院</Chinesesimp>
+            <Original>Kings County Hospital</Original>
+            <Czech>Kings County Hospital</Czech>
+            <Spanish>Kings County Hospital</Spanish>
+            <Russian>Kings County Hospital</Russian>
+            <German>Kings County Krankenhaus</German>
+            <French>Hôpital de Kings County</French>
+            <Italian>Kings County Hospital</Italian>
+            <Portuguese>Kings County Hospital</Portuguese>
+            <Polish>Kings County Hospital</Polish>
+			<Chinesesimp>Kings County医院</Chinesesimp>
         </Key>
         <Key ID="STR_SP_EMS_SE">
             <Original>South East Hospital</Original>
@@ -12967,7 +12955,7 @@
 			<Chinesesimp>管理员信息</Chinesesimp>
         </Key>
     </Package>
-    <Package name="Tanoa Strings">
+    <Package name="Kings County Strings">
         <Key ID="STR_Civ_Plane">
             <Original>Civ Plane</Original>
             <Czech></Czech>
@@ -13064,7 +13052,7 @@
             <German>Rebellen Helikopter</German>
 			<Chinesesimp>叛军直升机</Chinesesimp>
         </Key>
-        <Key ID="STR_Police_Tanoa">
+        <Key ID="STR_Police_Kings_County">
             <Original>Police HQ</Original>
             <Czech></Czech>
             <French>QG de Police</French>

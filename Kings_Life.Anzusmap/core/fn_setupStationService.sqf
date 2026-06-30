@@ -1,7 +1,7 @@
 /*
     File: fn_setupStationService.sqf
     Author: NiiRoZz
-    Edit: BoGuu - Added Tanoa Stations
+    Edit: BoGuu - Added Anzusmap Stations
 
     Description:
     Add action fuel action in Station Service.
@@ -62,7 +62,7 @@ private _altisPositions = [
     [25701.2,21372.6,-0.0774155]
 ];
 
-private _tanoaPositions = [
+private _anzusPositions = [
     [7978.23,7419.24,-0.100807],
     [7976.92,7427.11,-0.058516],
     [5173.94,8806.35,-0.0822775],
@@ -150,7 +150,7 @@ private _tanoaPositions = [
     [11637.2,13052.8,-0.228891]
 ];
 
-private _stationPositions = [[["Altis", _altisPositions], ["Tanoa", _tanoaPositions]]] call TON_fnc_terrainSort;
+private _stationPositions = [[["Altis", _altisPositions], ["Anzusmap", _anzusPositions]]] call TON_fnc_terrainSort;
 
 {
     private _pump = nearestObjects [_x,["Land_fs_feed_F","Land_FuelStation_01_pump_F","Land_FuelStation_02_pump_F"],5] select 0;

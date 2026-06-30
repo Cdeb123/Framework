@@ -12,7 +12,7 @@ private _shopCfg = missionConfigFile >> "Life_Shops" >> "LEOClothingShops" >> _s
 private _category = lbData [8953,lbCurSel 8953];
 private _categoryCfg = _shopCfg >> "Categories" >> _category;
 private _department = getText (_shopCfg >> "department");
-if (_department isEqualTo "") then {_department = "tcsd";};
+if (_department isEqualTo "") then {_department = "kcso";};
 
 lbClear 8954;
 life_leo_clothing_shop_items = [];

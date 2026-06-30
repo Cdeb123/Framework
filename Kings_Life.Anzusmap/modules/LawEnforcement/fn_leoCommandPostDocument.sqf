@@ -13,8 +13,8 @@ private _body = ctrlText (_display displayCtrl 8122);
 if (_title isEqualTo "" || {_body isEqualTo ""}) exitWith {hint "Command documents need a title and body.";};
 
 private _department = lbData [8102,lbCurSel 8102];
-if (_department isEqualTo "") then {_department = missionNamespace getVariable ["life_leo_department","tcsd"];};
-if (_department isEqualTo "") then {_department = "tcsd";};
+if (_department isEqualTo "") then {_department = missionNamespace getVariable ["life_leo_department","kcso"];};
+if (_department isEqualTo "") then {_department = "kcso";};
 
 [getPlayerUID player,[_department,_title,_body]] remoteExecCall ["DB_fnc_updateLEOCommandDocument",RSERV];
 hint "Command document posted.";

@@ -20,7 +20,7 @@ private _defaultIndex = 0;
 {
     private _idx = lbAdd [8102,getText (_x >> "displayName")];
     lbSetData [8102,_idx,configName _x];
-    if ((configName _x) isEqualTo (missionNamespace getVariable ["life_leo_department","tcsd"])) then {_defaultIndex = _idx;};
+    if ((configName _x) isEqualTo (missionNamespace getVariable ["life_leo_department","kcso"])) then {_defaultIndex = _idx;};
 } forEach ("true" configClasses (missionConfigFile >> "Life_LEO" >> "Departments"));
 lbSetCurSel [8102,_defaultIndex];
 

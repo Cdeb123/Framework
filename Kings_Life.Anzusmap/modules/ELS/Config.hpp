@@ -83,7 +83,7 @@ class Life_ELS {
         /*
             Add D3S police classnames here:
 
-            class TCSD_D3S {
+            class KCSO_D3S {
                 profile = "d3s_default";
                 classNames[] = {"YOUR_D3S_POLICE_CLASSNAME"};
             };
@@ -91,7 +91,7 @@ class Life_ELS {
             If a car needs different light/siren values, copy d3s_default into a
             new profile and point the vehicle group at that profile.
         */
-        class TCSD_D3S {
+        class KCSO_D3S {
             profile = "d3s_default";
             classNames[] = { "AG_CROWNVIC_Police_AG", "AG_CROWNVIC_Police_ST_AG", "AG_CROWNVIC_UNM_AG_TIER3", "AG_Bearcat_KCSO_AG", "AG_Titan_Police_AG", "AG_Camaro_21_HSU_AG_TIER3", "AG_CTSV_AdminServices_AG_TIER3", "AG_Bearcat_KCSO_AG", "AG_MustangGT15_HSU_AG", "AG_MustangGT15_HSU_ST_AG", "AG_Silverado_19_Unm_AG_TIER3", "AG_Taurus_Unm_AG", "AG_Suburban16_Unm_AG" };
         };

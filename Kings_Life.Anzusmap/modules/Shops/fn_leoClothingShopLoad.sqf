@@ -10,6 +10,15 @@ params [
 private _display = findDisplay 8950;
 if (isNull _display) exitWith {};
 
+if (_shop isEqualTo "cop") then {
+    _shop = switch (missionNamespace getVariable ["life_leo_department","kcso"]) do {
+        case "usms": {"usms"};
+        case "dea": {"dea"};
+        case "fbi": {"fbi"};
+        default {"cop"};
+    };
+};
+
 private _shopCfg = missionConfigFile >> "Life_Shops" >> "LEOClothingShops" >> _shop;
 if !(isClass _shopCfg) exitWith {closeDialog 0;};
 

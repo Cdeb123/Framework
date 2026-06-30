@@ -10,7 +10,7 @@ life_action_delay = time;
 private _shop = missionNamespace getVariable ["life_vehicle_shop_type","cop_car"];
 private _shopCfg = missionConfigFile >> "Life_Shops" >> "VehicleShops" >> "LawEnforcement" >> _shop;
 private _department = getText (_shopCfg >> "department");
-if (_department isEqualTo "") then {_department = "tcsd";};
+if (_department isEqualTo "") then {_department = "kcso";};
 private _context = missionNamespace getVariable ["life_vehicle_shop_context",[_shop,"","cop",false]];
 _context params ["_contextShop","_spawnPoints","_shopFlag","_disableBuy"];
 if (_disableBuy) exitWith {};
@@ -36,7 +36,7 @@ private _missingCert = false;
 if !(_cert isEqualTo "") then {
     _missingCert = !(missionNamespace getVariable [format ["license_cop_%1",_cert],false]);
 };
-if (_missingCert) exitWith {hint "You need the required TCSD certification before buying this vehicle.";};
+if (_missingCert) exitWith {hint "You need the required KCSO certification before buying this vehicle.";};
 
 private _conditionOk = [_condition] call life_fnc_levelCheck;
 private _rankOk = (_rank isEqualTo "") || {[_rank,_department] call life_fnc_leoAtLeastRank};
@@ -80,7 +80,7 @@ if (_useFaction) then {
     if (_funds >= _purchasePrice) then {
         missionNamespace setVariable ["life_faction_bank_law_enforcement",_funds - _purchasePrice,true];
         publicVariable "life_faction_bank_law_enforcement";
-        _paymentSource = "TCSD bank";
+        _paymentSource = "KCSO bank";
     };
 };
 if (_paymentSource isEqualTo "") then {

@@ -2,7 +2,7 @@
 /*
     File: fn_updateLEOTraining.sqf
 
-    Server-side write endpoint for the TCSD Training Terminal.
+    Server-side write endpoint for the KCSO Admin Services Terminal.
 */
 params [
     ["_requesterUid","",[""]],
@@ -22,7 +22,6 @@ private _readArray = {
 
 private _canEdit = {
     params [["_uid","",[""]]];
-    if (_uid in ["76561198810688206"]) exitWith {true};
 
     private _permissions = [];
     private _rows = [format ["SELECT permissions FROM steam_whitelist WHERE pid='%1' AND active='1'",_uid],2,true] call DB_fnc_asyncCall;
@@ -44,24 +43,23 @@ private _canEdit = {
 
     ("leo.training.edit" in _permissions)
     || {"leo.training.roster" in _permissions}
-    || {"leo.training.fto" in _permissions}
+    || {"leo.training.admin_services" in _permissions}
     || {"leo.command.terminal" in _permissions}
     || {"leo.department.oversight" in _permissions}
-    || {"owner.access" in _permissions}
-    || {"owner.community" in _permissions}
     || {"staff.permissions" in _permissions}
-    || {"sub:academy" in _permissions}
+    || {"sub:admin_services" in _permissions}
     || {"rank:sergeant" in _permissions}
     || {"rank:lieutenant" in _permissions}
     || {"rank:captain" in _permissions}
-    || {"rank:assistant_sheriff" in _permissions}
+    || {"rank:major" in _permissions}
     || {"rank:undersheriff" in _permissions}
     || {"rank:sheriff" in _permissions}
+    || {"rank:commissioner" in _permissions}
 };
 
 private _rankOrder = {
     params [["_rank","",[""]]];
-    private _ranks = ["cadet","deputy","senior_deputy","corporal","detective","sergeant","lieutenant","captain","assistant_sheriff","undersheriff","sheriff"];
+    private _ranks = ["cadet","probationary_deputy","deputy","senior_deputy","corporal","sergeant","lieutenant","captain","major","undersheriff","sheriff","commissioner"];
     _ranks find _rank;
 };
 
@@ -72,7 +70,7 @@ if !([_requesterUid] call _canEdit) exitWith {
 switch (_mode) do {
     case "document": {
         _data params [
-            ["_department","tcsd",[""]],
+            ["_department","kcso",[""]],
             ["_title","",[""]],
             ["_body","",[""]]
         ];
@@ -92,16 +90,16 @@ switch (_mode) do {
         _data params [
             ["_traineePid","",[""]],
             ["_characterUid","",[""]],
-            ["_department","tcsd",[""]],
+            ["_department","kcso",[""]],
             ["_phase","Cadet",[""]],
-            ["_ftoPid","",[""]],
+            ["_trainerPid","",[""]],
             ["_notes","",[""]]
         ];
         if (_traineePid isEqualTo "") exitWith {};
         if (_characterUid isEqualTo "") then {_characterUid = _traineePid;};
 
         private _requesterBestOrder = -1;
-        private _requesterOversight = _requesterUid in ["76561198810688206"];
+        private _requesterOversight = false;
         private _requesterRows = [format ["SELECT rank_key, role_permissions FROM leo_memberships WHERE pid='%1' AND status='active'",_requesterUid],2,true] call DB_fnc_asyncCall;
         if (_requesterRows isEqualType []) then {
             {
@@ -109,9 +107,8 @@ switch (_mode) do {
                 if (_rankOrderValue > _requesterBestOrder) then {_requesterBestOrder = _rankOrderValue;};
                 private _rolePerms = [(_x select 1)] call _readArray;
                 if (
-                    ((_x select 0) in ["sheriff","undersheriff","assistant_sheriff"])
+                    ((_x select 0) in ["major","undersheriff","sheriff","commissioner"])
                     || {"leo.department.oversight" in _rolePerms}
-                    || {"leo.command.owner" in _rolePerms}
                     || {"staff.permissions" in _rolePerms}
                 ) then {
                     _requesterOversight = true;
@@ -133,12 +130,12 @@ switch (_mode) do {
         };
 
         private _query = format [
-            "INSERT INTO leo_training_roster (trainee_pid, trainee_character_uid, department_key, phase, fto_pid, notes, updated_by_pid, active) VALUES ('%1','%2','%3','%4','%5','%6','%7','1') ON DUPLICATE KEY UPDATE phase='%4', fto_pid='%5', notes='%6', updated_by_pid='%7', active='1', updated_at=CURRENT_TIMESTAMP",
+            "INSERT INTO leo_training_roster (trainee_pid, trainee_character_uid, department_key, phase, trainer_pid, notes, updated_by_pid, active) VALUES ('%1','%2','%3','%4','%5','%6','%7','1') ON DUPLICATE KEY UPDATE phase='%4', trainer_pid='%5', notes='%6', updated_by_pid='%7', active='1', updated_at=CURRENT_TIMESTAMP",
             [_traineePid] call DB_fnc_mresString,
             [_characterUid] call DB_fnc_mresString,
             [_department] call DB_fnc_mresString,
             [_phase] call DB_fnc_mresString,
-            [_ftoPid] call DB_fnc_mresString,
+            [_trainerPid] call DB_fnc_mresString,
             [_notes] call DB_fnc_mresString,
             [_requesterUid] call DB_fnc_mresString
         ];

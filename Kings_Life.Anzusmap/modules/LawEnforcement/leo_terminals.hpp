@@ -40,7 +40,7 @@ class life_leo_command_terminal {
         };
         class Title: Life_RscText {
             idc = -1;
-            text = "TCSD Command Suite";
+            text = "KCSO Command Suite";
             colorText[] = {0.94,0.99,1,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.042;
@@ -51,7 +51,7 @@ class life_leo_command_terminal {
         };
         class Subtitle: Life_RscText {
             idc = -1;
-            text = "Ranks, divisions, roles, and department documents";
+            text = "Ranks, subdivisions, roles, and department documents";
             colorText[] = {0.56,0.70,0.78,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.024;
@@ -158,7 +158,7 @@ class life_leo_command_terminal {
             h = 0.034 * safezoneH;
         };
         class SubdivisionLabel: DepartmentLabel {
-            text = "Primary Division";
+            text = "Primary Subdivision";
             y = 0.380 * safezoneH + safezoneY;
         };
         class SubdivisionCombo: Life_RscCombo {
@@ -193,7 +193,7 @@ class life_leo_command_terminal {
             h = 0.034 * safezoneH;
         };
         class DivisionKeysLabel: DepartmentLabel {
-            text = "Extra Divisions";
+            text = "Extra Subdivisions";
             y = 0.584 * safezoneH + safezoneY;
         };
         class SubdivisionEdit: Life_RscEdit {
@@ -351,7 +351,7 @@ class life_leo_training_terminal {
         };
         class Title: Life_RscText {
             idc = -1;
-            text = "TCSD Training Academy";
+            text = "KCSO Admin Services";
             colorText[] = {1.0,0.96,0.88,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.042;
@@ -362,7 +362,7 @@ class life_leo_training_terminal {
         };
         class Subtitle: Life_RscText {
             idc = -1;
-            text = "Cadets, FTO assignments, academy documents, and release status";
+            text = "Cadets, trainer assignments, Admin Services documents, and release status";
             colorText[] = {0.78,0.68,0.52,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.024;
@@ -452,7 +452,7 @@ class life_leo_training_terminal {
 
         class RosterLabel: Life_RscText {
             idc = -1;
-            text = "Cadet & FTO Roster";
+            text = "Cadet & Trainer Roster";
             colorText[] = {1.0,0.78,0.42,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.026;
@@ -482,7 +482,7 @@ class life_leo_training_terminal {
             h = 0.034 * safezoneH;
         };
         class PhaseLabel: TraineeLabel {
-            text = "Academy Status";
+            text = "Admin Services Status";
             x = 0.668 * safezoneW + safezoneX;
         };
         class PhaseCombo: Life_RscCombo {
@@ -506,7 +506,7 @@ class life_leo_training_terminal {
         };
         class PostDocButton: Life_RscButtonMenu {
             idc = 8211;
-            text = "Post Academy Doc";
+            text = "Post Admin Doc";
             onButtonClick = "[] call life_fnc_leoTrainingPostDocument";
             x = 0.452 * safezoneW + safezoneX;
             y = 0.795 * safezoneH + safezoneY;

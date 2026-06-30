@@ -24,7 +24,16 @@ if (_shop isEqualTo "") exitWith {};
 
 private _useModernLEOShop = false;
 if (playerSide isEqualTo west) then {
-    _useModernLEOShop = isClass (missionConfigFile >> "Life_Shops" >> "VehicleShops" >> "LawEnforcement" >> _shop);
+    private _modernShop = _shop;
+    if (_modernShop isEqualTo "cop_car") then {
+        _modernShop = switch (missionNamespace getVariable ["life_leo_department","kcso"]) do {
+            case "usms": {"usms_motor_pool"};
+            case "dea": {"dea_motor_pool"};
+            case "fbi": {"fbi_motor_pool"};
+            default {"cop_car"};
+        };
+    };
+    _useModernLEOShop = isClass (missionConfigFile >> "Life_Shops" >> "VehicleShops" >> "LawEnforcement" >> _modernShop);
 };
 if (_useModernLEOShop) exitWith {_this call life_fnc_openLEOVehicleShop;};
 

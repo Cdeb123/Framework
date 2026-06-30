@@ -35,6 +35,14 @@ if (_args isEqualType "") then {
 if (_wrongSide) exitWith {hint localize "STR_Shop_Veh_NotAllowed";};
 if !(playerSide isEqualTo west) exitWith {hint localize "STR_Shop_Veh_NotAllowed";};
 if (_shop isEqualTo "") exitWith {};
+if (_shop isEqualTo "cop_car") then {
+    _shop = switch (missionNamespace getVariable ["life_leo_department","kcso"]) do {
+        case "usms": {"usms_motor_pool"};
+        case "dea": {"dea_motor_pool"};
+        case "fbi": {"fbi_motor_pool"};
+        default {"cop_car"};
+    };
+};
 
 private _shopCfg = missionConfigFile >> "Life_Shops" >> "VehicleShops" >> "LawEnforcement" >> _shop;
 if !(isClass _shopCfg) exitWith {};
@@ -47,7 +55,7 @@ private _missingCert = false;
 if !(_cert isEqualTo "") then {
     _missingCert = !(missionNamespace getVariable [format ["license_cop_%1",_cert],false]);
 };
-if (_missingCert) exitWith {hint "You need the required TCSD certification before using this shop.";};
+if (_missingCert) exitWith {hint "You need the required KCSO certification before using this shop.";};
 
 if (dialog) exitWith {};
 life_vehicle_shop_type = _shop;

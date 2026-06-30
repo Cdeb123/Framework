@@ -11,7 +11,6 @@ params [
 ];
 
 if (_rank isEqualTo "") exitWith {false};
-if ([] call life_fnc_isCommunityOwner) exitWith {true};
 
 private _memberships = missionNamespace getVariable ["life_leo_memberships",[]];
 private _ok = false;

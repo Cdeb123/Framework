@@ -64,7 +64,7 @@ if !(_trainingDocs isEqualType []) then {_trainingDocs = [];};
 private _commandDocs = ["SELECT id, department_key, title, body, created_by_pid, DATE_FORMAT(insert_time,'%Y-%m-%d %H:%i') FROM leo_command_documents WHERE active='1' ORDER BY id DESC LIMIT 40",2,true] call DB_fnc_asyncCall;
 if !(_commandDocs isEqualType []) then {_commandDocs = [];};
 
-private _trainingRoster = ["SELECT trainee_pid, trainee_character_uid, department_key, phase, fto_pid, notes FROM leo_training_roster WHERE active='1' ORDER BY updated_at DESC LIMIT 60",2,true] call DB_fnc_asyncCall;
+private _trainingRoster = ["SELECT trainee_pid, trainee_character_uid, department_key, phase, trainer_pid, notes FROM leo_training_roster WHERE active='1' ORDER BY updated_at DESC LIMIT 60",2,true] call DB_fnc_asyncCall;
 if !(_trainingRoster isEqualType []) then {_trainingRoster = [];};
 
 [_permissions,_citations,_warrants,_leoRows,_trainingDocs,_trainingRoster,_commandDocs] remoteExecCall ["life_fnc_frameworkDataReceived",_owner];

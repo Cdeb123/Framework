@@ -105,7 +105,7 @@ class Housing {
 
     };
 
-    class Tanoa {
+    class Anzusmap {
 
         // Houses with Garages
         class Land_Hotel_01_F {

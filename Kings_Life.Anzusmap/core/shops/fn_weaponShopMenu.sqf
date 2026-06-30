@@ -14,7 +14,14 @@ private _modernGroup = switch (playerSide) do {
     default {""};
 };
 private _modernShop = _requestedShop;
-if (_modernShop isEqualTo "cop_basic") then {_modernShop = "tcsd_armory";};
+if (_modernShop isEqualTo "cop_basic") then {
+    _modernShop = switch (missionNamespace getVariable ["life_leo_department","kcso"]) do {
+        case "usms": {"usms_armory"};
+        case "dea": {"dea_armory"};
+        case "fbi": {"fbi_armory"};
+        default {"kcso_armory"};
+    };
+};
 private _useModernShop = false;
 if !(_modernGroup isEqualTo "") then {
     _useModernShop = isClass (missionConfigFile >> "Life_Shops" >> "WeaponShops" >> _modernGroup >> _modernShop);

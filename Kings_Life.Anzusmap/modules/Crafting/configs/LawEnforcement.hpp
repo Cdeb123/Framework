@@ -5,7 +5,7 @@ class LawEnforcement {
     condition = "playerSide isEqualTo west";
     timeMultiplier = 1.35;
     vehicleGarageSide = "cop";
-    department = "tcsd";
+    department = "kcso";
 
     class Categories {
         class duty {
@@ -292,7 +292,7 @@ class LawEnforcement {
             outputAmount = 1;
             requiredLevel = 55;
             rank = "sergeant";
-            subdivisions[] = {"ert","patrol"};
+            subdivisions[] = {"swat"};
             craftTime = 300;
             cashCost = 13500;
             craftingXP = 560;
@@ -634,14 +634,14 @@ class LawEnforcement {
             outputAmount = 1;
             requiredLevel = 100;
             rank = "sergeant";
-            subdivisions[] = {"ert"};
-            rolePermissions[] = {"leo.tactical.ert"};
+            subdivisions[] = {"swat"};
+            rolePermissions[] = {"leo.tactical.swat"};
             craftTime = 780;
             cashCost = 125000;
             craftingXP = 1600;
             characterXP = 0;
             materials[] = {{"iron_refined",310},{"copper_refined",135},{"glass",46},{"oil_processed",70},{"diamond_cut",14}};
-            text = "Sergeant ERT armored vehicle with the longest police ground craft.";
+            text = "Sergeant SWAT armored vehicle with the longest police ground craft.";
         };
         class patrol_cvpi {
             title = "2011 CVPI Patrol";
@@ -651,7 +651,7 @@ class LawEnforcement {
             outputAmount = 1;
             requiredLevel = 80;
             rank = "deputy";
-            subdivisions[] = {"patrol"};
+            subdivisions[] = {};
             craftTime = 420;
             cashCost = 25000;
             craftingXP = 760;
@@ -667,25 +667,25 @@ class LawEnforcement {
             outputAmount = 1;
             requiredLevel = 90;
             rank = "deputy";
-            subdivisions[] = {"hse"};
-            rolePermissions[] = {"leo.vehicle.hse"};
+            subdivisions[] = {"hsu"};
+            rolePermissions[] = {"leo.vehicle.hsu"};
             craftTime = 520;
             cashCost = 42000;
             craftingXP = 930;
             characterXP = 0;
             materials[] = {{"iron_refined",140},{"copper_refined",72},{"glass",30},{"oil_processed",34},{"diamond_cut",6}};
-            text = "HSE vehicle delivered inactive to the police garage.";
+            text = "HSU vehicle delivered inactive to the police garage.";
         };
         class bearcat {
-            title = "ERT Bearcat";
+            title = "SWAT Bearcat";
             category = "vehicles";
             outputType = "vehicle";
             outputClass = "AG_Bearcat_KCSO_AG";
             outputAmount = 1;
             requiredLevel = 100;
             rank = "sergeant";
-            subdivisions[] = {"ert"};
-            rolePermissions[] = {"leo.tactical.ert"};
+            subdivisions[] = {"swat"};
+            rolePermissions[] = {"leo.tactical.swat"};
             craftTime = 700;
             cashCost = 85000;
             craftingXP = 1250;
@@ -694,14 +694,14 @@ class LawEnforcement {
             text = "Heavy tactical vehicle. This is one of the longest LEO crafts.";
         };
         class patrol_hummingbird {
-            title = "TCSD Patrol Hummingbird";
+            title = "KCSO Patrol Hummingbird";
             category = "vehicles";
             outputType = "vehicle";
             outputClass = "AG_Hummingbird_Police";
             outputAmount = 1;
             requiredLevel = 100;
             rank = "sergeant";
-            subdivisions[] = {"patrol"};
+            subdivisions[] = {};
             condition = "license_cop_cAir";
             craftTime = 760;
             cashCost = 110000;

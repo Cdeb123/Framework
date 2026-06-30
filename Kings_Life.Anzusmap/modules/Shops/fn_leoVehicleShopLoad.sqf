@@ -10,6 +10,15 @@ params [
 private _display = findDisplay 8800;
 if (isNull _display) exitWith {};
 
+if (_shop isEqualTo "cop_car") then {
+    _shop = switch (missionNamespace getVariable ["life_leo_department","kcso"]) do {
+        case "usms": {"usms_motor_pool"};
+        case "dea": {"dea_motor_pool"};
+        case "fbi": {"fbi_motor_pool"};
+        default {"cop_car"};
+    };
+};
+
 private _shopCfg = missionConfigFile >> "Life_Shops" >> "VehicleShops" >> "LawEnforcement" >> _shop;
 if !(isClass _shopCfg) exitWith {closeDialog 0;};
 

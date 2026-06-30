@@ -74,7 +74,7 @@ publicVariable "life_server_extDB_notLoaded";
 
 _timeStamp = diag_tickTime;
 diag_log "----------------------------------------------------------------------------------------------------";
-diag_log "---------------------------------- Starting Altis Life Server Init ---------------------------------";
+diag_log "---------------------------------- Starting Kings Life Server Init ---------------------------------";
 diag_log format["------------------------------------------ Version %1 -------------------------------------------",(LIFE_SETTINGS(getText,"framework_version"))];
 diag_log "----------------------------------------------------------------------------------------------------";
 
@@ -98,7 +98,7 @@ master_group attachTo[bank_obj,[0,0,0]];
     _var = createVehicle ["Land_Hospital_side2_F", [0,0,0], [], 0, "NONE"];
     _var attachTo [_hs, [-28.0336,-10.0317,0.0889387]];
     detach _var;
-    if (worldName isEqualTo "Tanoa") then {
+    if (worldName isEqualTo "Anzusmap") then {
         if (_forEachIndex isEqualTo 0) then {
             atm_hospital_2 setPos (_var modelToWorld [4.48633,0.438477,-8.25683]);
             vendor_hospital_2 setPos (_var modelToWorld [4.48633,0.438477,-8.25683]);
@@ -183,10 +183,10 @@ publicVariable "TON_fnc_playtime_values_request";
 
 
 /* Setup the federal reserve building(s) */
-private _vaultHouse = [[["Altis", "Land_Research_house_V1_F"], ["Tanoa", "Land_Medevac_house_V1_F"]]] call TON_fnc_terrainSort;
+private _vaultHouse = [[["Altis", "Land_Research_house_V1_F"], ["Anzusmap", "Land_Medevac_house_V1_F"]]] call TON_fnc_terrainSort;
 private _altisArray = [16019.5,16952.9,0];
-private _tanoaArray = [11074.2,11501.5,0.00137329];
-private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
+private _anzusArray = [11074.2,11501.5,0.00137329];
+private _pos = [[["Altis", _altisArray], ["Anzusmap", _anzusArray]]] call TON_fnc_terrainSort;
 
 _dome = nearestObject [_pos,"Land_Dome_Big_F"];
 _rsb = nearestObject [_pos,_vaultHouse];
@@ -209,5 +209,5 @@ server_corpses = [];
 addMissionEventHandler ["EntityRespawned", {_this call TON_fnc_entityRespawned}];
 
 diag_log "----------------------------------------------------------------------------------------------------";
-diag_log format ["               End of Altis Life Server Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
+diag_log format ["               End of Kings Life Server Init :: Total Execution Time %1 seconds ",(diag_tickTime) - _timeStamp];
 diag_log "----------------------------------------------------------------------------------------------------";

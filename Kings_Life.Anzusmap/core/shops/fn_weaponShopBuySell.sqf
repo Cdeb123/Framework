@@ -92,8 +92,8 @@ if (_isSelling) then {
     };
 } else {
     private _altisArray = ["Land_u_Barracks_V2_F","Land_i_Barracks_V2_F"];
-    private _tanoaArray = ["Land_School_01_F","Land_Warehouse_03_F","Land_House_Small_02_F"];
-    private _hideoutObjs = [[["Altis",_altisArray],["Tanoa",_tanoaArray]]] call TON_fnc_terrainSort;
+    private _anzusArray = ["Land_School_01_F","Land_Warehouse_03_F","Land_House_Small_02_F"];
+    private _hideoutObjs = [[["Altis",_altisArray],["Anzusmap",_anzusArray]]] call TON_fnc_terrainSort;
     private _nearHideouts = nearestObjects [getPosATL player,_hideoutObjs,25];
     private _hideout = if (_nearHideouts isEqualTo []) then {objNull} else {_nearHideouts select 0};
 

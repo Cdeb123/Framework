@@ -205,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `discord_permissions` (
 -- --------------------------------------------------------
 
 --
--- Named Law Enforcement memberships, command terminal data, and academy tools.
+-- Named Law Enforcement memberships, command terminal data, and Admin Services tools.
 -- These tables replace numeric cop rank as the source of truth for LEO roles.
 --
 
@@ -215,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `leo_memberships` (
     `character_uid`       VARCHAR(96) NOT NULL,
     `department_key`      VARCHAR(64) NOT NULL,
     `rank_key`            VARCHAR(64) NOT NULL,
-    `primary_subdivision` VARCHAR(64) NOT NULL DEFAULT 'patrol',
+    `primary_subdivision` VARCHAR(64) NOT NULL DEFAULT 'admin_services',
     `subdivisions`        TEXT NOT NULL,
     `role_permissions`    TEXT NOT NULL,
     `status`              ENUM('active','fired','suspended') NOT NULL DEFAULT 'active',
@@ -233,7 +233,7 @@ CREATE TABLE IF NOT EXISTS `leo_memberships` (
 
 CREATE TABLE IF NOT EXISTS `leo_training_documents` (
     `id`             INT NOT NULL AUTO_INCREMENT,
-    `department_key` VARCHAR(64) NOT NULL DEFAULT 'tcsd',
+    `department_key` VARCHAR(64) NOT NULL DEFAULT 'kcso',
     `title`          VARCHAR(96) NOT NULL,
     `body`           TEXT NOT NULL,
     `created_by_pid` VARCHAR(17) NOT NULL,
@@ -247,7 +247,7 @@ CREATE TABLE IF NOT EXISTS `leo_training_documents` (
 
 CREATE TABLE IF NOT EXISTS `leo_command_documents` (
     `id`             INT NOT NULL AUTO_INCREMENT,
-    `department_key` VARCHAR(64) NOT NULL DEFAULT 'tcsd',
+    `department_key` VARCHAR(64) NOT NULL DEFAULT 'kcso',
     `title`          VARCHAR(96) NOT NULL,
     `body`           TEXT NOT NULL,
     `created_by_pid` VARCHAR(17) NOT NULL,
@@ -263,9 +263,9 @@ CREATE TABLE IF NOT EXISTS `leo_training_roster` (
     `id`                    INT NOT NULL AUTO_INCREMENT,
     `trainee_pid`           VARCHAR(17) NOT NULL,
     `trainee_character_uid` VARCHAR(96) NOT NULL,
-    `department_key`        VARCHAR(64) NOT NULL DEFAULT 'tcsd',
+    `department_key`        VARCHAR(64) NOT NULL DEFAULT 'kcso',
     `phase`                 VARCHAR(64) NOT NULL DEFAULT 'Cadet',
-    `fto_pid`               VARCHAR(17) NOT NULL,
+    `trainer_pid`           VARCHAR(17) NOT NULL,
     `notes`                 TEXT NOT NULL,
     `updated_by_pid`        VARCHAR(17) NOT NULL,
     `active`                TINYINT NOT NULL DEFAULT 1,
@@ -280,10 +280,10 @@ CREATE TABLE IF NOT EXISTS `leo_training_roster` (
 INSERT INTO `players`
     (`pid`,`name`,`aliases`,`cash`,`bankacc`,`coplevel`,`mediclevel`,`civ_licenses`,`cop_licenses`,`med_licenses`,`civ_gear`,`cop_gear`,`med_gear`,`adminlevel`,`donorlevel`,`blacklist`)
 VALUES
-    ('76561198810688206','Community Owner','"[]"',0,1000000,'7','5','"[]"','"[]"','"[]"','"[]"','"[]"','"[]"','5','0',0)
+    ('76561198810688206','George Dunn','"[]"',0,1000000,'0','5','"[]"','"[]"','"[]"','"[]"','"[]"','"[]"','5','0',0)
 ON DUPLICATE KEY UPDATE
-    `name`='Community Owner',
-    `coplevel`='7',
+    `name`='George Dunn',
+    `coplevel`='0',
     `mediclevel`='5',
     `adminlevel`='5',
     `blacklist`=0;
@@ -291,7 +291,7 @@ ON DUPLICATE KEY UPDATE
 INSERT INTO `steam_whitelist`
     (`pid`,`faction`,`level`,`permissions`,`active`,`notes`)
 VALUES
-    ('76561198810688206','community_owner',999,'["owner.access","owner.community","whitelist.override","jobs.override","leo.access","leo.department.tcsd","leo.rank.tcsd.sheriff","leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.command.owner","leo.department.oversight","leo.training.view","leo.training.edit","leo.training.roster","staff.access","staff.whitelist","staff.permissions","staff.telemetry","police.access","police.cuff","police.ticket","police.warrant","police.search"]',1,'Community Owner bootstrap grant')
+    ('76561198810688206','community_manager',999,'["owner.access","owner.community","whitelist.override","jobs.override","civilian.basic","ems.access","ems.revive","ems.treat","doj.access","doj.records","doj.citation_review","staff.access","staff.whitelist","staff.permissions","staff.telemetry"]',1,'Community Manager bootstrap grant without KCSO rank coupling')
 ON DUPLICATE KEY UPDATE
     `level`=999,
     `permissions`=VALUES(`permissions`),
@@ -301,10 +301,10 @@ ON DUPLICATE KEY UPDATE
 INSERT INTO `leo_memberships`
     (`pid`,`character_uid`,`department_key`,`rank_key`,`primary_subdivision`,`subdivisions`,`role_permissions`,`status`,`hired_by_pid`,`updated_by_pid`,`notes`)
 VALUES
-    ('76561198810688206','76561198810688206','tcsd','sheriff','patrol','["patrol","academy","hse","ert","ia","mcu","cid"]','["leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.command.owner","leo.department.oversight","leo.training.view","leo.training.edit","leo.training.roster","staff.whitelist","staff.permissions"]','active','76561198810688206','76561198810688206','Community Owner and TCSD Sheriff bootstrap grant')
+    ('76561198810688206','76561198810688206','kcso','commissioner','admin_services','["admin_services","kcsu","cid","kcia","swat","hsu"]','["leo.command.terminal","leo.command.hire","leo.command.fire","leo.command.permissions","leo.command.ranks","leo.command.divisions","leo.command.roles","leo.command.documents","leo.command.executive","leo.department.oversight","leo.training.view","leo.training.edit","leo.training.roster","leo.training.admin_services"]','active','76561198810688206','76561198810688206','George Dunn KCSO Commissioner bootstrap grant')
 ON DUPLICATE KEY UPDATE
-    `rank_key`='sheriff',
-    `primary_subdivision`='patrol',
+    `rank_key`='commissioner',
+    `primary_subdivision`='admin_services',
     `subdivisions`=VALUES(`subdivisions`),
     `role_permissions`=VALUES(`role_permissions`),
     `status`='active',

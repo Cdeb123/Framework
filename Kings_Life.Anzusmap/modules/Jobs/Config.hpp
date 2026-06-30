@@ -57,10 +57,10 @@ class Life_Jobs {
 };
 
 class Life_CommunityOwnerGrant {
-    roleName = "Community Owner";
+    roleName = "Community Manager";
     ownerUIDs[] = {"76561198810688206"};
     adminRank = 5;
-    policeRank = 7;
+    policeRank = 0;
     medicRank = 5;
     permissions[] = {
         "owner.access",
@@ -68,40 +68,6 @@ class Life_CommunityOwnerGrant {
         "whitelist.override",
         "jobs.override",
         "civilian.basic",
-        "leo.access",
-        "leo.department.tcsd",
-        "leo.rank.tcsd.sheriff",
-        "leo.subdivision.tcsd.patrol",
-        "leo.subdivision.tcsd.academy",
-        "leo.subdivision.tcsd.hse",
-        "leo.subdivision.tcsd.ert",
-        "leo.subdivision.tcsd.ia",
-        "leo.subdivision.tcsd.mcu",
-        "leo.subdivision.tcsd.cid",
-        "leo.command.terminal",
-        "leo.command.hire",
-        "leo.command.fire",
-        "leo.command.permissions",
-        "leo.command.ranks",
-        "leo.command.divisions",
-        "leo.command.roles",
-        "leo.command.documents",
-        "leo.command.executive",
-        "leo.command.owner",
-        "leo.department.oversight",
-        "leo.training.view",
-        "leo.training.edit",
-        "leo.training.roster",
-        "leo.vehicle.hse",
-        "leo.tactical.ert",
-        "leo.investigations.major",
-        "leo.investigations.criminal",
-        "leo.records.internal",
-        "police.access",
-        "police.cuff",
-        "police.ticket",
-        "police.warrant",
-        "police.search",
         "ems.access",
         "ems.revive",
         "ems.treat",

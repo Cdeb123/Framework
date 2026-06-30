@@ -23,7 +23,7 @@ class Garages {
 
     };
 
-    class Tanoa {
+    class Anzusmap {
 
         class Land_SM_01_shed_F {
             price = 140000;

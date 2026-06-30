@@ -15,7 +15,14 @@ private _group = missionNamespace getVariable ["life_weapon_shop_group",switch (
     case civilian: {"Civilian"};
     default {""};
 }];
-if (_shop isEqualTo "cop_basic") then {_shop = "tcsd_armory";};
+if (_shop isEqualTo "cop_basic") then {
+    _shop = switch (missionNamespace getVariable ["life_leo_department","kcso"]) do {
+        case "usms": {"usms_armory"};
+        case "dea": {"dea_armory"};
+        case "fbi": {"fbi_armory"};
+        default {"kcso_armory"};
+    };
+};
 
 private _shopCfg = missionConfigFile >> "Life_Shops" >> "WeaponShops" >> _group >> _shop;
 if !(isClass _shopCfg) exitWith {closeDialog 0;};

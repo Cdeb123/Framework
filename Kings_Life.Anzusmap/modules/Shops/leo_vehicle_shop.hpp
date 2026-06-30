@@ -77,7 +77,7 @@ class life_leo_vehicle_shop {
     class controls {
         class Title: Life_RscText {
             idc = LEO_VEHICLE_SHOP_TITLE;
-            text = "TCSD Motor Pool";
+            text = "KCSO Motor Pool";
             colorText[] = {0.92,0.98,0.98,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.038;

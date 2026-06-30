@@ -15,7 +15,7 @@ params [
 if (_department isEqualTo "") then {
     _department = getText (missionConfigFile >> "Life_LEO" >> "defaultDepartment");
 };
-if (_department isEqualTo "") then {_department = "tcsd";};
+if (_department isEqualTo "") then {_department = "kcso";};
 
 private _conditionOk = [_condition] call life_fnc_levelCheck;
 private _rankOk = (_rank isEqualTo "") || {[_rank,_department] call life_fnc_leoAtLeastRank};

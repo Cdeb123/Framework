@@ -10,7 +10,7 @@ if ((lbCurSel 8954) < 0) exitWith {};
 private _shop = missionNamespace getVariable ["life_leo_clothing_shop_type","cop"];
 private _shopCfg = missionConfigFile >> "Life_Shops" >> "LEOClothingShops" >> _shop;
 private _department = getText (_shopCfg >> "department");
-if (_department isEqualTo "") then {_department = "tcsd";};
+if (_department isEqualTo "") then {_department = "kcso";};
 
 private _data = call compile (lbData [8954,lbCurSel 8954]);
 _data params [

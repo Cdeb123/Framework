@@ -25,8 +25,8 @@ _textSpoiler = _display displayCtrl 1101;
 _text2 = _display displayCtrl 1102;
 
 _message = "";
-_message = _message + "<t align='center' size='8' shadow='0'>A3UL</t><br /><br />";
-_message = _message + "A3UL, a Roleplay framework for ArmA III. Forked from the original Altis Life RPG.<br /><br />";
+_message = _message + "<t align='center' size='8' shadow='0'>Kings Life</t><br /><br />";
+_message = _message + "Kings Life, a roleplay framework for Kings County on Anzusmap.<br /><br />";
 _message = _message + "Useful links:<br /><br />";
 _message = _message + "<a color='#00DFFF'>•</a> Github: <a href='https://github.com/Cdeb123/Framework' color='#56BDD6'> https://github.com/Cdeb123/Framework</a><br />";
 _message = _message + "<a color='#00DFFF'>•</a> Wiki: <a href='https://github.com/Cdeb123/Framework/wiki' color='#56BDD6'> https://github.com/Cdeb123/Framework/wiki</a><br />";

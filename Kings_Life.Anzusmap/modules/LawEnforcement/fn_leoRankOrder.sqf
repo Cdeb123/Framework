@@ -6,7 +6,7 @@
 */
 params [
     ["_rank","",[""]],
-    ["_department",missionNamespace getVariable ["life_leo_department","tcsd"],[""]]
+    ["_department",missionNamespace getVariable ["life_leo_department","kcso"],[""]]
 ];
 
 if (_rank isEqualTo "") exitWith {-1};

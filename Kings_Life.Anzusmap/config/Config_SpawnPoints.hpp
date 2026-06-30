@@ -104,7 +104,7 @@ class CfgSpawnPoints {
                 displayName = $STR_MAR_Highway_Patrol;
                 spawnMarker = "cop_spawn_5";
                 icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
-                conditions = "['hse'] call life_fnc_leoHasSubdivision || {['sergeant'] call life_fnc_leoAtLeastRank}";
+                conditions = "['hsu'] call life_fnc_leoHasSubdivision || {['sergeant'] call life_fnc_leoAtLeastRank}";
             };
         };
 
@@ -222,11 +222,11 @@ class CfgSpawnPoints {
             };
 
             class GeorgetownHQ {
-                displayName = "Georgetown HQ";
+                displayName = "Kings County HQ";
                 spawnMarker = "cop_spawn_2";
                 icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
                 spawnType = "LEO Station";
-                description = "Georgetown law enforcement headquarters.";
+                description = "Kings County law enforcement headquarters.";
                 conditions = "";
             };
 
@@ -244,8 +244,8 @@ class CfgSpawnPoints {
                 spawnMarker = "cop_spawn_5";
                 icon = "\a3\ui_f\data\map\GroupIcons\badge_rotate_0_gs.paa";
                 spawnType = "LEO Station";
-                description = "Highway patrol station for traffic and island-wide response.";
-                conditions = "['hse'] call life_fnc_leoHasSubdivision || {['sergeant'] call life_fnc_leoAtLeastRank}";
+                description = "HSU station for traffic enforcement and county-wide response.";
+                conditions = "['hsu'] call life_fnc_leoHasSubdivision || {['sergeant'] call life_fnc_leoAtLeastRank}";
             };
         };
 

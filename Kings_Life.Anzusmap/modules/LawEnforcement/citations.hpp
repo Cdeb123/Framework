@@ -72,7 +72,7 @@ class life_citation_issue {
         };
         class Subtitle: Life_RscText {
             idc = -1;
-            text = "Tanoa County Citation Form";
+            text = "Kings County Citation Form";
             colorText[] = {0.56,0.70,0.78,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.021;

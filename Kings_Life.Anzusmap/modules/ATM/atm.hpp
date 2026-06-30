@@ -59,7 +59,7 @@ class Life_atm_management {
     class controls {
         class Title: Life_RscText {
             idc = -1;
-            text = "TANOA NATIONAL BANK";
+            text = "KINGS COUNTY NATIONAL BANK";
             colorText[] = {0.94,0.98,0.98,1};
             colorBackground[] = {0,0,0,0};
             sizeEx = 0.035;

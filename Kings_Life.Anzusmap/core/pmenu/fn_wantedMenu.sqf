@@ -4,7 +4,7 @@
     Author: Bryan "Tonic" Boardwine
 
     Description:
-    Opens the Wanted menu and connects to the APD.
+    Opens the Wanted menu and connects to the KCSO.
 */
 disableSerialization;
 

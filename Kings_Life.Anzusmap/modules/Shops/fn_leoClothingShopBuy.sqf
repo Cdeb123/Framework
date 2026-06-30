@@ -15,7 +15,7 @@ private _shopCondition = getText (_shopCfg >> "condition");
 if !([_shopCondition] call life_fnc_levelCheck) exitWith {hint localize "STR_Shop_Veh_NotAllowed";};
 
 private _department = getText (_shopCfg >> "department");
-if (_department isEqualTo "") then {_department = "tcsd";};
+if (_department isEqualTo "") then {_department = "kcso";};
 
 private _data = call compile (lbData [8954,lbCurSel 8954]);
 _data params [

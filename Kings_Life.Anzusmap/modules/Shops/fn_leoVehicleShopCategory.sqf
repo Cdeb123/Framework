@@ -12,7 +12,7 @@ private _shopCfg = missionConfigFile >> "Life_Shops" >> "VehicleShops" >> "LawEn
 private _category = lbData [8803,lbCurSel 8803];
 private _categoryCfg = _shopCfg >> "Categories" >> _category;
 private _department = getText (_shopCfg >> "department");
-if (_department isEqualTo "") then {_department = "tcsd";};
+if (_department isEqualTo "") then {_department = "kcso";};
 
 lbClear 8804;
 lbClear 8808;
