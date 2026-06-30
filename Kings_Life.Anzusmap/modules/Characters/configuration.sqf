@@ -1,0 +1,10 @@
+life_characters = [];
+life_character_completed = false;
+life_character_gate_active = false;
+life_character_slot = -1;
+life_character_uid = "";
+life_character_data = [];
+life_character_preview_objects = [];
+life_character_preview_camera = objNull;
+life_character_selectedChanged = false;
+life_character_preview_committed = false;
